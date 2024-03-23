@@ -1,20 +1,16 @@
-.DEFAULT_GOAL := all
-BUILD_DIR=build
-BINARY_NAME=multicycle top_bsv top_pipelined
-BSC_FLAGS=--aggressive-conditions --show-schedule -vdir $(BUILD_DIR) -bdir $(BUILD_DIR) -simdir $(BUILD_DIR) -o 
+CONNECTALDIR?=../connectal
+# S2H_INTERFACES = EchoRequest:Echo.request
+# H2S_INTERFACES = Echo:EchoIndication
+S2H_INTERFACES = MemcpyRequest:Memcpy.request
+H2S_INTERFACES = Memcpy:MemcpyIndication
+MEM_READ_INTERFACES = lMemcpy.dmaReadClient
+MEM_WRITE_INTERFACES = lMemcpy.dmaWriteClient
 
-.PHONY: clean all $(BINARY_NAME)
 
-$(BINARY_NAME):
-	mkdir -p $(BUILD_DIR)
-	bsc $(BSC_FLAGS) $@ -sim -g mk$@ -u $@.bsv
-	bsc $(BSC_FLAGS) $@ -sim -e mk$@
+BSVFILES = Echo.bsv 
+#BSVFILES = Memcpy.bsv
+CPPFILES= testecho.cpp
 
-clean:
-	rm -rf $(BUILD_DIR)
-	rm -f $(BINARY_NAME)
-	rm -f *.so
-	rm -f *.sched
+CONNECTALFLAGS += -D TRACE_PORTAL
 
-all: clean $(BINARY_NAME)
-
+include $(CONNECTALDIR)/Makefile.connectal

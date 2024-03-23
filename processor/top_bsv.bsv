@@ -4,7 +4,12 @@ import multicycle::*;
 import FIFO::*;
 typedef Bit#(32) Word;
 
-module mktop_bsv(Empty);
+
+interface ProcInterface;
+    method ActionValue#(Bit#(32)) getStatus();
+endinterface
+
+module mktop_bsv(ProcInterface);
     // Instantiate the dual ported memory
     BRAM_Configure cfg = defaultValue();
     cfg.loadFormat = tagged Hex "mem.vmh";
@@ -16,6 +21,10 @@ module mktop_bsv(Empty);
     FIFO#(Mem) mmioreq <- mkFIFO;
     let debug = False;
     Reg#(Bit#(32)) cycle_count <- mkReg(0);
+
+
+    Reg#(Bit#(32)) status <- mkReg(0);
+
 
     rule tic;
 	    cycle_count <= cycle_count + 1;
@@ -78,10 +87,12 @@ module mktop_bsv(Empty);
             // Exiting Simulation
                 if (req.data == 0) begin
                         $fdisplay(stderr, "  [0;32mPASS[0m");
+                        status <= 1;
                 end
                 else
                     begin
                         $fdisplay(stderr, "  [0;31mFAIL[0m (%0d)", req.data);
+                        status <= 99;
                     end
                 $fflush(stderr);
                 $finish;
@@ -96,5 +107,10 @@ module mktop_bsv(Empty);
         if (debug) $display("Put MMIOResp", fshow(req));
         rv_core.getMMIOResp(req);
     endrule
+
+
+    method ActionValue#(Bit#(32)) getStatus();
+		return status;
+    endmethod
     
 endmodule
