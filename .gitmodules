@@ -1,0 +1,9 @@
+[submodule "buildcache"]
+	path = buildcache
+	url = git@github.com:cambridgehackers/buildcache.git
+[submodule "connectal"]
+	path = connectal
+	url = git@github.com:cambridgehackers/connectal.git
+[submodule "fpgamake"]
+	path = fpgamake
+	url = git@github.com:cambridgehackers/fpgamake.git
