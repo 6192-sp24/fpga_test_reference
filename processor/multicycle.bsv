@@ -56,8 +56,8 @@ module mkmulticycle(RVIfc);
     String dumpFile = "output.log" ;
     let lfh <- mkReg(InvalidFile);
 
-    Bool debug = False;
-    Reg#(Bool) starting <- mkReg(True);
+    Bool debug = True;
+    Reg#(Bool) starting <- mkReg(False);
 
 
     rule fetch if (state == Fetch && !starting);
