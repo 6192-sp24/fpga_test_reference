@@ -54,6 +54,8 @@ module mkEcho#(EchoIndication indication)(Echo);
     // test f <- test(32);
     // FIFOF#(Bit#(32)) f <- mkrouterFIFOtest(2, True);
 
+    ProcInterface p <- mktop_bsv;
+
     rule heard;
         delay.deq;
         indication.heard(delay.first);
@@ -67,8 +69,9 @@ module mkEcho#(EchoIndication indication)(Echo);
    interface EchoRequest request;
       method Action say(Bit#(32) v);
         //  f.enq(v);
-         f.deq();
-    	 delay.enq(f.first());
+        // f.deq();
+        let x <- f.getStatus();
+    	 delay.enq(x);
       endmethod
       
       method Action say2(Bit#(16) a, Bit#(16) b);
