@@ -1,0 +1,1628 @@
+=== Generated schedule for mkConnectalTop ===
+
+Method schedule
+---------------
+Method: slave_read_server_readReq_put
+Ready signal: ctrl_mux_rv_req_ars.i_notFull && ctrl_mux_rv_rs.i_notFull
+Conflict-free: slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+Conflicts: slave_read_server_readReq_put
+ 
+Method: slave_read_server_readData_get
+Ready signal: ctrl_mux_rv_rs.i_notEmpty &&
+	      ctrl_mux_rv_read_data_funnel_buffs_0_0.i_notEmpty
+Conflict-free: slave_read_server_readReq_put,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+Conflicts: slave_read_server_readData_get
+ 
+Method: slave_write_server_writeReq_put
+Ready signal: ctrl_mux_rv_req_aws.i_notFull && ctrl_mux_rv_ws.i_notFull
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+Sequenced after (restricted): slave_write_server_writeData_put
+Conflicts: slave_write_server_writeReq_put
+ 
+Method: slave_write_server_writeData_put
+Ready signal: (! ctrl_mux_rv_lastWriteDataSeen) &&
+	      ctrl_mux_rv_ws.i_notEmpty && ctrl_mux_rv_write_data.i_notFull
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+Sequenced before (restricted): slave_write_server_writeReq_put
+Conflicts: slave_write_server_writeData_put
+ 
+Method: slave_write_server_writeDone_get
+Ready signal: ctrl_mux_rv_doneFifo.i_notEmpty
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+Conflicts: slave_write_server_writeDone_get
+ 
+Method: interrupt_0__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_1__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_2__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_3__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_4__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_5__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_6__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_7__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_8__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_9__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_10__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_11__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_12__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_13__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_14__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: interrupt_15__read
+Ready signal: True
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: readers_0_readReq_get
+Ready signal: False
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: readers_0_readData_put
+Ready signal: False
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: readers_1_readReq_get
+Ready signal: False
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: readers_1_readData_put
+Ready signal: False
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_0_writeReq_get
+Ready signal: False
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_0_writeData_get
+Ready signal: False
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_0_writeDone_put
+Ready signal: False
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_1_writeReq_get
+Ready signal: False
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_1_writeData_get
+Ready signal: False
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_1_writeDone_put
+Ready signal: False
+Conflict-free: slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       interrupt_0__read,
+	       interrupt_1__read,
+	       interrupt_2__read,
+	       interrupt_3__read,
+	       interrupt_4__read,
+	       interrupt_5__read,
+	       interrupt_6__read,
+	       interrupt_7__read,
+	       interrupt_8__read,
+	       interrupt_9__read,
+	       interrupt_10__read,
+	       interrupt_11__read,
+	       interrupt_12__read,
+	       interrupt_13__read,
+	       interrupt_14__read,
+	       interrupt_15__read,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Rule schedule
+-------------
+Rule: lEcho_p_bram_serverAdapterA_outData_setFirstCore
+Predicate: lEcho_p_bram_serverAdapterA_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterA_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_outData_setFirstEnq
+Predicate: (! lEcho_p_bram_serverAdapterA_outDataCore.notEmpty) &&
+	   lEcho_p_bram_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_outData_enqOnly
+Predicate: lEcho_p_bram_serverAdapterA_outDataCore.i_notFull &&
+	   (! lEcho_p_bram_serverAdapterA_outData_deqCalled.whas) &&
+	   lEcho_p_bram_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_outData_deqOnly
+Predicate: lEcho_p_bram_serverAdapterA_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterA_outData_deqCalled.whas &&
+	   (! lEcho_p_bram_serverAdapterA_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_outData_enqAndDeq
+Predicate: lEcho_p_bram_serverAdapterA_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterA_outDataCore.i_notFull &&
+	   lEcho_p_bram_serverAdapterA_outData_deqCalled.whas &&
+	   lEcho_p_bram_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_cnt_finalAdd
+Predicate: lEcho_p_bram_serverAdapterA_cnt_1.whas ||
+	   lEcho_p_bram_serverAdapterA_cnt_2.whas ||
+	   lEcho_p_bram_serverAdapterA_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_stageReadResponseAlways
+Predicate: lEcho_p_bram_serverAdapterA_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_moveToOutFIFO
+Predicate: ((! lEcho_p_bram_serverAdapterA_s1[0]) ||
+	    lEcho_p_bram_serverAdapterA_outDataCore.notFull) &&
+	   lEcho_p_bram_serverAdapterA_s1[1]
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_overRun
+Predicate: lEcho_p_bram_serverAdapterA_s1[1] &&
+	   (! lEcho_p_bram_serverAdapterA_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_outData_setFirstCore
+Predicate: lEcho_p_bram_serverAdapterB_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterB_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_outData_setFirstEnq
+Predicate: (! lEcho_p_bram_serverAdapterB_outDataCore.notEmpty) &&
+	   lEcho_p_bram_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_outData_enqOnly
+Predicate: lEcho_p_bram_serverAdapterB_outDataCore.i_notFull &&
+	   (! lEcho_p_bram_serverAdapterB_outData_deqCalled.whas) &&
+	   lEcho_p_bram_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_outData_deqOnly
+Predicate: lEcho_p_bram_serverAdapterB_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterB_outData_deqCalled.whas &&
+	   (! lEcho_p_bram_serverAdapterB_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_outData_enqAndDeq
+Predicate: lEcho_p_bram_serverAdapterB_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterB_outDataCore.i_notFull &&
+	   lEcho_p_bram_serverAdapterB_outData_deqCalled.whas &&
+	   lEcho_p_bram_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_cnt_finalAdd
+Predicate: lEcho_p_bram_serverAdapterB_cnt_1.whas ||
+	   lEcho_p_bram_serverAdapterB_cnt_2.whas ||
+	   lEcho_p_bram_serverAdapterB_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_stageReadResponseAlways
+Predicate: lEcho_p_bram_serverAdapterB_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_moveToOutFIFO
+Predicate: ((! lEcho_p_bram_serverAdapterB_s1[0]) ||
+	    lEcho_p_bram_serverAdapterB_outDataCore.notFull) &&
+	   lEcho_p_bram_serverAdapterB_s1[1]
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_overRun
+Predicate: lEcho_p_bram_serverAdapterB_s1[1] &&
+	   (! lEcho_p_bram_serverAdapterB_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_rv_core_fetch
+Predicate: (! lEcho_p_rv_core_toImem_rv.port0__read[68]) &&
+	   (lEcho_p_rv_core_state == 2'd0) && (! lEcho_p_rv_core_starting)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_rv_core_decode
+Predicate: lEcho_p_rv_core_fromImem_rv.port1__read[68] &&
+	   (lEcho_p_rv_core_state == 2'd1) && (! lEcho_p_rv_core_starting)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_rv_core_execute
+Predicate: (lEcho_p_rv_core_dInst[6] ||
+	    (! (lEcho_p_rv_core_dInst[4:3] == 2'b0)) ||
+	    ((((lEcho_p_rv_core_rv1 +
+		((lEcho_p_rv_core_dInst[35] &&
+		  (lEcho_p_rv_core_dInst[34:32] == 3'd0))
+		 ? sext lEcho_p_rv_core_dInst[31:20]
+		 : ((lEcho_p_rv_core_dInst[35] &&
+		     (lEcho_p_rv_core_dInst[34:32] == 3'd1))
+		    ? sext {lEcho_p_rv_core_dInst[31:25], lEcho_p_rv_core_dInst[11:7]}
+		    : ((lEcho_p_rv_core_dInst[35] &&
+			(lEcho_p_rv_core_dInst[34:32] == 3'd2))
+		       ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[7], lEcho_p_rv_core_dInst[30:25], lEcho_p_rv_core_dInst[11:8], 1'b0}
+		       : ((lEcho_p_rv_core_dInst[35] &&
+			   (lEcho_p_rv_core_dInst[34:32] == 3'd3))
+			  ? {lEcho_p_rv_core_dInst[31:12], 12'b0}
+			  : ((lEcho_p_rv_core_dInst[35] &&
+			      (lEcho_p_rv_core_dInst[34:32] == 3'd4))
+			     ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[19:12], lEcho_p_rv_core_dInst[20], lEcho_p_rv_core_dInst[30:21], 1'b0}
+			     : 32'd0))))))[31:2] ==
+	       30'd1006649340) ||
+	      ((lEcho_p_rv_core_rv1 +
+		((lEcho_p_rv_core_dInst[35] &&
+		  (lEcho_p_rv_core_dInst[34:32] == 3'd0))
+		 ? sext lEcho_p_rv_core_dInst[31:20]
+		 : ((lEcho_p_rv_core_dInst[35] &&
+		     (lEcho_p_rv_core_dInst[34:32] == 3'd1))
+		    ? sext {lEcho_p_rv_core_dInst[31:25], lEcho_p_rv_core_dInst[11:7]}
+		    : ((lEcho_p_rv_core_dInst[35] &&
+			(lEcho_p_rv_core_dInst[34:32] == 3'd2))
+		       ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[7], lEcho_p_rv_core_dInst[30:25], lEcho_p_rv_core_dInst[11:8], 1'b0}
+		       : ((lEcho_p_rv_core_dInst[35] &&
+			   (lEcho_p_rv_core_dInst[34:32] == 3'd3))
+			  ? {lEcho_p_rv_core_dInst[31:12], 12'b0}
+			  : ((lEcho_p_rv_core_dInst[35] &&
+			      (lEcho_p_rv_core_dInst[34:32] == 3'd4))
+			     ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[19:12], lEcho_p_rv_core_dInst[20], lEcho_p_rv_core_dInst[30:21], 1'b0}
+			     : 32'd0))))))[31:2] ==
+	       30'd1006649341) ||
+	      ((lEcho_p_rv_core_rv1 +
+		((lEcho_p_rv_core_dInst[35] &&
+		  (lEcho_p_rv_core_dInst[34:32] == 3'd0))
+		 ? sext lEcho_p_rv_core_dInst[31:20]
+		 : ((lEcho_p_rv_core_dInst[35] &&
+		     (lEcho_p_rv_core_dInst[34:32] == 3'd1))
+		    ? sext {lEcho_p_rv_core_dInst[31:25], lEcho_p_rv_core_dInst[11:7]}
+		    : ((lEcho_p_rv_core_dInst[35] &&
+			(lEcho_p_rv_core_dInst[34:32] == 3'd2))
+		       ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[7], lEcho_p_rv_core_dInst[30:25], lEcho_p_rv_core_dInst[11:8], 1'b0}
+		       : ((lEcho_p_rv_core_dInst[35] &&
+			   (lEcho_p_rv_core_dInst[34:32] == 3'd3))
+			  ? {lEcho_p_rv_core_dInst[31:12], 12'b0}
+			  : ((lEcho_p_rv_core_dInst[35] &&
+			      (lEcho_p_rv_core_dInst[34:32] == 3'd4))
+			     ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[19:12], lEcho_p_rv_core_dInst[20], lEcho_p_rv_core_dInst[30:21], 1'b0}
+			     : 32'd0))))))[31:2] ==
+	       30'd1006649342))
+	     ? ! lEcho_p_rv_core_toMMIO_rv.port0__read[68]
+	     : (! lEcho_p_rv_core_toDmem_rv.port0__read[68]))) &&
+	   (lEcho_p_rv_core_state == 2'd2) && (! lEcho_p_rv_core_starting)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_rv_core_writeback
+Predicate: (lEcho_p_rv_core_dInst[6] ||
+	    (! (lEcho_p_rv_core_dInst[4:3] == 2'b0)) ||
+	    (lEcho_p_rv_core_mem_business[0]
+	     ? lEcho_p_rv_core_fromMMIO_rv.port1__read[68]
+	     : lEcho_p_rv_core_fromDmem_rv.port1__read[68])) &&
+	   ((! lEcho_p_rv_core_dInst[36]) ||
+	    lEcho_p_rv_core_dInst[6] ||
+	    (! (lEcho_p_rv_core_dInst[4:3] == 2'b0)) ||
+	    (((lEcho_p_rv_core_mem_business[5:3] == 3'b0) ||
+	      (lEcho_p_rv_core_mem_business[5:3] == 3'b1) ||
+	      (lEcho_p_rv_core_mem_business[5:3] == 3'b100) ||
+	      (lEcho_p_rv_core_mem_business[5:3] == 3'b101))
+	     ? lEcho_p_rv_core_mem_business[0]
+	       ? lEcho_p_rv_core_fromMMIO_rv.port1__read[68]
+	       : lEcho_p_rv_core_fromDmem_rv.port1__read[68]
+	     : ((! (lEcho_p_rv_core_mem_business[5:3] == 3'b10)) ||
+		(lEcho_p_rv_core_mem_business[0]
+		 ? lEcho_p_rv_core_fromMMIO_rv.port1__read[68]
+		 : lEcho_p_rv_core_fromDmem_rv.port1__read[68])))) &&
+	   (lEcho_p_rv_core_state == 2'd3) && (! lEcho_p_rv_core_starting)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_tic
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: lEcho_p_requestI
+Predicate: lEcho_p_rv_core_toImem_rv.port1__read[68] &&
+	   (lEcho_p_bram_serverAdapterB_cnt .< 3'd3)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_responseI
+Predicate: (lEcho_p_bram_serverAdapterB_outDataCore.notEmpty ||
+	    lEcho_p_bram_serverAdapterB_outData_enqData.whas) &&
+	   lEcho_p_bram_serverAdapterB_outData_outData.whas &&
+	   (! lEcho_p_rv_core_fromImem_rv.port0__read[68])
+Blocking rules: (none)
+ 
+Rule: lEcho_p_requestD
+Predicate: lEcho_p_rv_core_toDmem_rv.port1__read[68] &&
+	   (lEcho_p_bram_serverAdapterA_cnt .< 3'd3)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_responseD
+Predicate: (lEcho_p_bram_serverAdapterA_outDataCore.notEmpty ||
+	    lEcho_p_bram_serverAdapterA_outData_enqData.whas) &&
+	   lEcho_p_bram_serverAdapterA_outData_outData.whas &&
+	   (! lEcho_p_rv_core_fromDmem_rv.port0__read[68])
+Blocking rules: (none)
+ 
+Rule: lEcho_p_requestMMIO
+Predicate: lEcho_p_rv_core_toMMIO_rv.port1__read[68] &&
+	   lEcho_p_mmioreq.i_notFull
+Blocking rules: (none)
+ 
+Rule: lEcho_p_responseMMIO
+Predicate: lEcho_p_mmioreq.i_notEmpty &&
+	   (! lEcho_p_rv_core_fromMMIO_rv.port0__read[68])
+Blocking rules: (none)
+ 
+Rule: lEcho_heard
+Predicate: lEchoIndicationOutput.RDY_ifc_heard && lEcho_delay.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: lEcho_heard2
+Predicate: lEchoIndicationOutput.RDY_ifc_heard2 && lEcho_delay2.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: handle_say_request
+Predicate: lEchoRequestInput.RDY_pipes_say_PipeOut_deq &&
+	   lEcho_delay.i_notFull
+Blocking rules: (none)
+ 
+Rule: handle_say2_request
+Predicate: lEchoRequestInput.RDY_pipes_say2_PipeOut_first &&
+	   lEchoRequestInput.RDY_pipes_say2_PipeOut_deq &&
+	   lEcho_delay2.i_notFull
+Blocking rules: (none)
+ 
+Rule: handle_setLeds_request
+Predicate: lEchoRequestInput.RDY_pipes_setLeds_PipeOut_deq
+Blocking rules: (none)
+ 
+Rule: ctrlPort_0_count
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memslave_0_fifoReadAddrGenerator_addrBeatRule
+Predicate: memslave_0_fifoReadAddrGenerator_requestFifo.i_notEmpty &&
+	   memslave_0_fifoReadAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_0_fifoWriteAddrGenerator_addrBeatRule
+Predicate: memslave_0_fifoWriteAddrGenerator_requestFifo.i_notEmpty &&
+	   memslave_0_fifoWriteAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_0_write_done
+Predicate: memslave_0_fifoWriteDoneFifo.i_notEmpty &&
+	   memslave_0_ws.i_notEmpty &&
+	   memslave_0_wsCtrl.i_notEmpty && memslave_0_doneFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_0_req_aw
+Predicate: memslave_0_req_aws.i_notEmpty &&
+	   memslave_0_fifoWriteAddrGenerator_requestFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_0_req_ar
+Predicate: memslave_0_req_ars.i_notEmpty &&
+	   memslave_0_fifoReadAddrGenerator_requestFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_0_rvrule
+Predicate: memslave_0_fifoReadAddrGenerator_addrBeatFifo.i_notEmpty &&
+	   memslave_0_rsCtrl.i_notEmpty &&
+	   memslave_0_rs.i_notEmpty &&
+	   memslave_0_rvFifo.i_notFull &&
+	   (memslave_0_rsCtrl.first ||
+	    (((! (memslave_0_fifoReadAddrGenerator_addrBeatFifo.first[21:17] ==
+		  5'd0)) ||
+	      case memslave_0_rs.first of
+	      1'd0 -> lEchoIndicationOutput.RDY_portalIfc_indications_0_first
+	      1'd1 -> lEchoIndicationOutput.RDY_portalIfc_indications_1_first
+	      _ -> 1'd1) &&
+	     ((! (memslave_0_fifoReadAddrGenerator_addrBeatFifo.first[21:17] ==
+		  5'd0)) ||
+	      case memslave_0_rs.first of
+	      1'd0 -> lEchoIndicationOutput.RDY_portalIfc_indications_0_deq
+	      1'd1 -> lEchoIndicationOutput.RDY_portalIfc_indications_1_deq
+	      _ -> 1'd1)))
+Blocking rules: (none)
+ 
+Rule: ctrlPort_1_count
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memslave_1_fifoReadAddrGenerator_addrBeatRule
+Predicate: memslave_1_fifoReadAddrGenerator_requestFifo.i_notEmpty &&
+	   memslave_1_fifoReadAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_1_fifoWriteAddrGenerator_addrBeatRule
+Predicate: memslave_1_fifoWriteAddrGenerator_requestFifo.i_notEmpty &&
+	   memslave_1_fifoWriteAddrGenerator_addrBeatFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_1_write_done
+Predicate: memslave_1_fifoWriteDoneFifo.i_notEmpty &&
+	   memslave_1_ws.i_notEmpty &&
+	   memslave_1_wsCtrl.i_notEmpty && memslave_1_doneFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_1_req_aw
+Predicate: memslave_1_req_aws.i_notEmpty &&
+	   memslave_1_fifoWriteAddrGenerator_requestFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_1_req_ar
+Predicate: memslave_1_req_ars.i_notEmpty &&
+	   memslave_1_fifoReadAddrGenerator_requestFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memslave_1_writeDataRule
+Predicate: memslave_1_wsCtrl.i_notEmpty &&
+	   memslave_1_writeDataFifo.i_notEmpty &&
+	   memslave_1_fifoWriteAddrGenerator_addrBeatFifo.i_notEmpty &&
+	   ((! memslave_1_fifoWriteAddrGenerator_addrBeatFifo.first[0]) ||
+	    memslave_1_fifoWriteDoneFifo.i_notFull) &&
+	   (memslave_1_wsCtrl.first ||
+	    (memslave_1_ws.i_notEmpty &&
+	     case memslave_1_ws.first of
+	     2'd0 -> lEchoRequestInput.RDY_portalIfc_requests_0_enq
+	     2'd1 -> lEchoRequestInput.RDY_portalIfc_requests_1_enq
+	     2'd2 -> lEchoRequestInput.RDY_portalIfc_requests_2_enq
+	     _ -> 1'd1))
+Blocking rules: (none)
+ 
+Rule: memslave_1_rvrule
+Predicate: memslave_1_fifoReadAddrGenerator_addrBeatFifo.i_notEmpty &&
+	   memslave_1_rsCtrl.i_notEmpty &&
+	   memslave_1_rvFifo.i_notFull &&
+	   (memslave_1_rsCtrl.first ||
+	    (! (memslave_1_fifoReadAddrGenerator_addrBeatFifo.first[21:17] ==
+		5'd4)) ||
+	    memslave_1_rs.i_notEmpty) &&
+	   ((! memslave_1_fifoReadAddrGenerator_addrBeatFifo.first[0]) ||
+	    memslave_1_rs.i_notEmpty)
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_writeTop
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_writeTop_1
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_readDataPipes_0_connect
+Predicate: memslave_0_rvFifo.i_notEmpty &&
+	   ctrl_mux_rv_readDataPipes_0_fifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_readDataPipes_1_connect
+Predicate: memslave_1_rvFifo.i_notEmpty &&
+	   ctrl_mux_rv_readDataPipes_1_fifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_read_data_funnel_funnel
+Predicate: ((! ctrl_mux_rv_readDataPipes_0_fifo.notEmpty) ||
+	    ctrl_mux_rv_readDataPipes_0_fifo.i_notEmpty) &&
+	   (ctrl_mux_rv_readDataPipes_0_fifo.notEmpty ||
+	    (! ctrl_mux_rv_readDataPipes_1_fifo.notEmpty) ||
+	    ctrl_mux_rv_readDataPipes_1_fifo.i_notEmpty) &&
+	   (((! ctrl_mux_rv_readDataPipes_1_fifo.notEmpty) &&
+	     (! ctrl_mux_rv_readDataPipes_0_fifo.notEmpty)) ||
+	    ctrl_mux_rv_read_data_funnel_buffs_0_0.i_notFull)
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_write_data_unfunnel_rv_xfer
+Predicate: ctrl_mux_rv_write_data.i_notEmpty &&
+	   ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_0.i_notFull &&
+	   (! ctrl_mux_rv_write_data.first[39])
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_write_data_unfunnel_rv_xfer_1
+Predicate: ctrl_mux_rv_write_data.i_notEmpty &&
+	   ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_1.i_notFull &&
+	   ctrl_mux_rv_write_data.first[39]
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_writeDataPipes_0_connect
+Predicate: memslave_0_wsCtrl.i_notEmpty &&
+	   ctrl_mux_rv_writeDataPipes_0_fifo.i_notEmpty &&
+	   memslave_0_fifoWriteAddrGenerator_addrBeatFifo.i_notEmpty &&
+	   ((! memslave_0_fifoWriteAddrGenerator_addrBeatFifo.first[0]) ||
+	    memslave_0_fifoWriteDoneFifo.i_notFull)
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_writeDataPipes_1_connect
+Predicate: ctrl_mux_rv_writeDataPipes_1_fifo.i_notEmpty &&
+	   memslave_1_writeDataFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_0_connect
+Predicate: ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_0.i_notEmpty &&
+	   ctrl_mux_rv_writeDataPipes_0_fifo.i_notFull &&
+	   ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_0.notEmpty
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_1_connect
+Predicate: ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_1.i_notEmpty &&
+	   ctrl_mux_rv_writeDataPipes_1_fifo.i_notFull &&
+	   ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_1.notEmpty
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_req_aw
+Predicate: ctrl_mux_rv_req_aws.i_notEmpty &&
+	   ctrl_mux_rv_ws.i_notEmpty &&
+	   case ctrl_mux_rv_ws.first of
+	   1'd0 -> memslave_0_req_aws.i_notFull &&
+		   memslave_0_ws.i_notFull && memslave_0_wsCtrl.i_notFull
+	   1'd1 -> memslave_1_req_aws.i_notFull &&
+		   memslave_1_ws.i_notFull && memslave_1_wsCtrl.i_notFull
+	   _ -> 1'd1
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_req_ar
+Predicate: ctrl_mux_rv_req_ars.i_notEmpty &&
+	   ctrl_mux_rv_rs.i_notEmpty &&
+	   case ctrl_mux_rv_rs.first of
+	   1'd0 -> memslave_0_req_ars.i_notFull &&
+		   memslave_0_rs.i_notFull && memslave_0_rsCtrl.i_notFull
+	   1'd1 -> memslave_1_req_ars.i_notFull &&
+		   memslave_1_rs.i_notFull && memslave_1_rsCtrl.i_notFull
+	   _ -> 1'd1
+Blocking rules: (none)
+ 
+Rule: ctrl_mux_rv_write_done_rule
+Predicate: ctrl_mux_rv_ws.i_notEmpty &&
+	   ctrl_mux_rv_doneFifo.i_notFull &&
+	   case ctrl_mux_rv_ws.first of
+	   1'd0 -> memslave_0_doneFifo.i_notEmpty
+	   1'd1 -> memslave_1_doneFifo.i_notEmpty
+	   _ -> 1'd1
+Blocking rules: (none)
+ 
+Logical execution order: slave_read_server_readReq_put,
+			 slave_write_server_writeData_put,
+			 slave_write_server_writeReq_put,
+			 slave_write_server_writeDone_get,
+			 interrupt_0__read,
+			 interrupt_1__read,
+			 interrupt_2__read,
+			 interrupt_3__read,
+			 interrupt_4__read,
+			 interrupt_5__read,
+			 interrupt_6__read,
+			 interrupt_7__read,
+			 interrupt_8__read,
+			 interrupt_9__read,
+			 interrupt_10__read,
+			 interrupt_11__read,
+			 interrupt_12__read,
+			 interrupt_13__read,
+			 interrupt_14__read,
+			 interrupt_15__read,
+			 readers_0_readReq_get,
+			 readers_0_readData_put,
+			 readers_1_readReq_get,
+			 readers_1_readData_put,
+			 writers_0_writeReq_get,
+			 writers_0_writeData_get,
+			 writers_0_writeDone_put,
+			 writers_1_writeReq_get,
+			 writers_1_writeData_get,
+			 writers_1_writeDone_put,
+			 lEcho_p_tic,
+			 lEcho_p_responseMMIO,
+			 lEcho_p_bram_serverAdapterA_moveToOutFIFO,
+			 lEcho_p_bram_serverAdapterA_overRun,
+			 lEcho_p_bram_serverAdapterA_outData_setFirstCore,
+			 lEcho_p_bram_serverAdapterA_outData_setFirstEnq,
+			 lEcho_p_responseD,
+			 lEcho_p_bram_serverAdapterA_outData_enqOnly,
+			 lEcho_p_bram_serverAdapterA_outData_deqOnly,
+			 lEcho_p_bram_serverAdapterA_outData_enqAndDeq,
+			 lEcho_p_bram_serverAdapterB_moveToOutFIFO,
+			 lEcho_p_bram_serverAdapterB_overRun,
+			 lEcho_p_bram_serverAdapterB_outData_setFirstCore,
+			 lEcho_p_bram_serverAdapterB_outData_setFirstEnq,
+			 lEcho_p_responseI,
+			 lEcho_p_bram_serverAdapterB_outData_enqOnly,
+			 lEcho_p_bram_serverAdapterB_outData_deqOnly,
+			 lEcho_p_bram_serverAdapterB_outData_enqAndDeq,
+			 lEcho_p_rv_core_fetch,
+			 lEcho_p_requestI,
+			 lEcho_p_bram_serverAdapterB_stageReadResponseAlways,
+			 lEcho_p_bram_serverAdapterB_cnt_finalAdd,
+			 lEcho_p_bram_serverAdapterB_s1__dreg_update,
+			 lEcho_p_rv_core_decode,
+			 lEcho_p_rv_core_execute,
+			 lEcho_p_requestD,
+			 lEcho_p_bram_serverAdapterA_stageReadResponseAlways,
+			 lEcho_p_bram_serverAdapterA_cnt_finalAdd,
+			 lEcho_p_bram_serverAdapterA_s1__dreg_update,
+			 lEcho_p_rv_core_writeback,
+			 memslave_0_req_aw,
+			 memslave_0_req_ar,
+			 memslave_0_rvrule,
+			 lEcho_heard,
+			 lEcho_heard2,
+			 ctrlPort_0_count,
+			 memslave_0_fifoReadAddrGenerator_addrBeatRule,
+			 memslave_0_fifoWriteAddrGenerator_addrBeatRule,
+			 memslave_1_req_aw,
+			 memslave_1_req_ar,
+			 memslave_1_rvrule,
+			 ctrlPort_1_count,
+			 memslave_1_writeDataRule,
+			 handle_say_request,
+			 handle_say2_request,
+			 handle_setLeds_request,
+			 lEcho_p_requestMMIO,
+			 memslave_1_write_done,
+			 memslave_1_fifoReadAddrGenerator_addrBeatRule,
+			 memslave_1_fifoWriteAddrGenerator_addrBeatRule,
+			 ctrl_mux_writeTop,
+			 ctrl_mux_writeTop_1,
+			 ctrl_mux_rv_req_aw,
+			 ctrl_mux_rv_req_ar,
+			 slave_read_server_readData_get,
+			 ctrl_mux_rv_write_done_rule,
+			 ctrl_mux_rv_read_data_funnel_funnel,
+			 ctrl_mux_rv_readDataPipes_0_connect,
+			 ctrl_mux_rv_readDataPipes_1_connect,
+			 ctrl_mux_rv_writeDataPipes_0_connect,
+			 memslave_0_write_done,
+			 ctrl_mux_rv_writeDataPipes_1_connect,
+			 ctrl_mux_rv_0_connect,
+			 ctrl_mux_rv_write_data_unfunnel_rv_xfer,
+			 ctrl_mux_rv_1_connect,
+			 ctrl_mux_rv_write_data_unfunnel_rv_xfer_1
+
+==============================================

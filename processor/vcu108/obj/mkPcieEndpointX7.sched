@@ -1,0 +1,497 @@
+=== Generated schedule for mkPcieEndpointX7 ===
+
+Method schedule
+---------------
+Method: pcie_rxn
+Ready signal: True
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_deq,
+	       regChanges_notEmpty
+ 
+Method: pcie_rxp
+Ready signal: True
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_deq,
+	       regChanges_notEmpty
+ 
+Method: pcie_txn
+Ready signal: True
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_deq,
+	       regChanges_notEmpty
+ 
+Method: pcie_txp
+Ready signal: True
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_deq,
+	       regChanges_notEmpty
+ 
+Method: user_lnk_up
+Ready signal: True
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_deq,
+	       regChanges_notEmpty
+ 
+Method: tlpr_request_put
+Ready signal: frq.i_notFull
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_deq,
+	       regChanges_notEmpty
+Conflicts: tlpr_request_put
+ 
+Method: tlpr_response_get
+Ready signal: frc.i_notEmpty
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_deq,
+	       regChanges_notEmpty
+Conflicts: tlpr_response_get
+ 
+Method: tlpc_request_put
+Ready signal: fcc.i_notFull
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_response_get,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_deq,
+	       regChanges_notEmpty
+Conflicts: tlpc_request_put
+ 
+Method: tlpc_response_get
+Ready signal: fcq.i_notEmpty
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_deq,
+	       regChanges_notEmpty
+Conflicts: tlpc_response_get
+ 
+Method: interruptRequest_put
+Ready signal: intrFifo.i_notFull
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       regChanges_first,
+	       regChanges_deq,
+	       regChanges_notEmpty
+Conflicts: interruptRequest_put
+ 
+Method: regChanges_first
+Ready signal: changeFifo.i_notEmpty
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_notEmpty
+Sequenced before: regChanges_deq
+ 
+Method: regChanges_deq
+Ready signal: changeFifo.i_notEmpty
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       interruptRequest_put
+Sequenced after: regChanges_first, regChanges_notEmpty
+Conflicts: regChanges_deq
+ 
+Method: regChanges_notEmpty
+Ready signal: True
+Conflict-free: pcie_rxn,
+	       pcie_rxp,
+	       pcie_txn,
+	       pcie_txp,
+	       user_lnk_up,
+	       tlpr_request_put,
+	       tlpr_response_get,
+	       tlpc_request_put,
+	       tlpc_response_get,
+	       interruptRequest_put,
+	       regChanges_first,
+	       regChanges_notEmpty
+Sequenced before: regChanges_deq
+ 
+Rule schedule
+-------------
+Rule: clkgen_pll_connect_feedback
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: clkgen_pll_connect_clkin1sel
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: fAxiRc_da_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: fAxiRc_va_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: fAxiRc_db_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: fAxiRc_vb_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: fAxiRc_canon
+Predicate: (fAxiRc_vb_dummy2_2
+	    ? fAxiRc_vb_lat_1.whas
+	      ? fAxiRc_vb_lat_1.wget
+	      : (fAxiRc_vb_lat_0.whas
+		 ? fAxiRc_vb_lat_0.wget
+		 : fAxiRc_vb_rl)
+	    : (_ :: Bit 1)) &&
+	   (fAxiRc_va_dummy2_2
+	    ? fAxiRc_va_lat_1.whas
+	      ? ! fAxiRc_va_lat_1.wget
+	      : (fAxiRc_va_lat_0.whas
+		 ? ! fAxiRc_va_lat_0.wget
+		 : (! fAxiRc_va_rl))
+	    : (_ :: Bit 1))
+Blocking rules: (none)
+ 
+Rule: fAxiRq_da_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: fAxiRq_va_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: fAxiRq_db_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: fAxiRq_vb_canon
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: fAxiRq_canon
+Predicate: (fAxiRq_vb_dummy2_2
+	    ? fAxiRq_vb_lat_1.whas
+	      ? fAxiRq_vb_lat_1.wget
+	      : (fAxiRq_vb_lat_0.whas
+		 ? fAxiRq_vb_lat_0.wget
+		 : fAxiRq_vb_rl)
+	    : (_ :: Bit 1)) &&
+	   (fAxiRq_va_dummy2_2
+	    ? fAxiRq_va_lat_1.whas
+	      ? ! fAxiRq_va_lat_1.wget
+	      : (fAxiRq_va_lat_0.whas
+		 ? ! fAxiRq_va_lat_0.wget
+		 : (! fAxiRq_va_rl))
+	    : (_ :: Bit 1))
+Blocking rules: (none)
+ 
+Rule: drive_axi_rq
+Predicate: (pcie_ep.s_axis_rq_tready == 4'd0) ||
+	   ((fAxiRq_va_dummy2_0 && fAxiRq_va_dummy2_1 && fAxiRq_va_dummy2_2)
+	    ? ! fAxiRq_va_rl
+	    : (_ :: Bit 1)) ||
+	   ((fAxiRq_va_dummy2_0 && fAxiRq_va_dummy2_1 && fAxiRq_va_dummy2_2)
+	    ? fAxiRq_va_rl
+	    : (_ :: Bit 1))
+Blocking rules: (none)
+ 
+Rule: rlBackpressureEnter
+Predicate: ! rqBackpressure
+Blocking rules: (none)
+ 
+Rule: rlBackpressureExit
+Predicate: rqBackpressure
+Blocking rules: (none)
+ 
+Rule: drive_axi_cc
+Predicate: fAxiCc.i_notEmpty &&
+	   (! (pcie_ep.s_axis_cc_tready == 4'd0)) && fAxiCc.notEmpty
+Blocking rules: (none)
+ 
+Rule: drive_axi_cc2
+Predicate: (pcie_ep.s_axis_cc_tready == 4'd0) || (! fAxiCc.notEmpty)
+Blocking rules: (none)
+ 
+Rule: drive_axi_rc_ready
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: sink_axi_rc
+Predicate: ((fAxiRc_vb_dummy2_0 && fAxiRc_vb_dummy2_1 && fAxiRc_vb_dummy2_2)
+	    ? ! fAxiRc_vb_rl
+	    : (_ :: Bit 1)) &&
+	   pcie_ep.m_axis_rc_tvalid
+Blocking rules: (none)
+ 
+Rule: drive_axi_cq_ready
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: sink_axi_cq
+Predicate: fAxiCq.i_notFull && pcie_ep.m_axis_cq_tvalid && fAxiCq.notFull
+Blocking rules: (none)
+ 
+Rule: rl_cq_wr_header
+Predicate: fAxiCq.i_notEmpty && fcq.i_notFull &&
+	   fAxiCq.first[17] &&
+	   ((fAxiCq.first[96:93] == 4'd1) || (fAxiCq.first[96:93] == 4'd3))
+Blocking rules: (none)
+ 
+Rule: rl_cq_wr_payload
+Predicate: fAxiCq.i_notEmpty && (! fAxiCq.first[17])
+Blocking rules: (none)
+ 
+Rule: rl_cq_rd_header
+Predicate: fAxiCq.i_notEmpty && fcq.i_notFull &&
+	   fAxiCq.first[17] &&
+	   ((fAxiCq.first[96:93] == 4'd0) || (fAxiCq.first[96:93] == 4'd2))
+Blocking rules: (none)
+ 
+Rule: rl_rc_header
+Predicate: ((fAxiRc_va_dummy2_0 && fAxiRc_va_dummy2_1 && fAxiRc_va_dummy2_2)
+	    ? fAxiRc_va_rl
+	    : (_ :: Bit 1)) &&
+	   frc.i_notFull &&
+	   ((fAxiRc_da_dummy2_0 && fAxiRc_da_dummy2_1 && fAxiRc_da_dummy2_2)
+	    ? fAxiRc_da_rl[17]
+	    : (_ :: Bit 1)) &&
+	   rc_even
+Blocking rules: (none)
+ 
+Rule: rl_rc_data
+Predicate: ((fAxiRc_va_dummy2_0 && fAxiRc_va_dummy2_1 && fAxiRc_va_dummy2_2)
+	    ? fAxiRc_va_rl
+	    : (_ :: Bit 1)) &&
+	   frc.i_notFull &&
+	   ((! rc_even) ||
+	    ((fAxiRc_da_dummy2_0 && fAxiRc_da_dummy2_1 && fAxiRc_da_dummy2_2)
+	     ? ! fAxiRc_da_rl[17]
+	     : (_ :: Bit 1))) &&
+	   (! (rc_dwcount == 11'd0))
+Blocking rules: rl_rc_header
+ 
+Rule: get_cc_tlps
+Predicate: fcc.i_notEmpty && fcc_tlps.i_notFull
+Blocking rules: (none)
+ 
+Rule: rl_cc_header
+Predicate: fcc_tlps.i_notEmpty && fAxiCc.i_notFull && fcc_tlps.first[152]
+Blocking rules: (none)
+ 
+Rule: rl_cc_data
+Predicate: fcc_tlps.i_notEmpty && fAxiCc.i_notFull &&
+	   (! fcc_tlps.first[152]) && (! (cc_dwcount == 11'd0))
+Blocking rules: (none)
+ 
+Rule: rl_rq_tlps
+Predicate: frq.i_notEmpty && frq_tlps.i_notFull
+Blocking rules: (none)
+ 
+Rule: rl_rq_header
+Predicate: frq_tlps.i_notEmpty &&
+	   (((! (frq_tlps.first[126:125] == 2'd0)) &&
+	     (! (frq_tlps.first[126:125] == 2'd1)) &&
+	     ((frq_tlps.first[126:125] == 2'd2) ||
+	      (frq_tlps.first[126:125] == 2'd3))) ||
+	    ((fAxiRq_vb_dummy2_0 && fAxiRq_vb_dummy2_1 && fAxiRq_vb_dummy2_2)
+	     ? ! fAxiRq_vb_rl
+	     : (_ :: Bit 1))) &&
+	   frq_tlps.first[152]
+Blocking rules: (none)
+ 
+Rule: rl_rq_data
+Predicate: frq_tlps.i_notEmpty &&
+	   ((rq_even && (! (rq_dwcount <= 11'd4))) ||
+	    ((fAxiRq_vb_dummy2_0 && fAxiRq_vb_dummy2_1 && fAxiRq_vb_dummy2_2)
+	     ? ! fAxiRq_vb_rl
+	     : (_ :: Bit 1))) &&
+	   (! (rq_dwcount == 11'd0))
+Blocking rules: rl_rq_header
+ 
+Rule: rl_intr
+Predicate: (! pcie_ep.cfg_interrupt_msix_enable[0]) ||
+	   (intrFifo.i_notEmpty && intrMutex.i_notFull)
+Blocking rules: (none)
+ 
+Rule: rl_intr_enable
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: rl_intr_sent
+Predicate: intrMutex.i_notEmpty &&
+	   (pcie_ep.cfg_interrupt_msix_sent ||
+	    pcie_ep.cfg_interrupt_msix_fail)
+Blocking rules: (none)
+ 
+Rule: rl_cycles
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: cs_rl_update
+Predicate: ((! cs_changeFifo.notFull) || cs_changeFifo.i_notFull) &&
+	   (! ({8'd0, rqBackpressureCount} == cs_snapshot))
+Blocking rules: Prelude_inst_changeSpecialWires_connect
+ 
+Rule: Prelude_inst_changeSpecialWires_connect
+Predicate: cs_changeFifo.i_notEmpty && changeFifo.i_notFull &&
+	   cs_changeFifo.notEmpty
+Blocking rules: (none)
+ 
+Rule: rl_drive_cfg_status_if
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: pcie_rxn,
+			 pcie_rxp,
+			 pcie_txn,
+			 pcie_txp,
+			 user_lnk_up,
+			 tlpr_request_put,
+			 tlpr_response_get,
+			 tlpc_request_put,
+			 tlpc_response_get,
+			 interruptRequest_put,
+			 regChanges_first,
+			 regChanges_notEmpty,
+			 regChanges_deq,
+			 rlBackpressureEnter,
+			 drive_axi_cc,
+			 drive_axi_cc2,
+			 drive_axi_rc_ready,
+			 sink_axi_rc,
+			 drive_axi_cq_ready,
+			 sink_axi_cq,
+			 rl_cq_wr_header,
+			 rl_cq_wr_payload,
+			 rl_cq_rd_header,
+			 rl_rc_header,
+			 rl_rc_data,
+			 get_cc_tlps,
+			 rl_cc_header,
+			 rl_cc_data,
+			 rl_rq_tlps,
+			 rl_rq_header,
+			 rl_rq_data,
+			 rl_intr,
+			 rl_intr_enable,
+			 rl_intr_sent,
+			 rl_drive_cfg_status_if,
+			 clkgen_pll_connect_feedback,
+			 clkgen_pll_connect_clkin1sel,
+			 fAxiRc_canon,
+			 fAxiRc_da_canon,
+			 fAxiRc_va_canon,
+			 fAxiRc_db_canon,
+			 fAxiRc_vb_canon,
+			 cs_rl_update,
+			 rlBackpressureExit,
+			 drive_axi_rq,
+			 rl_cycles,
+			 fAxiRq_canon,
+			 fAxiRq_da_canon,
+			 fAxiRq_va_canon,
+			 fAxiRq_db_canon,
+			 fAxiRq_vb_canon,
+			 Prelude_inst_changeSpecialWires_connect
+
+================================================

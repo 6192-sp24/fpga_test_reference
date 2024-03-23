@@ -1,0 +1,28 @@
+read_checkpoint ./Synth/mkPcieTop/mkPcieTop-synth.dcp
+    Elapsed time 1 seconds
+link_design
+    Elapsed time 20 seconds
+read_xdc /home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc
+    Elapsed time 0 seconds
+read_xdc /home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc
+    Elapsed time 1 seconds
+write_checkpoint -force ./Impl/TopDown/top-post-link.dcp
+    Elapsed time 5 seconds
+opt_design
+    Elapsed time 20 seconds
+write_checkpoint -force ./Impl/TopDown/top-post-opt.dcp
+    Elapsed time 4 seconds
+place_design
+    Elapsed time 59 seconds
+write_checkpoint -force ./Impl/TopDown/top-post-place.dcp
+    Elapsed time 5 seconds
+phys_opt_design
+    Elapsed time 0 seconds
+write_checkpoint -force ./Impl/TopDown/top-post-phys-opt.dcp
+    Elapsed time 5 seconds
+route_design
+    Elapsed time 75 seconds
+write_checkpoint -force ./Impl/TopDown/top-post-route.dcp
+    Elapsed time 5 seconds
+write_bitstream -bin_file -force Impl/TopDown/mkTop.bit
+    Elapsed time 36 seconds

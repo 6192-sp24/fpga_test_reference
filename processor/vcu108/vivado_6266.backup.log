@@ -1,0 +1,674 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Mar 22 23:58:09 2024
+# Process ID: 6266
+# Current directory: /home/seshan/fpga_test_reference/processor/vcu108
+# Command line: vivado -notrace -mode batch -source /home/seshan/fpga_test_reference/fpgamake/tcl/synth.tcl
+# Log file: /home/seshan/fpga_test_reference/processor/vcu108/vivado.log
+# Journal file: /home/seshan/fpga_test_reference/processor/vcu108/vivado.jou
+#-----------------------------------------------------------
+source /home/seshan/fpga_test_reference/fpgamake/tcl/synth.tcl -notrace
+add_files -scan_for_includes verilog/mkPcieTop.v verilog/mkPcieTop.v /home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v verilog/mkMemServerIndicationOutput.v verilog/mkPcieTracer.v verilog/mkPcieToMem.v verilog/mkMemServerRequestInput.v verilog/mkMemServerIndicationOutputPipes.v /home/seshan/Bluespec/opensource/lib/Verilog/ResetInverter.v verilog/mkPcieHost.v verilog/mkMemToPcieSynth.v /home/seshan/fpga_test_reference/connectal/verilog/SyncReset.v /home/seshan/Bluespec/opensource/lib/Verilog/ClockGen.v verilog/mkMMUIndicationOutput.v verilog/mkEchoIndicationOutputPipes.v /home/seshan/fpga_test_reference/connectal/verilog/SyncFIFO.v /home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v /home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v /home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v verilog/mkMMUIndicationOutputPipes.v verilog/mkMMUSynth.v /home/seshan/Bluespec/opensource/lib/Verilog.Vivado/RegFile.v verilog/mkEchoRequestInput.v /home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2BELoad.v verilog/mkMemServerRequestWrapperMemPortalPipes.v verilog/mkPcieControlAndStatusRegs.v verilog/mkPcieEndpointX7.v /home/seshan/Bluespec/opensource/lib/Verilog/SyncResetA.v verilog/mkMemServerIndicationProxySynth.v verilog/mkEchoIndicationOutput.v verilog/mkTLPDispatcher.v verilog/mkTLPArbiter.v /home/seshan/Bluespec/opensource/lib/Verilog/Counter.v verilog/mkConnectalTop.v verilog/mkMMURequestWrapperMemPortalPipes.v verilog/mkMMUIndicationProxySynth.v verilog/mkMMURequestInput.v verilog/mkMemInterrupt.v 
+Elapsed time 1 seconds
+read_ip /home/seshan/fpga_test_reference/connectal/out/vcu108/pcie3_ultrascale_0/pcie3_ultrascale_0.xci
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.1/data/ip'.
+Elapsed time 1 seconds
+read_xdc /home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc
+Elapsed time 0 seconds
+synth_design  -name mkPcieTop -top mkPcieTop -part xcvu095-ffva2104-2-e -flatten rebuilt -include_dirs "verilog /home/seshan/Bluespec/opensource/lib/Verilog /home/seshan/fpga_test_reference/connectal/verilog /home/seshan/Bluespec/opensource/lib/Verilog.Vivado" -mode default
+Command: synth_design -name mkPcieTop -top mkPcieTop -part xcvu095-ffva2104-2-e -flatten rebuilt -include_dirs {verilog /home/seshan/Bluespec/opensource/lib/Verilog /home/seshan/fpga_test_reference/connectal/verilog /home/seshan/Bluespec/opensource/lib/Verilog.Vivado} -mode default
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcvu095'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvu095'
+INFO: [Common 17-1540] The version limit for your license is '2021.06' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Device 21-403] Loading part xcvu095-ffva2104-2-e
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6274 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2092.199 ; gain = 114.711 ; free physical = 36580 ; free virtual = 124087
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mkPcieTop' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTop.v:43]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTop.v:74]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTop.v:76]
+INFO: [Synth 8-6157] synthesizing module 'SyncFIFO' [/home/seshan/fpga_test_reference/connectal/verilog/SyncFIFO.v:53]
+	Parameter dataWidth bound to: 4 - type: integer 
+	Parameter depth bound to: 32 - type: integer 
+	Parameter indxWidth bound to: 5 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/home/seshan/fpga_test_reference/connectal/verilog/SyncFIFO.v:90]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/home/seshan/fpga_test_reference/connectal/verilog/SyncFIFO.v:92]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/home/seshan/fpga_test_reference/connectal/verilog/SyncFIFO.v:109]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/home/seshan/fpga_test_reference/connectal/verilog/SyncFIFO.v:111]
+WARNING: [Synth 8-6026] Ignoring keep related attribute (keep/mark_debug/dont_touch) applied on memory [/home/seshan/fpga_test_reference/connectal/verilog/SyncFIFO.v:90]
+WARNING: [Synth 8-6026] Ignoring keep related attribute (keep/mark_debug/dont_touch) applied on memory
+INFO: [Synth 8-6155] done synthesizing module 'SyncFIFO' (1#1) [/home/seshan/fpga_test_reference/connectal/verilog/SyncFIFO.v:53]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS_GTE3' [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:33028]
+	Parameter REFCLK_EN_TX_PATH bound to: 1'b0 
+	Parameter REFCLK_HROW_CK_SEL bound to: 2'b00 
+	Parameter REFCLK_ICNTL_RX bound to: 2'b00 
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS_GTE3' (2#1) [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:33028]
+INFO: [Synth 8-6157] synthesizing module 'mkPcieEndpointX7' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:246]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 64 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2' (3#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (4#1) [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:959]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:966]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:969]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:972]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:975]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:978]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:981]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:984]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:987]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 4.000000 - type: float 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 4.000000 - type: float 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 4.000000 - type: float 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT1_DIVIDE bound to: 4 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT2_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT3_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter CLKOUT4_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT4_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT5_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT5_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT6_DIVIDE bound to: 10 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PSEN_INVERTED bound to: 1'b0 
+	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: float 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: float 
+	Parameter SS_EN bound to: FALSE - type: string 
+	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
+	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (5#1) [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:39813]
+INFO: [Synth 8-6157] synthesizing module 'ResetInverter' [/home/seshan/Bluespec/opensource/lib/Verilog/ResetInverter.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'ResetInverter' (6#1) [/home/seshan/Bluespec/opensource/lib/Verilog/ResetInverter.v:7]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:1072]
+INFO: [Synth 8-6157] synthesizing module 'SyncResetA' [/home/seshan/Bluespec/opensource/lib/Verilog/SyncResetA.v:20]
+	Parameter RSTDELAY bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'SyncResetA' (7#1) [/home/seshan/Bluespec/opensource/lib/Verilog/SyncResetA.v:20]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 64 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1' (8#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:1092]
+INFO: [Synth 8-6157] synthesizing module 'SyncReset' [/home/seshan/fpga_test_reference/connectal/verilog/SyncReset.v:43]
+	Parameter RSTDELAY bound to: 4 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/home/seshan/fpga_test_reference/connectal/verilog/SyncReset.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'SyncReset' (9#1) [/home/seshan/fpga_test_reference/connectal/verilog/SyncReset.v:43]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized0' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 265 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized0' (9#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized1' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 274 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized1' (9#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized2' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 153 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized2' (9#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized3' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 96 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized3' (9#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized0' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 1 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized0' (9#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:1216]
+INFO: [Synth 8-6157] synthesizing module 'SyncReset__parameterized0' [/home/seshan/fpga_test_reference/connectal/verilog/SyncReset.v:43]
+	Parameter RSTDELAY bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'SyncReset__parameterized0' (9#1) [/home/seshan/fpga_test_reference/connectal/verilog/SyncReset.v:43]
+INFO: [Synth 8-6157] synthesizing module 'pcie3_ultrascale_0' [/home/seshan/fpga_test_reference/processor/vcu108/.Xil/Vivado-6266-audacity/realtime/pcie3_ultrascale_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'pcie3_ultrascale_0' (10#1) [/home/seshan/fpga_test_reference/processor/vcu108/.Xil/Vivado-6266-audacity/realtime/pcie3_ultrascale_0_stub.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:1378]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_da_dummy2_0_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2251]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_da_dummy2_1_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2252]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_da_dummy2_2_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2253]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_db_dummy2_0_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2256]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_db_dummy2_1_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2257]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_db_dummy2_2_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2258]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_va_dummy2_0_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2261]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_va_dummy2_1_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2262]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_va_dummy2_2_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2263]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_vb_dummy2_0_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2265]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_vb_dummy2_1_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2266]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRc_vb_dummy2_2_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2267]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_da_dummy2_0_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2269]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_da_dummy2_1_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2270]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_da_dummy2_2_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2271]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_db_dummy2_0_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2274]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_db_dummy2_1_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2275]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_db_dummy2_2_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2276]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_va_dummy2_0_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2279]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_va_dummy2_1_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2280]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_va_dummy2_2_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2281]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_vb_dummy2_0_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2283]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_vb_dummy2_1_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2284]
+WARNING: [Synth 8-6014] Unused sequential element fAxiRq_vb_dummy2_2_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:2285]
+WARNING: [Synth 8-6014] Unused sequential element rqBackpressureCountSum_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:1736]
+WARNING: [Synth 8-6014] Unused sequential element rqBackpressureEvents_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:1750]
+INFO: [Synth 8-6155] done synthesizing module 'mkPcieEndpointX7' (11#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieEndpointX7.v:246]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (12#1) [/opt/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:32856]
+INFO: [Synth 8-6157] synthesizing module 'mkPcieHost' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieHost.v:7018]
+INFO: [Synth 8-6157] synthesizing module 'mkTLPArbiter' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkTLPArbiter.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'mkTLPArbiter' (13#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkTLPArbiter.v:60]
+INFO: [Synth 8-6157] synthesizing module 'mkPcieControlAndStatusRegs' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieControlAndStatusRegs.v:6516]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized4' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 206 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized4' (13#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized5' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 192 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized5' (13#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'BRAM2' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+	Parameter PIPELINED bound to: 1'b0 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter MEMSIZE bound to: 10'b1000000000 
+INFO: [Synth 8-5534] Detected attribute (* RAM_STYLE = "BLOCK" *) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:42]
+WARNING: [Synth 8-6014] Unused sequential element DOA_R2_reg was removed.  [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:75]
+WARNING: [Synth 8-6014] Unused sequential element DOB_R2_reg was removed.  [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'BRAM2' (14#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized6' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 1 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized6' (14#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized7' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 2 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized7' (14#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized8' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 29 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized8' (14#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized9' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 33 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized9' (14#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized1' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 32 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized1' (14#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized10' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 8 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized10' (14#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized11' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 3 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized11' (14#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized12' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 39 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized12' (14#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized13' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 6 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized13' (14#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'mkPcieControlAndStatusRegs' (15#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieControlAndStatusRegs.v:6516]
+INFO: [Synth 8-6157] synthesizing module 'mkTLPDispatcher' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkTLPDispatcher.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'mkTLPDispatcher' (16#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkTLPDispatcher.v:60]
+INFO: [Synth 8-6157] synthesizing module 'mkMemInterrupt' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemInterrupt.v:60]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized14' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 98 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized14' (16#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 98 - type: integer 
+	Parameter p2depth bound to: 4 - type: integer 
+	Parameter p3cntr_width bound to: 2 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 2 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* RAM_STYLE = "DISTRIBUTED" *) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:66]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO' (17#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO__parameterized0' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 153 - type: integer 
+	Parameter p2depth bound to: 8 - type: integer 
+	Parameter p3cntr_width bound to: 3 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 6 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO__parameterized0' (17#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'mkMemInterrupt' (18#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemInterrupt.v:60]
+INFO: [Synth 8-6157] synthesizing module 'mkPcieToMem' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieToMem.v:106]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO__parameterized1' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 128 - type: integer 
+	Parameter p2depth bound to: 8 - type: integer 
+	Parameter p3cntr_width bound to: 3 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 6 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO__parameterized1' (18#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+WARNING: [Synth 8-6014] Unused sequential element address_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieToMem.v:718]
+WARNING: [Synth 8-6014] Unused sequential element tlpTag_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieToMem.v:728]
+INFO: [Synth 8-6155] done synthesizing module 'mkPcieToMem' (19#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieToMem.v:106]
+INFO: [Synth 8-6157] synthesizing module 'mkMemToPcieSynth' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:167]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:948]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:960]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO__parameterized2' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 32 - type: integer 
+	Parameter p2depth bound to: 16 - type: integer 
+	Parameter p3cntr_width bound to: 4 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 14 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO__parameterized2' (19#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized15' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 128 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized15' (19#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized16' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 4 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized16' (19#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:1076]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:1088]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO__parameterized3' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 9 - type: integer 
+	Parameter p2depth bound to: 16 - type: integer 
+	Parameter p3cntr_width bound to: 4 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 14 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO__parameterized3' (19#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized17' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 36 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized17' (19#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO__parameterized4' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 8 - type: integer 
+	Parameter p2depth bound to: 16 - type: integer 
+	Parameter p3cntr_width bound to: 4 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 14 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO__parameterized4' (19#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized18' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 56 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized18' (19#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized19' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 165 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized19' (19#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized20' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 10 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized20' (19#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:1290]
+INFO: [Synth 8-6157] synthesizing module 'Counter' [/home/seshan/Bluespec/opensource/lib/Verilog/Counter.v:24]
+	Parameter width bound to: 32 - type: integer 
+	Parameter init bound to: 32'b00000000000000000000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'Counter' (20#1) [/home/seshan/Bluespec/opensource/lib/Verilog/Counter.v:24]
+INFO: [Synth 8-6157] synthesizing module 'BRAM2__parameterized0' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+	Parameter PIPELINED bound to: 1'b0 
+	Parameter ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter MEMSIZE bound to: 8'b10000000 
+WARNING: [Synth 8-6014] Unused sequential element DOA_R2_reg was removed.  [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:75]
+WARNING: [Synth 8-6014] Unused sequential element DOB_R2_reg was removed.  [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'BRAM2__parameterized0' (20#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:2101]
+WARNING: [Synth 8-6014] Unused sequential element memSlaveEngine_hitReg_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:2927]
+WARNING: [Synth 8-6014] Unused sequential element memSlaveEngine_quadAlignedTlpHandled_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:2930]
+WARNING: [Synth 8-6014] Unused sequential element memSlaveEngine_writeDataCnt_positive_reg_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:2936]
+INFO: [Synth 8-6155] done synthesizing module 'mkMemToPcieSynth' (21#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemToPcieSynth.v:167]
+INFO: [Synth 8-6157] synthesizing module 'mkPcieTracer' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTracer.v:234]
+INFO: [Synth 8-6157] synthesizing module 'BRAM2__parameterized1' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+	Parameter PIPELINED bound to: 1'b1 
+	Parameter ADDR_WIDTH bound to: 11 - type: integer 
+	Parameter DATA_WIDTH bound to: 192 - type: integer 
+	Parameter MEMSIZE bound to: 12'b100000000000 
+INFO: [Synth 8-6155] done synthesizing module 'BRAM2__parameterized1' (21#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized21' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 11 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized21' (21#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTracer.v:1120]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTracer.v:1139]
+WARNING: [Synth 8-6014] Unused sequential element fromPcieTraceBram_cbram_counter_1_cnt_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTracer.v:923]
+WARNING: [Synth 8-6014] Unused sequential element fromPcieTraceBram_cbram_counter_1_positive_reg_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTracer.v:1218]
+WARNING: [Synth 8-6014] Unused sequential element fromPcieTraceBram_cbram_cycles_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTracer.v:1220]
+WARNING: [Synth 8-6014] Unused sequential element toPcieTraceBram_cbram_counter_1_cnt_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTracer.v:996]
+WARNING: [Synth 8-6014] Unused sequential element toPcieTraceBram_cbram_counter_1_positive_reg_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTracer.v:1238]
+WARNING: [Synth 8-6014] Unused sequential element toPcieTraceBram_cbram_cycles_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTracer.v:1240]
+INFO: [Synth 8-6155] done synthesizing module 'mkPcieTracer' (22#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTracer.v:234]
+INFO: [Synth 8-6155] done synthesizing module 'mkPcieHost' (23#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieHost.v:7018]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized2' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 6 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized2' (23#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTop.v:2217]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized3' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 34 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized3' (23#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized22' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 40 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized22' (23#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTop.v:2409]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTop.v:2421]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTop.v:2433]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized4' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 28 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized4' (23#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized5' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 2 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized5' (23#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized23' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 41 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized23' (23#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'mkMMUIndicationProxySynth' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUIndicationProxySynth.v:168]
+INFO: [Synth 8-6157] synthesizing module 'mkMMUIndicationOutput' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUIndicationOutput.v:287]
+INFO: [Synth 8-6157] synthesizing module 'mkMMUIndicationOutputPipes' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUIndicationOutputPipes.v:386]
+WARNING: [Synth 8-6014] Unused sequential element configResp_responseAdapter_shift_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUIndicationOutputPipes.v:787]
+WARNING: [Synth 8-6014] Unused sequential element error_responseAdapter_shift_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUIndicationOutputPipes.v:758]
+WARNING: [Synth 8-6014] Unused sequential element idResponse_responseAdapter_shift_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUIndicationOutputPipes.v:794]
+INFO: [Synth 8-6155] done synthesizing module 'mkMMUIndicationOutputPipes' (24#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUIndicationOutputPipes.v:386]
+INFO: [Synth 8-6155] done synthesizing module 'mkMMUIndicationOutput' (25#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUIndicationOutput.v:287]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized24' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 22 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized24' (25#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized6' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 21 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized6' (25#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'mkMMUIndicationProxySynth' (26#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUIndicationProxySynth.v:168]
+INFO: [Synth 8-6157] synthesizing module 'mkMMURequestWrapperMemPortalPipes' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMURequestWrapperMemPortalPipes.v:552]
+INFO: [Synth 8-6157] synthesizing module 'mkMMURequestInput' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMURequestInput.v:875]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized7' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 416 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized7' (26#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized8' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 160 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized8' (26#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+WARNING: [Synth 8-6014] Unused sequential element idRequest_requestAdapter_fbnbuff_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMURequestInput.v:1509]
+WARNING: [Synth 8-6014] Unused sequential element idReturn_requestAdapter_fbnbuff_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMURequestInput.v:1510]
+INFO: [Synth 8-6155] done synthesizing module 'mkMMURequestInput' (27#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMURequestInput.v:875]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized9' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 3 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized9' (27#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'mkMMURequestWrapperMemPortalPipes' (28#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMURequestWrapperMemPortalPipes.v:552]
+INFO: [Synth 8-6157] synthesizing module 'mkMMUSynth' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUSynth.v:423]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized10' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 5 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized10' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized11' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 75 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized11' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized25' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 32 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized25' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized26' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 45 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized26' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO__parameterized5' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 30 - type: integer 
+	Parameter p2depth bound to: 3 - type: integer 
+	Parameter p3cntr_width bound to: 1 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 1 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO__parameterized5' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized27' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 43 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized27' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'BRAM2__parameterized2' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+	Parameter PIPELINED bound to: 1'b1 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 145 - type: integer 
+	Parameter MEMSIZE bound to: 6'b100000 
+INFO: [Synth 8-6155] done synthesizing module 'BRAM2__parameterized2' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized28' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 145 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized28' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO__parameterized6' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 45 - type: integer 
+	Parameter p2depth bound to: 3 - type: integer 
+	Parameter p3cntr_width bound to: 1 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 1 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO__parameterized6' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized29' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 5 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized29' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized30' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 81 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized30' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized31' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 51 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized31' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'BRAM2__parameterized3' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+	Parameter PIPELINED bound to: 1'b1 
+	Parameter ADDR_WIDTH bound to: 13 - type: integer 
+	Parameter DATA_WIDTH bound to: 28 - type: integer 
+	Parameter MEMSIZE bound to: 14'b10000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'BRAM2__parameterized3' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized32' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 28 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized32' (28#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUSynth.v:1802]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUSynth.v:1817]
+WARNING: [Synth 8-6014] Unused sequential element regall_cbram_cycles_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUSynth.v:2194]
+WARNING: [Synth 8-6014] Unused sequential element translationTable_cbram_cycles_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUSynth.v:2216]
+INFO: [Synth 8-6155] done synthesizing module 'mkMMUSynth' (29#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMMUSynth.v:423]
+INFO: [Synth 8-6157] synthesizing module 'mkMemServerIndicationProxySynth' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerIndicationProxySynth.v:192]
+INFO: [Synth 8-6157] synthesizing module 'mkMemServerIndicationOutput' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerIndicationOutput.v:429]
+INFO: [Synth 8-6157] synthesizing module 'mkMemServerIndicationOutputPipes' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerIndicationOutputPipes.v:598]
+WARNING: [Synth 8-6014] Unused sequential element addrResponse_responseAdapter_shift_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerIndicationOutputPipes.v:1092]
+WARNING: [Synth 8-6014] Unused sequential element error_responseAdapter_shift_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerIndicationOutputPipes.v:1121]
+WARNING: [Synth 8-6014] Unused sequential element reportMemoryTraffic_responseAdapter_shift_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerIndicationOutputPipes.v:1151]
+WARNING: [Synth 8-6014] Unused sequential element reportStateDbg_responseAdapter_shift_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerIndicationOutputPipes.v:1183]
+INFO: [Synth 8-6155] done synthesizing module 'mkMemServerIndicationOutputPipes' (30#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerIndicationOutputPipes.v:598]
+INFO: [Synth 8-6155] done synthesizing module 'mkMemServerIndicationOutput' (31#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerIndicationOutput.v:429]
+INFO: [Synth 8-6155] done synthesizing module 'mkMemServerIndicationProxySynth' (32#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerIndicationProxySynth.v:192]
+INFO: [Synth 8-6157] synthesizing module 'mkMemServerRequestWrapperMemPortalPipes' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerRequestWrapperMemPortalPipes.v:431]
+INFO: [Synth 8-6157] synthesizing module 'mkMemServerRequestInput' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerRequestInput.v:610]
+INFO: [Synth 8-6157] synthesizing module 'FIFO1__parameterized12' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+	Parameter width bound to: 4 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO1__parameterized12' (32#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO1.v:28]
+WARNING: [Synth 8-6014] Unused sequential element memoryTraffic_requestAdapter_fbnbuff_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerRequestInput.v:1117]
+WARNING: [Synth 8-6014] Unused sequential element setTileState_requestAdapter_fbnbuff_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerRequestInput.v:1118]
+WARNING: [Synth 8-6014] Unused sequential element stateDbg_requestAdapter_fbnbuff_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerRequestInput.v:1119]
+INFO: [Synth 8-6155] done synthesizing module 'mkMemServerRequestInput' (33#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerRequestInput.v:610]
+INFO: [Synth 8-6155] done synthesizing module 'mkMemServerRequestWrapperMemPortalPipes' (34#1) [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkMemServerRequestWrapperMemPortalPipes.v:431]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO__parameterized7' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 1 - type: integer 
+	Parameter p2depth bound to: 9 - type: integer 
+	Parameter p3cntr_width bound to: 3 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 7 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO__parameterized7' (34#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+INFO: [Synth 8-6157] synthesizing module 'RegFile' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/RegFile.v:15]
+	Parameter addr_width bound to: 4 - type: integer 
+	Parameter data_width bound to: 11 - type: integer 
+	Parameter lo bound to: 4'b0000 
+	Parameter hi bound to: 4'b1111 
+INFO: [Synth 8-5534] Detected attribute (* RAM_STYLE = "DISTRIBUTED" *) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/RegFile.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'RegFile' (35#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/RegFile.v:15]
+INFO: [Synth 8-6157] synthesizing module 'BRAM2__parameterized4' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+	Parameter PIPELINED bound to: 1'b1 
+	Parameter ADDR_WIDTH bound to: 11 - type: integer 
+	Parameter DATA_WIDTH bound to: 71 - type: integer 
+	Parameter MEMSIZE bound to: 12'b100000000000 
+INFO: [Synth 8-6155] done synthesizing module 'BRAM2__parameterized4' (35#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO__parameterized8' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 71 - type: integer 
+	Parameter p2depth bound to: 3 - type: integer 
+	Parameter p3cntr_width bound to: 1 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 1 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO__parameterized8' (35#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+INFO: [Synth 8-6157] synthesizing module 'SizedFIFO__parameterized9' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+	Parameter p1width bound to: 89 - type: integer 
+	Parameter p2depth bound to: 9 - type: integer 
+	Parameter p3cntr_width bound to: 3 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 7 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'SizedFIFO__parameterized9' (35#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:35]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized33' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter width bound to: 35 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized33' (35#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Synth 8-6157] synthesizing module 'FIFO2__parameterized34' [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+INFO: [Common 17-14] Message 'Synth 8-6157' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter width bound to: 71 - type: integer 
+	Parameter guarded bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'FIFO2__parameterized34' (35#1) [/home/seshan/Bluespec/opensource/lib/Verilog/FIFO2.v:28]
+	Parameter PIPELINED bound to: 1'b1 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+	Parameter MEMSIZE bound to: 5'b10000 
+INFO: [Synth 8-6155] done synthesizing module 'BRAM2__parameterized5' (35#1) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:8]
+INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter p1width bound to: 24 - type: integer 
+	Parameter p2depth bound to: 3 - type: integer 
+	Parameter p3cntr_width bound to: 1 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 1 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+	Parameter width bound to: 135 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter width bound to: 7 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter PIPELINED bound to: 1'b0 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 7 - type: integer 
+	Parameter MEMSIZE bound to: 5'b10000 
+WARNING: [Synth 8-6014] Unused sequential element DOA_R2_reg was removed.  [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:75]
+WARNING: [Synth 8-6014] Unused sequential element DOB_R2_reg was removed.  [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2.v:88]
+	Parameter p1width bound to: 7 - type: integer 
+	Parameter p2depth bound to: 3 - type: integer 
+	Parameter p3cntr_width bound to: 1 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 1 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+	Parameter p1width bound to: 24 - type: integer 
+	Parameter p2depth bound to: 16 - type: integer 
+	Parameter p3cntr_width bound to: 4 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 14 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkConnectalTop.v:2582]
+WARNING: [Synth 8-6014] Unused sequential element heard2_responseAdapter_shift_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkEchoIndicationOutputPipes.v:473]
+WARNING: [Synth 8-6014] Unused sequential element heard_responseAdapter_shift_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkEchoIndicationOutputPipes.v:476]
+	Parameter width bound to: 8 - type: integer 
+	Parameter guarded bound to: 1'b1 
+WARNING: [Synth 8-6014] Unused sequential element say2_requestAdapter_fbnbuff_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkEchoRequestInput.v:751]
+WARNING: [Synth 8-6014] Unused sequential element say_requestAdapter_fbnbuff_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkEchoRequestInput.v:752]
+WARNING: [Synth 8-6014] Unused sequential element setLeds_requestAdapter_fbnbuff_reg was removed.  [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkEchoRequestInput.v:753]
+	Parameter p1width bound to: 32 - type: integer 
+	Parameter p2depth bound to: 8 - type: integer 
+	Parameter p3cntr_width bound to: 3 - type: integer 
+	Parameter guarded bound to: 1'b1 
+	Parameter p2depth2 bound to: 6 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/SizedFIFO.v:178]
+	Parameter FILENAME bound to: mem.vmh - type: string 
+	Parameter PIPELINED bound to: 1'b0 
+	Parameter ADDR_WIDTH bound to: 30 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter CHUNKSIZE bound to: 8 - type: integer 
+	Parameter WE_WIDTH bound to: 4 - type: integer 
+	Parameter MEMSIZE bound to: 31'b1000000000000000000000000000000 
+	Parameter BINARY bound to: 1'b0 
+INFO: [Synth 8-5534] Detected attribute (* RAM_STYLE = "BLOCK" *) [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2BELoad.v:46]
+ERROR: [Synth 8-354] integer overflow when computing array size [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2BELoad.v:46]
+ERROR: [Synth 8-6156] failed synthesizing module 'BRAM2BELoad' [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2BELoad.v:8]
+ERROR: [Synth 8-6156] failed synthesizing module 'mkConnectalTop' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkConnectalTop.v:1098]
+ERROR: [Synth 8-6156] failed synthesizing module 'mkPcieTop' [/home/seshan/fpga_test_reference/processor/vcu108/verilog/mkPcieTop.v:43]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2222.746 ; gain = 245.258 ; free physical = 36577 ; free virtual = 124084
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+255 Infos, 87 Warnings, 0 Critical Warnings and 5 Errors encountered.
+synth_design failed
+ERROR: [Synth 8-354] integer overflow when computing array size [/home/seshan/Bluespec/opensource/lib/Verilog.Vivado/BRAM2BELoad.v:46]
+ERROR: [Synth 8-6156] failed synthesizing module 
+ERROR: [Synth 8-6156] failed synthesizing module 
+ERROR: [Synth 8-6156] failed synthesizing module 
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 22 23:58:30 2024...

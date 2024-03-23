@@ -70,7 +70,7 @@ module mkEcho#(EchoIndication indication)(Echo);
       method Action say(Bit#(32) v);
         //  f.enq(v);
         // f.deq();
-        let x <- f.getStatus();
+        let x <- p.getStatus();
     	 delay.enq(x);
       endmethod
       

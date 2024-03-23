@@ -1,0 +1,8 @@
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3094.141 ; gain = 0.000 ; free physical = 36041 ; free virtual = 123657
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3126.156 ; gain = 0.000 ; free physical = 36028 ; free virtual = 123650
+INFO: [Common 17-1381] The checkpoint '/home/seshan/fpga_test_reference/processor/vcu108/Synth/mkPcieTop/mkPcieTop-synth.dcp' has been generated.

@@ -1,0 +1,9 @@
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-1540] The version limit for your license is '2021.06' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.250 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+124 Infos, 36 Warnings, 24 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully

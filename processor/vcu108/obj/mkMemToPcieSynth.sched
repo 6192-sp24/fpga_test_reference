@@ -1,0 +1,493 @@
+=== Generated schedule for mkMemToPcieSynth ===
+
+Method schedule
+---------------
+Method: tlp_request_get
+Ready signal: memSlaveEngine_tlpOutFifo.i_notEmpty
+Conflict-free: tlp_response_put,
+	       slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       use4dw__write,
+	       use4dw__read
+Sequenced after: tlpOutFifoNotEmpty
+Conflicts: tlp_request_get
+ 
+Method: tlp_response_put
+Ready signal: memSlaveEngine_tlpInFifo.i_notFull
+Conflict-free: tlp_request_get,
+	       slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       tlpOutFifoNotEmpty,
+	       use4dw__write,
+	       use4dw__read
+Conflicts: tlp_response_put
+ 
+Method: slave_read_server_readReq_put
+Ready signal: memSlaveEngine_readReqFifo.i_notFull
+Conflict-free: tlp_request_get,
+	       tlp_response_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       tlpOutFifoNotEmpty,
+	       use4dw__write,
+	       use4dw__read
+Conflicts: slave_read_server_readReq_put
+ 
+Method: slave_read_server_readData_get
+Ready signal: ((3'd4 - {1'd0, memSlaveEngine_completionMimo_outPos})[1]
+	       ? (3'd4 - {1'd0, memSlaveEngine_completionMimo_outPos})[0]
+		 ? memSlaveEngine_completionMimo_fifos_1.notEmpty
+		 : memSlaveEngine_completionMimo_fifos_2.notEmpty
+	       : ((3'd4 - {1'd0, memSlaveEngine_completionMimo_outPos})[0]
+		  ? memSlaveEngine_completionMimo_fifos_3.notEmpty
+		  : memSlaveEngine_completionMimo_fifos_0.notEmpty)) &&
+	      ((3'd4 - {1'd0, memSlaveEngine_completionMimo_outPos})[1]
+	       ? (3'd4 - {1'd0, memSlaveEngine_completionMimo_outPos})[0]
+		 ? memSlaveEngine_completionMimo_fifos_2.notEmpty
+		 : memSlaveEngine_completionMimo_fifos_3.notEmpty
+	       : ((3'd4 - {1'd0, memSlaveEngine_completionMimo_outPos})[0]
+		  ? memSlaveEngine_completionMimo_fifos_0.notEmpty
+		  : memSlaveEngine_completionMimo_fifos_1.notEmpty)) &&
+	      ((3'd4 - {1'd0, memSlaveEngine_completionTagMimo_outPos})[1]
+	       ? (3'd4 - {1'd0, memSlaveEngine_completionTagMimo_outPos})[0]
+		 ? memSlaveEngine_completionTagMimo_fifos_1.notEmpty
+		 : memSlaveEngine_completionTagMimo_fifos_2.notEmpty
+	       : ((3'd4 - {1'd0, memSlaveEngine_completionTagMimo_outPos})[0]
+		  ? memSlaveEngine_completionTagMimo_fifos_3.notEmpty
+		  : memSlaveEngine_completionTagMimo_fifos_0.notEmpty)) &&
+	      ((3'd4 - {1'd0, memSlaveEngine_completionTagMimo_outPos})[1]
+	       ? (3'd4 - {1'd0, memSlaveEngine_completionTagMimo_outPos})[0]
+		 ? memSlaveEngine_completionTagMimo_fifos_2.notEmpty
+		 : memSlaveEngine_completionTagMimo_fifos_3.notEmpty
+	       : ((3'd4 - {1'd0, memSlaveEngine_completionTagMimo_outPos})[0]
+		  ? memSlaveEngine_completionTagMimo_fifos_0.notEmpty
+		  : memSlaveEngine_completionTagMimo_fifos_1.notEmpty)) &&
+	      case {1'd0, memSlaveEngine_completionMimo_outPos} of
+	      3'd0 -> memSlaveEngine_completionMimo_fifos_0.i_notEmpty
+	      3'd1 -> memSlaveEngine_completionMimo_fifos_1.i_notEmpty
+	      3'd2 -> memSlaveEngine_completionMimo_fifos_2.i_notEmpty
+	      3'd3 -> memSlaveEngine_completionMimo_fifos_3.i_notEmpty
+	      _ -> 1'd1 &&
+	      case {1'd0, ({1'd0, memSlaveEngine_completionMimo_outPos} +
+			   3'd1)[1:0]} of
+	      3'd0 -> memSlaveEngine_completionMimo_fifos_0.i_notEmpty
+	      3'd1 -> memSlaveEngine_completionMimo_fifos_1.i_notEmpty
+	      3'd2 -> memSlaveEngine_completionMimo_fifos_2.i_notEmpty
+	      3'd3 -> memSlaveEngine_completionMimo_fifos_3.i_notEmpty
+	      _ -> 1'd1 &&
+	      case {1'd0, memSlaveEngine_completionTagMimo_outPos} of
+	      3'd0 -> memSlaveEngine_completionTagMimo_fifos_0.i_notEmpty
+	      3'd1 -> memSlaveEngine_completionTagMimo_fifos_1.i_notEmpty
+	      3'd2 -> memSlaveEngine_completionTagMimo_fifos_2.i_notEmpty
+	      3'd3 -> memSlaveEngine_completionTagMimo_fifos_3.i_notEmpty
+	      _ -> 1'd1 &&
+	      case {1'd0, ({1'd0, memSlaveEngine_completionTagMimo_outPos} +
+			   3'd1)[1:0]} of
+	      3'd0 -> memSlaveEngine_completionTagMimo_fifos_0.i_notEmpty
+	      3'd1 -> memSlaveEngine_completionTagMimo_fifos_1.i_notEmpty
+	      3'd2 -> memSlaveEngine_completionTagMimo_fifos_2.i_notEmpty
+	      3'd3 -> memSlaveEngine_completionTagMimo_fifos_3.i_notEmpty
+	      _ -> 1'd1
+Conflict-free: tlp_request_get,
+	       tlp_response_put,
+	       slave_read_server_readReq_put,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       tlpOutFifoNotEmpty,
+	       use4dw__write,
+	       use4dw__read
+Conflicts: slave_read_server_readData_get
+ 
+Method: slave_write_server_writeReq_put
+Ready signal: memSlaveEngine_tlpWriteHeaderFifo.i_notFull &&
+	      memSlaveEngine_writeBurstCountFifo.i_notFull &&
+	      memSlaveEngine_writeTag.i_notFull
+Conflict-free: tlp_request_get,
+	       tlp_response_put,
+	       slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       tlpOutFifoNotEmpty,
+	       use4dw__write,
+	       use4dw__read
+Conflicts: slave_write_server_writeReq_put
+ 
+Method: slave_write_server_writeData_put
+Ready signal: memSlaveEngine_writeDataMimoHasRoom &&
+	      ((! (memSlaveEngine_writeBurstCount == 10'd0)) ||
+	       memSlaveEngine_writeBurstCountFifo.i_notEmpty) &&
+	      ((! (((memSlaveEngine_writeBurstCount == 10'd0)
+		    ? memSlaveEngine_writeBurstCountFifo.first
+		    : memSlaveEngine_writeBurstCount) ==
+		   10'd1)) ||
+	       memSlaveEngine_writeReadyFifo.i_notFull)
+Conflict-free: tlp_request_get,
+	       tlp_response_put,
+	       slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeDone_get,
+	       tlpOutFifoNotEmpty,
+	       use4dw__write,
+	       use4dw__read
+Conflicts: slave_write_server_writeData_put
+ 
+Method: slave_write_server_writeDone_get
+Ready signal: memSlaveEngine_doneTag.i_notEmpty
+Conflict-free: tlp_request_get,
+	       tlp_response_put,
+	       slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       tlpOutFifoNotEmpty,
+	       use4dw__write,
+	       use4dw__read
+Conflicts: slave_write_server_writeDone_get
+ 
+Method: tlpOutFifoNotEmpty
+Ready signal: True
+Conflict-free: tlp_response_put,
+	       slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       tlpOutFifoNotEmpty,
+	       use4dw__write,
+	       use4dw__read
+Sequenced before: tlp_request_get
+ 
+Method: use4dw__write
+Ready signal: True
+Conflict-free: tlp_request_get,
+	       tlp_response_put,
+	       slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       tlpOutFifoNotEmpty
+Sequenced before (restricted): use4dw__write
+Sequenced after: use4dw__read
+ 
+Method: use4dw__read
+Ready signal: True
+Conflict-free: tlp_request_get,
+	       tlp_response_put,
+	       slave_read_server_readReq_put,
+	       slave_read_server_readData_get,
+	       slave_write_server_writeReq_put,
+	       slave_write_server_writeData_put,
+	       slave_write_server_writeDone_get,
+	       tlpOutFifoNotEmpty,
+	       use4dw__read
+Sequenced before: use4dw__write
+ 
+Rule schedule
+-------------
+Rule: memSlaveEngine_completionMimo_tofifos
+Predicate: memSlaveEngine_completionMimo_weFifo.i_notEmpty &&
+	   memSlaveEngine_completionMimo_inFifo.i_notEmpty &&
+	   memSlaveEngine_completionMimo_inCountFifo.i_notEmpty &&
+	   memSlaveEngine_completionMimo_posFifo.i_notEmpty &&
+	   ((! memSlaveEngine_completionMimo_weFifo.first[0]) ||
+	    memSlaveEngine_completionMimo_fifos_0.i_notFull) &&
+	   ((! memSlaveEngine_completionMimo_weFifo.first[1]) ||
+	    memSlaveEngine_completionMimo_fifos_1.i_notFull) &&
+	   ((! memSlaveEngine_completionMimo_weFifo.first[2]) ||
+	    memSlaveEngine_completionMimo_fifos_2.i_notFull) &&
+	   ((! memSlaveEngine_completionMimo_weFifo.first[3]) ||
+	    memSlaveEngine_completionMimo_fifos_3.i_notFull)
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_completionTagMimo_tofifos
+Predicate: memSlaveEngine_completionTagMimo_weFifo.i_notEmpty &&
+	   memSlaveEngine_completionTagMimo_inFifo.i_notEmpty &&
+	   memSlaveEngine_completionTagMimo_inCountFifo.i_notEmpty &&
+	   memSlaveEngine_completionTagMimo_posFifo.i_notEmpty &&
+	   ((! memSlaveEngine_completionTagMimo_weFifo.first[0]) ||
+	    memSlaveEngine_completionTagMimo_fifos_0.i_notFull) &&
+	   ((! memSlaveEngine_completionTagMimo_weFifo.first[1]) ||
+	    memSlaveEngine_completionTagMimo_fifos_1.i_notFull) &&
+	   ((! memSlaveEngine_completionTagMimo_weFifo.first[2]) ||
+	    memSlaveEngine_completionTagMimo_fifos_2.i_notFull) &&
+	   ((! memSlaveEngine_completionTagMimo_weFifo.first[3]) ||
+	    memSlaveEngine_completionTagMimo_fifos_3.i_notFull)
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_0_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_0_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_0_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_1_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_1_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_1_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_2_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_2_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_2_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_3_portA
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_3_portB
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_vfStorage_3_portB_read_data
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_clear
+Predicate: memSlaveEngine_writeDataMimo_ifc_pwClear.whas
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_dequeue
+Predicate: memSlaveEngine_writeDataMimo_ifc_rwDeqCount.whas
+Blocking rules: memSlaveEngine_writeDataMimo_ifc_clear
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_enqueue
+Predicate: memSlaveEngine_writeDataMimo_ifc_rwEnqCount.whas &&
+	   memSlaveEngine_writeDataMimo_ifc_rwEnqData.whas
+Blocking rules: memSlaveEngine_writeDataMimo_ifc_clear
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_dequeue_fifo
+Predicate: (! (memSlaveEngine_writeDataMimo_ifc_vfStorage_0_rRdPtr.read ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_0_rWrPtr.read)) &&
+	   memSlaveEngine_writeDataMimo_ifc_vrwDeqFifo_0.whas
+Blocking rules: memSlaveEngine_writeDataMimo_ifc_clear
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_dequeue_fifo_1
+Predicate: (! (memSlaveEngine_writeDataMimo_ifc_vfStorage_1_rRdPtr.read ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_1_rWrPtr.read)) &&
+	   memSlaveEngine_writeDataMimo_ifc_vrwDeqFifo_1.whas
+Blocking rules: memSlaveEngine_writeDataMimo_ifc_clear
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_dequeue_fifo_2
+Predicate: (! (memSlaveEngine_writeDataMimo_ifc_vfStorage_2_rRdPtr.read ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_2_rWrPtr.read)) &&
+	   memSlaveEngine_writeDataMimo_ifc_vrwDeqFifo_2.whas
+Blocking rules: memSlaveEngine_writeDataMimo_ifc_clear
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_dequeue_fifo_3
+Predicate: (! (memSlaveEngine_writeDataMimo_ifc_vfStorage_3_rRdPtr.read ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_3_rWrPtr.read)) &&
+	   memSlaveEngine_writeDataMimo_ifc_vrwDeqFifo_3.whas
+Blocking rules: memSlaveEngine_writeDataMimo_ifc_clear
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_enqueue_fifo
+Predicate: (! ((memSlaveEngine_writeDataMimo_ifc_vfStorage_0_rRdPtr.read +
+		8'd65) ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_0_rWrPtr.read)) &&
+	   memSlaveEngine_writeDataMimo_ifc_vrwEnqFifo_0.whas
+Blocking rules: memSlaveEngine_writeDataMimo_ifc_clear
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_enqueue_fifo_1
+Predicate: (! ((memSlaveEngine_writeDataMimo_ifc_vfStorage_1_rRdPtr.read +
+		8'd65) ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_1_rWrPtr.read)) &&
+	   memSlaveEngine_writeDataMimo_ifc_vrwEnqFifo_1.whas
+Blocking rules: memSlaveEngine_writeDataMimo_ifc_clear
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_enqueue_fifo_2
+Predicate: (! ((memSlaveEngine_writeDataMimo_ifc_vfStorage_2_rRdPtr.read +
+		8'd65) ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_2_rWrPtr.read)) &&
+	   memSlaveEngine_writeDataMimo_ifc_vrwEnqFifo_2.whas
+Blocking rules: memSlaveEngine_writeDataMimo_ifc_clear
+ 
+Rule: memSlaveEngine_writeDataMimo_ifc_enqueue_fifo_3
+Predicate: (! ((memSlaveEngine_writeDataMimo_ifc_vfStorage_3_rRdPtr.read +
+		8'd65) ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_3_rWrPtr.read)) &&
+	   memSlaveEngine_writeDataMimo_ifc_vrwEnqFifo_3.whas
+Blocking rules: memSlaveEngine_writeDataMimo_ifc_clear
+ 
+Rule: memSlaveEngine_writeDataCnt_react
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_updateWriteDataMimoHasRoom
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_writeHeaderTlp
+Predicate: memSlaveEngine_writeReadyFifo.i_notEmpty &&
+	   memSlaveEngine_tlpWriteHeaderFifo.i_notEmpty &&
+	   memSlaveEngine_tlpOutFifo.i_notFull &&
+	   ((! memSlaveEngine_tlpWriteHeaderFifo.first[1]) ||
+	    (memSlaveEngine_writeDataMimo_ifc_rReadIndex[1]
+	     ? memSlaveEngine_writeDataMimo_ifc_rReadIndex[0]
+	       ? (memSlaveEngine_writeDataMimo_ifc_vfStorage_3_rRdPtr.read ==
+		  memSlaveEngine_writeDataMimo_ifc_vfStorage_3_rWrPtr.read) ||
+		 memSlaveEngine_writeDataMimo_ifc_vfStorage_3_wDataOut.whas
+	       : ((memSlaveEngine_writeDataMimo_ifc_vfStorage_2_rRdPtr.read ==
+		   memSlaveEngine_writeDataMimo_ifc_vfStorage_2_rWrPtr.read) ||
+		  memSlaveEngine_writeDataMimo_ifc_vfStorage_2_wDataOut.whas)
+	     : (memSlaveEngine_writeDataMimo_ifc_rReadIndex[0]
+		? (memSlaveEngine_writeDataMimo_ifc_vfStorage_1_rRdPtr.read ==
+		   memSlaveEngine_writeDataMimo_ifc_vfStorage_1_rWrPtr.read) ||
+		  memSlaveEngine_writeDataMimo_ifc_vfStorage_1_wDataOut.whas
+		: ((memSlaveEngine_writeDataMimo_ifc_vfStorage_0_rRdPtr.read ==
+		    memSlaveEngine_writeDataMimo_ifc_vfStorage_0_rWrPtr.read) ||
+		   memSlaveEngine_writeDataMimo_ifc_vfStorage_0_wDataOut.whas)))) &&
+	   ((! memSlaveEngine_tlpWriteHeaderFifo.first[0]) ||
+	    (memSlaveEngine_doneTag.i_notFull &&
+	     memSlaveEngine_writeTag.i_notEmpty)) &&
+	   (! memSlaveEngine_writeInProgress)
+Blocking rules: memSlaveEngine_readReqRule
+ 
+Rule: memSlaveEngine_writeTlps
+Predicate: memSlaveEngine_tlpOutFifo.i_notFull &&
+	   (memSlaveEngine_writeDataMimo_ifc_rReadIndex[0]
+	    ? (memSlaveEngine_writeDataMimo_ifc_vfStorage_0_rRdPtr.read ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_0_rWrPtr.read) ||
+	      memSlaveEngine_writeDataMimo_ifc_vfStorage_0_wDataOut.whas
+	    : ((memSlaveEngine_writeDataMimo_ifc_vfStorage_3_rRdPtr.read ==
+		memSlaveEngine_writeDataMimo_ifc_vfStorage_3_rWrPtr.read) ||
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_3_wDataOut.whas)) &&
+	   (memSlaveEngine_writeDataMimo_ifc_rReadIndex[0]
+	    ? (memSlaveEngine_writeDataMimo_ifc_vfStorage_1_rRdPtr.read ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_1_rWrPtr.read) ||
+	      memSlaveEngine_writeDataMimo_ifc_vfStorage_1_wDataOut.whas
+	    : ((memSlaveEngine_writeDataMimo_ifc_vfStorage_0_rRdPtr.read ==
+		memSlaveEngine_writeDataMimo_ifc_vfStorage_0_rWrPtr.read) ||
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_0_wDataOut.whas)) &&
+	   (memSlaveEngine_writeDataMimo_ifc_rReadIndex[0]
+	    ? (memSlaveEngine_writeDataMimo_ifc_vfStorage_2_rRdPtr.read ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_2_rWrPtr.read) ||
+	      memSlaveEngine_writeDataMimo_ifc_vfStorage_2_wDataOut.whas
+	    : ((memSlaveEngine_writeDataMimo_ifc_vfStorage_1_rRdPtr.read ==
+		memSlaveEngine_writeDataMimo_ifc_vfStorage_1_rWrPtr.read) ||
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_1_wDataOut.whas)) &&
+	   (memSlaveEngine_writeDataMimo_ifc_rReadIndex[0]
+	    ? (memSlaveEngine_writeDataMimo_ifc_vfStorage_3_rRdPtr.read ==
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_3_rWrPtr.read) ||
+	      memSlaveEngine_writeDataMimo_ifc_vfStorage_3_wDataOut.whas
+	    : ((memSlaveEngine_writeDataMimo_ifc_vfStorage_2_rRdPtr.read ==
+		memSlaveEngine_writeDataMimo_ifc_vfStorage_2_rWrPtr.read) ||
+	       memSlaveEngine_writeDataMimo_ifc_vfStorage_2_wDataOut.whas)) &&
+	   ((! memSlaveEngine_lastTlp) ||
+	    (memSlaveEngine_doneTag.i_notFull &&
+	     memSlaveEngine_writeTag.i_notEmpty)) &&
+	   memSlaveEngine_writeInProgress
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_tlpInRule
+Predicate: memSlaveEngine_tlpInFifo.i_notEmpty &&
+	   memSlaveEngine_tlpDecodeFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_handleTlpRule
+Predicate: memSlaveEngine_tlpDecodeFifo.i_notEmpty &&
+	   (memSlaveEngine_tlpDecodeFifo.first[152]
+	    ? (! (memSlaveEngine_tlpDecodeFifo.first[126:125] == 2'd2)) ||
+	      (! (memSlaveEngine_tlpDecodeFifo.first[124:120] == 5'd10)) ||
+	      (! memSlaveEngine_completionMimo_inFifo.notFull) ||
+	      (! memSlaveEngine_completionTagMimo_inFifo.notFull) ||
+	      (memSlaveEngine_completionMimo_inFifo.i_notFull &&
+	       memSlaveEngine_completionMimo_inCountFifo.i_notFull &&
+	       memSlaveEngine_completionMimo_weFifo.i_notFull &&
+	       memSlaveEngine_completionMimo_posFifo.i_notFull &&
+	       memSlaveEngine_completionTagMimo_inFifo.i_notFull &&
+	       memSlaveEngine_completionTagMimo_inCountFifo.i_notFull &&
+	       memSlaveEngine_completionTagMimo_weFifo.i_notFull &&
+	       memSlaveEngine_completionTagMimo_posFifo.i_notFull)
+	    : ((! memSlaveEngine_completionMimo_inFifo.notFull) ||
+	       (! memSlaveEngine_completionTagMimo_inFifo.notFull) ||
+	       (memSlaveEngine_completionMimo_inFifo.i_notFull &&
+		memSlaveEngine_completionMimo_inCountFifo.i_notFull &&
+		memSlaveEngine_completionMimo_weFifo.i_notFull &&
+		memSlaveEngine_completionMimo_posFifo.i_notFull &&
+		memSlaveEngine_completionTagMimo_inFifo.i_notFull &&
+		memSlaveEngine_completionTagMimo_inCountFifo.i_notFull &&
+		memSlaveEngine_completionTagMimo_weFifo.i_notFull &&
+		memSlaveEngine_completionTagMimo_posFifo.i_notFull)))
+Blocking rules: (none)
+ 
+Rule: memSlaveEngine_readReqRule
+Predicate: memSlaveEngine_tlpOutFifo.i_notFull &&
+	   memSlaveEngine_readReqFifo.i_notEmpty &&
+	   (! memSlaveEngine_writeInProgress)
+Blocking rules: (none)
+ 
+Logical execution order: tlp_response_put,
+			 slave_read_server_readReq_put,
+			 slave_read_server_readData_get,
+			 slave_write_server_writeReq_put,
+			 slave_write_server_writeData_put,
+			 slave_write_server_writeDone_get,
+			 tlpOutFifoNotEmpty,
+			 tlp_request_get,
+			 use4dw__read,
+			 use4dw__write,
+			 memSlaveEngine_updateWriteDataMimoHasRoom,
+			 memSlaveEngine_tlpInRule,
+			 memSlaveEngine_handleTlpRule,
+			 memSlaveEngine_readReqRule,
+			 memSlaveEngine_completionMimo_tofifos,
+			 memSlaveEngine_completionTagMimo_tofifos,
+			 memSlaveEngine_writeDataMimo_ifc_enqueue,
+			 memSlaveEngine_writeDataMimo_ifc_enqueue_fifo,
+			 memSlaveEngine_writeDataMimo_ifc_enqueue_fifo_1,
+			 memSlaveEngine_writeDataMimo_ifc_enqueue_fifo_2,
+			 memSlaveEngine_writeDataMimo_ifc_enqueue_fifo_3,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_0_portB_read_data,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_1_portB_read_data,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_2_portB_read_data,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_3_portB_read_data,
+			 memSlaveEngine_writeHeaderTlp,
+			 memSlaveEngine_writeTlps,
+			 memSlaveEngine_writeDataMimo_ifc_clear,
+			 memSlaveEngine_writeDataMimo_ifc_dequeue,
+			 memSlaveEngine_writeDataMimo_ifc_dequeue_fifo,
+			 memSlaveEngine_writeDataMimo_ifc_dequeue_fifo_1,
+			 memSlaveEngine_writeDataMimo_ifc_dequeue_fifo_2,
+			 memSlaveEngine_writeDataMimo_ifc_dequeue_fifo_3,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_0_portA,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_0_portB,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_1_portA,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_1_portB,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_2_portA,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_2_portB,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_3_portA,
+			 memSlaveEngine_writeDataMimo_ifc_vfStorage_3_portB,
+			 memSlaveEngine_writeDataCnt_react
+
+================================================

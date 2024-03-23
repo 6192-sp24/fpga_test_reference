@@ -1,0 +1,26 @@
+=== Generated schedule for mkEchoIndicationInverterV ===
+
+Method schedule
+---------------
+Method: ifc_heard
+Ready signal: inv_heard_inverter.RDY_mod_put
+Conflict-free: ifc_heard, ifc_heard2, inverseIfc_heard, inverseIfc_heard2
+ 
+Method: ifc_heard2
+Ready signal: inv_heard2_inverter.RDY_mod_put
+Conflict-free: ifc_heard, ifc_heard2, inverseIfc_heard, inverseIfc_heard2
+ 
+Method: inverseIfc_heard
+Ready signal: inv_heard_inverter.RDY_inverse_get
+Conflict-free: ifc_heard, ifc_heard2, inverseIfc_heard, inverseIfc_heard2
+ 
+Method: inverseIfc_heard2
+Ready signal: inv_heard2_inverter.RDY_inverse_get
+Conflict-free: ifc_heard, ifc_heard2, inverseIfc_heard, inverseIfc_heard2
+ 
+Logical execution order: ifc_heard,
+			 ifc_heard2,
+			 inverseIfc_heard,
+			 inverseIfc_heard2
+
+=========================================================

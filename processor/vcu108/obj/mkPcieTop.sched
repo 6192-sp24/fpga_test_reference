@@ -1,0 +1,1777 @@
+=== Generated schedule for mkPcieTop ===
+
+Method schedule
+---------------
+Method: pcie_rxn
+Ready signal: True
+Conflict-free: pcie_rxn, pcie_rxp, pcie_txn, pcie_txp
+ 
+Method: pcie_rxp
+Ready signal: True
+Conflict-free: pcie_rxn, pcie_rxp, pcie_txn, pcie_txp
+ 
+Method: pcie_txn
+Ready signal: True
+Conflict-free: pcie_rxn, pcie_rxp, pcie_txn, pcie_txp
+ 
+Method: pcie_txp
+Ready signal: True
+Conflict-free: pcie_rxn, pcie_rxp, pcie_txn, pcie_txp
+ 
+Rule schedule
+-------------
+Rule: host_pcieHostTop_Prelude_inst_changeSpecialWires_ClientServerRequest
+Predicate: host_pcieHostTop_ep7.RDY_tlpr_request_put &&
+	   host_pcieHostTop_pciehost.RDY_pcir_request_get
+Blocking rules: (none)
+ 
+Rule: host_pcieHostTop_Prelude_inst_changeSpecialWires_ClientServerResponse
+Predicate: host_pcieHostTop_ep7.RDY_tlpr_response_get &&
+	   host_pcieHostTop_pciehost.RDY_pcir_response_put
+Blocking rules: (none)
+ 
+Rule: host_pcieHostTop_Prelude_inst_changeSpecialWires_1_ClientServerRequest
+Predicate: host_pcieHostTop_ep7.RDY_tlpc_request_put &&
+	   host_pcieHostTop_pciehost.RDY_pcic_request_get
+Blocking rules: (none)
+ 
+Rule: host_pcieHostTop_Prelude_inst_changeSpecialWires_1_ClientServerResponse
+Predicate: host_pcieHostTop_ep7.RDY_tlpc_response_get &&
+	   host_pcieHostTop_pciehost.RDY_pcic_response_put
+Blocking rules: (none)
+ 
+Rule: host_pcieHostTop_connect
+Predicate: host_pcieHostTop_pciehost.RDY_changes_enq &&
+	   host_pcieHostTop_ep7.RDY_regChanges_first &&
+	   host_pcieHostTop_ep7.RDY_regChanges_deq &&
+	   host_pcieHostTop_ep7.regChanges_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMMU_rl_idResponse
+Predicate: portalTop_lMMU_mmu.RDY_idResponsePipe_first &&
+	   portalTop_lMMU_mmu.RDY_idResponsePipe_deq &&
+	   portalTop_lMMUIndicationProxy_rv.RDY_ifc_idResponse
+Blocking rules: (none)
+ 
+Rule: portalTop_lMMU_rl_configResp
+Predicate: portalTop_lMMU_mmu.RDY_configResponsePipe_first &&
+	   portalTop_lMMU_mmu.RDY_configResponsePipe_deq &&
+	   portalTop_lMMUIndicationProxy_rv.RDY_ifc_configResp
+Blocking rules: (none)
+ 
+Rule: portalTop_lMMU_dmaError
+Predicate: portalTop_lMMU_mmu.RDY_errorPipe_first &&
+	   portalTop_lMMU_mmu.RDY_errorPipe_deq &&
+	   portalTop_lMMUIndicationProxy_rv.RDY_ifc_error
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_setFirstCore
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_setFirstEnq
+Predicate: (! portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outDataCore.notEmpty) &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_enqOnly
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outDataCore.i_notFull &&
+	   (! portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_deqCalled.whas) &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_deqOnly
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_deqCalled.whas &&
+	   (! portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_enqAndDeq
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outDataCore.i_notFull &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_deqCalled.whas &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_cnt_finalAdd
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_cnt_1.whas ||
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_cnt_2.whas ||
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_passRequest
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_s1[1] ||
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_s2[1]
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_stageReadResponseAlways
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_moveToOutFIFO
+Predicate: ((! portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_s2[0]) ||
+	    portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outDataCore.notFull) &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_s2[1]
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_overRun
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_s2[1] &&
+	   (! portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_setFirstCore
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_setFirstEnq
+Predicate: (! portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outDataCore.notEmpty) &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_enqOnly
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outDataCore.i_notFull &&
+	   (! portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_deqCalled.whas) &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_deqOnly
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_deqCalled.whas &&
+	   (! portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_enqAndDeq
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outDataCore.i_notFull &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_deqCalled.whas &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_cnt_finalAdd
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_cnt_1.whas ||
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_cnt_2.whas ||
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_passRequest
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_s1[1] ||
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_s2[1]
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_stageReadResponseAlways
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_moveToOutFIFO
+Predicate: ((! portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_s2[0]) ||
+	    portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outDataCore.notFull) &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_s2[1]
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_overRun
+Predicate: portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_s2[1] &&
+	   (! portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_setFirstCore
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_setFirstEnq
+Predicate: (! portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outDataCore.notEmpty) &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_enqOnly
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outDataCore.i_notFull &&
+	   (! portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_deqCalled.whas) &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_deqOnly
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_deqCalled.whas &&
+	   (! portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_enqAndDeq
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outDataCore.i_notFull &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_deqCalled.whas &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_cnt_finalAdd
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_cnt_1.whas ||
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_cnt_2.whas ||
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_passRequest
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_s1[1] ||
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_s2[1]
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_stageReadResponseAlways
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_moveToOutFIFO
+Predicate: ((! portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_s2[0]) ||
+	    portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outDataCore.notFull) &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_s2[1]
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_overRun
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_s2[1] &&
+	   (! portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_setFirstCore
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_setFirstEnq
+Predicate: (! portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.notEmpty) &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_enqOnly
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.i_notFull &&
+	   (! portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_deqCalled.whas) &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_deqOnly
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_deqCalled.whas &&
+	   (! portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_enqAndDeq
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.i_notFull &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_deqCalled.whas &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_cnt_finalAdd
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_cnt_1.whas ||
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_cnt_2.whas ||
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_passRequest
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_s1[1] ||
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_s2[1]
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_stageReadResponseAlways
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_moveToOutFIFO
+Predicate: ((! portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_s2[0]) ||
+	    portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.notFull) &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_s2[1]
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_overRun
+Predicate: portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_s2[1] &&
+	   (! portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_tag_gen_counter_react
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_tag_gen_complete_rule1
+Predicate: (portalTop_lMemServer_reader_readers_0_tag_gen_tags.port1__read[portalTop_lMemServer_reader_readers_0_tag_gen_tail_ptr] ||
+	    portalTop_lMemServer_reader_readers_0_tag_gen_comp_fifo.i_notFull) &&
+	   portalTop_lMemServer_reader_readers_0_tag_gen_comp_state[0]
+Blocking rules: portalTop_lMemServer_reader_readers_0_tag_gen_ret_rule
+ 
+Rule: portalTop_lMemServer_reader_readers_0_tag_gen_ret_rule
+Predicate: portalTop_lMemServer_reader_readers_0_tag_gen_retFifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_tag_gen_init_rule
+Predicate: ! portalTop_lMemServer_reader_readers_0_tag_gen_inited
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_tag_gen_tag_rule
+Predicate: portalTop_lMemServer_reader_readers_0_tag_gen_tagFifo.i_notFull &&
+	   portalTop_lMemServer_reader_readers_0_tag_gen_inited &&
+	   portalTop_lMemServer_reader_readers_0_tag_gen_counter_positive_reg
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_cycle
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_dmaError
+Predicate: portalTop_lMemServerIndicationProxy_rv.RDY_ifc_error &&
+	   portalTop_lMemServer_reader_readers_0_dmaErrorFifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_checkMmuResp
+Predicate: portalTop_lMemServer_reader_readers_0_clientRequest.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_tag_gen_tagFifo.i_notEmpty &&
+	   portalTop_lMemServer_reader_readers_0_serverRequest.i_notFull &&
+	   ((! (portalTop_lMemServer_reader_readers_0_clientRequest.first[88:73] ==
+		16'd0)) ||
+	    ((! portalTop_lMemServer_reader_mmu_servers_0_tokFifo.first) &&
+	     portalTop_lMMU_mmu.RDY_addr_0_response_get &&
+	     portalTop_lMemServer_reader_mmu_servers_0_tokFifo.i_notEmpty))
+Blocking rules: portalTop_lMemServer_reader_mmuEntry
+ 
+Rule: portalTop_lMemServer_reader_readers_0_read_data
+Predicate: portalTop_lMemServer_reader_readers_0_serverData.i_notEmpty &&
+	   (portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outDataCore.notEmpty ||
+	    portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_enqData.whas) &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_outData.whas &&
+	   (portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_cnt .<
+	    3'd3) &&
+	   ((! portalTop_lMemServer_reader_readers_0_clientBurstLen.sub(portalTop_lMemServer_reader_readers_0_serverData.first[4:1])[10]) ||
+	    (portalTop_lMemServer_reader_readers_0_tag_gen_inited &&
+	     portalTop_lMemServer_reader_readers_0_tag_gen_retFifo.i_notFull))
+Blocking rules: portalTop_lMemServer_reader_readers_0_checkMmuResp
+ 
+Rule: portalTop_lMemServer_reader_readers_0_tag_completed
+Predicate: portalTop_lMemServer_reader_readers_0_tag_gen_comp_fifo.i_notEmpty &&
+	   (portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_cnt .<
+	    3'd3) &&
+	   portalTop_lMemServer_reader_readers_0_serverTag.i_notFull
+Blocking rules: mkConnectionGetPut
+ 
+Rule: portalTop_lMemServer_reader_readers_0_complete_burst1a
+Predicate: (portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outDataCore.notEmpty ||
+	    portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_enqData.whas) &&
+	   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_outData.whas &&
+	   portalTop_lMemServer_reader_readers_0_serverTag.i_notEmpty &&
+	   ((! (PrimArrayDynSelect (PrimBuildArray (! portalTop_lMemServer_reader_readers_0_killv_0)
+						   (! portalTop_lMemServer_reader_readers_0_killv_1)
+						   (! portalTop_lMemServer_reader_readers_0_killv_2)
+						   (! portalTop_lMemServer_reader_readers_0_killv_3))
+				   portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_outData.wget[23:22])) ||
+	    (portalTop_lMemServer_reader_readers_0_clientSelect.i_notFull &&
+	     (portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_cnt .<
+	      3'd3))) &&
+	   (portalTop_lMemServer_reader_readers_0_compCountReg == 10'd0)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_readers_0_burst_remainder
+Predicate: ((! (PrimArrayDynSelect (PrimBuildArray (! portalTop_lMemServer_reader_readers_0_killv_0)
+						   (! portalTop_lMemServer_reader_readers_0_killv_1)
+						   (! portalTop_lMemServer_reader_readers_0_killv_2)
+						   (! portalTop_lMemServer_reader_readers_0_killv_3))
+				   portalTop_lMemServer_reader_readers_0_compTileReg)) ||
+	    (portalTop_lMemServer_reader_readers_0_clientSelect.i_notFull &&
+	     (portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_cnt .<
+	      3'd3))) &&
+	   (! (portalTop_lMemServer_reader_readers_0_compCountReg == 10'd0))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_mmuEntry
+Predicate: portalTop_lMemServerIndicationProxy_rv.RDY_ifc_addrResponse &&
+	   portalTop_lMemServer_reader_addrReqFifo.i_notEmpty &&
+	   ((! (portalTop_lMemServer_reader_addrReqFifo.first[31:16] ==
+		16'd0)) ||
+	    portalTop_lMMU_mmu.RDY_addr_0_response_get)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_start_reg__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_state_handle_abort
+Predicate: portalTop_lMemServer_reader_dbgFSM_abort.whas &&
+	   portalTop_lMemServer_reader_dbgFSM_abort.wget &&
+	   ((! portalTop_lMemServer_reader_dbgFSM_start_wire.whas) ||
+	    (! portalTop_lMemServer_reader_dbgFSM_start_wire.wget))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_state_fired__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_state_every
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_restart
+Predicate: portalTop_lMemServer_reader_dbgFSM_start_reg_1 &&
+	   (! portalTop_lMemServer_reader_dbgFSM_state_fired) &&
+	   ((! portalTop_lMemServer_reader_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_dbgFSM_abort.wget))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_action_f_init_l157c7
+Predicate: ((! portalTop_lMemServer_reader_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_dbgFSM_abort.wget) ||
+	    (portalTop_lMemServer_reader_dbgFSM_start_wire.whas &&
+	     portalTop_lMemServer_reader_dbgFSM_start_wire.wget)) &&
+	   ((portalTop_lMemServer_reader_dbgFSM_start_wire.whas &&
+	     portalTop_lMemServer_reader_dbgFSM_start_wire.wget &&
+	     ((portalTop_lMemServer_reader_dbgFSM_abort.whas &&
+	       portalTop_lMemServer_reader_dbgFSM_abort.wget) ||
+	      (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+	       3'd0))) ||
+	    ((! (portalTop_lMemServer_reader_dbgPtr == 8'd0)) &&
+	     portalTop_lMemServer_reader_dbgFSM_start_wire.whas &&
+	     portalTop_lMemServer_reader_dbgFSM_start_wire.wget &&
+	     ((! portalTop_lMemServer_reader_dbgFSM_abort.whas) ||
+	      (! portalTop_lMemServer_reader_dbgFSM_abort.wget)) &&
+	     (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+	      3'd1)) ||
+	    ((! (portalTop_lMemServer_reader_dbgPtr == 8'd0)) &&
+	     portalTop_lMemServer_reader_dbgFSM_start_wire.whas &&
+	     portalTop_lMemServer_reader_dbgFSM_start_wire.wget &&
+	     ((! portalTop_lMemServer_reader_dbgFSM_abort.whas) ||
+	      (! portalTop_lMemServer_reader_dbgFSM_abort.wget)) &&
+	     (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+	      3'd3)))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_action_l158c10
+Predicate: portalTop_lMemServerIndicationProxy_rv.RDY_ifc_reportStateDbg &&
+	   (portalTop_lMemServer_reader_dbgPtr == 8'd0) &&
+	   ((! portalTop_lMemServer_reader_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_dbgFSM_abort.wget)) &&
+	   ((portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+	     3'd1) ||
+	    (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+	     3'd3))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_action_f_update_l157c7
+Predicate: ((! portalTop_lMemServer_reader_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_dbgFSM_abort.wget)) &&
+	   (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read == 3'd2)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_idle_l157c7
+Predicate: (! (portalTop_lMemServer_reader_dbgPtr == 8'd0)) &&
+	   ((! portalTop_lMemServer_reader_dbgFSM_start_wire.whas) ||
+	    (! portalTop_lMemServer_reader_dbgFSM_start_wire.wget)) &&
+	   ((! portalTop_lMemServer_reader_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_dbgFSM_abort.wget)) &&
+	   (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read == 3'd1)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_idle_l157c7_1
+Predicate: (! (portalTop_lMemServer_reader_dbgPtr == 8'd0)) &&
+	   ((! portalTop_lMemServer_reader_dbgFSM_start_wire.whas) ||
+	    (! portalTop_lMemServer_reader_dbgFSM_start_wire.wget)) &&
+	   ((! portalTop_lMemServer_reader_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_dbgFSM_abort.wget)) &&
+	   (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read == 3'd3)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_dbgFSM_fsm_start
+Predicate: ((portalTop_lMemServer_reader_dbgFSM_abort.whas &&
+	     portalTop_lMemServer_reader_dbgFSM_abort.wget) ||
+	    (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+	     3'd0) ||
+	    ((! (portalTop_lMemServer_reader_dbgPtr == 8'd0)) &&
+	     (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+	      3'd1)) ||
+	    ((! (portalTop_lMemServer_reader_dbgPtr == 8'd0)) &&
+	     (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+	      3'd3))) &&
+	   ((! portalTop_lMemServer_reader_dbgFSM_start_reg_1) ||
+	    portalTop_lMemServer_reader_dbgFSM_state_fired) &&
+	   portalTop_lMemServer_reader_dbgFSM_start_reg
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_start_reg__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_state_handle_abort
+Predicate: portalTop_lMemServer_reader_trafficFSM_abort.whas &&
+	   portalTop_lMemServer_reader_trafficFSM_abort.wget &&
+	   ((! portalTop_lMemServer_reader_trafficFSM_start_wire.whas) ||
+	    (! portalTop_lMemServer_reader_trafficFSM_start_wire.wget))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_state_fired__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_state_every
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_restart
+Predicate: portalTop_lMemServer_reader_trafficFSM_start_reg_1 &&
+	   (! portalTop_lMemServer_reader_trafficFSM_state_fired) &&
+	   ((! portalTop_lMemServer_reader_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_trafficFSM_abort.wget))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_action_l167c20
+Predicate: portalTop_lMemServer_reader_trafficFSM_start_wire.whas &&
+	   portalTop_lMemServer_reader_trafficFSM_start_wire.wget &&
+	   ((portalTop_lMemServer_reader_trafficFSM_abort.whas &&
+	     portalTop_lMemServer_reader_trafficFSM_abort.wget) ||
+	    (portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	     3'd0) ||
+	    (portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	     3'd5))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_action_f_init_l168c7
+Predicate: ((! portalTop_lMemServer_reader_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_trafficFSM_abort.wget)) &&
+	   (portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	    3'd1)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_action_l169c10
+Predicate: (portalTop_lMemServer_reader_trafficPtr == 8'd0) &&
+	   ((! portalTop_lMemServer_reader_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_trafficFSM_abort.wget)) &&
+	   ((portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	     3'd2) ||
+	    (portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	     3'd4))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_action_f_update_l168c7
+Predicate: ((! portalTop_lMemServer_reader_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_trafficFSM_abort.wget)) &&
+	   (portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	    3'd3)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_action_l173c17
+Predicate: portalTop_lMemServerIndicationProxy_rv.RDY_ifc_reportMemoryTraffic &&
+	   (! (portalTop_lMemServer_reader_trafficPtr == 8'd0)) &&
+	   ((! portalTop_lMemServer_reader_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_trafficFSM_abort.wget)) &&
+	   ((portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	     3'd2) ||
+	    (portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	     3'd4))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_idle_l166c4
+Predicate: ((! portalTop_lMemServer_reader_trafficFSM_start_wire.whas) ||
+	    (! portalTop_lMemServer_reader_trafficFSM_start_wire.wget)) &&
+	   ((! portalTop_lMemServer_reader_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_reader_trafficFSM_abort.wget)) &&
+	   (portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	    3'd5)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_reader_trafficFSM_fsm_start
+Predicate: ((portalTop_lMemServer_reader_trafficFSM_abort.whas &&
+	     portalTop_lMemServer_reader_trafficFSM_abort.wget) ||
+	    (portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	     3'd0) ||
+	    (portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+	     3'd5)) &&
+	   ((! portalTop_lMemServer_reader_trafficFSM_start_reg_1) ||
+	    portalTop_lMemServer_reader_trafficFSM_state_fired) &&
+	   portalTop_lMemServer_reader_trafficFSM_start_reg
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_setFirstCore
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_setFirstEnq
+Predicate: (! portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outDataCore.notEmpty) &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_enqOnly
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outDataCore.i_notFull &&
+	   (! portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_deqCalled.whas) &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_deqOnly
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_deqCalled.whas &&
+	   (! portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_enqAndDeq
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outDataCore.i_notFull &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_deqCalled.whas &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_cnt_finalAdd
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_cnt_1.whas ||
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_cnt_2.whas ||
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_stageReadResponseAlways
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_moveToOutFIFO
+Predicate: ((! portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_s1[0]) ||
+	    portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outDataCore.notFull) &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_s1[1]
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_overRun
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_s1[1] &&
+	   (! portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_setFirstCore
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_setFirstEnq
+Predicate: (! portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outDataCore.notEmpty) &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_enqOnly
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outDataCore.i_notFull &&
+	   (! portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_deqCalled.whas) &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_deqOnly
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_deqCalled.whas &&
+	   (! portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_enqAndDeq
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outDataCore.i_notEmpty &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outDataCore.i_notFull &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_deqCalled.whas &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_cnt_finalAdd
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_cnt_1.whas ||
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_cnt_2.whas ||
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_stageReadResponseAlways
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_moveToOutFIFO
+Predicate: ((! portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_s1[0]) ||
+	    portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outDataCore.notFull) &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_s1[1]
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_overRun
+Predicate: portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_s1[1] &&
+	   (! portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_tag_gen_counter_react
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_tag_gen_complete_rule1
+Predicate: (portalTop_lMemServer_writer_writers_0_tag_gen_tags.port1__read[portalTop_lMemServer_writer_writers_0_tag_gen_tail_ptr] ||
+	    portalTop_lMemServer_writer_writers_0_tag_gen_comp_fifo.i_notFull) &&
+	   portalTop_lMemServer_writer_writers_0_tag_gen_comp_state[0]
+Blocking rules: portalTop_lMemServer_writer_writers_0_tag_gen_ret_rule
+ 
+Rule: portalTop_lMemServer_writer_writers_0_tag_gen_ret_rule
+Predicate: portalTop_lMemServer_writer_writers_0_tag_gen_retFifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_tag_gen_init_rule
+Predicate: ! portalTop_lMemServer_writer_writers_0_tag_gen_inited
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_tag_gen_tag_rule
+Predicate: portalTop_lMemServer_writer_writers_0_tag_gen_tagFifo.i_notFull &&
+	   portalTop_lMemServer_writer_writers_0_tag_gen_inited &&
+	   portalTop_lMemServer_writer_writers_0_tag_gen_counter_positive_reg
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_cycle
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_dmaError
+Predicate: portalTop_lMemServerIndicationProxy_rv.RDY_ifc_error &&
+	   portalTop_lMemServer_writer_writers_0_dmaErrorFifo.i_notEmpty
+Blocking rules: portalTop_lMemServer_reader_readers_0_dmaError
+ 
+Rule: portalTop_lMemServer_writer_writers_0_checkMmuResp
+Predicate: portalTop_lMemServer_writer_writers_0_clientRequest.i_notEmpty &&
+	   portalTop_lMemServer_writer_writers_0_tag_gen_tagFifo.i_notEmpty &&
+	   portalTop_lMemServer_writer_writers_0_serverRequest.i_notFull &&
+	   ((! (portalTop_lMemServer_writer_writers_0_clientRequest.first[88:73] ==
+		16'd0)) ||
+	    ((! portalTop_lMemServer_writer_mmu_servers_0_tokFifo.first) &&
+	     portalTop_lMMU_mmu.RDY_addr_1_response_get &&
+	     portalTop_lMemServer_writer_mmu_servers_0_tokFifo.i_notEmpty))
+Blocking rules: portalTop_lMemServer_writer_mmuEntry
+ 
+Rule: portalTop_lMemServer_writer_writers_0_writeDoneComp0
+Predicate: portalTop_lMemServer_writer_writers_0_tag_gen_comp_fifo.i_notEmpty &&
+	   (portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_cnt .<
+	    3'd3)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_memdata
+Predicate: portalTop_lMemServer_writer_writers_0_serverProcessing.i_notEmpty &&
+	   portalTop_lMemServer_writer_writers_0_memDataFifo.i_notFull &&
+	   ((! (PrimArrayDynSelect (PrimBuildArray (! portalTop_lMemServer_writer_writers_0_killv_0)
+						   (! portalTop_lMemServer_writer_writers_0_killv_1)
+						   (! portalTop_lMemServer_writer_writers_0_killv_2)
+						   (! portalTop_lMemServer_writer_writers_0_killv_3))
+				   portalTop_lMemServer_writer_writers_0_serverProcessing.first[23:22])) ||
+	    case portalTop_lMemServer_writer_writers_0_serverProcessing.first[1] of
+	    1'd0 -> portalTop_lMemServer_writer_writers_0_clientWriteData_0.i_notEmpty
+	    1'd1 -> portalTop_lMemServer_writer_writers_0_clientWriteData_1.i_notEmpty
+	    _ -> 1'd1) &&
+	   ((! portalTop_lMemServer_writer_writers_0_firstReg) ||
+	    (portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_cnt .<
+	     3'd3))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_writers_0_fill_clientResponse
+Predicate: (portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outDataCore.notEmpty ||
+	    portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_enqData.whas) &&
+	   portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_outData.whas &&
+	   portalTop_lMemServer_writer_writers_0_clientResponse.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_mmuEntry
+Predicate: portalTop_lMemServerIndicationProxy_rv.RDY_ifc_addrResponse &&
+	   portalTop_lMemServer_writer_addrReqFifo.i_notEmpty &&
+	   ((! (portalTop_lMemServer_writer_addrReqFifo.first[31:16] ==
+		16'd0)) ||
+	    portalTop_lMMU_mmu.RDY_addr_1_response_get)
+Blocking rules: portalTop_lMemServer_reader_mmuEntry
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_start_reg__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_state_handle_abort
+Predicate: portalTop_lMemServer_writer_dbgFSM_abort.whas &&
+	   portalTop_lMemServer_writer_dbgFSM_abort.wget &&
+	   ((! portalTop_lMemServer_writer_dbgFSM_start_wire.whas) ||
+	    (! portalTop_lMemServer_writer_dbgFSM_start_wire.wget))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_state_fired__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_state_every
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_restart
+Predicate: portalTop_lMemServer_writer_dbgFSM_start_reg_1 &&
+	   (! portalTop_lMemServer_writer_dbgFSM_state_fired) &&
+	   ((! portalTop_lMemServer_writer_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_dbgFSM_abort.wget))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_action_f_init_l241c7
+Predicate: ((! portalTop_lMemServer_writer_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_dbgFSM_abort.wget) ||
+	    (portalTop_lMemServer_writer_dbgFSM_start_wire.whas &&
+	     portalTop_lMemServer_writer_dbgFSM_start_wire.wget)) &&
+	   ((portalTop_lMemServer_writer_dbgFSM_start_wire.whas &&
+	     portalTop_lMemServer_writer_dbgFSM_start_wire.wget &&
+	     ((portalTop_lMemServer_writer_dbgFSM_abort.whas &&
+	       portalTop_lMemServer_writer_dbgFSM_abort.wget) ||
+	      (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+	       3'd0))) ||
+	    ((! (portalTop_lMemServer_writer_dbgPtr == 8'd0)) &&
+	     portalTop_lMemServer_writer_dbgFSM_start_wire.whas &&
+	     portalTop_lMemServer_writer_dbgFSM_start_wire.wget &&
+	     ((! portalTop_lMemServer_writer_dbgFSM_abort.whas) ||
+	      (! portalTop_lMemServer_writer_dbgFSM_abort.wget)) &&
+	     (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+	      3'd1)) ||
+	    ((! (portalTop_lMemServer_writer_dbgPtr == 8'd0)) &&
+	     portalTop_lMemServer_writer_dbgFSM_start_wire.whas &&
+	     portalTop_lMemServer_writer_dbgFSM_start_wire.wget &&
+	     ((! portalTop_lMemServer_writer_dbgFSM_abort.whas) ||
+	      (! portalTop_lMemServer_writer_dbgFSM_abort.wget)) &&
+	     (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+	      3'd3)))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_action_l242c10
+Predicate: portalTop_lMemServerIndicationProxy_rv.RDY_ifc_reportStateDbg &&
+	   (portalTop_lMemServer_writer_dbgPtr == 8'd0) &&
+	   ((! portalTop_lMemServer_writer_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_dbgFSM_abort.wget)) &&
+	   ((portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+	     3'd1) ||
+	    (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+	     3'd3))
+Blocking rules: portalTop_lMemServer_reader_dbgFSM_action_l158c10
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_action_f_update_l241c7
+Predicate: ((! portalTop_lMemServer_writer_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_dbgFSM_abort.wget)) &&
+	   (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read == 3'd2)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_idle_l241c7
+Predicate: (! (portalTop_lMemServer_writer_dbgPtr == 8'd0)) &&
+	   ((! portalTop_lMemServer_writer_dbgFSM_start_wire.whas) ||
+	    (! portalTop_lMemServer_writer_dbgFSM_start_wire.wget)) &&
+	   ((! portalTop_lMemServer_writer_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_dbgFSM_abort.wget)) &&
+	   (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read == 3'd1)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_idle_l241c7_1
+Predicate: (! (portalTop_lMemServer_writer_dbgPtr == 8'd0)) &&
+	   ((! portalTop_lMemServer_writer_dbgFSM_start_wire.whas) ||
+	    (! portalTop_lMemServer_writer_dbgFSM_start_wire.wget)) &&
+	   ((! portalTop_lMemServer_writer_dbgFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_dbgFSM_abort.wget)) &&
+	   (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read == 3'd3)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_dbgFSM_fsm_start
+Predicate: ((portalTop_lMemServer_writer_dbgFSM_abort.whas &&
+	     portalTop_lMemServer_writer_dbgFSM_abort.wget) ||
+	    (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+	     3'd0) ||
+	    ((! (portalTop_lMemServer_writer_dbgPtr == 8'd0)) &&
+	     (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+	      3'd1)) ||
+	    ((! (portalTop_lMemServer_writer_dbgPtr == 8'd0)) &&
+	     (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+	      3'd3))) &&
+	   ((! portalTop_lMemServer_writer_dbgFSM_start_reg_1) ||
+	    portalTop_lMemServer_writer_dbgFSM_state_fired) &&
+	   portalTop_lMemServer_writer_dbgFSM_start_reg
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_start_reg__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_state_handle_abort
+Predicate: portalTop_lMemServer_writer_trafficFSM_abort.whas &&
+	   portalTop_lMemServer_writer_trafficFSM_abort.wget &&
+	   ((! portalTop_lMemServer_writer_trafficFSM_start_wire.whas) ||
+	    (! portalTop_lMemServer_writer_trafficFSM_start_wire.wget))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_state_fired__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_state_every
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_restart
+Predicate: portalTop_lMemServer_writer_trafficFSM_start_reg_1 &&
+	   (! portalTop_lMemServer_writer_trafficFSM_state_fired) &&
+	   ((! portalTop_lMemServer_writer_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_trafficFSM_abort.wget))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_action_l251c20
+Predicate: portalTop_lMemServer_writer_trafficFSM_start_wire.whas &&
+	   portalTop_lMemServer_writer_trafficFSM_start_wire.wget &&
+	   ((portalTop_lMemServer_writer_trafficFSM_abort.whas &&
+	     portalTop_lMemServer_writer_trafficFSM_abort.wget) ||
+	    (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	     3'd0) ||
+	    (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	     3'd5))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_action_f_init_l252c7
+Predicate: ((! portalTop_lMemServer_writer_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_trafficFSM_abort.wget)) &&
+	   (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	    3'd1)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_action_l253c10
+Predicate: (portalTop_lMemServer_writer_trafficPtr == 8'd0) &&
+	   ((! portalTop_lMemServer_writer_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_trafficFSM_abort.wget)) &&
+	   ((portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	     3'd2) ||
+	    (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	     3'd4))
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_action_f_update_l252c7
+Predicate: ((! portalTop_lMemServer_writer_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_trafficFSM_abort.wget)) &&
+	   (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	    3'd3)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_action_l257c17
+Predicate: portalTop_lMemServerIndicationProxy_rv.RDY_ifc_reportMemoryTraffic &&
+	   (! (portalTop_lMemServer_writer_trafficPtr == 8'd0)) &&
+	   ((! portalTop_lMemServer_writer_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_trafficFSM_abort.wget)) &&
+	   ((portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	     3'd2) ||
+	    (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	     3'd4))
+Blocking rules: portalTop_lMemServer_reader_trafficFSM_action_l173c17
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_idle_l250c4
+Predicate: ((! portalTop_lMemServer_writer_trafficFSM_start_wire.whas) ||
+	    (! portalTop_lMemServer_writer_trafficFSM_start_wire.wget)) &&
+	   ((! portalTop_lMemServer_writer_trafficFSM_abort.whas) ||
+	    (! portalTop_lMemServer_writer_trafficFSM_abort.wget)) &&
+	   (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	    3'd5)
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_writer_trafficFSM_fsm_start
+Predicate: ((portalTop_lMemServer_writer_trafficFSM_abort.whas &&
+	     portalTop_lMemServer_writer_trafficFSM_abort.wget) ||
+	    (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	     3'd0) ||
+	    (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+	     3'd5)) &&
+	   ((! portalTop_lMemServer_writer_trafficFSM_start_reg_1) ||
+	    portalTop_lMemServer_writer_trafficFSM_state_fired) &&
+	   portalTop_lMemServer_writer_trafficFSM_start_reg
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_0_mr_request
+Predicate: tile_0.RDY_readers_0_readReq_get &&
+	   portalTop_lMemServer_reader_readers_0_clientRequest.i_notFull &&
+	   portalTop_lMMU_mmu.RDY_addr_0_request_put &&
+	   portalTop_lMemServer_reader_mmu_servers_0_tokFifo.i_notFull &&
+	   portalTop_lMemServer_reader_readers_0_dmaErrorFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_0_mr_response
+Predicate: portalTop_lMemServer_reader_readers_0_clientSelect.i_notEmpty &&
+	   (portalTop_lMemServer_reader_readers_0_clientSelect.first ==
+	    2'd0) &&
+	   tile_0.RDY_readers_0_readData_put &&
+	   (portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.notEmpty ||
+	    portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_enqData.whas) &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_outData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_1_mr_request
+Predicate: tile_0.RDY_readers_1_readReq_get &&
+	   portalTop_lMemServer_reader_readers_0_clientRequest.i_notFull &&
+	   portalTop_lMMU_mmu.RDY_addr_0_request_put &&
+	   portalTop_lMemServer_reader_mmu_servers_0_tokFifo.i_notFull &&
+	   portalTop_lMemServer_reader_readers_0_dmaErrorFifo.i_notFull
+Blocking rules: portalTop_lMemServer_0_mr_request
+ 
+Rule: portalTop_lMemServer_1_mr_response
+Predicate: portalTop_lMemServer_reader_readers_0_clientSelect.i_notEmpty &&
+	   (portalTop_lMemServer_reader_readers_0_clientSelect.first ==
+	    2'd1) &&
+	   tile_0.RDY_readers_1_readData_put &&
+	   (portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outDataCore.notEmpty ||
+	    portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_enqData.whas) &&
+	   portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_outData.whas
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_1_0_mw_request
+Predicate: tile_0.RDY_writers_0_writeReq_get &&
+	   portalTop_lMemServer_writer_writers_0_clientRequest.i_notFull &&
+	   portalTop_lMMU_mmu.RDY_addr_1_request_put &&
+	   portalTop_lMemServer_writer_mmu_servers_0_tokFifo.i_notFull &&
+	   portalTop_lMemServer_writer_writers_0_dmaErrorFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_1_0_mw_response
+Predicate: tile_0.RDY_writers_0_writeData_get &&
+	   portalTop_lMemServer_writer_writers_0_clientWriteData_0.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_1_0_mw_done
+Predicate: (! portalTop_lMemServer_writer_writers_0_clientResponse.first[0]) &&
+	   tile_0.RDY_writers_0_writeDone_put &&
+	   portalTop_lMemServer_writer_writers_0_clientResponse.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_1_1_mw_request
+Predicate: tile_0.RDY_writers_1_writeReq_get &&
+	   portalTop_lMemServer_writer_writers_0_clientRequest.i_notFull &&
+	   portalTop_lMMU_mmu.RDY_addr_1_request_put &&
+	   portalTop_lMemServer_writer_mmu_servers_0_tokFifo.i_notFull &&
+	   portalTop_lMemServer_writer_writers_0_dmaErrorFifo.i_notFull
+Blocking rules: portalTop_lMemServer_1_0_mw_request
+ 
+Rule: portalTop_lMemServer_1_1_mw_response
+Predicate: tile_0.RDY_writers_1_writeData_get &&
+	   portalTop_lMemServer_writer_writers_0_clientWriteData_1.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServer_1_1_mw_done
+Predicate: portalTop_lMemServer_writer_writers_0_clientResponse.first[0] &&
+	   tile_0.RDY_writers_1_writeDone_put &&
+	   portalTop_lMemServer_writer_writers_0_clientResponse.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_lMMURequestWrapper_handle_sglist_request
+Predicate: portalTop_lMMU_mmu.RDY_request_sglist &&
+	   portalTop_lMMURequestWrapper_dut.RDY_pipes_sglist_PipeOut_first &&
+	   portalTop_lMMURequestWrapper_dut.RDY_pipes_sglist_PipeOut_deq
+Blocking rules: (none)
+ 
+Rule: portalTop_lMMURequestWrapper_handle_region_request
+Predicate: portalTop_lMMU_mmu.RDY_request_region &&
+	   portalTop_lMMURequestWrapper_dut.RDY_pipes_region_PipeOut_first &&
+	   portalTop_lMMURequestWrapper_dut.RDY_pipes_region_PipeOut_deq
+Blocking rules: (none)
+ 
+Rule: portalTop_lMMURequestWrapper_handle_idRequest_request
+Predicate: portalTop_lMMU_mmu.RDY_request_idRequest &&
+	   portalTop_lMMURequestWrapper_dut.RDY_pipes_idRequest_PipeOut_first &&
+	   portalTop_lMMURequestWrapper_dut.RDY_pipes_idRequest_PipeOut_deq
+Blocking rules: (none)
+ 
+Rule: portalTop_lMMURequestWrapper_handle_idReturn_request
+Predicate: portalTop_lMMU_mmu.RDY_request_idReturn &&
+	   portalTop_lMMURequestWrapper_dut.RDY_pipes_idReturn_PipeOut_first &&
+	   portalTop_lMMURequestWrapper_dut.RDY_pipes_idReturn_PipeOut_deq
+Blocking rules: (none)
+ 
+Rule: portalTop_lMMURequestWrapper_handle_setInterface_request
+Predicate: portalTop_lMMURequestWrapper_dut.RDY_pipes_setInterface_PipeOut_first &&
+	   portalTop_lMMURequestWrapper_dut.RDY_pipes_setInterface_PipeOut_deq
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServerRequestWrapper_handle_addrTrans_request
+Predicate: portalTop_lMemServerRequestWrapper_dut.RDY_pipes_addrTrans_PipeOut_first &&
+	   portalTop_lMemServerRequestWrapper_dut.RDY_pipes_addrTrans_PipeOut_deq &&
+	   portalTop_lMemServer_writer_addrReqFifo.i_notFull &&
+	   ((! (portalTop_lMemServerRequestWrapper_dut.pipes_addrTrans_PipeOut_first[63:48] ==
+		16'd0)) ||
+	    portalTop_lMMU_mmu.RDY_addr_1_request_put)
+Blocking rules: portalTop_lMemServer_1_1_mw_request,
+		portalTop_lMemServer_1_0_mw_request
+ 
+Rule: portalTop_lMemServerRequestWrapper_handle_setTileState_request
+Predicate: portalTop_lMemServerRequestWrapper_dut.RDY_pipes_setTileState_PipeOut_first &&
+	   portalTop_lMemServerRequestWrapper_dut.RDY_pipes_setTileState_PipeOut_deq
+Blocking rules: (none)
+ 
+Rule: portalTop_lMemServerRequestWrapper_handle_stateDbg_request
+Predicate: portalTop_lMemServerRequestWrapper_dut.RDY_pipes_stateDbg_PipeOut_first &&
+	   portalTop_lMemServerRequestWrapper_dut.RDY_pipes_stateDbg_PipeOut_deq &&
+	   (portalTop_lMemServerRequestWrapper_dut.pipes_stateDbg_PipeOut_first
+	    ? ((portalTop_lMemServer_writer_dbgFSM_abort.whas &&
+		portalTop_lMemServer_writer_dbgFSM_abort.wget) ||
+	       (portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+		3'd0) ||
+	       ((! (portalTop_lMemServer_writer_dbgPtr == 8'd0)) &&
+		(portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+		 3'd1)) ||
+	       ((! (portalTop_lMemServer_writer_dbgPtr == 8'd0)) &&
+		(portalTop_lMemServer_writer_dbgFSM_state_mkFSMstate.read ==
+		 3'd3))) &&
+	      ((! portalTop_lMemServer_writer_dbgFSM_start_reg_1) ||
+	       portalTop_lMemServer_writer_dbgFSM_state_fired) &&
+	      (! portalTop_lMemServer_writer_dbgFSM_start_reg)
+	    : (((portalTop_lMemServer_reader_dbgFSM_abort.whas &&
+		 portalTop_lMemServer_reader_dbgFSM_abort.wget) ||
+		(portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+		 3'd0) ||
+		((! (portalTop_lMemServer_reader_dbgPtr == 8'd0)) &&
+		 (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+		  3'd1)) ||
+		((! (portalTop_lMemServer_reader_dbgPtr == 8'd0)) &&
+		 (portalTop_lMemServer_reader_dbgFSM_state_mkFSMstate.read ==
+		  3'd3))) &&
+	       ((! portalTop_lMemServer_reader_dbgFSM_start_reg_1) ||
+		portalTop_lMemServer_reader_dbgFSM_state_fired) &&
+	       (! portalTop_lMemServer_reader_dbgFSM_start_reg)))
+Blocking rules: portalTop_lMemServer_writer_dbgFSM_fsm_start,
+		portalTop_lMemServer_reader_dbgFSM_fsm_start
+ 
+Rule: portalTop_lMemServerRequestWrapper_handle_memoryTraffic_request
+Predicate: portalTop_lMemServerRequestWrapper_dut.RDY_pipes_memoryTraffic_PipeOut_first &&
+	   portalTop_lMemServerRequestWrapper_dut.RDY_pipes_memoryTraffic_PipeOut_deq &&
+	   (portalTop_lMemServerRequestWrapper_dut.pipes_memoryTraffic_PipeOut_first
+	    ? ((portalTop_lMemServer_writer_trafficFSM_abort.whas &&
+		portalTop_lMemServer_writer_trafficFSM_abort.wget) ||
+	       (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+		3'd0) ||
+	       (portalTop_lMemServer_writer_trafficFSM_state_mkFSMstate.read ==
+		3'd5)) &&
+	      ((! portalTop_lMemServer_writer_trafficFSM_start_reg_1) ||
+	       portalTop_lMemServer_writer_trafficFSM_state_fired) &&
+	      (! portalTop_lMemServer_writer_trafficFSM_start_reg)
+	    : (((portalTop_lMemServer_reader_trafficFSM_abort.whas &&
+		 portalTop_lMemServer_reader_trafficFSM_abort.wget) ||
+		(portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+		 3'd0) ||
+		(portalTop_lMemServer_reader_trafficFSM_state_mkFSMstate.read ==
+		 3'd5)) &&
+	       ((! portalTop_lMemServer_reader_trafficFSM_start_reg_1) ||
+		portalTop_lMemServer_reader_trafficFSM_state_fired) &&
+	       (! portalTop_lMemServer_reader_trafficFSM_start_reg)))
+Blocking rules: portalTop_lMemServer_writer_trafficFSM_fsm_start,
+		portalTop_lMemServer_reader_trafficFSM_fsm_start
+ 
+Rule: portalTop_framework_ctrl_mux_writeTop
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_writeTop_1
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_writeTop_2
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_writeTop_3
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_readDataPipes_0_connect
+Predicate: portalTop_lMMUIndicationProxy_rv.RDY_portalIfc_slave_read_server_readData_get &&
+	   portalTop_framework_ctrl_mux_rv_readDataPipes_0_fifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_readDataPipes_1_connect
+Predicate: portalTop_lMemServerIndicationProxy_rv.RDY_portalIfc_slave_read_server_readData_get &&
+	   portalTop_framework_ctrl_mux_rv_readDataPipes_1_fifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_readDataPipes_2_connect
+Predicate: portalTop_lMMURequestWrapper_dut.RDY_portalIfc_slave_read_server_readData_get &&
+	   portalTop_framework_ctrl_mux_rv_readDataPipes_2_fifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_readDataPipes_3_connect
+Predicate: portalTop_lMemServerRequestWrapper_dut.RDY_portalIfc_slave_read_server_readData_get &&
+	   portalTop_framework_ctrl_mux_rv_readDataPipes_3_fifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_read_data_funnel_funnel
+Predicate: ((! portalTop_framework_ctrl_mux_rv_readDataPipes_0_fifo.notEmpty) ||
+	    portalTop_framework_ctrl_mux_rv_readDataPipes_0_fifo.i_notEmpty) &&
+	   (portalTop_framework_ctrl_mux_rv_readDataPipes_0_fifo.notEmpty ||
+	    (! portalTop_framework_ctrl_mux_rv_readDataPipes_1_fifo.notEmpty) ||
+	    portalTop_framework_ctrl_mux_rv_readDataPipes_1_fifo.i_notEmpty) &&
+	   (portalTop_framework_ctrl_mux_rv_readDataPipes_1_fifo.notEmpty ||
+	    portalTop_framework_ctrl_mux_rv_readDataPipes_0_fifo.notEmpty ||
+	    (! portalTop_framework_ctrl_mux_rv_readDataPipes_2_fifo.notEmpty) ||
+	    portalTop_framework_ctrl_mux_rv_readDataPipes_2_fifo.i_notEmpty) &&
+	   (portalTop_framework_ctrl_mux_rv_readDataPipes_2_fifo.notEmpty ||
+	    portalTop_framework_ctrl_mux_rv_readDataPipes_1_fifo.notEmpty ||
+	    portalTop_framework_ctrl_mux_rv_readDataPipes_0_fifo.notEmpty ||
+	    (! portalTop_framework_ctrl_mux_rv_readDataPipes_3_fifo.notEmpty) ||
+	    portalTop_framework_ctrl_mux_rv_readDataPipes_3_fifo.i_notEmpty) &&
+	   (((! portalTop_framework_ctrl_mux_rv_readDataPipes_3_fifo.notEmpty) &&
+	     (! portalTop_framework_ctrl_mux_rv_readDataPipes_2_fifo.notEmpty) &&
+	     (! portalTop_framework_ctrl_mux_rv_readDataPipes_1_fifo.notEmpty) &&
+	     (! portalTop_framework_ctrl_mux_rv_readDataPipes_0_fifo.notEmpty)) ||
+	    portalTop_framework_ctrl_mux_rv_read_data_funnel_buffs_0_0.i_notFull)
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_xfer
+Predicate: portalTop_framework_ctrl_mux_rv_write_data.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_0.i_notFull &&
+	   (portalTop_framework_ctrl_mux_rv_write_data.first[40:39] == 2'd0)
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_xfer_1
+Predicate: portalTop_framework_ctrl_mux_rv_write_data.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_1.i_notFull &&
+	   (portalTop_framework_ctrl_mux_rv_write_data.first[40:39] == 2'd1)
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_xfer_2
+Predicate: portalTop_framework_ctrl_mux_rv_write_data.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_2.i_notFull &&
+	   (portalTop_framework_ctrl_mux_rv_write_data.first[40:39] == 2'd2)
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_xfer_3
+Predicate: portalTop_framework_ctrl_mux_rv_write_data.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_3.i_notFull &&
+	   (portalTop_framework_ctrl_mux_rv_write_data.first[40:39] == 2'd3)
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_writeDataPipes_0_connect
+Predicate: portalTop_lMMUIndicationProxy_rv.RDY_portalIfc_slave_write_server_writeData_put &&
+	   portalTop_framework_ctrl_mux_rv_writeDataPipes_0_fifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_writeDataPipes_1_connect
+Predicate: portalTop_lMemServerIndicationProxy_rv.RDY_portalIfc_slave_write_server_writeData_put &&
+	   portalTop_framework_ctrl_mux_rv_writeDataPipes_1_fifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_writeDataPipes_2_connect
+Predicate: portalTop_lMMURequestWrapper_dut.RDY_portalIfc_slave_write_server_writeData_put &&
+	   portalTop_framework_ctrl_mux_rv_writeDataPipes_2_fifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_writeDataPipes_3_connect
+Predicate: portalTop_lMemServerRequestWrapper_dut.RDY_portalIfc_slave_write_server_writeData_put &&
+	   portalTop_framework_ctrl_mux_rv_writeDataPipes_3_fifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_0_connect
+Predicate: portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_0.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_writeDataPipes_0_fifo.i_notFull &&
+	   portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_0.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_1_connect
+Predicate: portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_1.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_writeDataPipes_1_fifo.i_notFull &&
+	   portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_1.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_2_connect
+Predicate: portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_2.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_writeDataPipes_2_fifo.i_notFull &&
+	   portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_2.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_3_connect
+Predicate: portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_3.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_writeDataPipes_3_fifo.i_notFull &&
+	   portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_buff_0_0_3.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_req_aw
+Predicate: portalTop_framework_ctrl_mux_rv_req_aws.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_ws.i_notEmpty &&
+	   case portalTop_framework_ctrl_mux_rv_ws.first of
+	   2'd0 -> portalTop_lMMUIndicationProxy_rv.RDY_portalIfc_slave_write_server_writeReq_put
+	   2'd1 -> portalTop_lMemServerIndicationProxy_rv.RDY_portalIfc_slave_write_server_writeReq_put
+	   2'd2 -> portalTop_lMMURequestWrapper_dut.RDY_portalIfc_slave_write_server_writeReq_put
+	   2'd3 -> portalTop_lMemServerRequestWrapper_dut.RDY_portalIfc_slave_write_server_writeReq_put
+	   _ -> 1'd1
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_req_ar
+Predicate: portalTop_framework_ctrl_mux_rv_req_ars.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_rs.i_notEmpty &&
+	   case portalTop_framework_ctrl_mux_rv_rs.first of
+	   2'd0 -> portalTop_lMMUIndicationProxy_rv.RDY_portalIfc_slave_read_server_readReq_put
+	   2'd1 -> portalTop_lMemServerIndicationProxy_rv.RDY_portalIfc_slave_read_server_readReq_put
+	   2'd2 -> portalTop_lMMURequestWrapper_dut.RDY_portalIfc_slave_read_server_readReq_put
+	   2'd3 -> portalTop_lMemServerRequestWrapper_dut.RDY_portalIfc_slave_read_server_readReq_put
+	   _ -> 1'd1
+Blocking rules: (none)
+ 
+Rule: portalTop_framework_ctrl_mux_rv_write_done_rule
+Predicate: portalTop_framework_ctrl_mux_rv_ws.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_doneFifo.i_notFull &&
+	   case portalTop_framework_ctrl_mux_rv_ws.first of
+	   2'd0 -> portalTop_lMMUIndicationProxy_rv.RDY_portalIfc_slave_write_server_writeDone_get
+	   2'd1 -> portalTop_lMemServerIndicationProxy_rv.RDY_portalIfc_slave_write_server_writeDone_get
+	   2'd2 -> portalTop_lMMURequestWrapper_dut.RDY_portalIfc_slave_write_server_writeDone_get
+	   2'd3 -> portalTop_lMemServerRequestWrapper_dut.RDY_portalIfc_slave_write_server_writeDone_get
+	   _ -> 1'd1
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_readDataPipes_0_connect
+Predicate: portalTop_framework_ctrl_mux_rv_rs.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_read_data_funnel_buffs_0_0.i_notEmpty &&
+	   portalTop_ctrl_mux_readDataPipes_0_fifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_readDataPipes_1_connect
+Predicate: tile_0.RDY_slave_read_server_readData_get &&
+	   portalTop_ctrl_mux_readDataPipes_1_fifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_read_data_funnel_funnel
+Predicate: ((! portalTop_ctrl_mux_readDataPipes_0_fifo.notEmpty) ||
+	    portalTop_ctrl_mux_readDataPipes_0_fifo.i_notEmpty) &&
+	   (portalTop_ctrl_mux_readDataPipes_0_fifo.notEmpty ||
+	    (! portalTop_ctrl_mux_readDataPipes_1_fifo.notEmpty) ||
+	    portalTop_ctrl_mux_readDataPipes_1_fifo.i_notEmpty) &&
+	   (((! portalTop_ctrl_mux_readDataPipes_1_fifo.notEmpty) &&
+	     (! portalTop_ctrl_mux_readDataPipes_0_fifo.notEmpty)) ||
+	    portalTop_ctrl_mux_read_data_funnel_buffs_0_0.i_notFull)
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_write_data_unfunnel_rv_xfer
+Predicate: portalTop_ctrl_mux_write_data.i_notEmpty &&
+	   portalTop_ctrl_mux_write_data_unfunnel_rv_buff_0_0_0.i_notFull &&
+	   (! portalTop_ctrl_mux_write_data.first[39])
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_write_data_unfunnel_rv_xfer_1
+Predicate: portalTop_ctrl_mux_write_data.i_notEmpty &&
+	   portalTop_ctrl_mux_write_data_unfunnel_rv_buff_0_0_1.i_notFull &&
+	   portalTop_ctrl_mux_write_data.first[39]
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_writeDataPipes_0_connect
+Predicate: (! portalTop_framework_ctrl_mux_rv_lastWriteDataSeen) &&
+	   portalTop_framework_ctrl_mux_rv_ws.i_notEmpty &&
+	   portalTop_ctrl_mux_writeDataPipes_0_fifo.i_notEmpty &&
+	   portalTop_framework_ctrl_mux_rv_write_data.i_notFull
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_writeDataPipes_1_connect
+Predicate: tile_0.RDY_slave_write_server_writeData_put &&
+	   portalTop_ctrl_mux_writeDataPipes_1_fifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_0_connect
+Predicate: portalTop_ctrl_mux_write_data_unfunnel_rv_buff_0_0_0.i_notEmpty &&
+	   portalTop_ctrl_mux_writeDataPipes_0_fifo.i_notFull &&
+	   portalTop_ctrl_mux_write_data_unfunnel_rv_buff_0_0_0.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_1_connect
+Predicate: portalTop_ctrl_mux_write_data_unfunnel_rv_buff_0_0_1.i_notEmpty &&
+	   portalTop_ctrl_mux_writeDataPipes_1_fifo.i_notFull &&
+	   portalTop_ctrl_mux_write_data_unfunnel_rv_buff_0_0_1.notEmpty
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_req_aw
+Predicate: portalTop_ctrl_mux_req_aws.i_notEmpty &&
+	   portalTop_ctrl_mux_ws.i_notEmpty &&
+	   case portalTop_ctrl_mux_ws.first of
+	   1'd0 -> portalTop_framework_ctrl_mux_rv_req_aws.i_notFull &&
+		   portalTop_framework_ctrl_mux_rv_ws.i_notFull
+	   1'd1 -> tile_0.RDY_slave_write_server_writeReq_put
+	   _ -> 1'd1
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_req_ar
+Predicate: portalTop_ctrl_mux_req_ars.i_notEmpty &&
+	   portalTop_ctrl_mux_rs.i_notEmpty &&
+	   case portalTop_ctrl_mux_rs.first of
+	   1'd0 -> portalTop_framework_ctrl_mux_rv_req_ars.i_notFull &&
+		   portalTop_framework_ctrl_mux_rv_rs.i_notFull
+	   1'd1 -> tile_0.RDY_slave_read_server_readReq_put
+	   _ -> 1'd1
+Blocking rules: (none)
+ 
+Rule: portalTop_ctrl_mux_write_done_rule
+Predicate: portalTop_ctrl_mux_ws.i_notEmpty &&
+	   portalTop_ctrl_mux_doneFifo.i_notFull &&
+	   case portalTop_ctrl_mux_ws.first of
+	   1'd0 -> portalTop_framework_ctrl_mux_rv_doneFifo.i_notEmpty
+	   1'd1 -> tile_0.RDY_slave_write_server_writeDone_get
+	   _ -> 1'd1
+Blocking rules: (none)
+ 
+Rule: Prelude_inst_changeSpecialWires_mkConnectionGetPut
+Predicate: host_pcieHostTop_pciehost.RDY_master_read_client_readReq_get &&
+	   portalTop_ctrl_mux_req_ars.i_notFull &&
+	   portalTop_ctrl_mux_rs.i_notFull
+Blocking rules: (none)
+ 
+Rule: Prelude_inst_changeSpecialWires_1_mkConnectionGetPut
+Predicate: host_pcieHostTop_pciehost.RDY_master_read_client_readData_put &&
+	   portalTop_ctrl_mux_rs.i_notEmpty &&
+	   portalTop_ctrl_mux_read_data_funnel_buffs_0_0.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: Prelude_inst_changeSpecialWires_2_mkConnectionGetPut
+Predicate: host_pcieHostTop_pciehost.RDY_master_write_client_writeReq_get &&
+	   portalTop_ctrl_mux_req_aws.i_notFull &&
+	   portalTop_ctrl_mux_ws.i_notFull
+Blocking rules: (none)
+ 
+Rule: Prelude_inst_changeSpecialWires_3_mkConnectionGetPut
+Predicate: (! portalTop_ctrl_mux_lastWriteDataSeen) &&
+	   host_pcieHostTop_pciehost.RDY_master_write_client_writeData_get &&
+	   portalTop_ctrl_mux_ws.i_notEmpty &&
+	   portalTop_ctrl_mux_write_data.i_notFull
+Blocking rules: (none)
+ 
+Rule: Prelude_inst_changeSpecialWires_4_mkConnectionGetPut
+Predicate: portalTop_ctrl_mux_doneFifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: mkConnectionGetPut
+Predicate: host_pcieHostTop_pciehost.RDY_slave_0_read_server_readReq_put &&
+	   (portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_cnt .<
+	    3'd3) &&
+	   portalTop_lMemServer_reader_readers_0_serverRequest.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: mkConnectionGetPut_1
+Predicate: host_pcieHostTop_pciehost.RDY_slave_0_read_server_readData_get &&
+	   portalTop_lMemServer_reader_readers_0_serverData.i_notFull &&
+	   (portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_cnt .<
+	    3'd3)
+Blocking rules: (none)
+ 
+Rule: mkConnectionGetPut_2
+Predicate: host_pcieHostTop_pciehost.RDY_slave_0_write_server_writeReq_put &&
+	   portalTop_lMemServer_writer_writers_0_serverRequest.i_notEmpty &&
+	   portalTop_lMemServer_writer_writers_0_serverProcessing.i_notFull
+Blocking rules: (none)
+ 
+Rule: mkConnectionGetPut_3
+Predicate: host_pcieHostTop_pciehost.RDY_slave_0_write_server_writeData_put &&
+	   portalTop_lMemServer_writer_writers_0_memDataFifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: mkConnectionGetPut_4
+Predicate: host_pcieHostTop_pciehost.RDY_slave_0_write_server_writeDone_get &&
+	   portalTop_lMemServer_writer_writers_0_tag_gen_inited &&
+	   portalTop_lMemServer_writer_writers_0_tag_gen_retFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: interrupt_rule
+Predicate: ((((! tile_0.interrupt_0__read) && (! tile_0.interrupt_1__read) &&
+	      (! tile_0.interrupt_2__read) && (! tile_0.interrupt_3__read) &&
+	      (! tile_0.interrupt_4__read) && (! tile_0.interrupt_5__read) &&
+	      (! tile_0.interrupt_6__read) && (! tile_0.interrupt_7__read) &&
+	      (! tile_0.interrupt_8__read) && (! tile_0.interrupt_9__read) &&
+	      (! tile_0.interrupt_10__read) &&
+	      (! tile_0.interrupt_11__read) &&
+	      (! tile_0.interrupt_12__read) &&
+	      (! tile_0.interrupt_13__read) &&
+	      (! tile_0.interrupt_14__read) &&
+	      (! tile_0.interrupt_15__read)) ||
+	     interruptRequested_1) &&
+	    (((! portalTop_lMMUIndicationProxy_rv.portalIfc_interrupt__read) &&
+	      (! portalTop_lMemServerIndicationProxy_rv.portalIfc_interrupt__read) &&
+	      (! portalTop_lMMURequestWrapper_dut.portalIfc_interrupt__read) &&
+	      (! portalTop_lMemServerRequestWrapper_dut.portalIfc_interrupt__read)) ||
+	     interruptRequested_0)) ||
+	   intrFifo.i_notFull
+Blocking rules: (none)
+ 
+Rule: GetPutWithClocks_inst_mkConnectionWithClocks_mcwc_doGet
+Predicate: GetPutWithClocks_inst_mkConnectionWithClocks_synchronizer.RDY_enq &&
+	   intrFifo.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: GetPutWithClocks_inst_mkConnectionWithClocks_mcwc_doPut
+Predicate: GetPutWithClocks_inst_mkConnectionWithClocks_synchronizer.RDY_deq &&
+	   GetPutWithClocks_inst_mkConnectionWithClocks_synchronizer.RDY_first &&
+	   host_pcieHostTop_ep7.RDY_interruptRequest_put
+Blocking rules: (none)
+ 
+Rule: __me_check_70
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_71
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_81
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_82
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_83
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_84
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_125
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_126
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_136
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_137
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_138
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: __me_check_139
+Predicate: True
+Blocking rules: (none)
+ 
+Logical execution order: pcie_rxn,
+			 pcie_rxp,
+			 pcie_txn,
+			 pcie_txp,
+			 mkConnectionGetPut,
+			 mkConnectionGetPut_2,
+			 mkConnectionGetPut_3,
+			 mkConnectionGetPut_4,
+			 interrupt_rule,
+			 host_pcieHostTop_connect,
+			 host_pcieHostTop_Prelude_inst_changeSpecialWires_ClientServerRequest,
+			 host_pcieHostTop_Prelude_inst_changeSpecialWires_ClientServerResponse,
+			 host_pcieHostTop_Prelude_inst_changeSpecialWires_1_ClientServerRequest,
+			 host_pcieHostTop_Prelude_inst_changeSpecialWires_1_ClientServerResponse,
+			 portalTop_lMMU_rl_idResponse,
+			 portalTop_lMMU_rl_configResp,
+			 portalTop_lMMU_dmaError,
+			 portalTop_lMemServer_reader_mmuEntry,
+			 portalTop_lMemServer_reader_readers_0_dmaError,
+			 portalTop_lMemServer_reader_readers_0_checkMmuResp,
+			 portalTop_lMemServer_reader_readers_0_tag_completed,
+			 portalTop_lMemServer_reader_readers_0_burst_remainder,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_moveToOutFIFO,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_overRun,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_passRequest,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_setFirstCore,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_setFirstEnq,
+			 portalTop_lMemServer_reader_readers_0_read_data,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_enqOnly,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_deqOnly,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_outData_enqAndDeq,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_stageReadResponseAlways,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_moveToOutFIFO,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_overRun,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_passRequest,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_setFirstCore,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_setFirstEnq,
+			 portalTop_lMemServer_reader_readers_0_complete_burst1a,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_enqOnly,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_deqOnly,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_outData_enqAndDeq,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_cnt_finalAdd,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterB_s1__dreg_update,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_stageReadResponseAlways,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_moveToOutFIFO,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_overRun,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_passRequest,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_setFirstCore,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_setFirstEnq,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_enqOnly,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_deqOnly,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_outData_enqAndDeq,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_cnt_finalAdd,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterA_s1__dreg_update,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_stageReadResponseAlways,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_moveToOutFIFO,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_overRun,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_passRequest,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_setFirstCore,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_setFirstEnq,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_s1__dreg_update,
+			 portalTop_lMemServer_reader_readers_0_tag_gen_ret_rule,
+			 portalTop_lMemServer_reader_readers_0_tag_gen_complete_rule1,
+			 portalTop_lMemServer_reader_readers_0_tag_gen_init_rule,
+			 portalTop_lMemServer_reader_readers_0_tag_gen_tag_rule,
+			 portalTop_lMemServer_reader_readers_0_tag_gen_counter_react,
+			 portalTop_lMemServer_reader_dbgFSM_restart,
+			 portalTop_lMemServer_reader_dbgFSM_action_l158c10,
+			 portalTop_lMemServer_reader_dbgFSM_fsm_start,
+			 portalTop_lMemServer_reader_dbgFSM_idle_l157c7,
+			 portalTop_lMemServer_reader_dbgFSM_idle_l157c7_1,
+			 portalTop_lMemServer_reader_dbgFSM_state_handle_abort,
+			 portalTop_lMemServer_reader_trafficFSM_restart,
+			 portalTop_lMemServer_reader_trafficFSM_action_f_init_l168c7,
+			 portalTop_lMemServer_reader_trafficFSM_action_l169c10,
+			 mkConnectionGetPut_1,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_stageReadResponseAlways,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_cnt_finalAdd,
+			 portalTop_lMemServer_reader_readers_0_serverProcessing_serverAdapterA_s1__dreg_update,
+			 portalTop_lMemServer_reader_trafficFSM_action_f_update_l168c7,
+			 portalTop_lMemServer_reader_trafficFSM_action_l173c17,
+			 __me_check_82,
+			 __me_check_83,
+			 __me_check_84,
+			 portalTop_lMemServer_reader_trafficFSM_fsm_start,
+			 portalTop_lMemServer_reader_trafficFSM_action_l167c20,
+			 __me_check_81,
+			 portalTop_lMemServer_reader_trafficFSM_idle_l166c4,
+			 portalTop_lMemServer_reader_trafficFSM_state_handle_abort,
+			 portalTop_lMemServer_reader_trafficFSM_state_every,
+			 portalTop_lMemServer_writer_mmuEntry,
+			 portalTop_lMemServer_writer_writers_0_dmaError,
+			 portalTop_lMemServer_writer_writers_0_checkMmuResp,
+			 portalTop_lMemServer_writer_writers_0_writeDoneComp0,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_moveToOutFIFO,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_overRun,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_setFirstCore,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_setFirstEnq,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_enqOnly,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_deqOnly,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_outData_enqAndDeq,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_stageReadResponseAlways,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_moveToOutFIFO,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_overRun,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_setFirstCore,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_setFirstEnq,
+			 portalTop_lMemServer_writer_writers_0_fill_clientResponse,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_enqOnly,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_deqOnly,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_outData_enqAndDeq,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_cnt_finalAdd,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterB_s1__dreg_update,
+			 portalTop_lMemServer_writer_writers_0_tag_gen_ret_rule,
+			 portalTop_lMemServer_writer_writers_0_tag_gen_complete_rule1,
+			 portalTop_lMemServer_writer_writers_0_tag_gen_init_rule,
+			 portalTop_lMemServer_writer_writers_0_tag_gen_tag_rule,
+			 portalTop_lMemServer_writer_writers_0_tag_gen_counter_react,
+			 portalTop_lMemServer_writer_dbgFSM_restart,
+			 portalTop_lMemServer_writer_dbgFSM_action_l242c10,
+			 portalTop_lMemServer_writer_dbgFSM_fsm_start,
+			 portalTop_lMemServer_writer_dbgFSM_idle_l241c7,
+			 portalTop_lMemServer_writer_dbgFSM_idle_l241c7_1,
+			 portalTop_lMemServer_writer_dbgFSM_state_handle_abort,
+			 portalTop_lMemServer_writer_trafficFSM_restart,
+			 portalTop_lMemServer_writer_trafficFSM_action_f_init_l252c7,
+			 portalTop_lMemServer_writer_trafficFSM_action_l253c10,
+			 portalTop_lMemServer_writer_writers_0_memdata,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_stageReadResponseAlways,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_cnt_finalAdd,
+			 portalTop_lMemServer_writer_writers_0_respFifos_serverAdapterA_s1__dreg_update,
+			 portalTop_lMemServer_writer_trafficFSM_action_f_update_l252c7,
+			 portalTop_lMemServer_writer_trafficFSM_action_l257c17,
+			 __me_check_137,
+			 __me_check_138,
+			 __me_check_139,
+			 portalTop_lMemServer_writer_trafficFSM_fsm_start,
+			 portalTop_lMemServer_writer_trafficFSM_action_l251c20,
+			 __me_check_136,
+			 portalTop_lMemServer_writer_trafficFSM_idle_l250c4,
+			 portalTop_lMemServer_writer_trafficFSM_state_handle_abort,
+			 portalTop_lMemServer_writer_trafficFSM_state_every,
+			 portalTop_lMemServer_0_mr_request,
+			 portalTop_lMemServer_0_mr_response,
+			 portalTop_lMemServer_1_mr_request,
+			 portalTop_lMemServer_1_mr_response,
+			 portalTop_lMemServer_reader_readers_0_cycle,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_enqOnly,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_deqOnly,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_outData_enqAndDeq,
+			 portalTop_lMemServer_reader_readers_0_clientData_serverAdapterB_cnt_finalAdd,
+			 portalTop_lMemServer_1_0_mw_request,
+			 portalTop_lMemServer_1_0_mw_response,
+			 portalTop_lMemServer_1_0_mw_done,
+			 portalTop_lMemServer_1_1_mw_request,
+			 portalTop_lMemServer_writer_writers_0_cycle,
+			 portalTop_lMemServer_1_1_mw_response,
+			 portalTop_lMemServer_1_1_mw_done,
+			 portalTop_lMMURequestWrapper_handle_sglist_request,
+			 portalTop_lMMURequestWrapper_handle_region_request,
+			 portalTop_lMMURequestWrapper_handle_idRequest_request,
+			 portalTop_lMMURequestWrapper_handle_idReturn_request,
+			 portalTop_lMMURequestWrapper_handle_setInterface_request,
+			 portalTop_lMemServerRequestWrapper_handle_addrTrans_request,
+			 portalTop_lMemServerRequestWrapper_handle_setTileState_request,
+			 portalTop_lMemServerRequestWrapper_handle_stateDbg_request,
+			 portalTop_lMemServer_reader_dbgFSM_action_f_init_l157c7,
+			 portalTop_lMemServer_reader_dbgFSM_action_f_update_l157c7,
+			 __me_check_70,
+			 __me_check_71,
+			 portalTop_lMemServer_reader_dbgFSM_start_reg__dreg_update,
+			 portalTop_lMemServer_reader_dbgFSM_state_every,
+			 portalTop_lMemServer_reader_dbgFSM_state_fired__dreg_update,
+			 portalTop_lMemServer_writer_dbgFSM_action_f_init_l241c7,
+			 portalTop_lMemServer_writer_dbgFSM_action_f_update_l241c7,
+			 __me_check_125,
+			 __me_check_126,
+			 portalTop_lMemServer_writer_dbgFSM_start_reg__dreg_update,
+			 portalTop_lMemServer_writer_dbgFSM_state_every,
+			 portalTop_lMemServer_writer_dbgFSM_state_fired__dreg_update,
+			 portalTop_lMemServerRequestWrapper_handle_memoryTraffic_request,
+			 portalTop_lMemServer_reader_trafficFSM_start_reg__dreg_update,
+			 portalTop_lMemServer_reader_trafficFSM_state_fired__dreg_update,
+			 portalTop_lMemServer_writer_trafficFSM_start_reg__dreg_update,
+			 portalTop_lMemServer_writer_trafficFSM_state_fired__dreg_update,
+			 portalTop_framework_ctrl_mux_writeTop,
+			 portalTop_framework_ctrl_mux_writeTop_1,
+			 portalTop_framework_ctrl_mux_writeTop_2,
+			 portalTop_framework_ctrl_mux_writeTop_3,
+			 portalTop_framework_ctrl_mux_rv_req_aw,
+			 portalTop_framework_ctrl_mux_rv_req_ar,
+			 portalTop_framework_ctrl_mux_rv_read_data_funnel_funnel,
+			 portalTop_framework_ctrl_mux_rv_readDataPipes_0_connect,
+			 portalTop_framework_ctrl_mux_rv_readDataPipes_1_connect,
+			 portalTop_framework_ctrl_mux_rv_readDataPipes_2_connect,
+			 portalTop_framework_ctrl_mux_rv_readDataPipes_3_connect,
+			 portalTop_framework_ctrl_mux_rv_writeDataPipes_0_connect,
+			 portalTop_framework_ctrl_mux_rv_writeDataPipes_1_connect,
+			 portalTop_framework_ctrl_mux_rv_writeDataPipes_2_connect,
+			 portalTop_framework_ctrl_mux_rv_writeDataPipes_3_connect,
+			 portalTop_framework_ctrl_mux_rv_0_connect,
+			 portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_xfer,
+			 portalTop_framework_ctrl_mux_rv_1_connect,
+			 portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_xfer_1,
+			 portalTop_framework_ctrl_mux_rv_2_connect,
+			 portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_xfer_2,
+			 portalTop_framework_ctrl_mux_rv_3_connect,
+			 portalTop_framework_ctrl_mux_rv_write_data_unfunnel_rv_xfer_3,
+			 portalTop_ctrl_mux_req_ar,
+			 portalTop_ctrl_mux_read_data_funnel_funnel,
+			 portalTop_ctrl_mux_readDataPipes_0_connect,
+			 portalTop_ctrl_mux_readDataPipes_1_connect,
+			 portalTop_ctrl_mux_writeDataPipes_0_connect,
+			 portalTop_framework_ctrl_mux_rv_write_done_rule,
+			 portalTop_ctrl_mux_writeDataPipes_1_connect,
+			 portalTop_ctrl_mux_req_aw,
+			 portalTop_ctrl_mux_0_connect,
+			 portalTop_ctrl_mux_write_data_unfunnel_rv_xfer,
+			 portalTop_ctrl_mux_1_connect,
+			 portalTop_ctrl_mux_write_data_unfunnel_rv_xfer_1,
+			 Prelude_inst_changeSpecialWires_mkConnectionGetPut,
+			 Prelude_inst_changeSpecialWires_1_mkConnectionGetPut,
+			 Prelude_inst_changeSpecialWires_3_mkConnectionGetPut,
+			 portalTop_ctrl_mux_write_done_rule,
+			 Prelude_inst_changeSpecialWires_2_mkConnectionGetPut,
+			 Prelude_inst_changeSpecialWires_4_mkConnectionGetPut,
+			 GetPutWithClocks_inst_mkConnectionWithClocks_mcwc_doGet,
+			 GetPutWithClocks_inst_mkConnectionWithClocks_mcwc_doPut
+
+=========================================

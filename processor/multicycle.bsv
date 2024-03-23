@@ -3,7 +3,6 @@ import SpecialFIFOs::*;
 import RegFile::*;
 import RVUtil::*;
 import Vector::*;
-import KonataHelper::*;
 import Printf::*;
 
 typedef struct { Bit#(4) byte_en; Bit#(32) addr; Bit#(32) data; } Mem deriving (Eq, FShow, Bits);
@@ -56,30 +55,13 @@ module mkmulticycle(RVIfc);
 	// Konata Logging
     String dumpFile = "output.log" ;
     let lfh <- mkReg(InvalidFile);
-	Reg#(KonataId) current_id <- mkReg(0);
-	Reg#(KonataId) fresh_id <- mkReg(0);
-	Reg#(KonataId) commit_id <- mkReg(0);
-	FIFO#(KonataId) retired <- mkFIFO;
-	FIFO#(KonataId) squashed <- mkFIFO;
 
-    Bool debug = True;
+    Bool debug = False;
     Reg#(Bool) starting <- mkReg(True);
 
-	rule do_tic_logging;
-        if (starting) begin
-            let f <- $fopen( dumpFile, "w" ) ;
-            lfh <= f;
-            $fwrite(f, "Kanata\t0004\nC=\t1\n");
-            starting <= False;
-        end
-		konataTic(lfh);
-	endrule
 
     rule fetch if (state == Fetch && !starting);
 	    if(debug) $display("Fetch %x", pc);
-		let iid <- fetch1Konata(lfh, fresh_id, 0);
-        labelKonataLeft(lfh, iid, $format("PC : %x",pc));
-		current_id <= iid;
         let req = Mem {byte_en : 0,
 			   addr : pc,
 			   data : 0};
@@ -92,8 +74,6 @@ module mkmulticycle(RVIfc);
 		fromImem.deq();
         let instr = resp.data;
         let decodedInst = decodeInst(instr);
-		decodeKonata(lfh, current_id);
-        labelKonataLeft(lfh,current_id, $format("Instr bits: %x",decodedInst.inst));
 		dInst <= decodedInst;
 		if (debug) $display("[Decode] ", fshow(decodedInst));
         let rs1_idx = getInstFields(instr).rs1;
@@ -102,7 +82,6 @@ module mkmulticycle(RVIfc);
 		let rs2 = (rs2_idx == 0 ? 0 : rf[rs2_idx]);
 		$display("REG ",fshow(pc),fshow(rs1_idx),fshow(rs1),fshow(rs2_idx),fshow(rs2));
 
-        labelKonataLeft(lfh,current_id, $format(" Potential r1: %x, Potential r2: %x" , rs1, rs2));
 		rv1 <= rs1;
 		rv2 <= rs2;
         state <= Execute;
@@ -110,7 +89,6 @@ module mkmulticycle(RVIfc);
 
     rule execute if (state == Execute && !starting);
 		if (debug) $display("[Execute] ", fshow(dInst));
-		executeKonata(lfh, current_id);
 		let imm = getImmediate(dInst);
 		Bool mmio = False;
 		let data = execALU32(dInst.inst, rv1, rv2, imm, pc);
@@ -138,18 +116,14 @@ module mkmulticycle(RVIfc);
 		    if (isMMIO(addr)) begin 
 		        if (debug) $display("[Execute] MMIO", fshow(req));
     		    toMMIO.enq(req);
-                labelKonataLeft(lfh,current_id, $format(" MMIO ", fshow(req)));
     		    mmio = True;
 		    end else begin 
-                labelKonataLeft(lfh,current_id, $format(" MEM ", fshow(req)));
     		    toDmem.enq(req);
 		    end
 		end
 		else if (isControlInst(dInst)) begin
-                labelKonataLeft(lfh,current_id, $format(" Ctrl instr "));
                 data = pc + 4;
 		end else begin 
-            labelKonataLeft(lfh,current_id, $format(" Standard instr "));
 		end
 		let controlResult = execControl32(dInst.inst, rv1, rv2, imm, pc);
 		let nextPc = controlResult.nextPC;
@@ -157,14 +131,11 @@ module mkmulticycle(RVIfc);
 		pc <= nextPc;
 		rvd <= data;
 
-        labelKonataLeft(lfh,current_id, $format(" ALU output: %x" , data));
 		mem_business <= MemBusiness { isUnsigned : unpack(isUnsigned), size : size, offset : offset, mmio: mmio};
 		state <= Writeback;
     endrule
 
     rule writeback if (state == Writeback && !starting);
-		writebackKonata(lfh,current_id);
-        retired.enq(current_id);
 		state <= Fetch;
         let data = rvd;
         let fields = getInstFields(dInst.inst);
@@ -199,17 +170,6 @@ module mkmulticycle(RVIfc);
 		end
     endrule
 
-    rule administrative_konata_commit;
-        retired.deq();
-        let f = retired.first();
-		commitKonata(lfh, f, commit_id);
-    endrule
-
-    rule administrative_konata_flush;
-        squashed.deq();
-        let f = squashed.first();
-		squashKonata(lfh, f);
-    endrule
 
     method ActionValue#(Mem) getIReq();
 		toImem.deq();

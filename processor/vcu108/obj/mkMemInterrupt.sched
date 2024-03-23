@@ -1,0 +1,52 @@
+=== Generated schedule for mkMemInterrupt ===
+
+Method schedule
+---------------
+Method: tlp_request_get
+Ready signal: tlpOutFifo.i_notEmpty
+Conflict-free: tlp_response_put, interruptRequest_put, interruptTrace_get
+Conflicts: tlp_request_get
+ 
+Method: tlp_response_put
+Ready signal: True
+Conflict-free: tlp_request_get,
+	       tlp_response_put,
+	       interruptRequest_put,
+	       interruptTrace_get
+ 
+Method: interruptRequest_put
+Ready signal: interruptRequestFifo.i_notFull &&
+	      ((! interruptTraceFifo.notFull) || interruptTraceFifo.i_notFull)
+Conflict-free: tlp_request_get, tlp_response_put
+Sequenced before: interruptTrace_get
+Conflicts: interruptRequest_put
+ 
+Method: interruptTrace_get
+Ready signal: interruptTraceFifo.i_notEmpty
+Conflict-free: tlp_request_get, tlp_response_put
+Sequenced after: interruptRequest_put
+Conflicts: interruptTrace_get
+ 
+Rule schedule
+-------------
+Rule: interruptTlpOut
+Predicate: interruptRequestFifo.i_notEmpty &&
+	   ((interruptRequestFifo.first[1] &&
+	     interruptRequestFifo.first[0]) ||
+	    tlpOutFifo.i_notFull) &&
+	   interruptRequestFifo.notEmpty && (! interruptSecondHalf[32])
+Blocking rules: (none)
+ 
+Rule: interruptTlpDataOut
+Predicate: interruptRequestFifo.i_notEmpty && tlpOutFifo.i_notFull &&
+	   interruptSecondHalf[32]
+Blocking rules: (none)
+ 
+Logical execution order: tlp_request_get,
+			 tlp_response_put,
+			 interruptTlpOut,
+			 interruptRequest_put,
+			 interruptTrace_get,
+			 interruptTlpDataOut
+
+==============================================

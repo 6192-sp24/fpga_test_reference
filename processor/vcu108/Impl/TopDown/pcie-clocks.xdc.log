@@ -1,0 +1,82 @@
+Parsing XDC File [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:3]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:3]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk1_300_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:5]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk1_300_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:5]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk2_300_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:6]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk2_300_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:6]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk_300_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:8]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk_300_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:8]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk1_250_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:9]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk1_250_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:9]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk2_250_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:10]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk2_250_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:10]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+INFO: [Timing 38-2] Deriving generated clocks [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:18]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:18]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:18]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:19]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:19]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:19]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:24]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:24]
+WARNING: [Vivado 12-627] No clocks matched 'sys_clk'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:24]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:24]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_clocks userclk2]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:24]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:25]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:25]
+WARNING: [Vivado 12-627] No clocks matched 'sys_clk'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:25]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:25]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_clocks sys_clk]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:25]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:27]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:27]
+WARNING: [Vivado 12-627] No clocks matched 'clk_pll_i'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:27]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:27]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_clocks userclk2]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:27]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:28]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:28]
+WARNING: [Vivado 12-627] No clocks matched 'clk_pll_i'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:28]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:28]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_clocks clk_pll_i]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:28]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc]

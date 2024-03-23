@@ -1,0 +1,24 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date              : Sat Mar 23 00:10:02 2024
+| Host              : audacity running 64-bit Ubuntu 18.04.6 LTS
+| Command           : report_datasheet -file ./Impl/TopDown/top-post-route_datasheet.txt
+| Design            : mkPcieTop
+| Device            : xcvu095-ffva2104
+| Speed File        : -2  PRODUCTION 1.26 12-04-2018
+| Temperature Grade : E
+-----------------------------------------------------------------------------------------
+
+Data Sheet Report
+
+Setup between Clocks
+
+-----------+-------------+---------------+---------+---------------+---------+---------------+---------+---------------+---------+
+Source     | Destination |  Src:Rise     | Process |  Src:Rise     | Process |  Src:Fall     | Process |  Src:Fall     | Process |
+Clock      | Clock       | Dest:Rise(ns) | Corner  | Dest:Fall(ns) | Corner  | Dest:Rise(ns) | Corner  | Dest:Fall(ns) | Corner  |
+-----------+-------------+---------------+---------+---------------+---------+---------------+---------+---------------+---------+
+pci_refclk | pci_refclk  |         3.931 | SLOW    |               |         |               |         |               |         |
+-----------+-------------+---------------+---------+---------------+---------+---------------+---------+---------------+---------+
+
+
