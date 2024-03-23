@@ -1241,12 +1241,7 @@ Predicate: (lEcho_p_rv_core_dInst[6] ||
 Blocking rules: (none)
  
 Rule: lEcho_p_rv_core_writeback
-Predicate: (lEcho_p_rv_core_dInst[6] ||
-	    (! (lEcho_p_rv_core_dInst[4:3] == 2'b0)) ||
-	    (lEcho_p_rv_core_mem_business[0]
-	     ? lEcho_p_rv_core_fromMMIO_rv.port1__read[68]
-	     : lEcho_p_rv_core_fromDmem_rv.port1__read[68])) &&
-	   ((! lEcho_p_rv_core_dInst[36]) ||
+Predicate: ((! lEcho_p_rv_core_dInst[36]) ||
 	    lEcho_p_rv_core_dInst[6] ||
 	    (! (lEcho_p_rv_core_dInst[4:3] == 2'b0)) ||
 	    (((lEcho_p_rv_core_mem_business[5:3] == 3'b0) ||
@@ -1260,6 +1255,11 @@ Predicate: (lEcho_p_rv_core_dInst[6] ||
 		(lEcho_p_rv_core_mem_business[0]
 		 ? lEcho_p_rv_core_fromMMIO_rv.port1__read[68]
 		 : lEcho_p_rv_core_fromDmem_rv.port1__read[68])))) &&
+	   (lEcho_p_rv_core_dInst[6] ||
+	    (! (lEcho_p_rv_core_dInst[4:3] == 2'b0)) ||
+	    (lEcho_p_rv_core_mem_business[0]
+	     ? lEcho_p_rv_core_fromMMIO_rv.port1__read[68]
+	     : lEcho_p_rv_core_fromDmem_rv.port1__read[68])) &&
 	   (lEcho_p_rv_core_state == 2'd3) && (! lEcho_p_rv_core_starting)
 Blocking rules: (none)
  

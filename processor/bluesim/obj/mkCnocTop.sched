@@ -1,0 +1,703 @@
+=== Generated schedule for mkCnocTop ===
+
+Method schedule
+---------------
+Method: requests_0_id
+Ready signal: True
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: requests_0_message_enq
+Ready signal: lEchoRequestInputNoc_fifoMsgSink.i_notFull
+Conflict-free: requests_0_id,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+Sequenced after: requests_0_message_notFull
+Conflicts: requests_0_message_enq
+ 
+Method: requests_0_message_notFull
+Ready signal: True
+Conflict-free: requests_0_id,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+Sequenced before: requests_0_message_enq
+ 
+Method: indications_0_id
+Ready signal: True
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: indications_0_message_first
+Ready signal: lEchoIndicationOutputNoc_fifoMsgSource.i_notEmpty
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+Sequenced before: indications_0_message_deq
+ 
+Method: indications_0_message_deq
+Ready signal: lEchoIndicationOutputNoc_fifoMsgSource.i_notEmpty
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+Sequenced after: indications_0_message_first, indications_0_message_notEmpty
+Conflicts: indications_0_message_deq
+ 
+Method: indications_0_message_notEmpty
+Ready signal: True
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+Sequenced before: indications_0_message_deq
+ 
+Method: readers_0_readReq_get
+Ready signal: False
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: readers_0_readData_put
+Ready signal: False
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: readers_1_readReq_get
+Ready signal: False
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: readers_1_readData_put
+Ready signal: False
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_0_writeReq_get
+Ready signal: False
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_0_writeData_get
+Ready signal: False
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_0_writeDone_put
+Ready signal: False
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_1_writeReq_get
+Ready signal: False
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_1_writeData_get
+Ready signal: False
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Method: writers_1_writeDone_put
+Ready signal: False
+Conflict-free: requests_0_id,
+	       requests_0_message_enq,
+	       requests_0_message_notFull,
+	       indications_0_id,
+	       indications_0_message_first,
+	       indications_0_message_deq,
+	       indications_0_message_notEmpty,
+	       readers_0_readReq_get,
+	       readers_0_readData_put,
+	       readers_1_readReq_get,
+	       readers_1_readData_put,
+	       writers_0_writeReq_get,
+	       writers_0_writeData_get,
+	       writers_0_writeDone_put,
+	       writers_1_writeReq_get,
+	       writers_1_writeData_get,
+	       writers_1_writeDone_put
+ 
+Rule schedule
+-------------
+Rule: lEcho_p_bram_serverAdapterA_outData_setFirstCore
+Predicate: lEcho_p_bram_serverAdapterA_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterA_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_outData_setFirstEnq
+Predicate: (! lEcho_p_bram_serverAdapterA_outDataCore.notEmpty) &&
+	   lEcho_p_bram_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_outData_enqOnly
+Predicate: lEcho_p_bram_serverAdapterA_outDataCore.i_notFull &&
+	   (! lEcho_p_bram_serverAdapterA_outData_deqCalled.whas) &&
+	   lEcho_p_bram_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_outData_deqOnly
+Predicate: lEcho_p_bram_serverAdapterA_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterA_outData_deqCalled.whas &&
+	   (! lEcho_p_bram_serverAdapterA_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_outData_enqAndDeq
+Predicate: lEcho_p_bram_serverAdapterA_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterA_outDataCore.i_notFull &&
+	   lEcho_p_bram_serverAdapterA_outData_deqCalled.whas &&
+	   lEcho_p_bram_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_cnt_finalAdd
+Predicate: lEcho_p_bram_serverAdapterA_cnt_1.whas ||
+	   lEcho_p_bram_serverAdapterA_cnt_2.whas ||
+	   lEcho_p_bram_serverAdapterA_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_stageReadResponseAlways
+Predicate: lEcho_p_bram_serverAdapterA_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_moveToOutFIFO
+Predicate: ((! lEcho_p_bram_serverAdapterA_s1[0]) ||
+	    lEcho_p_bram_serverAdapterA_outDataCore.notFull) &&
+	   lEcho_p_bram_serverAdapterA_s1[1]
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterA_overRun
+Predicate: lEcho_p_bram_serverAdapterA_s1[1] &&
+	   (! lEcho_p_bram_serverAdapterA_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_outData_setFirstCore
+Predicate: lEcho_p_bram_serverAdapterB_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterB_outDataCore.notEmpty
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_outData_setFirstEnq
+Predicate: (! lEcho_p_bram_serverAdapterB_outDataCore.notEmpty) &&
+	   lEcho_p_bram_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_outData_enqOnly
+Predicate: lEcho_p_bram_serverAdapterB_outDataCore.i_notFull &&
+	   (! lEcho_p_bram_serverAdapterB_outData_deqCalled.whas) &&
+	   lEcho_p_bram_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_outData_deqOnly
+Predicate: lEcho_p_bram_serverAdapterB_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterB_outData_deqCalled.whas &&
+	   (! lEcho_p_bram_serverAdapterB_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_outData_enqAndDeq
+Predicate: lEcho_p_bram_serverAdapterB_outDataCore.i_notEmpty &&
+	   lEcho_p_bram_serverAdapterB_outDataCore.i_notFull &&
+	   lEcho_p_bram_serverAdapterB_outData_deqCalled.whas &&
+	   lEcho_p_bram_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_cnt_finalAdd
+Predicate: lEcho_p_bram_serverAdapterB_cnt_1.whas ||
+	   lEcho_p_bram_serverAdapterB_cnt_2.whas ||
+	   lEcho_p_bram_serverAdapterB_cnt_3.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_s1__dreg_update
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_stageReadResponseAlways
+Predicate: lEcho_p_bram_serverAdapterB_writeWithResp.whas
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_moveToOutFIFO
+Predicate: ((! lEcho_p_bram_serverAdapterB_s1[0]) ||
+	    lEcho_p_bram_serverAdapterB_outDataCore.notFull) &&
+	   lEcho_p_bram_serverAdapterB_s1[1]
+Blocking rules: (none)
+ 
+Rule: lEcho_p_bram_serverAdapterB_overRun
+Predicate: lEcho_p_bram_serverAdapterB_s1[1] &&
+	   (! lEcho_p_bram_serverAdapterB_outDataCore.notFull)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_rv_core_fetch
+Predicate: (! lEcho_p_rv_core_toImem_rv.port0__read[68]) &&
+	   (lEcho_p_rv_core_state == 2'd0) && (! lEcho_p_rv_core_starting)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_rv_core_decode
+Predicate: lEcho_p_rv_core_fromImem_rv.port1__read[68] &&
+	   (lEcho_p_rv_core_state == 2'd1) && (! lEcho_p_rv_core_starting)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_rv_core_execute
+Predicate: (lEcho_p_rv_core_dInst[6] ||
+	    (! (lEcho_p_rv_core_dInst[4:3] == 2'b0)) ||
+	    ((((lEcho_p_rv_core_rv1 +
+		((lEcho_p_rv_core_dInst[35] &&
+		  (lEcho_p_rv_core_dInst[34:32] == 3'd0))
+		 ? sext lEcho_p_rv_core_dInst[31:20]
+		 : ((lEcho_p_rv_core_dInst[35] &&
+		     (lEcho_p_rv_core_dInst[34:32] == 3'd1))
+		    ? sext {lEcho_p_rv_core_dInst[31:25], lEcho_p_rv_core_dInst[11:7]}
+		    : ((lEcho_p_rv_core_dInst[35] &&
+			(lEcho_p_rv_core_dInst[34:32] == 3'd2))
+		       ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[7], lEcho_p_rv_core_dInst[30:25], lEcho_p_rv_core_dInst[11:8], 1'b0}
+		       : ((lEcho_p_rv_core_dInst[35] &&
+			   (lEcho_p_rv_core_dInst[34:32] == 3'd3))
+			  ? {lEcho_p_rv_core_dInst[31:12], 12'b0}
+			  : ((lEcho_p_rv_core_dInst[35] &&
+			      (lEcho_p_rv_core_dInst[34:32] == 3'd4))
+			     ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[19:12], lEcho_p_rv_core_dInst[20], lEcho_p_rv_core_dInst[30:21], 1'b0}
+			     : 32'd0))))))[31:2] ==
+	       30'd1006649340) ||
+	      ((lEcho_p_rv_core_rv1 +
+		((lEcho_p_rv_core_dInst[35] &&
+		  (lEcho_p_rv_core_dInst[34:32] == 3'd0))
+		 ? sext lEcho_p_rv_core_dInst[31:20]
+		 : ((lEcho_p_rv_core_dInst[35] &&
+		     (lEcho_p_rv_core_dInst[34:32] == 3'd1))
+		    ? sext {lEcho_p_rv_core_dInst[31:25], lEcho_p_rv_core_dInst[11:7]}
+		    : ((lEcho_p_rv_core_dInst[35] &&
+			(lEcho_p_rv_core_dInst[34:32] == 3'd2))
+		       ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[7], lEcho_p_rv_core_dInst[30:25], lEcho_p_rv_core_dInst[11:8], 1'b0}
+		       : ((lEcho_p_rv_core_dInst[35] &&
+			   (lEcho_p_rv_core_dInst[34:32] == 3'd3))
+			  ? {lEcho_p_rv_core_dInst[31:12], 12'b0}
+			  : ((lEcho_p_rv_core_dInst[35] &&
+			      (lEcho_p_rv_core_dInst[34:32] == 3'd4))
+			     ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[19:12], lEcho_p_rv_core_dInst[20], lEcho_p_rv_core_dInst[30:21], 1'b0}
+			     : 32'd0))))))[31:2] ==
+	       30'd1006649341) ||
+	      ((lEcho_p_rv_core_rv1 +
+		((lEcho_p_rv_core_dInst[35] &&
+		  (lEcho_p_rv_core_dInst[34:32] == 3'd0))
+		 ? sext lEcho_p_rv_core_dInst[31:20]
+		 : ((lEcho_p_rv_core_dInst[35] &&
+		     (lEcho_p_rv_core_dInst[34:32] == 3'd1))
+		    ? sext {lEcho_p_rv_core_dInst[31:25], lEcho_p_rv_core_dInst[11:7]}
+		    : ((lEcho_p_rv_core_dInst[35] &&
+			(lEcho_p_rv_core_dInst[34:32] == 3'd2))
+		       ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[7], lEcho_p_rv_core_dInst[30:25], lEcho_p_rv_core_dInst[11:8], 1'b0}
+		       : ((lEcho_p_rv_core_dInst[35] &&
+			   (lEcho_p_rv_core_dInst[34:32] == 3'd3))
+			  ? {lEcho_p_rv_core_dInst[31:12], 12'b0}
+			  : ((lEcho_p_rv_core_dInst[35] &&
+			      (lEcho_p_rv_core_dInst[34:32] == 3'd4))
+			     ? sext {lEcho_p_rv_core_dInst[31], lEcho_p_rv_core_dInst[19:12], lEcho_p_rv_core_dInst[20], lEcho_p_rv_core_dInst[30:21], 1'b0}
+			     : 32'd0))))))[31:2] ==
+	       30'd1006649342))
+	     ? ! lEcho_p_rv_core_toMMIO_rv.port0__read[68]
+	     : (! lEcho_p_rv_core_toDmem_rv.port0__read[68]))) &&
+	   (lEcho_p_rv_core_state == 2'd2) && (! lEcho_p_rv_core_starting)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_rv_core_writeback
+Predicate: ((! lEcho_p_rv_core_dInst[36]) ||
+	    lEcho_p_rv_core_dInst[6] ||
+	    (! (lEcho_p_rv_core_dInst[4:3] == 2'b0)) ||
+	    (((lEcho_p_rv_core_mem_business[5:3] == 3'b0) ||
+	      (lEcho_p_rv_core_mem_business[5:3] == 3'b1) ||
+	      (lEcho_p_rv_core_mem_business[5:3] == 3'b100) ||
+	      (lEcho_p_rv_core_mem_business[5:3] == 3'b101))
+	     ? lEcho_p_rv_core_mem_business[0]
+	       ? lEcho_p_rv_core_fromMMIO_rv.port1__read[68]
+	       : lEcho_p_rv_core_fromDmem_rv.port1__read[68]
+	     : ((! (lEcho_p_rv_core_mem_business[5:3] == 3'b10)) ||
+		(lEcho_p_rv_core_mem_business[0]
+		 ? lEcho_p_rv_core_fromMMIO_rv.port1__read[68]
+		 : lEcho_p_rv_core_fromDmem_rv.port1__read[68])))) &&
+	   (lEcho_p_rv_core_dInst[6] ||
+	    (! (lEcho_p_rv_core_dInst[4:3] == 2'b0)) ||
+	    (lEcho_p_rv_core_mem_business[0]
+	     ? lEcho_p_rv_core_fromMMIO_rv.port1__read[68]
+	     : lEcho_p_rv_core_fromDmem_rv.port1__read[68])) &&
+	   (lEcho_p_rv_core_state == 2'd3) && (! lEcho_p_rv_core_starting)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_tic
+Predicate: True
+Blocking rules: (none)
+ 
+Rule: lEcho_p_requestI
+Predicate: lEcho_p_rv_core_toImem_rv.port1__read[68] &&
+	   (lEcho_p_bram_serverAdapterB_cnt .< 3'd3)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_responseI
+Predicate: (lEcho_p_bram_serverAdapterB_outDataCore.notEmpty ||
+	    lEcho_p_bram_serverAdapterB_outData_enqData.whas) &&
+	   lEcho_p_bram_serverAdapterB_outData_outData.whas &&
+	   (! lEcho_p_rv_core_fromImem_rv.port0__read[68])
+Blocking rules: (none)
+ 
+Rule: lEcho_p_requestD
+Predicate: lEcho_p_rv_core_toDmem_rv.port1__read[68] &&
+	   (lEcho_p_bram_serverAdapterA_cnt .< 3'd3)
+Blocking rules: (none)
+ 
+Rule: lEcho_p_responseD
+Predicate: (lEcho_p_bram_serverAdapterA_outDataCore.notEmpty ||
+	    lEcho_p_bram_serverAdapterA_outData_enqData.whas) &&
+	   lEcho_p_bram_serverAdapterA_outData_outData.whas &&
+	   (! lEcho_p_rv_core_fromDmem_rv.port0__read[68])
+Blocking rules: (none)
+ 
+Rule: lEcho_p_requestMMIO
+Predicate: lEcho_p_rv_core_toMMIO_rv.port1__read[68] &&
+	   lEcho_p_mmioreq.i_notFull
+Blocking rules: (none)
+ 
+Rule: lEcho_p_responseMMIO
+Predicate: lEcho_p_mmioreq.i_notEmpty &&
+	   (! lEcho_p_rv_core_fromMMIO_rv.port0__read[68])
+Blocking rules: (none)
+ 
+Rule: lEcho_heard
+Predicate: lEchoIndicationOutput.RDY_ifc_heard && lEcho_delay.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: lEcho_heard2
+Predicate: lEchoIndicationOutput.RDY_ifc_heard2 && lEcho_delay2.i_notEmpty
+Blocking rules: (none)
+ 
+Rule: handle_say_request
+Predicate: lEchoRequestInput.RDY_pipes_say_PipeOut_deq &&
+	   lEcho_delay.i_notFull
+Blocking rules: (none)
+ 
+Rule: handle_say2_request
+Predicate: lEchoRequestInput.RDY_pipes_say2_PipeOut_first &&
+	   lEchoRequestInput.RDY_pipes_say2_PipeOut_deq &&
+	   lEcho_delay2.i_notFull
+Blocking rules: (none)
+ 
+Rule: handle_setLeds_request
+Predicate: lEchoRequestInput.RDY_pipes_setLeds_PipeOut_deq
+Blocking rules: (none)
+ 
+Rule: lEchoIndicationOutputNoc_sendHeader
+Predicate: lEchoIndicationOutputNoc_fifoMsgSource.i_notFull &&
+	   (! lEchoIndicationOutputNoc_bpState) &&
+	   (lEchoIndicationOutput.portalIfc_indications_0_notEmpty ||
+	    lEchoIndicationOutput.portalIfc_indications_1_notEmpty)
+Blocking rules: (none)
+ 
+Rule: lEchoIndicationOutputNoc_sendMessage
+Predicate: lEchoIndicationOutputNoc_fifoMsgSource.i_notFull &&
+	   case lEchoIndicationOutputNoc_methodIdReg of
+	   8'd0 -> lEchoIndicationOutput.RDY_portalIfc_indications_0_deq
+	   8'd1 -> lEchoIndicationOutput.RDY_portalIfc_indications_1_deq
+	   _ -> 1'd1 &&
+	   case lEchoIndicationOutputNoc_methodIdReg of
+	   8'd0 -> lEchoIndicationOutput.RDY_portalIfc_indications_0_first
+	   8'd1 -> lEchoIndicationOutput.RDY_portalIfc_indications_1_first
+	   _ -> 1'd1 &&
+	   lEchoIndicationOutputNoc_bpState
+Blocking rules: (none)
+ 
+Rule: lEchoRequestInputNoc_receiveMessageHeader
+Predicate: lEchoRequestInputNoc_fifoMsgSink.i_notEmpty &&
+	   (! lEchoRequestInputNoc_bpState)
+Blocking rules: (none)
+ 
+Rule: lEchoRequestInputNoc_receiveMessage
+Predicate: lEchoRequestInputNoc_fifoMsgSink.i_notEmpty &&
+	   case lEchoRequestInputNoc_methodIdReg of
+	   8'd0 -> lEchoRequestInput.RDY_portalIfc_requests_0_enq
+	   8'd1 -> lEchoRequestInput.RDY_portalIfc_requests_1_enq
+	   8'd2 -> lEchoRequestInput.RDY_portalIfc_requests_2_enq
+	   _ -> 1'd1 &&
+	   lEchoRequestInputNoc_bpState
+Blocking rules: (none)
+ 
+Logical execution order: requests_0_id,
+			 requests_0_message_notFull,
+			 requests_0_message_enq,
+			 indications_0_id,
+			 indications_0_message_first,
+			 indications_0_message_notEmpty,
+			 indications_0_message_deq,
+			 readers_0_readReq_get,
+			 readers_0_readData_put,
+			 readers_1_readReq_get,
+			 readers_1_readData_put,
+			 writers_0_writeReq_get,
+			 writers_0_writeData_get,
+			 writers_0_writeDone_put,
+			 writers_1_writeReq_get,
+			 writers_1_writeData_get,
+			 writers_1_writeDone_put,
+			 lEcho_p_tic,
+			 lEcho_p_responseMMIO,
+			 lEcho_p_bram_serverAdapterA_moveToOutFIFO,
+			 lEcho_p_bram_serverAdapterA_overRun,
+			 lEcho_p_bram_serverAdapterA_outData_setFirstCore,
+			 lEcho_p_bram_serverAdapterA_outData_setFirstEnq,
+			 lEcho_p_responseD,
+			 lEcho_p_bram_serverAdapterA_outData_enqOnly,
+			 lEcho_p_bram_serverAdapterA_outData_deqOnly,
+			 lEcho_p_bram_serverAdapterA_outData_enqAndDeq,
+			 lEcho_p_bram_serverAdapterB_moveToOutFIFO,
+			 lEcho_p_bram_serverAdapterB_overRun,
+			 lEcho_p_bram_serverAdapterB_outData_setFirstCore,
+			 lEcho_p_bram_serverAdapterB_outData_setFirstEnq,
+			 lEcho_p_responseI,
+			 lEcho_p_bram_serverAdapterB_outData_enqOnly,
+			 lEcho_p_bram_serverAdapterB_outData_deqOnly,
+			 lEcho_p_bram_serverAdapterB_outData_enqAndDeq,
+			 lEcho_p_rv_core_fetch,
+			 lEcho_p_requestI,
+			 lEcho_p_bram_serverAdapterB_stageReadResponseAlways,
+			 lEcho_p_bram_serverAdapterB_cnt_finalAdd,
+			 lEcho_p_bram_serverAdapterB_s1__dreg_update,
+			 lEcho_p_rv_core_decode,
+			 lEcho_p_rv_core_execute,
+			 lEcho_p_requestD,
+			 lEcho_p_bram_serverAdapterA_stageReadResponseAlways,
+			 lEcho_p_bram_serverAdapterA_cnt_finalAdd,
+			 lEcho_p_bram_serverAdapterA_s1__dreg_update,
+			 lEcho_p_rv_core_writeback,
+			 lEchoIndicationOutputNoc_sendHeader,
+			 lEcho_heard,
+			 lEcho_heard2,
+			 lEchoIndicationOutputNoc_sendMessage,
+			 lEchoRequestInputNoc_receiveMessageHeader,
+			 lEchoRequestInputNoc_receiveMessage,
+			 handle_say_request,
+			 handle_say2_request,
+			 handle_setLeds_request,
+			 lEcho_p_requestMMIO
+
+=========================================

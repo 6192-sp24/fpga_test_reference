@@ -2311,96 +2311,101 @@ module mkConnectalTop(CLK,
   wire MUX_lEcho_p_rv_core_pc_write_1__SEL_1;
 
   // remaining internal signals
-  reg [31 : 0] rd_val__h11214,
-	       rs1__h8457,
-	       rs2__h8458,
-	       v__h11573,
-	       v__h16829,
-	       v__h16980,
-	       v__h20164,
-	       x1_avValue_data__h17159;
+  reg [31 : 0] rd_val__h11526,
+	       rs1__h8625,
+	       rs2__h8626,
+	       v__h11885,
+	       v__h17363,
+	       v__h17514,
+	       v__h20698,
+	       x1_avValue_data__h17693;
   reg [3 : 0] CASE_lEcho_p_rv_core_dInst_BITS_13_TO_12_0b0_0_ETC__q2;
-  reg [2 : 0] CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16;
-  reg CASE_ctrl_mux_rv_rs_first__089_0_memslave_0_re_ETC___d1100,
+  reg [2 : 0] CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15;
+  reg CASE_ctrl_mux_rv_rs_first__200_0_memslave_0_re_ETC___d1211,
       CASE_ctrl_mux_rv_wsD_OUT_0_memslave_0_doneFif_ETC__q7,
-      CASE_ctrl_mux_rv_ws_first__059_0_memslave_0_re_ETC___d1070,
+      CASE_ctrl_mux_rv_ws_first__170_0_memslave_0_re_ETC___d1181,
+      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q10,
       CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q11,
-      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q12,
-      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q13,
-      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q14,
-      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15,
-      CASE_lEcho_p_rv_core_mem_business_BITS_5_TO_3__ETC__q10,
-      CASE_lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_ETC__q3,
+      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16,
+      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q17,
+      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q18,
+      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q19,
+      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q20,
+      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q8,
+      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q9,
+      CASE_lEcho_p_rv_core_mem_business_BITS_5_TO_3__ETC__q14,
+      CASE_lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_ETC__q3,
       CASE_memslave_0_rsD_OUT_0_lEchoIndicationOutp_ETC__q5,
       CASE_memslave_0_rsD_OUT_0_lEchoIndicationOutp_ETC__q6,
       CASE_memslave_1_wsD_OUT_0_lEchoRequestInputR_ETC__q4,
-      IF_lEcho_p_rv_core_dInst_22_BITS_14_TO_12_23_E_ETC___d439,
-      x__h17202,
-      x__h20298;
-  wire [31 : 0] IF_lEcho_p_rv_core_dInst_22_BIT_35_29_AND_lEch_ETC___d364,
-		_theResult___snd__h10817,
-		_theResult___snd__h10883,
-		_theResult___snd__h10902,
-		alu_src2__h11211,
-		data__h9660,
-		imm__h9658,
-		incPC__h10719,
-		lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367,
-		mem_data__h11845,
-		mem_data__h11846,
-		nextPC__h10819,
-		nextPC__h10885,
-		nextPc__h10702,
-		v___1__h16913,
-		v___1__h20151,
-		v___1__h20243,
-		v__h11517,
-		x1_avValue_data__h17175,
-		x__h10534,
-		x__h10535,
-		x__h12970,
-		x__h13367;
-  wire [20 : 0] x__h10130;
-  wire [15 : 0] mem_data1846_BITS_15_TO_0__q9;
-  wire [12 : 0] x__h9969;
-  wire [11 : 0] lEcho_p_rv_core_dInst_BITS_31_TO_20__q1, x__h9900;
-  wire [9 : 0] burstCount___1__h14997,
-	       burstCount___1__h15548,
-	       burstCount___1__h17864,
-	       burstCount___1__h18415,
-	       burstCount__h14966,
-	       burstCount__h15517,
-	       burstCount__h17833,
-	       burstCount__h18384;
-  wire [7 : 0] mem_data1846_BITS_7_TO_0__q8;
-  wire [6 : 0] x__h25214, x__h25614;
-  wire [4 : 0] addr__h14964,
-	       addr__h15515,
-	       addr__h17831,
-	       addr__h18382,
-	       shift_amount__h9750,
-	       x__h11894;
-  wire [3 : 0] req_byte_en__h10343;
+      IF_lEcho_p_rv_core_dInst_05_BITS_14_TO_12_24_E_ETC___d540,
+      IF_lEcho_p_rv_core_fromImem_rv_port1__read__30_ETC___d216,
+      x__h17736,
+      x__h20832;
+  wire [31 : 0] IF_lEcho_p_rv_core_dInst_05_BIT_35_12_AND_lEch_ETC___d447,
+		_theResult___snd__h11129,
+		_theResult___snd__h11195,
+		_theResult___snd__h11214,
+		alu_src2__h11523,
+		data__h9996,
+		imm__h9994,
+		incPC__h11031,
+		lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450,
+		mem_data__h12157,
+		mem_data__h12158,
+		nextPC__h11131,
+		nextPC__h11197,
+		nextPc__h11014,
+		v___1__h17447,
+		v___1__h20685,
+		v___1__h20777,
+		v__h11829,
+		value__h10754,
+		value__h10756,
+		x1_avValue_data__h17709,
+		x__h13504,
+		x__h13901;
+  wire [20 : 0] x__h10414;
+  wire [15 : 0] mem_data2158_BITS_15_TO_0__q13;
+  wire [12 : 0] x__h10253;
+  wire [11 : 0] lEcho_p_rv_core_dInst_BITS_31_TO_20__q1, x__h10184;
+  wire [9 : 0] burstCount___1__h15531,
+	       burstCount___1__h16082,
+	       burstCount___1__h18398,
+	       burstCount___1__h18949,
+	       burstCount__h15500,
+	       burstCount__h16051,
+	       burstCount__h18367,
+	       burstCount__h18918;
+  wire [7 : 0] mem_data2158_BITS_7_TO_0__q12;
+  wire [6 : 0] x__h25748, x__h26148;
+  wire [4 : 0] addr__h15498,
+	       addr__h16049,
+	       addr__h18365,
+	       addr__h18916,
+	       shift_amount__h10064,
+	       x__h12206;
+  wire [3 : 0] req_byte_en__h10561;
   wire [2 : 0] lEcho_p_bram_serverAdapterA_cnt_6_PLUS_IF_lEch_ETC___d32,
 	       lEcho_p_bram_serverAdapterB_cnt_5_PLUS_IF_lEch_ETC___d91;
-  wire IF_lEcho_p_rv_core_mem_business_87_BIT_0_88_TH_ETC___d493,
-       IF_memslave_0_fifoReadAddrGenerator_isFirstReg_ETC___d718,
-       IF_memslave_0_fifoWriteAddrGenerator_isFirstRe_ETC___d740,
-       IF_memslave_1_fifoReadAddrGenerator_isFirstReg_ETC___d851,
-       IF_memslave_1_fifoWriteAddrGenerator_isFirstRe_ETC___d873,
-       NOT_IF_lEcho_p_rv_core_dInst_22_BITS_6_TO_4_13_ETC___d446,
-       NOT_ctrl_mux_rv_req_ars_first__104_BITS_15_TO__ETC___d1108,
-       NOT_ctrl_mux_rv_req_aws_first__074_BITS_15_TO__ETC___d1078,
-       NOT_memslave_0_fifoReadAddrGenerator_addrBeatF_ETC___d778,
-       lEcho_p_rv_core_dInst_22_BIT_6_23_OR_NOT_lEcho_ETC___d381,
-       lEcho_p_rv_core_dInst_22_BIT_6_23_OR_NOT_lEcho_ETC___d509,
-       lEcho_p_rv_core_rv1_28_EQ_lEcho_p_rv_core_rv2_02___d425,
-       lEcho_p_rv_core_rv1_28_SLT_lEcho_p_rv_core_rv2_02___d429,
-       lEcho_p_rv_core_rv1_28_ULT_lEcho_p_rv_core_rv2_02___d433,
-       memslave_1_fifoWriteAddrGenerator_addrBeatFifo_ETC___d909,
-       memslave_1_ws_i_notEmpty__78_AND_CASE_memslave_ETC___d906,
-       x__h11365,
-       x__h11372;
+  wire IF_lEcho_p_rv_core_mem_business_88_BIT_0_97_TH_ETC___d602,
+       IF_memslave_0_fifoReadAddrGenerator_isFirstReg_ETC___d829,
+       IF_memslave_0_fifoWriteAddrGenerator_isFirstRe_ETC___d851,
+       IF_memslave_1_fifoReadAddrGenerator_isFirstReg_ETC___d962,
+       IF_memslave_1_fifoWriteAddrGenerator_isFirstRe_ETC___d984,
+       NOT_IF_lEcho_p_rv_core_dInst_05_BITS_6_TO_4_14_ETC___d547,
+       NOT_ctrl_mux_rv_req_ars_first__215_BITS_15_TO__ETC___d1219,
+       NOT_ctrl_mux_rv_req_aws_first__185_BITS_15_TO__ETC___d1189,
+       NOT_memslave_0_fifoReadAddrGenerator_addrBeatF_ETC___d889,
+       lEcho_p_rv_core_dInst_05_BIT_6_06_OR_NOT_lEcho_ETC___d464,
+       lEcho_p_rv_core_dInst_05_BIT_6_06_OR_NOT_lEcho_ETC___d607,
+       lEcho_p_rv_core_rv1_11_EQ_lEcho_p_rv_core_rv2_03___d526,
+       lEcho_p_rv_core_rv1_11_SLT_lEcho_p_rv_core_rv2_03___d530,
+       lEcho_p_rv_core_rv1_11_ULT_lEcho_p_rv_core_rv2_03___d534,
+       memslave_1_fifoWriteAddrGenerator_addrBeatFifo_ETC___d1020,
+       memslave_1_ws_i_notEmpty__89_AND_CASE_memslave_ETC___d1017,
+       x__h11677,
+       x__h11684;
 
   // action method slave_read_server_readReq_put
   assign RDY_slave_read_server_readReq_put =
@@ -2795,7 +2800,7 @@ module mkConnectalTop(CLK,
 					   .EMPTY_N(lEcho_delay2_EMPTY_N));
 
   // submodule lEcho_p_bram_memory
-  BRAM2BELoad #(.FILENAME("mem.vmh"),
+  BRAM2BELoad #(.FILENAME("/home/seshan/fpga_test_reference/processor/mem.vmh"),
 		.PIPELINED(1'd0),
 		.ADDR_WIDTH(32'd12),
 		.DATA_WIDTH(32'd32),
@@ -3190,17 +3195,17 @@ module mkConnectalTop(CLK,
 
   // rule RL_lEcho_p_rv_core_execute
   assign WILL_FIRE_RL_lEcho_p_rv_core_execute =
-	     lEcho_p_rv_core_dInst_22_BIT_6_23_OR_NOT_lEcho_ETC___d381 &&
+	     lEcho_p_rv_core_dInst_05_BIT_6_06_OR_NOT_lEcho_ETC___d464 &&
 	     lEcho_p_rv_core_state == 2'd2 &&
 	     !lEcho_p_rv_core_starting ;
 
   // rule RL_lEcho_p_rv_core_writeback
   assign WILL_FIRE_RL_lEcho_p_rv_core_writeback =
+	     (!lEcho_p_rv_core_dInst[36] ||
+	      lEcho_p_rv_core_dInst_05_BIT_6_06_OR_NOT_lEcho_ETC___d607) &&
 	     (lEcho_p_rv_core_dInst[6] ||
 	      lEcho_p_rv_core_dInst[4:3] != 2'b0 ||
-	      IF_lEcho_p_rv_core_mem_business_87_BIT_0_88_TH_ETC___d493) &&
-	     (!lEcho_p_rv_core_dInst[36] ||
-	      lEcho_p_rv_core_dInst_22_BIT_6_23_OR_NOT_lEcho_ETC___d509) &&
+	      IF_lEcho_p_rv_core_mem_business_88_BIT_0_97_TH_ETC___d602) &&
 	     lEcho_p_rv_core_state == 2'd3 &&
 	     !lEcho_p_rv_core_starting ;
 
@@ -3211,7 +3216,7 @@ module mkConnectalTop(CLK,
 	     memslave_0_rs_EMPTY_N &&
 	     memslave_0_rvFifo_FULL_N &&
 	     (memslave_0_rsCtrl_D_OUT ||
-	      NOT_memslave_0_fifoReadAddrGenerator_addrBeatF_ETC___d778) ;
+	      NOT_memslave_0_fifoReadAddrGenerator_addrBeatF_ETC___d889) ;
 
   // rule RL_memslave_1_rvrule
   assign WILL_FIRE_RL_memslave_1_rvrule =
@@ -3228,7 +3233,7 @@ module mkConnectalTop(CLK,
   // rule RL_memslave_1_writeDataRule
   assign WILL_FIRE_RL_memslave_1_writeDataRule =
 	     memslave_1_wsCtrl_EMPTY_N && memslave_1_writeDataFifo_EMPTY_N &&
-	     memslave_1_fifoWriteAddrGenerator_addrBeatFifo_ETC___d909 ;
+	     memslave_1_fifoWriteAddrGenerator_addrBeatFifo_ETC___d1020 ;
 
   // rule RL_lEcho_p_requestMMIO
   assign WILL_FIRE_RL_lEcho_p_requestMMIO =
@@ -3238,12 +3243,12 @@ module mkConnectalTop(CLK,
   // rule RL_ctrl_mux_rv_req_aw
   assign WILL_FIRE_RL_ctrl_mux_rv_req_aw =
 	     ctrl_mux_rv_req_aws_EMPTY_N && ctrl_mux_rv_ws_EMPTY_N &&
-	     CASE_ctrl_mux_rv_ws_first__059_0_memslave_0_re_ETC___d1070 ;
+	     CASE_ctrl_mux_rv_ws_first__170_0_memslave_0_re_ETC___d1181 ;
 
   // rule RL_ctrl_mux_rv_req_ar
   assign WILL_FIRE_RL_ctrl_mux_rv_req_ar =
 	     ctrl_mux_rv_req_ars_EMPTY_N && ctrl_mux_rv_rs_EMPTY_N &&
-	     CASE_ctrl_mux_rv_rs_first__089_0_memslave_0_re_ETC___d1100 ;
+	     CASE_ctrl_mux_rv_rs_first__200_0_memslave_0_re_ETC___d1211 ;
 
   // rule RL_ctrl_mux_rv_write_done_rule
   assign WILL_FIRE_RL_ctrl_mux_rv_write_done_rule =
@@ -3345,7 +3350,7 @@ module mkConnectalTop(CLK,
 	     lEcho_p_bram_serverAdapterB_outData_outData_whas &&
 	     !lEcho_p_rv_core_fromImem_rv[68] ;
   assign lEcho_p_rv_core_fromImem_rv_port0__write_1 =
-	     { 1'd1, lEcho_p_ireq[67:32], x__h12970 } ;
+	     { 1'd1, lEcho_p_ireq[67:32], x__h13504 } ;
   assign lEcho_p_rv_core_fromImem_rv_port1__read =
 	     lEcho_p_rv_core_fromImem_rv_EN_port0__write ?
 	       lEcho_p_rv_core_fromImem_rv_port0__write_1 :
@@ -3358,14 +3363,14 @@ module mkConnectalTop(CLK,
 	     WILL_FIRE_RL_lEcho_p_rv_core_execute &&
 	     !lEcho_p_rv_core_dInst[6] &&
 	     lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
-	     lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2] !=
+	     lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] !=
 	     30'd1006649340 &&
-	     lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2] !=
+	     lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] !=
 	     30'd1006649341 &&
-	     lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2] !=
+	     lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] !=
 	     30'd1006649342 ;
   assign lEcho_p_rv_core_toDmem_rv_port0__write_1 =
-	     { 1'd1, req_byte_en__h10343, x__h10534, x__h10535 } ;
+	     { 1'd1, req_byte_en__h10561, value__h10754, value__h10756 } ;
   assign lEcho_p_rv_core_toDmem_rv_port1__read =
 	     lEcho_p_rv_core_toDmem_rv_EN_port0__write ?
 	       lEcho_p_rv_core_toDmem_rv_port0__write_1 :
@@ -3383,7 +3388,7 @@ module mkConnectalTop(CLK,
 	     lEcho_p_bram_serverAdapterA_outData_outData_whas &&
 	     !lEcho_p_rv_core_fromDmem_rv[68] ;
   assign lEcho_p_rv_core_fromDmem_rv_port0__write_1 =
-	     { 1'd1, lEcho_p_dreq[67:32], x__h13367 } ;
+	     { 1'd1, lEcho_p_dreq[67:32], x__h13901 } ;
   assign lEcho_p_rv_core_fromDmem_rv_port1__read =
 	     lEcho_p_rv_core_fromDmem_rv_EN_port0__write ?
 	       lEcho_p_rv_core_fromDmem_rv_port0__write_1 :
@@ -3401,11 +3406,11 @@ module mkConnectalTop(CLK,
 	     WILL_FIRE_RL_lEcho_p_rv_core_execute &&
 	     !lEcho_p_rv_core_dInst[6] &&
 	     lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
-	     (lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2] ==
+	     (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
 	      30'd1006649340 ||
-	      lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2] ==
+	      lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
 	      30'd1006649341 ||
-	      lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2] ==
+	      lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
 	      30'd1006649342) ;
   assign lEcho_p_rv_core_toMMIO_rv_port1__read =
 	     lEcho_p_rv_core_toMMIO_rv_EN_port0__write ?
@@ -3531,7 +3536,7 @@ module mkConnectalTop(CLK,
 
   // register lEcho_p_rv_core_dInst
   assign lEcho_p_rv_core_dInst_D_IN =
-	     { CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15,
+	     { IF_lEcho_p_rv_core_fromImem_rv_port1__read__30_ETC___d216,
 	       lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11000 ||
 	       lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b0 ||
 	       lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01000 ||
@@ -3559,7 +3564,7 @@ module mkConnectalTop(CLK,
 	       lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01001 ||
 	       lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11000 ||
 	       lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11011,
-	       CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16,
+	       CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15,
 	       lEcho_p_rv_core_fromImem_rv_port1__read[31:0] } ;
   assign lEcho_p_rv_core_dInst_EN = WILL_FIRE_RL_lEcho_p_rv_core_decode ;
 
@@ -3588,263 +3593,263 @@ module mkConnectalTop(CLK,
 	       lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
 	       lEcho_p_rv_core_dInst[14],
 	       lEcho_p_rv_core_dInst[13:12],
-	       lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[1:0],
+	       lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[1:0],
 	       !lEcho_p_rv_core_dInst[6] &&
 	       lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
-	       (lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2] ==
+	       (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
 		30'd1006649340 ||
-		lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2] ==
+		lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
 		30'd1006649341 ||
-		lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2] ==
+		lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
 		30'd1006649342) } ;
   assign lEcho_p_rv_core_mem_business_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_execute ;
 
   // register lEcho_p_rv_core_pc
   assign lEcho_p_rv_core_pc_D_IN =
-	     MUX_lEcho_p_rv_core_pc_write_1__SEL_1 ? 32'd0 : nextPc__h10702 ;
+	     MUX_lEcho_p_rv_core_pc_write_1__SEL_1 ? 32'd0 : nextPc__h11014 ;
   assign lEcho_p_rv_core_pc_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     !lEcho_p_rv_core_dInst[39] ||
 	     WILL_FIRE_RL_lEcho_p_rv_core_execute ;
 
   // register lEcho_p_rv_core_rf_0
-  assign lEcho_p_rv_core_rf_0_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_0_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_0_EN = 1'b0 ;
 
   // register lEcho_p_rv_core_rf_1
-  assign lEcho_p_rv_core_rf_1_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_1_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_1_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd1 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_10
-  assign lEcho_p_rv_core_rf_10_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_10_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_10_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd10 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_11
-  assign lEcho_p_rv_core_rf_11_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_11_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_11_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd11 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_12
-  assign lEcho_p_rv_core_rf_12_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_12_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_12_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd12 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_13
-  assign lEcho_p_rv_core_rf_13_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_13_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_13_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd13 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_14
-  assign lEcho_p_rv_core_rf_14_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_14_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_14_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd14 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_15
-  assign lEcho_p_rv_core_rf_15_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_15_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_15_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd15 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_16
-  assign lEcho_p_rv_core_rf_16_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_16_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_16_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd16 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_17
-  assign lEcho_p_rv_core_rf_17_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_17_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_17_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd17 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_18
-  assign lEcho_p_rv_core_rf_18_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_18_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_18_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd18 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_19
-  assign lEcho_p_rv_core_rf_19_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_19_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_19_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd19 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_2
-  assign lEcho_p_rv_core_rf_2_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_2_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_2_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd2 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_20
-  assign lEcho_p_rv_core_rf_20_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_20_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_20_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd20 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_21
-  assign lEcho_p_rv_core_rf_21_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_21_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_21_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd21 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_22
-  assign lEcho_p_rv_core_rf_22_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_22_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_22_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd22 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_23
-  assign lEcho_p_rv_core_rf_23_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_23_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_23_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd23 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_24
-  assign lEcho_p_rv_core_rf_24_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_24_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_24_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd24 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_25
-  assign lEcho_p_rv_core_rf_25_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_25_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_25_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd25 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_26
-  assign lEcho_p_rv_core_rf_26_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_26_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_26_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd26 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_27
-  assign lEcho_p_rv_core_rf_27_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_27_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_27_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd27 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_28
-  assign lEcho_p_rv_core_rf_28_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_28_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_28_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd28 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_29
-  assign lEcho_p_rv_core_rf_29_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_29_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_29_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd29 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_3
-  assign lEcho_p_rv_core_rf_3_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_3_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_3_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd3 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_30
-  assign lEcho_p_rv_core_rf_30_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_30_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_30_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd30 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_31
-  assign lEcho_p_rv_core_rf_31_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_31_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_31_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd31 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_4
-  assign lEcho_p_rv_core_rf_4_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_4_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_4_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd4 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_5
-  assign lEcho_p_rv_core_rf_5_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_5_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_5_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd5 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_6
-  assign lEcho_p_rv_core_rf_6_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_6_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_6_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd6 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_7
-  assign lEcho_p_rv_core_rf_7_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_7_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_7_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd7 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_8
-  assign lEcho_p_rv_core_rf_8_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_8_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_8_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd8 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rf_9
-  assign lEcho_p_rv_core_rf_9_D_IN = v__h11517 ;
+  assign lEcho_p_rv_core_rf_9_D_IN = v__h11829 ;
   assign lEcho_p_rv_core_rf_9_EN =
 	     WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
 	     lEcho_p_rv_core_dInst[11:7] == 5'd9 &&
 	     lEcho_p_rv_core_dInst[36] ;
 
   // register lEcho_p_rv_core_rv1
-  assign lEcho_p_rv_core_rv1_D_IN = rs1__h8457 ;
+  assign lEcho_p_rv_core_rv1_D_IN = rs1__h8625 ;
   assign lEcho_p_rv_core_rv1_EN = WILL_FIRE_RL_lEcho_p_rv_core_decode ;
 
   // register lEcho_p_rv_core_rv2
-  assign lEcho_p_rv_core_rv2_D_IN = rs2__h8458 ;
+  assign lEcho_p_rv_core_rv2_D_IN = rs2__h8626 ;
   assign lEcho_p_rv_core_rv2_EN = WILL_FIRE_RL_lEcho_p_rv_core_decode ;
 
   // register lEcho_p_rv_core_rvd
   assign lEcho_p_rv_core_rvd_D_IN =
 	     (!lEcho_p_rv_core_dInst[6] &&
 	      lEcho_p_rv_core_dInst[4:3] == 2'b0) ?
-	       x__h10535 :
+	       value__h10756 :
 	       ((lEcho_p_rv_core_dInst[6:4] == 3'b110) ?
-		  incPC__h10719 :
-		  data__h9660) ;
+		  incPC__h11031 :
+		  data__h9996) ;
   assign lEcho_p_rv_core_rvd_EN = WILL_FIRE_RL_lEcho_p_rv_core_execute ;
 
   // register lEcho_p_rv_core_starting
@@ -3897,111 +3902,111 @@ module mkConnectalTop(CLK,
 	     lEcho_p_rv_core_toMMIO_rv_port1__read[63:32] == 32'hF000FFF8 ;
 
   // register memslave_0_fifoReadAddrGenerator_addrReg
-  assign memslave_0_fifoReadAddrGenerator_addrReg_D_IN = addr__h14964 + 5'd4 ;
+  assign memslave_0_fifoReadAddrGenerator_addrReg_D_IN = addr__h15498 + 5'd4 ;
   assign memslave_0_fifoReadAddrGenerator_addrReg_EN =
 	     memslave_0_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoReadAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_0_fifoReadAddrGenerator_burstCountReg
   assign memslave_0_fifoReadAddrGenerator_burstCountReg_D_IN =
-	     burstCount__h14966 - 10'd1 ;
+	     burstCount__h15500 - 10'd1 ;
   assign memslave_0_fifoReadAddrGenerator_burstCountReg_EN =
 	     memslave_0_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoReadAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_0_fifoReadAddrGenerator_isFirstReg
   assign memslave_0_fifoReadAddrGenerator_isFirstReg_D_IN =
-	     IF_memslave_0_fifoReadAddrGenerator_isFirstReg_ETC___d718 ;
+	     IF_memslave_0_fifoReadAddrGenerator_isFirstReg_ETC___d829 ;
   assign memslave_0_fifoReadAddrGenerator_isFirstReg_EN =
 	     memslave_0_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoReadAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_0_fifoReadAddrGenerator_isLastReg
   assign memslave_0_fifoReadAddrGenerator_isLastReg_D_IN =
-	     burstCount__h14966 == 10'd2 ;
+	     burstCount__h15500 == 10'd2 ;
   assign memslave_0_fifoReadAddrGenerator_isLastReg_EN =
 	     memslave_0_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoReadAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_0_fifoWriteAddrGenerator_addrReg
   assign memslave_0_fifoWriteAddrGenerator_addrReg_D_IN =
-	     addr__h15515 + 5'd4 ;
+	     addr__h16049 + 5'd4 ;
   assign memslave_0_fifoWriteAddrGenerator_addrReg_EN =
 	     memslave_0_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoWriteAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_0_fifoWriteAddrGenerator_burstCountReg
   assign memslave_0_fifoWriteAddrGenerator_burstCountReg_D_IN =
-	     burstCount__h15517 - 10'd1 ;
+	     burstCount__h16051 - 10'd1 ;
   assign memslave_0_fifoWriteAddrGenerator_burstCountReg_EN =
 	     memslave_0_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoWriteAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_0_fifoWriteAddrGenerator_isFirstReg
   assign memslave_0_fifoWriteAddrGenerator_isFirstReg_D_IN =
-	     IF_memslave_0_fifoWriteAddrGenerator_isFirstRe_ETC___d740 ;
+	     IF_memslave_0_fifoWriteAddrGenerator_isFirstRe_ETC___d851 ;
   assign memslave_0_fifoWriteAddrGenerator_isFirstReg_EN =
 	     memslave_0_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoWriteAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_0_fifoWriteAddrGenerator_isLastReg
   assign memslave_0_fifoWriteAddrGenerator_isLastReg_D_IN =
-	     burstCount__h15517 == 10'd2 ;
+	     burstCount__h16051 == 10'd2 ;
   assign memslave_0_fifoWriteAddrGenerator_isLastReg_EN =
 	     memslave_0_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoWriteAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_1_fifoReadAddrGenerator_addrReg
-  assign memslave_1_fifoReadAddrGenerator_addrReg_D_IN = addr__h17831 + 5'd4 ;
+  assign memslave_1_fifoReadAddrGenerator_addrReg_D_IN = addr__h18365 + 5'd4 ;
   assign memslave_1_fifoReadAddrGenerator_addrReg_EN =
 	     memslave_1_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoReadAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_1_fifoReadAddrGenerator_burstCountReg
   assign memslave_1_fifoReadAddrGenerator_burstCountReg_D_IN =
-	     burstCount__h17833 - 10'd1 ;
+	     burstCount__h18367 - 10'd1 ;
   assign memslave_1_fifoReadAddrGenerator_burstCountReg_EN =
 	     memslave_1_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoReadAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_1_fifoReadAddrGenerator_isFirstReg
   assign memslave_1_fifoReadAddrGenerator_isFirstReg_D_IN =
-	     IF_memslave_1_fifoReadAddrGenerator_isFirstReg_ETC___d851 ;
+	     IF_memslave_1_fifoReadAddrGenerator_isFirstReg_ETC___d962 ;
   assign memslave_1_fifoReadAddrGenerator_isFirstReg_EN =
 	     memslave_1_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoReadAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_1_fifoReadAddrGenerator_isLastReg
   assign memslave_1_fifoReadAddrGenerator_isLastReg_D_IN =
-	     burstCount__h17833 == 10'd2 ;
+	     burstCount__h18367 == 10'd2 ;
   assign memslave_1_fifoReadAddrGenerator_isLastReg_EN =
 	     memslave_1_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoReadAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_1_fifoWriteAddrGenerator_addrReg
   assign memslave_1_fifoWriteAddrGenerator_addrReg_D_IN =
-	     addr__h18382 + 5'd4 ;
+	     addr__h18916 + 5'd4 ;
   assign memslave_1_fifoWriteAddrGenerator_addrReg_EN =
 	     memslave_1_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoWriteAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_1_fifoWriteAddrGenerator_burstCountReg
   assign memslave_1_fifoWriteAddrGenerator_burstCountReg_D_IN =
-	     burstCount__h18384 - 10'd1 ;
+	     burstCount__h18918 - 10'd1 ;
   assign memslave_1_fifoWriteAddrGenerator_burstCountReg_EN =
 	     memslave_1_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoWriteAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_1_fifoWriteAddrGenerator_isFirstReg
   assign memslave_1_fifoWriteAddrGenerator_isFirstReg_D_IN =
-	     IF_memslave_1_fifoWriteAddrGenerator_isFirstRe_ETC___d873 ;
+	     IF_memslave_1_fifoWriteAddrGenerator_isFirstRe_ETC___d984 ;
   assign memslave_1_fifoWriteAddrGenerator_isFirstReg_EN =
 	     memslave_1_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoWriteAddrGenerator_addrBeatFifo_FULL_N ;
 
   // register memslave_1_fifoWriteAddrGenerator_isLastReg
   assign memslave_1_fifoWriteAddrGenerator_isLastReg_D_IN =
-	     burstCount__h18384 == 10'd2 ;
+	     burstCount__h18918 == 10'd2 ;
   assign memslave_1_fifoWriteAddrGenerator_isLastReg_EN =
 	     memslave_1_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoWriteAddrGenerator_addrBeatFifo_FULL_N ;
@@ -4194,7 +4199,7 @@ module mkConnectalTop(CLK,
 	     lEchoRequestInput_RDY_pipes_setLeds_PipeOut_deq ;
 
   // submodule lEcho_delay
-  assign lEcho_delay_D_IN = lEcho_p_status ;
+  assign lEcho_delay_D_IN = lEcho_p_status + 32'd1 ;
   assign lEcho_delay_ENQ =
 	     lEchoRequestInput_RDY_pipes_say_PipeOut_deq &&
 	     lEcho_delay_FULL_N ;
@@ -4280,10 +4285,10 @@ module mkConnectalTop(CLK,
 
   // submodule memslave_0_fifoReadAddrGenerator_addrBeatFifo
   assign memslave_0_fifoReadAddrGenerator_addrBeatFifo_D_IN =
-	     { addr__h14964,
-	       burstCount__h14966,
+	     { addr__h15498,
+	       burstCount__h15500,
 	       memslave_0_fifoReadAddrGenerator_requestFifo_D_OUT[5:0],
-	       IF_memslave_0_fifoReadAddrGenerator_isFirstReg_ETC___d718 } ;
+	       IF_memslave_0_fifoReadAddrGenerator_isFirstReg_ETC___d829 } ;
   assign memslave_0_fifoReadAddrGenerator_addrBeatFifo_ENQ =
 	     memslave_0_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoReadAddrGenerator_addrBeatFifo_FULL_N ;
@@ -4300,15 +4305,15 @@ module mkConnectalTop(CLK,
   assign memslave_0_fifoReadAddrGenerator_requestFifo_DEQ =
 	     memslave_0_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoReadAddrGenerator_addrBeatFifo_FULL_N &&
-	     IF_memslave_0_fifoReadAddrGenerator_isFirstReg_ETC___d718 ;
+	     IF_memslave_0_fifoReadAddrGenerator_isFirstReg_ETC___d829 ;
   assign memslave_0_fifoReadAddrGenerator_requestFifo_CLR = 1'b0 ;
 
   // submodule memslave_0_fifoWriteAddrGenerator_addrBeatFifo
   assign memslave_0_fifoWriteAddrGenerator_addrBeatFifo_D_IN =
-	     { addr__h15515,
-	       burstCount__h15517,
+	     { addr__h16049,
+	       burstCount__h16051,
 	       memslave_0_fifoWriteAddrGenerator_requestFifo_D_OUT[5:0],
-	       IF_memslave_0_fifoWriteAddrGenerator_isFirstRe_ETC___d740 } ;
+	       IF_memslave_0_fifoWriteAddrGenerator_isFirstRe_ETC___d851 } ;
   assign memslave_0_fifoWriteAddrGenerator_addrBeatFifo_ENQ =
 	     memslave_0_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoWriteAddrGenerator_addrBeatFifo_FULL_N ;
@@ -4325,7 +4330,7 @@ module mkConnectalTop(CLK,
   assign memslave_0_fifoWriteAddrGenerator_requestFifo_DEQ =
 	     memslave_0_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_0_fifoWriteAddrGenerator_addrBeatFifo_FULL_N &&
-	     IF_memslave_0_fifoWriteAddrGenerator_isFirstRe_ETC___d740 ;
+	     IF_memslave_0_fifoWriteAddrGenerator_isFirstRe_ETC___d851 ;
   assign memslave_0_fifoWriteAddrGenerator_requestFifo_CLR = 1'b0 ;
 
   // submodule memslave_0_fifoWriteDoneFifo
@@ -4359,7 +4364,7 @@ module mkConnectalTop(CLK,
   assign memslave_0_req_aws_CLR = 1'b0 ;
 
   // submodule memslave_0_rs
-  assign memslave_0_rs_D_IN = x__h25614[0] ;
+  assign memslave_0_rs_D_IN = x__h26148[0] ;
   assign memslave_0_rs_ENQ =
 	     WILL_FIRE_RL_ctrl_mux_rv_req_ar && ctrl_mux_rv_rs_D_OUT == 1'd0 ;
   assign memslave_0_rs_DEQ = WILL_FIRE_RL_memslave_0_rvrule ;
@@ -4374,7 +4379,7 @@ module mkConnectalTop(CLK,
 
   // submodule memslave_0_rvFifo
   assign memslave_0_rvFifo_D_IN =
-	     { x1_avValue_data__h17175,
+	     { x1_avValue_data__h17709,
 	       memslave_0_fifoReadAddrGenerator_addrBeatFifo_D_OUT[6:0] } ;
   assign memslave_0_rvFifo_ENQ = WILL_FIRE_RL_memslave_0_rvrule ;
   assign memslave_0_rvFifo_DEQ =
@@ -4383,7 +4388,7 @@ module mkConnectalTop(CLK,
   assign memslave_0_rvFifo_CLR = 1'b0 ;
 
   // submodule memslave_0_ws
-  assign memslave_0_ws_D_IN = x__h25214[0] ;
+  assign memslave_0_ws_D_IN = x__h25748[0] ;
   assign memslave_0_ws_ENQ =
 	     WILL_FIRE_RL_ctrl_mux_rv_req_aw && ctrl_mux_rv_ws_D_OUT == 1'd0 ;
   assign memslave_0_ws_DEQ =
@@ -4415,10 +4420,10 @@ module mkConnectalTop(CLK,
 
   // submodule memslave_1_fifoReadAddrGenerator_addrBeatFifo
   assign memslave_1_fifoReadAddrGenerator_addrBeatFifo_D_IN =
-	     { addr__h17831,
-	       burstCount__h17833,
+	     { addr__h18365,
+	       burstCount__h18367,
 	       memslave_1_fifoReadAddrGenerator_requestFifo_D_OUT[5:0],
-	       IF_memslave_1_fifoReadAddrGenerator_isFirstReg_ETC___d851 } ;
+	       IF_memslave_1_fifoReadAddrGenerator_isFirstReg_ETC___d962 } ;
   assign memslave_1_fifoReadAddrGenerator_addrBeatFifo_ENQ =
 	     memslave_1_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoReadAddrGenerator_addrBeatFifo_FULL_N ;
@@ -4435,15 +4440,15 @@ module mkConnectalTop(CLK,
   assign memslave_1_fifoReadAddrGenerator_requestFifo_DEQ =
 	     memslave_1_fifoReadAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoReadAddrGenerator_addrBeatFifo_FULL_N &&
-	     IF_memslave_1_fifoReadAddrGenerator_isFirstReg_ETC___d851 ;
+	     IF_memslave_1_fifoReadAddrGenerator_isFirstReg_ETC___d962 ;
   assign memslave_1_fifoReadAddrGenerator_requestFifo_CLR = 1'b0 ;
 
   // submodule memslave_1_fifoWriteAddrGenerator_addrBeatFifo
   assign memslave_1_fifoWriteAddrGenerator_addrBeatFifo_D_IN =
-	     { addr__h18382,
-	       burstCount__h18384,
+	     { addr__h18916,
+	       burstCount__h18918,
 	       memslave_1_fifoWriteAddrGenerator_requestFifo_D_OUT[5:0],
-	       IF_memslave_1_fifoWriteAddrGenerator_isFirstRe_ETC___d873 } ;
+	       IF_memslave_1_fifoWriteAddrGenerator_isFirstRe_ETC___d984 } ;
   assign memslave_1_fifoWriteAddrGenerator_addrBeatFifo_ENQ =
 	     memslave_1_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoWriteAddrGenerator_addrBeatFifo_FULL_N ;
@@ -4460,7 +4465,7 @@ module mkConnectalTop(CLK,
   assign memslave_1_fifoWriteAddrGenerator_requestFifo_DEQ =
 	     memslave_1_fifoWriteAddrGenerator_requestFifo_EMPTY_N &&
 	     memslave_1_fifoWriteAddrGenerator_addrBeatFifo_FULL_N &&
-	     IF_memslave_1_fifoWriteAddrGenerator_isFirstRe_ETC___d873 ;
+	     IF_memslave_1_fifoWriteAddrGenerator_isFirstRe_ETC___d984 ;
   assign memslave_1_fifoWriteAddrGenerator_requestFifo_CLR = 1'b0 ;
 
   // submodule memslave_1_fifoWriteDoneFifo
@@ -4494,7 +4499,7 @@ module mkConnectalTop(CLK,
   assign memslave_1_req_aws_CLR = 1'b0 ;
 
   // submodule memslave_1_rs
-  assign memslave_1_rs_D_IN = x__h25614[1:0] ;
+  assign memslave_1_rs_D_IN = x__h26148[1:0] ;
   assign memslave_1_rs_ENQ =
 	     WILL_FIRE_RL_ctrl_mux_rv_req_ar && ctrl_mux_rv_rs_D_OUT == 1'd1 ;
   assign memslave_1_rs_DEQ =
@@ -4513,7 +4518,7 @@ module mkConnectalTop(CLK,
 
   // submodule memslave_1_rvFifo
   assign memslave_1_rvFifo_D_IN =
-	     { v___1__h20151,
+	     { v___1__h20685,
 	       memslave_1_fifoReadAddrGenerator_addrBeatFifo_D_OUT[6:0] } ;
   assign memslave_1_rvFifo_ENQ = WILL_FIRE_RL_memslave_1_rvrule ;
   assign memslave_1_rvFifo_DEQ =
@@ -4532,7 +4537,7 @@ module mkConnectalTop(CLK,
   assign memslave_1_writeDataFifo_CLR = 1'b0 ;
 
   // submodule memslave_1_ws
-  assign memslave_1_ws_D_IN = x__h25214[1:0] ;
+  assign memslave_1_ws_D_IN = x__h25748[1:0] ;
   assign memslave_1_ws_ENQ =
 	     WILL_FIRE_RL_ctrl_mux_rv_req_aw && ctrl_mux_rv_ws_D_OUT == 1'd1 ;
   assign memslave_1_ws_DEQ =
@@ -4552,128 +4557,128 @@ module mkConnectalTop(CLK,
   assign memslave_1_wsCtrl_CLR = 1'b0 ;
 
   // remaining internal signals
-  assign IF_lEcho_p_rv_core_dInst_22_BIT_35_29_AND_lEch_ETC___d364 =
+  assign IF_lEcho_p_rv_core_dInst_05_BIT_35_12_AND_lEch_ETC___d447 =
 	     (lEcho_p_rv_core_dInst[35] &&
 	      lEcho_p_rv_core_dInst[34:32] == 3'd2) ?
-	       { {19{x__h9969[12]}}, x__h9969 } :
+	       { {19{x__h10253[12]}}, x__h10253 } :
 	       ((lEcho_p_rv_core_dInst[35] &&
 		 lEcho_p_rv_core_dInst[34:32] == 3'd3) ?
 		  { lEcho_p_rv_core_dInst[31:12], 12'b0 } :
 		  ((lEcho_p_rv_core_dInst[35] &&
 		    lEcho_p_rv_core_dInst[34:32] == 3'd4) ?
-		     { {11{x__h10130[20]}}, x__h10130 } :
+		     { {11{x__h10414[20]}}, x__h10414 } :
 		     32'd0)) ;
-  assign IF_lEcho_p_rv_core_mem_business_87_BIT_0_88_TH_ETC___d493 =
+  assign IF_lEcho_p_rv_core_mem_business_88_BIT_0_97_TH_ETC___d602 =
 	     lEcho_p_rv_core_mem_business[0] ?
 	       lEcho_p_rv_core_fromMMIO_rv_port1__read[68] :
 	       lEcho_p_rv_core_fromDmem_rv_port1__read[68] ;
-  assign IF_memslave_0_fifoReadAddrGenerator_isFirstReg_ETC___d718 =
+  assign IF_memslave_0_fifoReadAddrGenerator_isFirstReg_ETC___d829 =
 	     memslave_0_fifoReadAddrGenerator_isFirstReg ?
 	       memslave_0_fifoReadAddrGenerator_requestFifo_D_OUT[15:6] ==
 	       10'd4 :
 	       memslave_0_fifoReadAddrGenerator_isLastReg ;
-  assign IF_memslave_0_fifoWriteAddrGenerator_isFirstRe_ETC___d740 =
+  assign IF_memslave_0_fifoWriteAddrGenerator_isFirstRe_ETC___d851 =
 	     memslave_0_fifoWriteAddrGenerator_isFirstReg ?
 	       memslave_0_fifoWriteAddrGenerator_requestFifo_D_OUT[15:6] ==
 	       10'd4 :
 	       memslave_0_fifoWriteAddrGenerator_isLastReg ;
-  assign IF_memslave_1_fifoReadAddrGenerator_isFirstReg_ETC___d851 =
+  assign IF_memslave_1_fifoReadAddrGenerator_isFirstReg_ETC___d962 =
 	     memslave_1_fifoReadAddrGenerator_isFirstReg ?
 	       memslave_1_fifoReadAddrGenerator_requestFifo_D_OUT[15:6] ==
 	       10'd4 :
 	       memslave_1_fifoReadAddrGenerator_isLastReg ;
-  assign IF_memslave_1_fifoWriteAddrGenerator_isFirstRe_ETC___d873 =
+  assign IF_memslave_1_fifoWriteAddrGenerator_isFirstRe_ETC___d984 =
 	     memslave_1_fifoWriteAddrGenerator_isFirstReg ?
 	       memslave_1_fifoWriteAddrGenerator_requestFifo_D_OUT[15:6] ==
 	       10'd4 :
 	       memslave_1_fifoWriteAddrGenerator_isLastReg ;
-  assign NOT_IF_lEcho_p_rv_core_dInst_22_BITS_6_TO_4_13_ETC___d446 =
-	     nextPc__h10702 != incPC__h10719 ;
-  assign NOT_ctrl_mux_rv_req_ars_first__104_BITS_15_TO__ETC___d1108 =
+  assign NOT_IF_lEcho_p_rv_core_dInst_05_BITS_6_TO_4_14_ETC___d547 =
+	     nextPc__h11014 != incPC__h11031 ;
+  assign NOT_ctrl_mux_rv_req_ars_first__215_BITS_15_TO__ETC___d1219 =
 	     ctrl_mux_rv_req_ars_D_OUT[15:6] > 10'd4 ;
-  assign NOT_ctrl_mux_rv_req_aws_first__074_BITS_15_TO__ETC___d1078 =
+  assign NOT_ctrl_mux_rv_req_aws_first__185_BITS_15_TO__ETC___d1189 =
 	     ctrl_mux_rv_req_aws_D_OUT[15:6] > 10'd4 ;
-  assign NOT_memslave_0_fifoReadAddrGenerator_addrBeatF_ETC___d778 =
+  assign NOT_memslave_0_fifoReadAddrGenerator_addrBeatF_ETC___d889 =
 	     (memslave_0_fifoReadAddrGenerator_addrBeatFifo_D_OUT[21:17] !=
 	      5'd0 ||
 	      CASE_memslave_0_rsD_OUT_0_lEchoIndicationOutp_ETC__q5) &&
 	     (memslave_0_fifoReadAddrGenerator_addrBeatFifo_D_OUT[21:17] !=
 	      5'd0 ||
 	      CASE_memslave_0_rsD_OUT_0_lEchoIndicationOutp_ETC__q6) ;
-  assign _theResult___snd__h10817 =
+  assign _theResult___snd__h11129 =
 	     (lEcho_p_rv_core_dInst[2] && lEcho_p_rv_core_dInst[3]) ?
-	       nextPC__h10819 :
-	       _theResult___snd__h10883 ;
-  assign _theResult___snd__h10883 =
+	       nextPC__h11131 :
+	       _theResult___snd__h11195 ;
+  assign _theResult___snd__h11195 =
 	     (lEcho_p_rv_core_dInst[2] && !lEcho_p_rv_core_dInst[3]) ?
-	       nextPC__h10885 :
-	       _theResult___snd__h10902 ;
-  assign _theResult___snd__h10902 =
-	     IF_lEcho_p_rv_core_dInst_22_BITS_14_TO_12_23_E_ETC___d439 ?
-	       nextPC__h10819 :
-	       incPC__h10719 ;
-  assign addr__h14964 =
+	       nextPC__h11197 :
+	       _theResult___snd__h11214 ;
+  assign _theResult___snd__h11214 =
+	     IF_lEcho_p_rv_core_dInst_05_BITS_14_TO_12_24_E_ETC___d540 ?
+	       nextPC__h11131 :
+	       incPC__h11031 ;
+  assign addr__h15498 =
 	     memslave_0_fifoReadAddrGenerator_isFirstReg ?
 	       memslave_0_fifoReadAddrGenerator_requestFifo_D_OUT[20:16] :
 	       memslave_0_fifoReadAddrGenerator_addrReg ;
-  assign addr__h15515 =
+  assign addr__h16049 =
 	     memslave_0_fifoWriteAddrGenerator_isFirstReg ?
 	       memslave_0_fifoWriteAddrGenerator_requestFifo_D_OUT[20:16] :
 	       memslave_0_fifoWriteAddrGenerator_addrReg ;
-  assign addr__h17831 =
+  assign addr__h18365 =
 	     memslave_1_fifoReadAddrGenerator_isFirstReg ?
 	       memslave_1_fifoReadAddrGenerator_requestFifo_D_OUT[20:16] :
 	       memslave_1_fifoReadAddrGenerator_addrReg ;
-  assign addr__h18382 =
+  assign addr__h18916 =
 	     memslave_1_fifoWriteAddrGenerator_isFirstReg ?
 	       memslave_1_fifoWriteAddrGenerator_requestFifo_D_OUT[20:16] :
 	       memslave_1_fifoWriteAddrGenerator_addrReg ;
-  assign alu_src2__h11211 =
-	     lEcho_p_rv_core_dInst[5] ? lEcho_p_rv_core_rv2 : imm__h9658 ;
-  assign burstCount___1__h14997 =
+  assign alu_src2__h11523 =
+	     lEcho_p_rv_core_dInst[5] ? lEcho_p_rv_core_rv2 : imm__h9994 ;
+  assign burstCount___1__h15531 =
 	     { 2'd0,
 	       memslave_0_fifoReadAddrGenerator_requestFifo_D_OUT[15:8] } ;
-  assign burstCount___1__h15548 =
+  assign burstCount___1__h16082 =
 	     { 2'd0,
 	       memslave_0_fifoWriteAddrGenerator_requestFifo_D_OUT[15:8] } ;
-  assign burstCount___1__h17864 =
+  assign burstCount___1__h18398 =
 	     { 2'd0,
 	       memslave_1_fifoReadAddrGenerator_requestFifo_D_OUT[15:8] } ;
-  assign burstCount___1__h18415 =
+  assign burstCount___1__h18949 =
 	     { 2'd0,
 	       memslave_1_fifoWriteAddrGenerator_requestFifo_D_OUT[15:8] } ;
-  assign burstCount__h14966 =
+  assign burstCount__h15500 =
 	     memslave_0_fifoReadAddrGenerator_isFirstReg ?
-	       burstCount___1__h14997 :
+	       burstCount___1__h15531 :
 	       memslave_0_fifoReadAddrGenerator_burstCountReg ;
-  assign burstCount__h15517 =
+  assign burstCount__h16051 =
 	     memslave_0_fifoWriteAddrGenerator_isFirstReg ?
-	       burstCount___1__h15548 :
+	       burstCount___1__h16082 :
 	       memslave_0_fifoWriteAddrGenerator_burstCountReg ;
-  assign burstCount__h17833 =
+  assign burstCount__h18367 =
 	     memslave_1_fifoReadAddrGenerator_isFirstReg ?
-	       burstCount___1__h17864 :
+	       burstCount___1__h18398 :
 	       memslave_1_fifoReadAddrGenerator_burstCountReg ;
-  assign burstCount__h18384 =
+  assign burstCount__h18918 =
 	     memslave_1_fifoWriteAddrGenerator_isFirstReg ?
-	       burstCount___1__h18415 :
+	       burstCount___1__h18949 :
 	       memslave_1_fifoWriteAddrGenerator_burstCountReg ;
-  assign data__h9660 =
+  assign data__h9996 =
 	     (lEcho_p_rv_core_dInst[2] && lEcho_p_rv_core_dInst[5]) ?
-	       imm__h9658 :
+	       imm__h9994 :
 	       ((lEcho_p_rv_core_dInst[2] && !lEcho_p_rv_core_dInst[5]) ?
-		  nextPC__h10819 :
-		  rd_val__h11214) ;
-  assign imm__h9658 =
+		  nextPC__h11131 :
+		  rd_val__h11526) ;
+  assign imm__h9994 =
 	     (lEcho_p_rv_core_dInst[35] &&
 	      lEcho_p_rv_core_dInst[34:32] == 3'd0) ?
 	       { {20{lEcho_p_rv_core_dInst_BITS_31_TO_20__q1[11]}},
 		 lEcho_p_rv_core_dInst_BITS_31_TO_20__q1 } :
 	       ((lEcho_p_rv_core_dInst[35] &&
 		 lEcho_p_rv_core_dInst[34:32] == 3'd1) ?
-		  { {20{x__h9900[11]}}, x__h9900 } :
-		  IF_lEcho_p_rv_core_dInst_22_BIT_35_29_AND_lEch_ETC___d364) ;
-  assign incPC__h10719 = lEcho_p_rv_core_pc + 32'd4 ;
+		  { {20{x__h10184[11]}}, x__h10184 } :
+		  IF_lEcho_p_rv_core_dInst_05_BIT_35_12_AND_lEch_ETC___d447) ;
+  assign incPC__h11031 = lEcho_p_rv_core_pc + 32'd4 ;
   assign lEcho_p_bram_serverAdapterA_cnt_6_PLUS_IF_lEch_ETC___d32 =
 	     lEcho_p_bram_serverAdapterA_cnt +
 	     (lEcho_p_bram_serverAdapterA_cnt_1_whas ? 3'd1 : 3'd0) +
@@ -4686,158 +4691,158 @@ module mkConnectalTop(CLK,
 	     (lEcho_p_bram_serverAdapterB_outData_deqCalled_whas ?
 		3'd7 :
 		3'd0) ;
-  assign lEcho_p_rv_core_dInst_22_BIT_6_23_OR_NOT_lEcho_ETC___d381 =
+  assign lEcho_p_rv_core_dInst_05_BIT_6_06_OR_NOT_lEcho_ETC___d464 =
 	     lEcho_p_rv_core_dInst[6] || lEcho_p_rv_core_dInst[4:3] != 2'b0 ||
-	     CASE_lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_ETC__q3 ;
-  assign lEcho_p_rv_core_dInst_22_BIT_6_23_OR_NOT_lEcho_ETC___d509 =
+	     CASE_lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_ETC__q3 ;
+  assign lEcho_p_rv_core_dInst_05_BIT_6_06_OR_NOT_lEcho_ETC___d607 =
 	     lEcho_p_rv_core_dInst[6] || lEcho_p_rv_core_dInst[4:3] != 2'b0 ||
-	     CASE_lEcho_p_rv_core_mem_business_BITS_5_TO_3__ETC__q10 ;
+	     CASE_lEcho_p_rv_core_mem_business_BITS_5_TO_3__ETC__q14 ;
   assign lEcho_p_rv_core_dInst_BITS_31_TO_20__q1 =
 	     lEcho_p_rv_core_dInst[31:20] ;
-  assign lEcho_p_rv_core_rv1_28_EQ_lEcho_p_rv_core_rv2_02___d425 =
+  assign lEcho_p_rv_core_rv1_11_EQ_lEcho_p_rv_core_rv2_03___d526 =
 	     lEcho_p_rv_core_rv1 == lEcho_p_rv_core_rv2 ;
-  assign lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367 =
-	     lEcho_p_rv_core_rv1 + imm__h9658 ;
-  assign lEcho_p_rv_core_rv1_28_SLT_lEcho_p_rv_core_rv2_02___d429 =
+  assign lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450 =
+	     lEcho_p_rv_core_rv1 + imm__h9994 ;
+  assign lEcho_p_rv_core_rv1_11_SLT_lEcho_p_rv_core_rv2_03___d530 =
 	     (lEcho_p_rv_core_rv1 ^ 32'h80000000) <
 	     (lEcho_p_rv_core_rv2 ^ 32'h80000000) ;
-  assign lEcho_p_rv_core_rv1_28_ULT_lEcho_p_rv_core_rv2_02___d433 =
+  assign lEcho_p_rv_core_rv1_11_ULT_lEcho_p_rv_core_rv2_03___d534 =
 	     lEcho_p_rv_core_rv1 < lEcho_p_rv_core_rv2 ;
-  assign mem_data1846_BITS_15_TO_0__q9 = mem_data__h11846[15:0] ;
-  assign mem_data1846_BITS_7_TO_0__q8 = mem_data__h11846[7:0] ;
-  assign mem_data__h11845 =
+  assign mem_data2158_BITS_15_TO_0__q13 = mem_data__h12158[15:0] ;
+  assign mem_data2158_BITS_7_TO_0__q12 = mem_data__h12158[7:0] ;
+  assign mem_data__h12157 =
 	     lEcho_p_rv_core_mem_business[0] ?
 	       lEcho_p_rv_core_fromMMIO_rv_port1__read[31:0] :
 	       lEcho_p_rv_core_fromDmem_rv_port1__read[31:0] ;
-  assign mem_data__h11846 = mem_data__h11845 >> x__h11894 ;
-  assign memslave_1_fifoWriteAddrGenerator_addrBeatFifo_ETC___d909 =
+  assign mem_data__h12158 = mem_data__h12157 >> x__h12206 ;
+  assign memslave_1_fifoWriteAddrGenerator_addrBeatFifo_ETC___d1020 =
 	     memslave_1_fifoWriteAddrGenerator_addrBeatFifo_EMPTY_N &&
 	     (!memslave_1_fifoWriteAddrGenerator_addrBeatFifo_D_OUT[0] ||
 	      memslave_1_fifoWriteDoneFifo_FULL_N) &&
 	     (memslave_1_wsCtrl_D_OUT ||
-	      memslave_1_ws_i_notEmpty__78_AND_CASE_memslave_ETC___d906) ;
-  assign memslave_1_ws_i_notEmpty__78_AND_CASE_memslave_ETC___d906 =
+	      memslave_1_ws_i_notEmpty__89_AND_CASE_memslave_ETC___d1017) ;
+  assign memslave_1_ws_i_notEmpty__89_AND_CASE_memslave_ETC___d1017 =
 	     memslave_1_ws_EMPTY_N &&
 	     CASE_memslave_1_wsD_OUT_0_lEchoRequestInputR_ETC__q4 ;
-  assign nextPC__h10819 = lEcho_p_rv_core_pc + imm__h9658 ;
-  assign nextPC__h10885 =
-	     { lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:1],
+  assign nextPC__h11131 = lEcho_p_rv_core_pc + imm__h9994 ;
+  assign nextPC__h11197 =
+	     { lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:1],
 	       1'd0 } ;
-  assign nextPc__h10702 =
+  assign nextPc__h11014 =
 	     (lEcho_p_rv_core_dInst[6:4] == 3'b110) ?
-	       _theResult___snd__h10817 :
-	       incPC__h10719 ;
-  assign req_byte_en__h10343 =
+	       _theResult___snd__h11129 :
+	       incPC__h11031 ;
+  assign req_byte_en__h10561 =
 	     lEcho_p_rv_core_dInst[5] ?
 	       CASE_lEcho_p_rv_core_dInst_BITS_13_TO_12_0b0_0_ETC__q2 :
 	       4'd0 ;
-  assign shift_amount__h9750 =
-	     { lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[1:0],
+  assign shift_amount__h10064 =
+	     { lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[1:0],
 	       3'b0 } ;
-  assign v___1__h16913 =
+  assign v___1__h17447 =
 	     lEchoIndicationOutput_portalIfc_intr_channel + 32'd1 ;
-  assign v___1__h20151 =
+  assign v___1__h20685 =
 	     memslave_1_rsCtrl_D_OUT ?
-	       v__h20164 :
+	       v__h20698 :
 	       ((memslave_1_fifoReadAddrGenerator_addrBeatFifo_D_OUT[21:17] ==
 		 5'd4) ?
-		  { 31'd0, x__h20298 } :
+		  { 31'd0, x__h20832 } :
 		  32'd0) ;
-  assign v___1__h20243 = lEchoRequestInput_portalIfc_intr_channel + 32'd1 ;
-  assign v__h11517 =
+  assign v___1__h20777 = lEchoRequestInput_portalIfc_intr_channel + 32'd1 ;
+  assign v__h11829 =
 	     (!lEcho_p_rv_core_dInst[6] &&
 	      lEcho_p_rv_core_dInst[4:3] == 2'b0) ?
-	       v__h11573 :
+	       v__h11885 :
 	       lEcho_p_rv_core_rvd ;
-  assign x1_avValue_data__h17175 =
-	     memslave_0_rsCtrl_D_OUT ? v__h16829 : x1_avValue_data__h17159 ;
-  assign x__h10130 =
-	     { lEcho_p_rv_core_dInst[31],
-	       lEcho_p_rv_core_dInst[19:12],
-	       lEcho_p_rv_core_dInst[20],
-	       lEcho_p_rv_core_dInst[30:21],
-	       1'b0 } ;
-  assign x__h10534 =
-	     { lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2],
+  assign value__h10754 =
+	     { lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2],
 	       2'b0 } ;
-  assign x__h10535 = lEcho_p_rv_core_rv2 << shift_amount__h9750 ;
-  assign x__h11365 =
-	     (lEcho_p_rv_core_rv1 ^ 32'h80000000) <
-	     (alu_src2__h11211 ^ 32'h80000000) ;
-  assign x__h11372 = lEcho_p_rv_core_rv1 < alu_src2__h11211 ;
-  assign x__h11894 = { lEcho_p_rv_core_mem_business[2:1], 3'b0 } ;
-  assign x__h12970 =
-	     lEcho_p_bram_serverAdapterB_outDataCore_EMPTY_N ?
-	       lEcho_p_bram_serverAdapterB_outDataCore_D_OUT :
-	       lEcho_p_bram_memory_DOB ;
-  assign x__h13367 =
-	     lEcho_p_bram_serverAdapterA_outDataCore_EMPTY_N ?
-	       lEcho_p_bram_serverAdapterA_outDataCore_D_OUT :
-	       lEcho_p_bram_memory_DOA ;
-  assign x__h25214 = ctrl_mux_rv_req_aws_D_OUT[27:21] - 7'd1 ;
-  assign x__h25614 = ctrl_mux_rv_req_ars_D_OUT[27:21] - 7'd1 ;
-  assign x__h9900 =
+  assign value__h10756 = lEcho_p_rv_core_rv2 << shift_amount__h10064 ;
+  assign x1_avValue_data__h17709 =
+	     memslave_0_rsCtrl_D_OUT ? v__h17363 : x1_avValue_data__h17693 ;
+  assign x__h10184 =
 	     { lEcho_p_rv_core_dInst[31:25], lEcho_p_rv_core_dInst[11:7] } ;
-  assign x__h9969 =
+  assign x__h10253 =
 	     { lEcho_p_rv_core_dInst[31],
 	       lEcho_p_rv_core_dInst[7],
 	       lEcho_p_rv_core_dInst[30:25],
 	       lEcho_p_rv_core_dInst[11:8],
 	       1'b0 } ;
+  assign x__h10414 =
+	     { lEcho_p_rv_core_dInst[31],
+	       lEcho_p_rv_core_dInst[19:12],
+	       lEcho_p_rv_core_dInst[20],
+	       lEcho_p_rv_core_dInst[30:21],
+	       1'b0 } ;
+  assign x__h11677 =
+	     (lEcho_p_rv_core_rv1 ^ 32'h80000000) <
+	     (alu_src2__h11523 ^ 32'h80000000) ;
+  assign x__h11684 = lEcho_p_rv_core_rv1 < alu_src2__h11523 ;
+  assign x__h12206 = { lEcho_p_rv_core_mem_business[2:1], 3'b0 } ;
+  assign x__h13504 =
+	     lEcho_p_bram_serverAdapterB_outDataCore_EMPTY_N ?
+	       lEcho_p_bram_serverAdapterB_outDataCore_D_OUT :
+	       lEcho_p_bram_memory_DOB ;
+  assign x__h13901 =
+	     lEcho_p_bram_serverAdapterA_outDataCore_EMPTY_N ?
+	       lEcho_p_bram_serverAdapterA_outDataCore_D_OUT :
+	       lEcho_p_bram_memory_DOA ;
+  assign x__h25748 = ctrl_mux_rv_req_aws_D_OUT[27:21] - 7'd1 ;
+  assign x__h26148 = ctrl_mux_rv_req_ars_D_OUT[27:21] - 7'd1 ;
   always@(memslave_0_rs_D_OUT or
 	  lEchoIndicationOutput_portalIfc_indications_0_first or
 	  lEchoIndicationOutput_portalIfc_indications_1_first)
   begin
     case (memslave_0_rs_D_OUT)
-      1'd0: v__h16980 = lEchoIndicationOutput_portalIfc_indications_0_first;
-      1'd1: v__h16980 = lEchoIndicationOutput_portalIfc_indications_1_first;
+      1'd0: v__h17514 = lEchoIndicationOutput_portalIfc_indications_0_first;
+      1'd1: v__h17514 = lEchoIndicationOutput_portalIfc_indications_1_first;
     endcase
   end
   always@(memslave_0_fifoReadAddrGenerator_addrBeatFifo_D_OUT or
 	  lEchoIndicationOutput_portalIfc_intr_status or
 	  ctrlPort_0_interruptEnableReg or
-	  v___1__h16913 or
+	  v___1__h17447 or
 	  ctrlPort_0_num_portals_reg or
 	  ctrlPort_0_cycle_count or ctrlPort_0_snapshot)
   begin
     case (memslave_0_fifoReadAddrGenerator_addrBeatFifo_D_OUT[21:17])
       5'd0:
-	  v__h16829 =
+	  v__h17363 =
 	      lEchoIndicationOutput_portalIfc_intr_status ? 32'd1 : 32'd0;
-      5'd4: v__h16829 = ctrlPort_0_interruptEnableReg ? 32'd1 : 32'd0;
-      5'd8: v__h16829 = 32'd2;
+      5'd4: v__h17363 = ctrlPort_0_interruptEnableReg ? 32'd1 : 32'd0;
+      5'd8: v__h17363 = 32'd2;
       5'h0C:
-	  v__h16829 =
+	  v__h17363 =
 	      lEchoIndicationOutput_portalIfc_intr_status ?
-		v___1__h16913 :
+		v___1__h17447 :
 		32'd0;
-      5'h10: v__h16829 = 32'd5;
-      5'h14: v__h16829 = ctrlPort_0_num_portals_reg;
-      5'h18: v__h16829 = ctrlPort_0_cycle_count[63:32];
-      5'h1C: v__h16829 = ctrlPort_0_snapshot;
-      default: v__h16829 = 32'h005A05A0;
+      5'h10: v__h17363 = 32'd5;
+      5'h14: v__h17363 = ctrlPort_0_num_portals_reg;
+      5'h18: v__h17363 = ctrlPort_0_cycle_count[63:32];
+      5'h1C: v__h17363 = ctrlPort_0_snapshot;
+      default: v__h17363 = 32'h005A05A0;
     endcase
   end
   always@(memslave_1_fifoReadAddrGenerator_addrBeatFifo_D_OUT or
 	  lEchoRequestInput_portalIfc_intr_status or
 	  ctrlPort_1_interruptEnableReg or
-	  v___1__h20243 or
+	  v___1__h20777 or
 	  ctrlPort_1_num_portals_reg or
 	  ctrlPort_1_cycle_count or ctrlPort_1_snapshot)
   begin
     case (memslave_1_fifoReadAddrGenerator_addrBeatFifo_D_OUT[21:17])
       5'd0:
-	  v__h20164 = lEchoRequestInput_portalIfc_intr_status ? 32'd1 : 32'd0;
-      5'd4: v__h20164 = ctrlPort_1_interruptEnableReg ? 32'd1 : 32'd0;
-      5'd8: v__h20164 = 32'd2;
+	  v__h20698 = lEchoRequestInput_portalIfc_intr_status ? 32'd1 : 32'd0;
+      5'd4: v__h20698 = ctrlPort_1_interruptEnableReg ? 32'd1 : 32'd0;
+      5'd8: v__h20698 = 32'd2;
       5'h0C:
-	  v__h20164 =
-	      lEchoRequestInput_portalIfc_intr_status ? v___1__h20243 : 32'd0;
-      5'h10: v__h20164 = 32'd6;
-      5'h14: v__h20164 = ctrlPort_1_num_portals_reg;
-      5'h18: v__h20164 = ctrlPort_1_cycle_count[63:32];
-      5'h1C: v__h20164 = ctrlPort_1_snapshot;
-      default: v__h20164 = 32'h005A05A0;
+	  v__h20698 =
+	      lEchoRequestInput_portalIfc_intr_status ? v___1__h20777 : 32'd0;
+      5'h10: v__h20698 = 32'd6;
+      5'h14: v__h20698 = ctrlPort_1_num_portals_reg;
+      5'h18: v__h20698 = ctrlPort_1_cycle_count[63:32];
+      5'h1C: v__h20698 = ctrlPort_1_snapshot;
+      default: v__h20698 = 32'h005A05A0;
     endcase
   end
   always@(memslave_0_rs_D_OUT or
@@ -4846,9 +4851,9 @@ module mkConnectalTop(CLK,
   begin
     case (memslave_0_rs_D_OUT)
       1'd0:
-	  x__h17202 = lEchoIndicationOutput_portalIfc_indications_0_notEmpty;
+	  x__h17736 = lEchoIndicationOutput_portalIfc_indications_0_notEmpty;
       1'd1:
-	  x__h17202 = lEchoIndicationOutput_portalIfc_indications_1_notEmpty;
+	  x__h17736 = lEchoIndicationOutput_portalIfc_indications_1_notEmpty;
     endcase
   end
   always@(memslave_1_rs_D_OUT or
@@ -4857,98 +4862,98 @@ module mkConnectalTop(CLK,
 	  lEchoRequestInput_portalIfc_requests_2_notFull)
   begin
     case (memslave_1_rs_D_OUT)
-      2'd0: x__h20298 = lEchoRequestInput_portalIfc_requests_0_notFull;
-      2'd1: x__h20298 = lEchoRequestInput_portalIfc_requests_1_notFull;
-      2'd2: x__h20298 = lEchoRequestInput_portalIfc_requests_2_notFull;
-      2'd3: x__h20298 = 1'b0 /* unspecified value */ ;
+      2'd0: x__h20832 = lEchoRequestInput_portalIfc_requests_0_notFull;
+      2'd1: x__h20832 = lEchoRequestInput_portalIfc_requests_1_notFull;
+      2'd2: x__h20832 = lEchoRequestInput_portalIfc_requests_2_notFull;
+      2'd3: x__h20832 = 1'b0 /* unspecified value */ ;
     endcase
   end
   always@(memslave_0_fifoReadAddrGenerator_addrBeatFifo_D_OUT or
-	  v__h16980 or x__h17202)
+	  v__h17514 or x__h17736)
   begin
     case (memslave_0_fifoReadAddrGenerator_addrBeatFifo_D_OUT[21:17])
-      5'd0: x1_avValue_data__h17159 = v__h16980;
-      5'd4: x1_avValue_data__h17159 = { 31'd0, x__h17202 };
-      default: x1_avValue_data__h17159 = 32'd0;
+      5'd0: x1_avValue_data__h17693 = v__h17514;
+      5'd4: x1_avValue_data__h17693 = { 31'd0, x__h17736 };
+      default: x1_avValue_data__h17693 = 32'd0;
     endcase
   end
   always@(lEcho_p_rv_core_dInst or
-	  lEcho_p_rv_core_rv1 or alu_src2__h11211 or x__h11365 or x__h11372)
+	  lEcho_p_rv_core_rv1 or alu_src2__h11523 or x__h11677 or x__h11684)
   begin
     case (lEcho_p_rv_core_dInst[14:12])
       3'b0:
-	  rd_val__h11214 =
+	  rd_val__h11526 =
 	      (lEcho_p_rv_core_dInst[5] && lEcho_p_rv_core_dInst[30]) ?
-		lEcho_p_rv_core_rv1 - alu_src2__h11211 :
-		lEcho_p_rv_core_rv1 + alu_src2__h11211;
-      3'b001: rd_val__h11214 = lEcho_p_rv_core_rv1 << alu_src2__h11211[4:0];
-      3'b010: rd_val__h11214 = { 31'd0, x__h11365 };
-      3'b011: rd_val__h11214 = { 31'd0, x__h11372 };
-      3'b100: rd_val__h11214 = lEcho_p_rv_core_rv1 ^ alu_src2__h11211;
+		lEcho_p_rv_core_rv1 - alu_src2__h11523 :
+		lEcho_p_rv_core_rv1 + alu_src2__h11523;
+      3'b001: rd_val__h11526 = lEcho_p_rv_core_rv1 << alu_src2__h11523[4:0];
+      3'b010: rd_val__h11526 = { 31'd0, x__h11677 };
+      3'b011: rd_val__h11526 = { 31'd0, x__h11684 };
+      3'b100: rd_val__h11526 = lEcho_p_rv_core_rv1 ^ alu_src2__h11523;
       3'b101:
-	  rd_val__h11214 =
+	  rd_val__h11526 =
 	      lEcho_p_rv_core_dInst[30] ?
-		lEcho_p_rv_core_rv1 >> alu_src2__h11211[4:0] |
-		~(32'hFFFFFFFF >> alu_src2__h11211[4:0]) &
+		lEcho_p_rv_core_rv1 >> alu_src2__h11523[4:0] |
+		~(32'hFFFFFFFF >> alu_src2__h11523[4:0]) &
 		{32{lEcho_p_rv_core_rv1[31]}} :
-		lEcho_p_rv_core_rv1 >> alu_src2__h11211[4:0];
-      3'b110: rd_val__h11214 = lEcho_p_rv_core_rv1 | alu_src2__h11211;
-      3'b111: rd_val__h11214 = lEcho_p_rv_core_rv1 & alu_src2__h11211;
+		lEcho_p_rv_core_rv1 >> alu_src2__h11523[4:0];
+      3'b110: rd_val__h11526 = lEcho_p_rv_core_rv1 | alu_src2__h11523;
+      3'b111: rd_val__h11526 = lEcho_p_rv_core_rv1 & alu_src2__h11523;
     endcase
   end
   always@(lEcho_p_rv_core_dInst or
-	  lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367)
+	  lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450)
   begin
     case (lEcho_p_rv_core_dInst[13:12])
       2'b0:
 	  CASE_lEcho_p_rv_core_dInst_BITS_13_TO_12_0b0_0_ETC__q2 =
 	      4'b0001 <<
-	      lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[1:0];
+	      lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[1:0];
       2'b01:
 	  CASE_lEcho_p_rv_core_dInst_BITS_13_TO_12_0b0_0_ETC__q2 =
 	      4'b0011 <<
-	      lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[1:0];
+	      lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[1:0];
       2'b10:
 	  CASE_lEcho_p_rv_core_dInst_BITS_13_TO_12_0b0_0_ETC__q2 =
 	      4'b1111 <<
-	      lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[1:0];
+	      lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[1:0];
       2'd3: CASE_lEcho_p_rv_core_dInst_BITS_13_TO_12_0b0_0_ETC__q2 = 4'd0;
     endcase
   end
-  always@(lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367 or
+  always@(lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450 or
 	  lEcho_p_rv_core_toDmem_rv or lEcho_p_rv_core_toMMIO_rv)
   begin
-    case (lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_core_ETC___d367[31:2])
+    case (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2])
       30'd1006649340, 30'd1006649341, 30'd1006649342:
-	  CASE_lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_ETC__q3 =
+	  CASE_lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_ETC__q3 =
 	      !lEcho_p_rv_core_toMMIO_rv[68];
-      default: CASE_lEcho_p_rv_core_rv1_28_PLUS_IF_lEcho_p_rv_ETC__q3 =
+      default: CASE_lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_ETC__q3 =
 		   !lEcho_p_rv_core_toDmem_rv[68];
     endcase
   end
   always@(lEcho_p_rv_core_dInst or
-	  lEcho_p_rv_core_rv1_28_ULT_lEcho_p_rv_core_rv2_02___d433 or
-	  lEcho_p_rv_core_rv1_28_EQ_lEcho_p_rv_core_rv2_02___d425 or
-	  lEcho_p_rv_core_rv1_28_SLT_lEcho_p_rv_core_rv2_02___d429)
+	  lEcho_p_rv_core_rv1_11_ULT_lEcho_p_rv_core_rv2_03___d534 or
+	  lEcho_p_rv_core_rv1_11_EQ_lEcho_p_rv_core_rv2_03___d526 or
+	  lEcho_p_rv_core_rv1_11_SLT_lEcho_p_rv_core_rv2_03___d530)
   begin
     case (lEcho_p_rv_core_dInst[14:12])
       3'b0:
-	  IF_lEcho_p_rv_core_dInst_22_BITS_14_TO_12_23_E_ETC___d439 =
-	      lEcho_p_rv_core_rv1_28_EQ_lEcho_p_rv_core_rv2_02___d425;
+	  IF_lEcho_p_rv_core_dInst_05_BITS_14_TO_12_24_E_ETC___d540 =
+	      lEcho_p_rv_core_rv1_11_EQ_lEcho_p_rv_core_rv2_03___d526;
       3'b001:
-	  IF_lEcho_p_rv_core_dInst_22_BITS_14_TO_12_23_E_ETC___d439 =
-	      !lEcho_p_rv_core_rv1_28_EQ_lEcho_p_rv_core_rv2_02___d425;
+	  IF_lEcho_p_rv_core_dInst_05_BITS_14_TO_12_24_E_ETC___d540 =
+	      !lEcho_p_rv_core_rv1_11_EQ_lEcho_p_rv_core_rv2_03___d526;
       3'b100:
-	  IF_lEcho_p_rv_core_dInst_22_BITS_14_TO_12_23_E_ETC___d439 =
-	      lEcho_p_rv_core_rv1_28_SLT_lEcho_p_rv_core_rv2_02___d429;
+	  IF_lEcho_p_rv_core_dInst_05_BITS_14_TO_12_24_E_ETC___d540 =
+	      lEcho_p_rv_core_rv1_11_SLT_lEcho_p_rv_core_rv2_03___d530;
       3'b101:
-	  IF_lEcho_p_rv_core_dInst_22_BITS_14_TO_12_23_E_ETC___d439 =
-	      !lEcho_p_rv_core_rv1_28_SLT_lEcho_p_rv_core_rv2_02___d429;
+	  IF_lEcho_p_rv_core_dInst_05_BITS_14_TO_12_24_E_ETC___d540 =
+	      !lEcho_p_rv_core_rv1_11_SLT_lEcho_p_rv_core_rv2_03___d530;
       3'b110:
-	  IF_lEcho_p_rv_core_dInst_22_BITS_14_TO_12_23_E_ETC___d439 =
-	      lEcho_p_rv_core_rv1_28_ULT_lEcho_p_rv_core_rv2_02___d433;
-      default: IF_lEcho_p_rv_core_dInst_22_BITS_14_TO_12_23_E_ETC___d439 =
-		   !lEcho_p_rv_core_rv1_28_ULT_lEcho_p_rv_core_rv2_02___d433;
+	  IF_lEcho_p_rv_core_dInst_05_BITS_14_TO_12_24_E_ETC___d540 =
+	      lEcho_p_rv_core_rv1_11_ULT_lEcho_p_rv_core_rv2_03___d534;
+      default: IF_lEcho_p_rv_core_dInst_05_BITS_14_TO_12_24_E_ETC___d540 =
+		   !lEcho_p_rv_core_rv1_11_ULT_lEcho_p_rv_core_rv2_03___d534;
     endcase
   end
   always@(memslave_1_ws_D_OUT or
@@ -4978,11 +4983,11 @@ module mkConnectalTop(CLK,
   begin
     case (ctrl_mux_rv_ws_D_OUT)
       1'd0:
-	  CASE_ctrl_mux_rv_ws_first__059_0_memslave_0_re_ETC___d1070 =
+	  CASE_ctrl_mux_rv_ws_first__170_0_memslave_0_re_ETC___d1181 =
 	      memslave_0_req_aws_FULL_N && memslave_0_ws_FULL_N &&
 	      memslave_0_wsCtrl_FULL_N;
       1'd1:
-	  CASE_ctrl_mux_rv_ws_first__059_0_memslave_0_re_ETC___d1070 =
+	  CASE_ctrl_mux_rv_ws_first__170_0_memslave_0_re_ETC___d1181 =
 	      memslave_1_req_aws_FULL_N && memslave_1_ws_FULL_N &&
 	      memslave_1_wsCtrl_FULL_N;
     endcase
@@ -5022,11 +5027,11 @@ module mkConnectalTop(CLK,
   begin
     case (ctrl_mux_rv_rs_D_OUT)
       1'd0:
-	  CASE_ctrl_mux_rv_rs_first__089_0_memslave_0_re_ETC___d1100 =
+	  CASE_ctrl_mux_rv_rs_first__200_0_memslave_0_re_ETC___d1211 =
 	      memslave_0_req_ars_FULL_N && memslave_0_rs_FULL_N &&
 	      memslave_0_rsCtrl_FULL_N;
       1'd1:
-	  CASE_ctrl_mux_rv_rs_first__089_0_memslave_0_re_ETC___d1100 =
+	  CASE_ctrl_mux_rv_rs_first__200_0_memslave_0_re_ETC___d1211 =
 	      memslave_1_req_ars_FULL_N && memslave_1_rs_FULL_N &&
 	      memslave_1_rsCtrl_FULL_N;
     endcase
@@ -5076,38 +5081,38 @@ module mkConnectalTop(CLK,
 	  lEcho_p_rv_core_rf_30 or lEcho_p_rv_core_rf_31)
   begin
     case (lEcho_p_rv_core_fromImem_rv_port1__read[19:15])
-      5'b0: rs1__h8457 = 32'd0;
-      5'd1: rs1__h8457 = lEcho_p_rv_core_rf_1;
-      5'd2: rs1__h8457 = lEcho_p_rv_core_rf_2;
-      5'd3: rs1__h8457 = lEcho_p_rv_core_rf_3;
-      5'd4: rs1__h8457 = lEcho_p_rv_core_rf_4;
-      5'd5: rs1__h8457 = lEcho_p_rv_core_rf_5;
-      5'd6: rs1__h8457 = lEcho_p_rv_core_rf_6;
-      5'd7: rs1__h8457 = lEcho_p_rv_core_rf_7;
-      5'd8: rs1__h8457 = lEcho_p_rv_core_rf_8;
-      5'd9: rs1__h8457 = lEcho_p_rv_core_rf_9;
-      5'd10: rs1__h8457 = lEcho_p_rv_core_rf_10;
-      5'd11: rs1__h8457 = lEcho_p_rv_core_rf_11;
-      5'd12: rs1__h8457 = lEcho_p_rv_core_rf_12;
-      5'd13: rs1__h8457 = lEcho_p_rv_core_rf_13;
-      5'd14: rs1__h8457 = lEcho_p_rv_core_rf_14;
-      5'd15: rs1__h8457 = lEcho_p_rv_core_rf_15;
-      5'd16: rs1__h8457 = lEcho_p_rv_core_rf_16;
-      5'd17: rs1__h8457 = lEcho_p_rv_core_rf_17;
-      5'd18: rs1__h8457 = lEcho_p_rv_core_rf_18;
-      5'd19: rs1__h8457 = lEcho_p_rv_core_rf_19;
-      5'd20: rs1__h8457 = lEcho_p_rv_core_rf_20;
-      5'd21: rs1__h8457 = lEcho_p_rv_core_rf_21;
-      5'd22: rs1__h8457 = lEcho_p_rv_core_rf_22;
-      5'd23: rs1__h8457 = lEcho_p_rv_core_rf_23;
-      5'd24: rs1__h8457 = lEcho_p_rv_core_rf_24;
-      5'd25: rs1__h8457 = lEcho_p_rv_core_rf_25;
-      5'd26: rs1__h8457 = lEcho_p_rv_core_rf_26;
-      5'd27: rs1__h8457 = lEcho_p_rv_core_rf_27;
-      5'd28: rs1__h8457 = lEcho_p_rv_core_rf_28;
-      5'd29: rs1__h8457 = lEcho_p_rv_core_rf_29;
-      5'd30: rs1__h8457 = lEcho_p_rv_core_rf_30;
-      5'd31: rs1__h8457 = lEcho_p_rv_core_rf_31;
+      5'b0: rs1__h8625 = 32'd0;
+      5'd1: rs1__h8625 = lEcho_p_rv_core_rf_1;
+      5'd2: rs1__h8625 = lEcho_p_rv_core_rf_2;
+      5'd3: rs1__h8625 = lEcho_p_rv_core_rf_3;
+      5'd4: rs1__h8625 = lEcho_p_rv_core_rf_4;
+      5'd5: rs1__h8625 = lEcho_p_rv_core_rf_5;
+      5'd6: rs1__h8625 = lEcho_p_rv_core_rf_6;
+      5'd7: rs1__h8625 = lEcho_p_rv_core_rf_7;
+      5'd8: rs1__h8625 = lEcho_p_rv_core_rf_8;
+      5'd9: rs1__h8625 = lEcho_p_rv_core_rf_9;
+      5'd10: rs1__h8625 = lEcho_p_rv_core_rf_10;
+      5'd11: rs1__h8625 = lEcho_p_rv_core_rf_11;
+      5'd12: rs1__h8625 = lEcho_p_rv_core_rf_12;
+      5'd13: rs1__h8625 = lEcho_p_rv_core_rf_13;
+      5'd14: rs1__h8625 = lEcho_p_rv_core_rf_14;
+      5'd15: rs1__h8625 = lEcho_p_rv_core_rf_15;
+      5'd16: rs1__h8625 = lEcho_p_rv_core_rf_16;
+      5'd17: rs1__h8625 = lEcho_p_rv_core_rf_17;
+      5'd18: rs1__h8625 = lEcho_p_rv_core_rf_18;
+      5'd19: rs1__h8625 = lEcho_p_rv_core_rf_19;
+      5'd20: rs1__h8625 = lEcho_p_rv_core_rf_20;
+      5'd21: rs1__h8625 = lEcho_p_rv_core_rf_21;
+      5'd22: rs1__h8625 = lEcho_p_rv_core_rf_22;
+      5'd23: rs1__h8625 = lEcho_p_rv_core_rf_23;
+      5'd24: rs1__h8625 = lEcho_p_rv_core_rf_24;
+      5'd25: rs1__h8625 = lEcho_p_rv_core_rf_25;
+      5'd26: rs1__h8625 = lEcho_p_rv_core_rf_26;
+      5'd27: rs1__h8625 = lEcho_p_rv_core_rf_27;
+      5'd28: rs1__h8625 = lEcho_p_rv_core_rf_28;
+      5'd29: rs1__h8625 = lEcho_p_rv_core_rf_29;
+      5'd30: rs1__h8625 = lEcho_p_rv_core_rf_30;
+      5'd31: rs1__h8625 = lEcho_p_rv_core_rf_31;
     endcase
   end
   always@(lEcho_p_rv_core_fromImem_rv_port1__read or
@@ -5143,90 +5148,58 @@ module mkConnectalTop(CLK,
 	  lEcho_p_rv_core_rf_30 or lEcho_p_rv_core_rf_31)
   begin
     case (lEcho_p_rv_core_fromImem_rv_port1__read[24:20])
-      5'd0: rs2__h8458 = 32'd0;
-      5'd1: rs2__h8458 = lEcho_p_rv_core_rf_1;
-      5'd2: rs2__h8458 = lEcho_p_rv_core_rf_2;
-      5'd3: rs2__h8458 = lEcho_p_rv_core_rf_3;
-      5'd4: rs2__h8458 = lEcho_p_rv_core_rf_4;
-      5'd5: rs2__h8458 = lEcho_p_rv_core_rf_5;
-      5'd6: rs2__h8458 = lEcho_p_rv_core_rf_6;
-      5'd7: rs2__h8458 = lEcho_p_rv_core_rf_7;
-      5'd8: rs2__h8458 = lEcho_p_rv_core_rf_8;
-      5'd9: rs2__h8458 = lEcho_p_rv_core_rf_9;
-      5'd10: rs2__h8458 = lEcho_p_rv_core_rf_10;
-      5'd11: rs2__h8458 = lEcho_p_rv_core_rf_11;
-      5'd12: rs2__h8458 = lEcho_p_rv_core_rf_12;
-      5'd13: rs2__h8458 = lEcho_p_rv_core_rf_13;
-      5'd14: rs2__h8458 = lEcho_p_rv_core_rf_14;
-      5'd15: rs2__h8458 = lEcho_p_rv_core_rf_15;
-      5'd16: rs2__h8458 = lEcho_p_rv_core_rf_16;
-      5'd17: rs2__h8458 = lEcho_p_rv_core_rf_17;
-      5'd18: rs2__h8458 = lEcho_p_rv_core_rf_18;
-      5'd19: rs2__h8458 = lEcho_p_rv_core_rf_19;
-      5'd20: rs2__h8458 = lEcho_p_rv_core_rf_20;
-      5'd21: rs2__h8458 = lEcho_p_rv_core_rf_21;
-      5'd22: rs2__h8458 = lEcho_p_rv_core_rf_22;
-      5'd23: rs2__h8458 = lEcho_p_rv_core_rf_23;
-      5'd24: rs2__h8458 = lEcho_p_rv_core_rf_24;
-      5'd25: rs2__h8458 = lEcho_p_rv_core_rf_25;
-      5'd26: rs2__h8458 = lEcho_p_rv_core_rf_26;
-      5'd27: rs2__h8458 = lEcho_p_rv_core_rf_27;
-      5'd28: rs2__h8458 = lEcho_p_rv_core_rf_28;
-      5'd29: rs2__h8458 = lEcho_p_rv_core_rf_29;
-      5'd30: rs2__h8458 = lEcho_p_rv_core_rf_30;
-      5'd31: rs2__h8458 = lEcho_p_rv_core_rf_31;
-    endcase
-  end
-  always@(lEcho_p_rv_core_mem_business or
-	  lEcho_p_rv_core_rvd or
-	  mem_data1846_BITS_7_TO_0__q8 or
-	  mem_data1846_BITS_15_TO_0__q9 or mem_data__h11846)
-  begin
-    case (lEcho_p_rv_core_mem_business[5:3])
-      3'b0:
-	  v__h11573 =
-	      { {24{mem_data1846_BITS_7_TO_0__q8[7]}},
-		mem_data1846_BITS_7_TO_0__q8 };
-      3'b001:
-	  v__h11573 =
-	      { {16{mem_data1846_BITS_15_TO_0__q9[15]}},
-		mem_data1846_BITS_15_TO_0__q9 };
-      3'b010: v__h11573 = mem_data__h11846;
-      3'b100: v__h11573 = { 24'd0, mem_data__h11846[7:0] };
-      3'b101: v__h11573 = { 16'd0, mem_data__h11846[15:0] };
-      default: v__h11573 = lEcho_p_rv_core_rvd;
-    endcase
-  end
-  always@(lEcho_p_rv_core_mem_business or
-	  IF_lEcho_p_rv_core_mem_business_87_BIT_0_88_TH_ETC___d493)
-  begin
-    case (lEcho_p_rv_core_mem_business[5:3])
-      3'b0, 3'b001, 3'b100, 3'b101:
-	  CASE_lEcho_p_rv_core_mem_business_BITS_5_TO_3__ETC__q10 =
-	      IF_lEcho_p_rv_core_mem_business_87_BIT_0_88_TH_ETC___d493;
-      default: CASE_lEcho_p_rv_core_mem_business_BITS_5_TO_3__ETC__q10 =
-		   lEcho_p_rv_core_mem_business[5:3] != 3'b010 ||
-		   IF_lEcho_p_rv_core_mem_business_87_BIT_0_88_TH_ETC___d493;
+      5'd0: rs2__h8626 = 32'd0;
+      5'd1: rs2__h8626 = lEcho_p_rv_core_rf_1;
+      5'd2: rs2__h8626 = lEcho_p_rv_core_rf_2;
+      5'd3: rs2__h8626 = lEcho_p_rv_core_rf_3;
+      5'd4: rs2__h8626 = lEcho_p_rv_core_rf_4;
+      5'd5: rs2__h8626 = lEcho_p_rv_core_rf_5;
+      5'd6: rs2__h8626 = lEcho_p_rv_core_rf_6;
+      5'd7: rs2__h8626 = lEcho_p_rv_core_rf_7;
+      5'd8: rs2__h8626 = lEcho_p_rv_core_rf_8;
+      5'd9: rs2__h8626 = lEcho_p_rv_core_rf_9;
+      5'd10: rs2__h8626 = lEcho_p_rv_core_rf_10;
+      5'd11: rs2__h8626 = lEcho_p_rv_core_rf_11;
+      5'd12: rs2__h8626 = lEcho_p_rv_core_rf_12;
+      5'd13: rs2__h8626 = lEcho_p_rv_core_rf_13;
+      5'd14: rs2__h8626 = lEcho_p_rv_core_rf_14;
+      5'd15: rs2__h8626 = lEcho_p_rv_core_rf_15;
+      5'd16: rs2__h8626 = lEcho_p_rv_core_rf_16;
+      5'd17: rs2__h8626 = lEcho_p_rv_core_rf_17;
+      5'd18: rs2__h8626 = lEcho_p_rv_core_rf_18;
+      5'd19: rs2__h8626 = lEcho_p_rv_core_rf_19;
+      5'd20: rs2__h8626 = lEcho_p_rv_core_rf_20;
+      5'd21: rs2__h8626 = lEcho_p_rv_core_rf_21;
+      5'd22: rs2__h8626 = lEcho_p_rv_core_rf_22;
+      5'd23: rs2__h8626 = lEcho_p_rv_core_rf_23;
+      5'd24: rs2__h8626 = lEcho_p_rv_core_rf_24;
+      5'd25: rs2__h8626 = lEcho_p_rv_core_rf_25;
+      5'd26: rs2__h8626 = lEcho_p_rv_core_rf_26;
+      5'd27: rs2__h8626 = lEcho_p_rv_core_rf_27;
+      5'd28: rs2__h8626 = lEcho_p_rv_core_rf_28;
+      5'd29: rs2__h8626 = lEcho_p_rv_core_rf_29;
+      5'd30: rs2__h8626 = lEcho_p_rv_core_rf_30;
+      5'd31: rs2__h8626 = lEcho_p_rv_core_rf_31;
     endcase
   end
   always@(lEcho_p_rv_core_fromImem_rv_port1__read)
   begin
     case (lEcho_p_rv_core_fromImem_rv_port1__read[31:20])
       12'b0, 12'b000000000001, 12'b001100000010:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q11 =
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q8 =
 	      lEcho_p_rv_core_fromImem_rv_port1__read[19:15] == 5'b0;
-      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q11 =
+      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q8 =
 		   lEcho_p_rv_core_fromImem_rv_port1__read[31:20] ==
 		   12'b000100000101 &&
 		   lEcho_p_rv_core_fromImem_rv_port1__read[19:15] == 5'b0;
     endcase
   end
   always@(lEcho_p_rv_core_fromImem_rv_port1__read or
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q11)
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q8)
   begin
     case (lEcho_p_rv_core_fromImem_rv_port1__read[6:0])
       7'b1100011:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q12 =
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q9 =
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b0 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b001 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b100 ||
@@ -5234,26 +5207,26 @@ module mkConnectalTop(CLK,
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b110 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b111;
       7'b1100111:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q12 =
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q9 =
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b0;
-      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q12 =
+      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q9 =
 		   lEcho_p_rv_core_fromImem_rv_port1__read[6:0] ==
 		   7'b1101111 ||
 		   lEcho_p_rv_core_fromImem_rv_port1__read[6:0] ==
 		   7'b1110011 &&
 		   lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b0 &&
 		   lEcho_p_rv_core_fromImem_rv_port1__read[11:7] == 5'b0 &&
-		   CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q11;
+		   CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q8;
     endcase
   end
   always@(lEcho_p_rv_core_fromImem_rv_port1__read)
   begin
     case (lEcho_p_rv_core_fromImem_rv_port1__read[14:12])
       3'b0, 3'b101:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q13 =
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q10 =
 	      lEcho_p_rv_core_fromImem_rv_port1__read[31:25] == 7'b0 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[31:25] == 7'b0100000;
-      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q13 =
+      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q10 =
 		   (lEcho_p_rv_core_fromImem_rv_port1__read[14:12] ==
 		    3'b001 ||
 		    lEcho_p_rv_core_fromImem_rv_port1__read[14:12] ==
@@ -5270,37 +5243,37 @@ module mkConnectalTop(CLK,
     endcase
   end
   always@(lEcho_p_rv_core_fromImem_rv_port1__read or
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q12 or
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q13)
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q9 or
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q10)
   begin
     case (lEcho_p_rv_core_fromImem_rv_port1__read[6:0])
       7'b0100011:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q14 =
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q11 =
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b0 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b001 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b010;
       7'b0110011:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q14 =
-	      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q13;
-      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q14 =
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q11 =
+	      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q10;
+      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q11 =
 		   lEcho_p_rv_core_fromImem_rv_port1__read[6:0] ==
 		   7'b0110111 ||
-		   CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q12;
+		   CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q9;
     endcase
   end
   always@(lEcho_p_rv_core_fromImem_rv_port1__read or
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q14)
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q11)
   begin
     case (lEcho_p_rv_core_fromImem_rv_port1__read[6:0])
       7'b0000011:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15 =
+	  IF_lEcho_p_rv_core_fromImem_rv_port1__read__30_ETC___d216 =
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b0 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b001 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b010 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b100 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b101;
       7'b0010011:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15 =
+	  IF_lEcho_p_rv_core_fromImem_rv_port1__read__30_ETC___d216 =
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b0 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b010 ||
 	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b011 ||
@@ -5315,23 +5288,161 @@ module mkConnectalTop(CLK,
 		  lEcho_p_rv_core_fromImem_rv_port1__read[31:26] ==
 		  6'b010000) &&
 		 !lEcho_p_rv_core_fromImem_rv_port1__read[25]);
-      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15 =
+      default: IF_lEcho_p_rv_core_fromImem_rv_port1__read__30_ETC___d216 =
 		   lEcho_p_rv_core_fromImem_rv_port1__read[6:0] ==
 		   7'b0010111 ||
-		   CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q14;
+		   CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q11;
+    endcase
+  end
+  always@(lEcho_p_rv_core_mem_business or
+	  lEcho_p_rv_core_rvd or
+	  mem_data2158_BITS_7_TO_0__q12 or
+	  mem_data2158_BITS_15_TO_0__q13 or mem_data__h12158)
+  begin
+    case (lEcho_p_rv_core_mem_business[5:3])
+      3'b0:
+	  v__h11885 =
+	      { {24{mem_data2158_BITS_7_TO_0__q12[7]}},
+		mem_data2158_BITS_7_TO_0__q12 };
+      3'b001:
+	  v__h11885 =
+	      { {16{mem_data2158_BITS_15_TO_0__q13[15]}},
+		mem_data2158_BITS_15_TO_0__q13 };
+      3'b010: v__h11885 = mem_data__h12158;
+      3'b100: v__h11885 = { 24'd0, mem_data__h12158[7:0] };
+      3'b101: v__h11885 = { 16'd0, mem_data__h12158[15:0] };
+      default: v__h11885 = lEcho_p_rv_core_rvd;
+    endcase
+  end
+  always@(lEcho_p_rv_core_mem_business or
+	  IF_lEcho_p_rv_core_mem_business_88_BIT_0_97_TH_ETC___d602)
+  begin
+    case (lEcho_p_rv_core_mem_business[5:3])
+      3'b0, 3'b001, 3'b100, 3'b101:
+	  CASE_lEcho_p_rv_core_mem_business_BITS_5_TO_3__ETC__q14 =
+	      IF_lEcho_p_rv_core_mem_business_88_BIT_0_97_TH_ETC___d602;
+      default: CASE_lEcho_p_rv_core_mem_business_BITS_5_TO_3__ETC__q14 =
+		   lEcho_p_rv_core_mem_business[5:3] != 3'b010 ||
+		   IF_lEcho_p_rv_core_mem_business_88_BIT_0_97_TH_ETC___d602;
     endcase
   end
   always@(lEcho_p_rv_core_fromImem_rv_port1__read)
   begin
     case (lEcho_p_rv_core_fromImem_rv_port1__read[6:2])
       5'b0, 5'b00001, 5'b00100, 5'b00110, 5'b11001:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16 = 3'd0;
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15 = 3'd0;
       5'b00101, 5'b01101:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16 = 3'd3;
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15 = 3'd3;
       5'b01000, 5'b01001:
-	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16 = 3'd1;
-      5'b11000: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16 = 3'd2;
-      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16 = 3'd4;
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15 = 3'd1;
+      5'b11000: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15 = 3'd2;
+      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q15 = 3'd4;
+    endcase
+  end
+  always@(lEcho_p_rv_core_fromImem_rv_port1__read)
+  begin
+    case (lEcho_p_rv_core_fromImem_rv_port1__read[31:20])
+      12'b0, 12'b000000000001, 12'b001100000010:
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16 =
+	      lEcho_p_rv_core_fromImem_rv_port1__read[19:15] != 5'b0;
+      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16 =
+		   lEcho_p_rv_core_fromImem_rv_port1__read[31:20] !=
+		   12'b000100000101 ||
+		   lEcho_p_rv_core_fromImem_rv_port1__read[19:15] != 5'b0;
+    endcase
+  end
+  always@(lEcho_p_rv_core_fromImem_rv_port1__read or
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16)
+  begin
+    case (lEcho_p_rv_core_fromImem_rv_port1__read[6:0])
+      7'b1100011:
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q17 =
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b0 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b001 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b100 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b101 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b110 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b111;
+      7'b1100111:
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q17 =
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b0;
+      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q17 =
+		   lEcho_p_rv_core_fromImem_rv_port1__read[6:0] !=
+		   7'b1101111 &&
+		   (lEcho_p_rv_core_fromImem_rv_port1__read[6:0] !=
+		    7'b1110011 ||
+		    lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b0 ||
+		    lEcho_p_rv_core_fromImem_rv_port1__read[11:7] != 5'b0 ||
+		    CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q16);
+    endcase
+  end
+  always@(lEcho_p_rv_core_fromImem_rv_port1__read)
+  begin
+    case (lEcho_p_rv_core_fromImem_rv_port1__read[14:12])
+      3'b0, 3'b101:
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q18 =
+	      lEcho_p_rv_core_fromImem_rv_port1__read[31:25] != 7'b0 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[31:25] != 7'b0100000;
+      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q18 =
+		   lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b001 &&
+		   lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b010 &&
+		   lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b011 &&
+		   lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b100 &&
+		   lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b110 &&
+		   lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b111 ||
+		   lEcho_p_rv_core_fromImem_rv_port1__read[31:25] != 7'b0;
+    endcase
+  end
+  always@(lEcho_p_rv_core_fromImem_rv_port1__read or
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q17 or
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q18)
+  begin
+    case (lEcho_p_rv_core_fromImem_rv_port1__read[6:0])
+      7'b0100011:
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q19 =
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b0 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b001 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b010;
+      7'b0110011:
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q19 =
+	      CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q18;
+      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q19 =
+		   lEcho_p_rv_core_fromImem_rv_port1__read[6:0] !=
+		   7'b0110111 &&
+		   CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q17;
+    endcase
+  end
+  always@(lEcho_p_rv_core_fromImem_rv_port1__read or
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q19)
+  begin
+    case (lEcho_p_rv_core_fromImem_rv_port1__read[6:0])
+      7'b0000011:
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q20 =
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b0 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b001 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b010 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b100 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b101;
+      7'b0010011:
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q20 =
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b0 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b010 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b011 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b100 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b110 &&
+	      lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b111 &&
+	      ((lEcho_p_rv_core_fromImem_rv_port1__read[14:12] == 3'b001) ?
+		 lEcho_p_rv_core_fromImem_rv_port1__read[31:26] != 6'b0 ||
+		 lEcho_p_rv_core_fromImem_rv_port1__read[25] :
+		 lEcho_p_rv_core_fromImem_rv_port1__read[14:12] != 3'b101 ||
+		 lEcho_p_rv_core_fromImem_rv_port1__read[31:26] != 6'b0 &&
+		 lEcho_p_rv_core_fromImem_rv_port1__read[31:26] !=
+		 6'b010000 ||
+		 lEcho_p_rv_core_fromImem_rv_port1__read[25]);
+      default: CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q20 =
+		   lEcho_p_rv_core_fromImem_rv_port1__read[6:0] !=
+		   7'b0010111 &&
+		   CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q19;
     endcase
   end
 
@@ -5400,7 +5511,7 @@ module mkConnectalTop(CLK,
 	lEcho_p_rv_core_rv1 <= `BSV_ASSIGNMENT_DELAY 32'd0;
 	lEcho_p_rv_core_rv2 <= `BSV_ASSIGNMENT_DELAY 32'd0;
 	lEcho_p_rv_core_rvd <= `BSV_ASSIGNMENT_DELAY 32'd0;
-	lEcho_p_rv_core_starting <= `BSV_ASSIGNMENT_DELAY 1'd1;
+	lEcho_p_rv_core_starting <= `BSV_ASSIGNMENT_DELAY 1'd0;
 	lEcho_p_rv_core_state <= `BSV_ASSIGNMENT_DELAY 2'd0;
 	lEcho_p_rv_core_toDmem_rv <= `BSV_ASSIGNMENT_DELAY
 	    69'h0AAAAAAAAAAAAAAAAA;
@@ -5797,6 +5908,179 @@ module mkConnectalTop(CLK,
 	  !lEcho_p_bram_serverAdapterB_outDataCore_FULL_N)
 	$display("ERROR: %m: mkBRAMSeverAdapter overrun");
     if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_fetch)
+	$display("Fetch %x", lEcho_p_rv_core_pc);
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write("[Decode] ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode)
+	$write("DecodedInst { ", "legal: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  CASE_lEcho_p_rv_core_fromImem_rvport1__read_B_ETC__q20)
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  IF_lEcho_p_rv_core_fromImem_rv_port1__read__30_ETC___d216)
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write(", ", "valid_rs1: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11000 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b0 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01000 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01100 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00100)
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  (lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11000 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b0 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01000 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01100 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11001 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00100))
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write(", ", "valid_rs2: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11000 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01000 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01100)
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  (lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11000 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01000 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01100))
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write(", ", "valid_rd: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01101 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11011 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b0 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01100 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00100 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00101)
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  (lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01101 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11011 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b0 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01100 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11001 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00100 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00101))
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode)
+	$write(", ", "immediateType: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b0 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00100 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00110 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00101 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01101 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01000 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11000 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11011)
+	$write("tagged Invalid ", "");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  (lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b0 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00001 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00100 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00110 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11001 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00101 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01101 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01000 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01001 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11000 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11011))
+	$write("tagged Valid ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b0 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00100 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00110 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00101 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01101 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01000 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11000 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11011)
+	$write("");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  (lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b0 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00001 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00100 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00110 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11001))
+	$write("ImmI");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b0 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00100 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00110 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00101 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01101 &&
+	  (lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01000 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01001))
+	$write("ImmS");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11000)
+	$write("ImmB");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b0 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00100 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00110 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11000 &&
+	  (lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b00101 ||
+	   lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b01101))
+	$write("ImmU");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] == 5'b11011 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b0 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00100 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00110 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01000 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01001 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b11000 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b00101 &&
+	  lEcho_p_rv_core_fromImem_rv_port1__read[6:2] != 5'b01101)
+	$write("ImmJ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write(", ", "inst: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode)
+	$write("'h%h", lEcho_p_rv_core_fromImem_rv_port1__read[31:0], " }");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write("\n");
+    if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write("REG ");
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_decode)
@@ -5805,29 +6089,392 @@ module mkConnectalTop(CLK,
       if (WILL_FIRE_RL_lEcho_p_rv_core_decode)
 	$write("'h%h", lEcho_p_rv_core_fromImem_rv_port1__read[19:15]);
     if (RST_N != `BSV_RESET_VALUE)
-      if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write("'h%h", rs1__h8457);
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write("'h%h", rs1__h8625);
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_decode)
 	$write("'h%h", lEcho_p_rv_core_fromImem_rv_port1__read[24:20]);
     if (RST_N != `BSV_RESET_VALUE)
-      if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write("'h%h", rs2__h8458);
+      if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write("'h%h", rs2__h8626);
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_decode) $write("\n");
     if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute) $write("[Execute] ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute)
+	$write("DecodedInst { ", "legal: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && lEcho_p_rv_core_dInst[39])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[39])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute) $write(", ", "valid_rs1: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && lEcho_p_rv_core_dInst[38])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[38])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute) $write(", ", "valid_rs2: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && lEcho_p_rv_core_dInst[37])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[37])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute) $write(", ", "valid_rd: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && lEcho_p_rv_core_dInst[36])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[36])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute)
+	$write(", ", "immediateType: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && lEcho_p_rv_core_dInst[35])
+	$write("tagged Valid ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[35])
+	$write("tagged Invalid ", "");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd0)
+	$write("ImmI");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd1)
+	$write("ImmS");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd2)
+	$write("ImmB");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd3)
+	$write("ImmU");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd0 &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd1 &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd2 &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd3)
+	$write("ImmJ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[35])
+	$write("");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute) $write(", ", "inst: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute)
+	$write("'h%h", lEcho_p_rv_core_dInst[31:0], " }");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute) $write("\n");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[6] &&
+	  lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
+	  (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649340 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649341 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649342))
+	$write("[Execute] MMIO");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[6] &&
+	  lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
+	  (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649340 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649341 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649342))
+	$write("Mem { ", "byte_en: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[6] &&
+	  lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
+	  (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649340 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649341 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649342))
+	$write("'h%h", req_byte_en__h10561);
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[6] &&
+	  lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
+	  (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649340 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649341 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649342))
+	$write(", ", "addr: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[6] &&
+	  lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
+	  (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649340 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649341 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649342))
+	$write("'h%h", value__h10754);
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[6] &&
+	  lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
+	  (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649340 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649341 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649342))
+	$write(", ", "data: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[6] &&
+	  lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
+	  (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649340 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649341 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649342))
+	$write("'h%h", value__h10756, " }");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_execute && !lEcho_p_rv_core_dInst[6] &&
+	  lEcho_p_rv_core_dInst[4:3] == 2'b0 &&
+	  (lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649340 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649341 ||
+	   lEcho_p_rv_core_rv1_11_PLUS_IF_lEcho_p_rv_core_ETC___d450[31:2] ==
+	   30'd1006649342))
+	$write("\n");
+    if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_execute &&
-	  NOT_IF_lEcho_p_rv_core_dInst_22_BITS_6_TO_4_13_ETC___d446)
+	  NOT_IF_lEcho_p_rv_core_dInst_05_BITS_6_TO_4_14_ETC___d547)
 	$write("REDIRECT ");
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_execute &&
-	  NOT_IF_lEcho_p_rv_core_dInst_22_BITS_6_TO_4_13_ETC___d446)
-	$write("'h%h", nextPc__h10702);
+	  NOT_IF_lEcho_p_rv_core_dInst_05_BITS_6_TO_4_14_ETC___d547)
+	$write("'h%h", nextPc__h11014);
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_execute &&
-	  NOT_IF_lEcho_p_rv_core_dInst_22_BITS_6_TO_4_13_ETC___d446)
+	  NOT_IF_lEcho_p_rv_core_dInst_05_BITS_6_TO_4_14_ETC___d547)
 	$write("'h%h", lEcho_p_rv_core_pc);
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_execute &&
-	  NOT_IF_lEcho_p_rv_core_dInst_22_BITS_6_TO_4_13_ETC___d446)
+	  NOT_IF_lEcho_p_rv_core_dInst_05_BITS_6_TO_4_14_ETC___d547)
+	$write("\n");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback) $write("[Writeback]");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback)
+	$write("DecodedInst { ", "legal: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback && lEcho_p_rv_core_dInst[39])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback) $write(", ", "valid_rs1: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback && lEcho_p_rv_core_dInst[38])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[38])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback) $write(", ", "valid_rs2: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback && lEcho_p_rv_core_dInst[37])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[37])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback) $write(", ", "valid_rd: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback && lEcho_p_rv_core_dInst[36])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[36])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback)
+	$write(", ", "immediateType: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback && lEcho_p_rv_core_dInst[35])
+	$write("tagged Valid ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[35])
+	$write("tagged Invalid ", "");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd0)
+	$write("ImmI");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd1)
+	$write("ImmS");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd2)
+	$write("ImmB");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd3)
+	$write("ImmU");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd0 &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd1 &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd2 &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd3)
+	$write("ImmJ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[35])
+	$write("");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback) $write(", ", "inst: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback)
+	$write("'h%h", lEcho_p_rv_core_dInst[31:0], " }");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback) $write("\n");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
+	$write("[Writeback] Illegal Inst, Drop and fault: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
+	$write("DecodedInst { ", "legal: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
+	$write(", ", "valid_rs1: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  lEcho_p_rv_core_dInst[38])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  !lEcho_p_rv_core_dInst[38])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
+	$write(", ", "valid_rs2: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  lEcho_p_rv_core_dInst[37])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  !lEcho_p_rv_core_dInst[37])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
+	$write(", ", "valid_rd: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  lEcho_p_rv_core_dInst[36])
+	$write("True");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  !lEcho_p_rv_core_dInst[36])
+	$write("False");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
+	$write(", ", "immediateType: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  lEcho_p_rv_core_dInst[35])
+	$write("tagged Valid ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  !lEcho_p_rv_core_dInst[35])
+	$write("tagged Invalid ", "");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd0)
+	$write("ImmI");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd1)
+	$write("ImmS");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd2)
+	$write("ImmB");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] == 3'd3)
+	$write("ImmU");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  lEcho_p_rv_core_dInst[35] &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd0 &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd1 &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd2 &&
+	  lEcho_p_rv_core_dInst[34:32] != 3'd3)
+	$write("ImmJ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39] &&
+	  !lEcho_p_rv_core_dInst[35])
+	$write("");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
+	$write(", ", "inst: ");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
+	$write("'h%h", lEcho_p_rv_core_dInst[31:0], " }");
+    if (RST_N != `BSV_RESET_VALUE)
+      if (WILL_FIRE_RL_lEcho_p_rv_core_writeback &&
+	  !lEcho_p_rv_core_dInst[39])
 	$write("\n");
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_writeback && lEcho_p_rv_core_dInst[36])
@@ -5837,7 +6484,7 @@ module mkConnectalTop(CLK,
 	$write("'h%h", lEcho_p_rv_core_dInst[11:7]);
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_writeback && lEcho_p_rv_core_dInst[36])
-	$write("'h%h", v__h11517);
+	$write("'h%h", v__h11829);
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_lEcho_p_rv_core_writeback && lEcho_p_rv_core_dInst[36])
 	$write("\n");
@@ -5885,25 +6532,25 @@ module mkConnectalTop(CLK,
 	$finish(32'd1);
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_ctrl_mux_rv_req_aw &&
-	  NOT_ctrl_mux_rv_req_aws_first__074_BITS_15_TO__ETC___d1078 &&
+	  NOT_ctrl_mux_rv_req_aws_first__185_BITS_15_TO__ETC___d1189 &&
 	  ctrl_mux_rv_ws_D_OUT == 1'd0)
 	$display("**** \n\n mkMemMethodMux.writeReq len=%d \n\n ****",
 		 ctrl_mux_rv_req_aws_D_OUT[15:6]);
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_ctrl_mux_rv_req_aw &&
-	  NOT_ctrl_mux_rv_req_aws_first__074_BITS_15_TO__ETC___d1078 &&
+	  NOT_ctrl_mux_rv_req_aws_first__185_BITS_15_TO__ETC___d1189 &&
 	  ctrl_mux_rv_ws_D_OUT == 1'd1)
 	$display("**** \n\n mkMemMethodMux.writeReq len=%d \n\n ****",
 		 ctrl_mux_rv_req_aws_D_OUT[15:6]);
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_ctrl_mux_rv_req_ar &&
-	  NOT_ctrl_mux_rv_req_ars_first__104_BITS_15_TO__ETC___d1108 &&
+	  NOT_ctrl_mux_rv_req_ars_first__215_BITS_15_TO__ETC___d1219 &&
 	  ctrl_mux_rv_rs_D_OUT == 1'd0)
 	$display("**** \n\n mkMemMethodMux.readReq len=%d \n\n ****",
 		 ctrl_mux_rv_req_ars_D_OUT[15:6]);
     if (RST_N != `BSV_RESET_VALUE)
       if (WILL_FIRE_RL_ctrl_mux_rv_req_ar &&
-	  NOT_ctrl_mux_rv_req_ars_first__104_BITS_15_TO__ETC___d1108 &&
+	  NOT_ctrl_mux_rv_req_ars_first__215_BITS_15_TO__ETC___d1219 &&
 	  ctrl_mux_rv_rs_D_OUT == 1'd1)
 	$display("**** \n\n mkMemMethodMux.readReq len=%d \n\n ****",
 		 ctrl_mux_rv_req_ars_D_OUT[15:6]);

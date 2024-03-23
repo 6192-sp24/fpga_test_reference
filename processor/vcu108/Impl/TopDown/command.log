@@ -9,20 +9,20 @@ read_xdc /home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-cloc
 write_checkpoint -force ./Impl/TopDown/top-post-link.dcp
     Elapsed time 5 seconds
 opt_design
-    Elapsed time 20 seconds
+    Elapsed time 21 seconds
 write_checkpoint -force ./Impl/TopDown/top-post-opt.dcp
     Elapsed time 4 seconds
 place_design
-    Elapsed time 59 seconds
+    Elapsed time 99 seconds
 write_checkpoint -force ./Impl/TopDown/top-post-place.dcp
     Elapsed time 5 seconds
 phys_opt_design
-    Elapsed time 0 seconds
+    Elapsed time 37 seconds
 write_checkpoint -force ./Impl/TopDown/top-post-phys-opt.dcp
     Elapsed time 5 seconds
 route_design
-    Elapsed time 75 seconds
+    Elapsed time 101 seconds
 write_checkpoint -force ./Impl/TopDown/top-post-route.dcp
-    Elapsed time 5 seconds
+    Elapsed time 6 seconds
 write_bitstream -bin_file -force Impl/TopDown/mkTop.bit
     Elapsed time 36 seconds

@@ -8,15 +8,33 @@ Conflict-free: getStatus
  
 Rule schedule
 -------------
-Rule: bram_serverAdapterA_outData_enqueue
-Predicate: bram_serverAdapterA_outData_enqw.whas &&
-	   ((! bram_serverAdapterA_outData_dequeueing.whas) ||
-	    bram_serverAdapterA_outData_ff.i_notEmpty)
+Rule: bram_serverAdapterA_outData_setFirstCore
+Predicate: bram_serverAdapterA_outDataCore.i_notEmpty &&
+	   bram_serverAdapterA_outDataCore.notEmpty
 Blocking rules: (none)
  
-Rule: bram_serverAdapterA_outData_dequeue
-Predicate: bram_serverAdapterA_outData_dequeueing.whas &&
-	   bram_serverAdapterA_outData_ff.i_notEmpty
+Rule: bram_serverAdapterA_outData_setFirstEnq
+Predicate: (! bram_serverAdapterA_outDataCore.notEmpty) &&
+	   bram_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: bram_serverAdapterA_outData_enqOnly
+Predicate: bram_serverAdapterA_outDataCore.i_notFull &&
+	   (! bram_serverAdapterA_outData_deqCalled.whas) &&
+	   bram_serverAdapterA_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: bram_serverAdapterA_outData_deqOnly
+Predicate: bram_serverAdapterA_outDataCore.i_notEmpty &&
+	   bram_serverAdapterA_outData_deqCalled.whas &&
+	   (! bram_serverAdapterA_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: bram_serverAdapterA_outData_enqAndDeq
+Predicate: bram_serverAdapterA_outDataCore.i_notEmpty &&
+	   bram_serverAdapterA_outDataCore.i_notFull &&
+	   bram_serverAdapterA_outData_deqCalled.whas &&
+	   bram_serverAdapterA_outData_enqData.whas
 Blocking rules: (none)
  
 Rule: bram_serverAdapterA_cnt_finalAdd
@@ -34,26 +52,42 @@ Blocking rules: (none)
  
 Rule: bram_serverAdapterA_moveToOutFIFO
 Predicate: ((! bram_serverAdapterA_s1[0]) ||
-	    bram_serverAdapterA_outData_ff.i_notFull) &&
+	    bram_serverAdapterA_outDataCore.notFull) &&
 	   bram_serverAdapterA_s1[1]
 Blocking rules: (none)
  
 Rule: bram_serverAdapterA_overRun
 Predicate: bram_serverAdapterA_s1[1] &&
-	   ((! bram_serverAdapterA_outData_beforeEnq.read) ||
-	    (! bram_serverAdapterA_outData_beforeDeq.read) ||
-	    (! bram_serverAdapterA_outData_ff.i_notFull))
+	   (! bram_serverAdapterA_outDataCore.notFull)
 Blocking rules: (none)
  
-Rule: bram_serverAdapterB_outData_enqueue
-Predicate: bram_serverAdapterB_outData_enqw.whas &&
-	   ((! bram_serverAdapterB_outData_dequeueing.whas) ||
-	    bram_serverAdapterB_outData_ff.i_notEmpty)
+Rule: bram_serverAdapterB_outData_setFirstCore
+Predicate: bram_serverAdapterB_outDataCore.i_notEmpty &&
+	   bram_serverAdapterB_outDataCore.notEmpty
 Blocking rules: (none)
  
-Rule: bram_serverAdapterB_outData_dequeue
-Predicate: bram_serverAdapterB_outData_dequeueing.whas &&
-	   bram_serverAdapterB_outData_ff.i_notEmpty
+Rule: bram_serverAdapterB_outData_setFirstEnq
+Predicate: (! bram_serverAdapterB_outDataCore.notEmpty) &&
+	   bram_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: bram_serverAdapterB_outData_enqOnly
+Predicate: bram_serverAdapterB_outDataCore.i_notFull &&
+	   (! bram_serverAdapterB_outData_deqCalled.whas) &&
+	   bram_serverAdapterB_outData_enqData.whas
+Blocking rules: (none)
+ 
+Rule: bram_serverAdapterB_outData_deqOnly
+Predicate: bram_serverAdapterB_outDataCore.i_notEmpty &&
+	   bram_serverAdapterB_outData_deqCalled.whas &&
+	   (! bram_serverAdapterB_outData_enqData.whas)
+Blocking rules: (none)
+ 
+Rule: bram_serverAdapterB_outData_enqAndDeq
+Predicate: bram_serverAdapterB_outDataCore.i_notEmpty &&
+	   bram_serverAdapterB_outDataCore.i_notFull &&
+	   bram_serverAdapterB_outData_deqCalled.whas &&
+	   bram_serverAdapterB_outData_enqData.whas
 Blocking rules: (none)
  
 Rule: bram_serverAdapterB_cnt_finalAdd
@@ -71,15 +105,13 @@ Blocking rules: (none)
  
 Rule: bram_serverAdapterB_moveToOutFIFO
 Predicate: ((! bram_serverAdapterB_s1[0]) ||
-	    bram_serverAdapterB_outData_ff.i_notFull) &&
+	    bram_serverAdapterB_outDataCore.notFull) &&
 	   bram_serverAdapterB_s1[1]
 Blocking rules: (none)
  
 Rule: bram_serverAdapterB_overRun
 Predicate: bram_serverAdapterB_s1[1] &&
-	   ((! bram_serverAdapterB_outData_beforeEnq.read) ||
-	    (! bram_serverAdapterB_outData_beforeDeq.read) ||
-	    (! bram_serverAdapterB_outData_ff.i_notFull))
+	   (! bram_serverAdapterB_outDataCore.notFull)
 Blocking rules: (none)
  
 Rule: rv_core_fetch
@@ -95,101 +127,47 @@ Blocking rules: (none)
 Rule: rv_core_execute
 Predicate: (rv_core_dInst[6] || (! (rv_core_dInst[4:3] == 2'b0)) ||
 	    ((((rv_core_rv1 +
-		((rv_core_dInst[35] &&
-		  ((rv_core_dInst[35]
-		    ? rv_core_dInst[34:32]
-		    : (_ :: Bit 3)) ==
-		   3'd0))
+		((rv_core_dInst[35] && (rv_core_dInst[34:32] == 3'd0))
 		 ? sext rv_core_dInst[31:20]
-		 : ((rv_core_dInst[35] &&
-		     ((rv_core_dInst[35]
-		       ? rv_core_dInst[34:32]
-		       : (_ :: Bit 3)) ==
-		      3'd1))
+		 : ((rv_core_dInst[35] && (rv_core_dInst[34:32] == 3'd1))
 		    ? sext {rv_core_dInst[31:25], rv_core_dInst[11:7]}
-		    : ((rv_core_dInst[35] &&
-			((rv_core_dInst[35]
-			  ? rv_core_dInst[34:32]
-			  : (_ :: Bit 3)) ==
-			 3'd2))
+		    : ((rv_core_dInst[35] && (rv_core_dInst[34:32] == 3'd2))
 		       ? sext {rv_core_dInst[31], rv_core_dInst[7], rv_core_dInst[30:25], rv_core_dInst[11:8], 1'b0}
 		       : ((rv_core_dInst[35] &&
-			   ((rv_core_dInst[35]
-			     ? rv_core_dInst[34:32]
-			     : (_ :: Bit 3)) ==
-			    3'd3))
+			   (rv_core_dInst[34:32] == 3'd3))
 			  ? {rv_core_dInst[31:12], 12'b0}
 			  : ((rv_core_dInst[35] &&
-			      ((rv_core_dInst[35]
-				? rv_core_dInst[34:32]
-				: (_ :: Bit 3)) ==
-			       3'd4))
+			      (rv_core_dInst[34:32] == 3'd4))
 			     ? sext {rv_core_dInst[31], rv_core_dInst[19:12], rv_core_dInst[20], rv_core_dInst[30:21], 1'b0}
 			     : 32'd0))))))[31:2] ==
 	       30'd1006649340) ||
 	      ((rv_core_rv1 +
-		((rv_core_dInst[35] &&
-		  ((rv_core_dInst[35]
-		    ? rv_core_dInst[34:32]
-		    : (_ :: Bit 3)) ==
-		   3'd0))
+		((rv_core_dInst[35] && (rv_core_dInst[34:32] == 3'd0))
 		 ? sext rv_core_dInst[31:20]
-		 : ((rv_core_dInst[35] &&
-		     ((rv_core_dInst[35]
-		       ? rv_core_dInst[34:32]
-		       : (_ :: Bit 3)) ==
-		      3'd1))
+		 : ((rv_core_dInst[35] && (rv_core_dInst[34:32] == 3'd1))
 		    ? sext {rv_core_dInst[31:25], rv_core_dInst[11:7]}
-		    : ((rv_core_dInst[35] &&
-			((rv_core_dInst[35]
-			  ? rv_core_dInst[34:32]
-			  : (_ :: Bit 3)) ==
-			 3'd2))
+		    : ((rv_core_dInst[35] && (rv_core_dInst[34:32] == 3'd2))
 		       ? sext {rv_core_dInst[31], rv_core_dInst[7], rv_core_dInst[30:25], rv_core_dInst[11:8], 1'b0}
 		       : ((rv_core_dInst[35] &&
-			   ((rv_core_dInst[35]
-			     ? rv_core_dInst[34:32]
-			     : (_ :: Bit 3)) ==
-			    3'd3))
+			   (rv_core_dInst[34:32] == 3'd3))
 			  ? {rv_core_dInst[31:12], 12'b0}
 			  : ((rv_core_dInst[35] &&
-			      ((rv_core_dInst[35]
-				? rv_core_dInst[34:32]
-				: (_ :: Bit 3)) ==
-			       3'd4))
+			      (rv_core_dInst[34:32] == 3'd4))
 			     ? sext {rv_core_dInst[31], rv_core_dInst[19:12], rv_core_dInst[20], rv_core_dInst[30:21], 1'b0}
 			     : 32'd0))))))[31:2] ==
 	       30'd1006649341) ||
 	      ((rv_core_rv1 +
-		((rv_core_dInst[35] &&
-		  ((rv_core_dInst[35]
-		    ? rv_core_dInst[34:32]
-		    : (_ :: Bit 3)) ==
-		   3'd0))
+		((rv_core_dInst[35] && (rv_core_dInst[34:32] == 3'd0))
 		 ? sext rv_core_dInst[31:20]
-		 : ((rv_core_dInst[35] &&
-		     ((rv_core_dInst[35]
-		       ? rv_core_dInst[34:32]
-		       : (_ :: Bit 3)) ==
-		      3'd1))
+		 : ((rv_core_dInst[35] && (rv_core_dInst[34:32] == 3'd1))
 		    ? sext {rv_core_dInst[31:25], rv_core_dInst[11:7]}
-		    : ((rv_core_dInst[35] &&
-			((rv_core_dInst[35]
-			  ? rv_core_dInst[34:32]
-			  : (_ :: Bit 3)) ==
-			 3'd2))
+		    : ((rv_core_dInst[35] && (rv_core_dInst[34:32] == 3'd2))
 		       ? sext {rv_core_dInst[31], rv_core_dInst[7], rv_core_dInst[30:25], rv_core_dInst[11:8], 1'b0}
 		       : ((rv_core_dInst[35] &&
-			   ((rv_core_dInst[35]
-			     ? rv_core_dInst[34:32]
-			     : (_ :: Bit 3)) ==
-			    3'd3))
+			   (rv_core_dInst[34:32] == 3'd3))
 			  ? {rv_core_dInst[31:12], 12'b0}
 			  : ((rv_core_dInst[35] &&
-			      ((rv_core_dInst[35]
-				? rv_core_dInst[34:32]
-				: (_ :: Bit 3)) ==
-			       3'd4))
+			      (rv_core_dInst[34:32] == 3'd4))
 			     ? sext {rv_core_dInst[31], rv_core_dInst[19:12], rv_core_dInst[20], rv_core_dInst[30:21], 1'b0}
 			     : 32'd0))))))[31:2] ==
 	       30'd1006649342))
@@ -229,9 +207,9 @@ Predicate: rv_core_toImem_rv.port1__read[68] &&
 Blocking rules: (none)
  
 Rule: responseI
-Predicate: bram_serverAdapterB_outData_beforeDeq.read &&
-	   (bram_serverAdapterB_outData_ff.i_notEmpty ||
-	    bram_serverAdapterB_outData_enqw.whas) &&
+Predicate: (bram_serverAdapterB_outDataCore.notEmpty ||
+	    bram_serverAdapterB_outData_enqData.whas) &&
+	   bram_serverAdapterB_outData_outData.whas &&
 	   (! rv_core_fromImem_rv.port0__read[68])
 Blocking rules: (none)
  
@@ -241,9 +219,9 @@ Predicate: rv_core_toDmem_rv.port1__read[68] &&
 Blocking rules: (none)
  
 Rule: responseD
-Predicate: bram_serverAdapterA_outData_beforeDeq.read &&
-	   (bram_serverAdapterA_outData_ff.i_notEmpty ||
-	    bram_serverAdapterA_outData_enqw.whas) &&
+Predicate: (bram_serverAdapterA_outDataCore.notEmpty ||
+	    bram_serverAdapterA_outData_enqData.whas) &&
+	   bram_serverAdapterA_outData_outData.whas &&
 	   (! rv_core_fromDmem_rv.port0__read[68])
 Blocking rules: (none)
  
@@ -258,16 +236,22 @@ Blocking rules: (none)
 Logical execution order: getStatus,
 			 tic,
 			 responseMMIO,
-			 bram_serverAdapterA_overRun,
 			 bram_serverAdapterA_moveToOutFIFO,
+			 bram_serverAdapterA_overRun,
+			 bram_serverAdapterA_outData_setFirstCore,
+			 bram_serverAdapterA_outData_setFirstEnq,
 			 responseD,
-			 bram_serverAdapterA_outData_enqueue,
-			 bram_serverAdapterA_outData_dequeue,
-			 bram_serverAdapterB_overRun,
+			 bram_serverAdapterA_outData_enqOnly,
+			 bram_serverAdapterA_outData_deqOnly,
+			 bram_serverAdapterA_outData_enqAndDeq,
 			 bram_serverAdapterB_moveToOutFIFO,
+			 bram_serverAdapterB_overRun,
+			 bram_serverAdapterB_outData_setFirstCore,
+			 bram_serverAdapterB_outData_setFirstEnq,
 			 responseI,
-			 bram_serverAdapterB_outData_enqueue,
-			 bram_serverAdapterB_outData_dequeue,
+			 bram_serverAdapterB_outData_enqOnly,
+			 bram_serverAdapterB_outData_deqOnly,
+			 bram_serverAdapterB_outData_enqAndDeq,
 			 rv_core_fetch,
 			 requestI,
 			 bram_serverAdapterB_stageReadResponseAlways,

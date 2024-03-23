@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date              : Sat Mar 23 00:10:01 2024
+| Date              : Sat Mar 23 17:55:21 2024
 | Host              : audacity running 64-bit Ubuntu 18.04.6 LTS
 | Command           : report_timing_summary -file ./Impl/TopDown/top-post-route-timing-summary.txt
 | Design            : mkPcieTop
@@ -128,10 +128,10 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      0.069        0.000                      0                45557        0.030        0.000                      0                45557        0.000        0.000                       0                 19702  
+     -0.210       -2.496                     32                50459        0.030        0.000                      0                50459        0.000        0.000                       0                 21409  
 
 
-All user specified timing constraints are met.
+Timing constraints are not met.
 
 
 ------------------------------------------------------------------------------------------------
@@ -139,17 +139,17 @@ All user specified timing constraints are met.
 | -------------
 ------------------------------------------------------------------------------------------------
 
-Clock                                       Waveform(ns)           Period(ns)      Frequency(MHz)
------                                       ------------           ----------      --------------
-pci_refclk                                  {0.000 5.000}          10.000          100.000         
-  qpll1outclk_out[0]                        {0.000 0.100}          0.200           5000.001        
-  qpll1outclk_out[0]_1                      {0.000 0.100}          0.200           5000.001        
-  qpll1outrefclk_out[0]                     {0.000 5.000}          10.000          100.000         
-  qpll1outrefclk_out[0]_1                   {0.000 5.000}          10.000          100.000         
-  txoutclk_out[3]                           {0.000 1.000}          2.000           500.000         
-    host_pcieHostTop_ep7_CLK_epPortalClock  {0.000 2.000}          4.000           250.000         
-    mcap_clk                                {0.000 4.000}          8.000           125.000         
-    pipe_clk                                {0.000 2.000}          4.000           250.000         
+Clock                                     Waveform(ns)           Period(ns)      Frequency(MHz)
+-----                                     ------------           ----------      --------------
+pci_refclk                                {0.000 5.000}          10.000          100.000         
+  qpll1outclk_out[0]                      {0.000 0.100}          0.200           5000.001        
+  qpll1outclk_out[0]_1                    {0.000 0.100}          0.200           5000.001        
+  qpll1outrefclk_out[0]                   {0.000 5.000}          10.000          100.000         
+  qpll1outrefclk_out[0]_1                 {0.000 5.000}          10.000          100.000         
+  txoutclk_out[3]                         {0.000 1.000}          2.000           500.000         
+    host_pcieHostTop_ep7_CLK_epPcieClock  {0.000 2.000}          4.000           250.000         
+    mcap_clk                              {0.000 4.000}          8.000           125.000         
+    pipe_clk                              {0.000 2.000}          4.000           250.000         
 
 
 ------------------------------------------------------------------------------------------------
@@ -157,13 +157,13 @@ pci_refclk                                  {0.000 5.000}          10.000       
 | -----------------
 ------------------------------------------------------------------------------------------------
 
-Clock                                           WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
------                                           -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-pci_refclk                                        7.963        0.000                      0                  175        0.039        0.000                      0                  175        3.200        0.000                       0                   230  
-  txoutclk_out[3]                                 0.157        0.000                      0                 1172        0.030        0.000                      0                 1172        0.000        0.000                       0                    37  
-    host_pcieHostTop_ep7_CLK_epPortalClock        0.069        0.000                      0                39535        0.031        0.000                      0                39535        0.000        0.000                       0                 17348  
-    mcap_clk                                                                                                                                                                                  0.000        0.000                       0                     1  
-    pipe_clk                                      0.888        0.000                      0                 3618        0.031        0.000                      0                 3618        0.000        0.000                       0                  2086  
+Clock                                         WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                                         -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+pci_refclk                                      7.888        0.000                      0                  175        0.049        0.000                      0                  175        3.200        0.000                       0                   230  
+  txoutclk_out[3]                               0.278        0.000                      0                 1172        0.030        0.000                      0                 1172        0.000        0.000                       0                    37  
+    host_pcieHostTop_ep7_CLK_epPcieClock       -0.210       -2.496                     32                44437        0.030        0.000                      0                44437        0.000        0.000                       0                 19055  
+    mcap_clk                                                                                                                                                                                0.000        0.000                       0                     1  
+    pipe_clk                                    0.674        0.000                      0                 3618        0.030        0.000                      0                 3618        0.000        0.000                       0                  2086  
 
 
 ------------------------------------------------------------------------------------------------
@@ -171,9 +171,9 @@ pci_refclk                                        7.963        0.000            
 | -----------------
 ------------------------------------------------------------------------------------------------
 
-From Clock                              To Clock                                    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
-----------                              --------                                    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
-host_pcieHostTop_ep7_CLK_epPortalClock  pipe_clk                                      0.845        0.000                      0                  974        0.102        0.000                      0                  974  
+From Clock                            To Clock                                  WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------                            --------                                  -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+host_pcieHostTop_ep7_CLK_epPcieClock  pipe_clk                                    0.609        0.000                      0                  974        0.130        0.000                      0                  974  
 
 
 ------------------------------------------------------------------------------------------------
@@ -181,10 +181,10 @@ host_pcieHostTop_ep7_CLK_epPortalClock  pipe_clk                                
 | -----------------------
 ------------------------------------------------------------------------------------------------
 
-Path Group                              From Clock                              To Clock                                    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
-----------                              ----------                              --------                                    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
-**async_default**                       host_pcieHostTop_ep7_CLK_epPortalClock  host_pcieHostTop_ep7_CLK_epPortalClock        2.059        0.000                      0                   58        0.196        0.000                      0                   58  
-**async_default**                       pci_refclk                              pci_refclk                                    9.042        0.000                      0                   25        0.151        0.000                      0                   25  
+Path Group                            From Clock                            To Clock                                  WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------                            ----------                            --------                                  -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+**async_default**                     host_pcieHostTop_ep7_CLK_epPcieClock  host_pcieHostTop_ep7_CLK_epPcieClock        1.113        0.000                      0                   58        0.142        0.000                      0                   58  
+**async_default**                     pci_refclk                            pci_refclk                                  8.967        0.000                      0                   25        0.210        0.000                      0                   25  
 
 
 ------------------------------------------------------------------------------------------------
@@ -197,35 +197,35 @@ Path Group                              From Clock                              
 From Clock:  pci_refclk
   To Clock:  pci_refclk
 
-Setup :            0  Failing Endpoints,  Worst Slack        7.963ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.039ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        7.888ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.049ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.200ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             7.963ns  (required time - arrival time)
-  Source:                 host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done/sync_vec[3].sync_cell_i/sync_reg[3]/C
+Slack (MET) :             7.888ns  (required time - arrival time)
+  Source:                 host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus/sync_vec[0].sync_cell_i/sync_reg[3]/C
                             (rising edge-triggered cell FDRE clocked by pci_refclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[4]/D
+  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[7]/D
                             (rising edge-triggered cell FDCE clocked by pci_refclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             pci_refclk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (pci_refclk rise@10.000ns - pci_refclk rise@0.000ns)
-  Data Path Delay:        1.942ns  (logic 0.603ns (31.050%)  route 1.339ns (68.950%))
-  Logic Levels:           3  (LUT4=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.119ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.320ns = ( 12.320 - 10.000 ) 
-    Source Clock Delay      (SCD):    2.775ns
-    Clock Pessimism Removal (CPR):    0.336ns
+  Data Path Delay:        2.013ns  (logic 0.627ns (31.148%)  route 1.386ns (68.852%))
+  Logic Levels:           3  (LUT3=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.125ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.327ns = ( 12.327 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.742ns
+    Clock Pessimism Removal (CPR):    0.290ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.015ns (routing 0.718ns, distribution 1.297ns)
-  Clock Net Delay (Destination): 1.783ns (routing 0.651ns, distribution 1.132ns)
+  Clock Net Delay (Source):      1.982ns (routing 0.718ns, distribution 1.264ns)
+  Clock Net Delay (Destination): 1.790ns (routing 0.651ns, distribution 1.139ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -238,22 +238,22 @@ Slack (MET) :             7.963ns  (required time - arrival time)
                          net (fo=2, routed)           0.082     0.445    host_pcieHostTop_ep7/pcie_ep/inst/sys_clk
     BUFG_GT_X1Y27        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.315     0.760 r  host_pcieHostTop_ep7/pcie_ep/inst/bufg_gt_sysclk/O
-    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         2.015     2.775    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done/sync_vec[3].sync_cell_i/sync_reg[0]_0
-    SLICE_X138Y70        FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done/sync_vec[3].sync_cell_i/sync_reg[3]/C
+    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         1.982     2.742    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus/sync_vec[0].sync_cell_i/sync_reg[3]_0
+    SLICE_X138Y47        FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus/sync_vec[0].sync_cell_i/sync_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X138Y70        FDRE (Prop_CFF2_SLICEL_C_Q)
-                                                      0.117     2.892 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done/sync_vec[3].sync_cell_i/sync_reg[3]/Q
-                         net (fo=1, routed)           0.451     3.343    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done/sync_vec[1].sync_cell_i/FSM_onehot_fsm[6]_i_2[2]
-    SLICE_X138Y78        LUT4 (Prop_D6LUT_SLICEL_I2_O)
-                                                      0.175     3.518 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done/sync_vec[1].sync_cell_i/FSM_onehot_fsm[6]_i_3/O
-                         net (fo=1, routed)           0.442     3.960    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done/sync_vec[4].sync_cell_i/FSM_onehot_fsm_reg[4]_1
-    SLICE_X139Y67        LUT5 (Prop_H6LUT_SLICEM_I4_O)
-                                                      0.120     4.080 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done/sync_vec[4].sync_cell_i/FSM_onehot_fsm[6]_i_2/O
-                         net (fo=3, routed)           0.419     4.499    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done/sync_vec[4].sync_cell_i/sync_reg[3]_0
-    SLICE_X139Y74        LUT6 (Prop_D6LUT_SLICEM_I2_O)
-                                                      0.191     4.690 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done/sync_vec[4].sync_cell_i/FSM_onehot_fsm[4]_i_1/O
-                         net (fo=1, routed)           0.027     4.717    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_txsync_done_n_4
-    SLICE_X139Y74        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[4]/D
+    SLICE_X138Y47        FDRE (Prop_CFF2_SLICEL_C_Q)
+                                                      0.117     2.859 f  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus/sync_vec[0].sync_cell_i/sync_reg[3]/Q
+                         net (fo=1, routed)           0.352     3.211    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus/sync_vec[3].sync_cell_i/fsm[2]_i_3[0]
+    SLICE_X138Y42        LUT4 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.188     3.399 f  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus/sync_vec[3].sync_cell_i/fsm[2]_i_4/O
+                         net (fo=1, routed)           0.344     3.743    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus/sync_vec[4].sync_cell_i/FSM_onehot_fsm_reg[7]_1
+    SLICE_X137Y39        LUT5 (Prop_H6LUT_SLICEL_I4_O)
+                                                      0.188     3.931 f  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus/sync_vec[4].sync_cell_i/fsm[2]_i_3/O
+                         net (fo=2, routed)           0.653     4.584    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus/sync_vec[4].sync_cell_i/sync_reg[3]_0
+    SLICE_X137Y74        LUT3 (Prop_G5LUT_SLICEL_I0_O)
+                                                      0.134     4.718 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus/sync_vec[4].sync_cell_i/FSM_onehot_fsm[7]_i_1/O
+                         net (fo=1, routed)           0.037     4.755    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_phystatus_n_2
+    SLICE_X137Y74        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[7]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock pci_refclk rise edge)
@@ -265,17 +265,17 @@ Slack (MET) :             7.963ns  (required time - arrival time)
                          net (fo=2, routed)           0.046    10.254    host_pcieHostTop_ep7/pcie_ep/inst/sys_clk
     BUFG_GT_X1Y27        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.283    10.537 r  host_pcieHostTop_ep7/pcie_ep/inst/bufg_gt_sysclk/O
-    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         1.783    12.320    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
-    SLICE_X139Y74        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[4]/C
-                         clock pessimism              0.336    12.656    
-                         clock uncertainty           -0.035    12.621    
-    SLICE_X139Y74        FDCE (Setup_DFF_SLICEM_C_D)
-                                                      0.059    12.680    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[4]
+    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         1.790    12.327    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
+    SLICE_X137Y74        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[7]/C
+                         clock pessimism              0.290    12.617    
+                         clock uncertainty           -0.035    12.582    
+    SLICE_X137Y74        FDCE (Setup_GFF2_SLICEL_C_D)
+                                                      0.061    12.643    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[7]
   -------------------------------------------------------------------
-                         required time                         12.680    
-                         arrival time                          -4.717    
+                         required time                         12.643    
+                         arrival time                          -4.755    
   -------------------------------------------------------------------
-                         slack                                  7.963    
+                         slack                                  7.888    
 
 
 
@@ -283,21 +283,21 @@ Slack (MET) :             7.963ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.039ns  (arrival time - required time)
-  Source:                 host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_reg/C
-                            (rising edge-triggered cell FDPE clocked by pci_refclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_r_reg[2]_srl3/D
+Slack (MET) :             0.049ns  (arrival time - required time)
+  Source:                 host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/userrdy_reg/C
+                            (rising edge-triggered cell FDCE clocked by pci_refclk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/userrdy_r_reg[2]_srl3/D
                             (rising edge-triggered cell SRL16E clocked by pci_refclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             pci_refclk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (pci_refclk rise@0.000ns - pci_refclk rise@0.000ns)
-  Data Path Delay:        0.200ns  (logic 0.048ns (24.000%)  route 0.152ns (76.000%))
+  Data Path Delay:        0.250ns  (logic 0.048ns (19.200%)  route 0.202ns (80.800%))
   Logic Levels:           0  
-  Clock Path Skew:        0.041ns (DCD - SCD - CPR)
+  Clock Path Skew:        0.081ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.514ns
-    Source Clock Delay      (SCD):    1.198ns
-    Clock Pessimism Removal (CPR):    0.275ns
-  Clock Net Delay (Source):      0.915ns (routing 0.367ns, distribution 0.548ns)
+    Source Clock Delay      (SCD):    1.201ns
+    Clock Pessimism Removal (CPR):    0.232ns
+  Clock Net Delay (Source):      0.918ns (routing 0.367ns, distribution 0.551ns)
   Clock Net Delay (Destination): 1.096ns (routing 0.417ns, distribution 0.679ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -311,13 +311,13 @@ Slack (MET) :             0.039ns  (arrival time - required time)
                          net (fo=2, routed)           0.018     0.183    host_pcieHostTop_ep7/pcie_ep/inst/sys_clk
     BUFG_GT_X1Y27        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.100     0.283 r  host_pcieHostTop_ep7/pcie_ep/inst/bufg_gt_sysclk/O
-    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         0.915     1.198    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
-    SLICE_X139Y75        FDPE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_reg/C
+    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         0.918     1.201    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
+    SLICE_X138Y74        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/userrdy_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X139Y75        FDPE (Prop_HFF2_SLICEM_C_Q)
-                                                      0.048     1.246 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_reg/Q
-                         net (fo=1, routed)           0.152     1.398    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset__0
-    SLICE_X139Y75        SRL16E                                       r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_r_reg[2]_srl3/D
+    SLICE_X138Y74        FDCE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.048     1.249 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/userrdy_reg/Q
+                         net (fo=1, routed)           0.202     1.451    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/userrdy
+    SLICE_X139Y74        SRL16E                                       r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/userrdy_r_reg[2]_srl3/D
   -------------------------------------------------------------------    -------------------
 
                          (clock pci_refclk rise edge)
@@ -330,15 +330,15 @@ Slack (MET) :             0.039ns  (arrival time - required time)
     BUFG_GT_X1Y27        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.418 r  host_pcieHostTop_ep7/pcie_ep/inst/bufg_gt_sysclk/O
     X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         1.096     1.514    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
-    SLICE_X139Y75        SRL16E                                       r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_r_reg[2]_srl3/CLK
-                         clock pessimism             -0.275     1.239    
-    SLICE_X139Y75        SRL16E (Hold_A6LUT_SLICEM_CLK_D)
-                                                      0.120     1.359    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_r_reg[2]_srl3
+    SLICE_X139Y74        SRL16E                                       r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/userrdy_r_reg[2]_srl3/CLK
+                         clock pessimism             -0.232     1.282    
+    SLICE_X139Y74        SRL16E (Hold_D6LUT_SLICEM_CLK_D)
+                                                      0.120     1.402    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/userrdy_r_reg[2]_srl3
   -------------------------------------------------------------------
-                         required time                         -1.359    
-                         arrival time                           1.398    
+                         required time                         -1.402    
+                         arrival time                           1.451    
   -------------------------------------------------------------------
-                         slack                                  0.039    
+                         slack                                  0.049    
 
 
 
@@ -352,9 +352,9 @@ Period(ns):         10.000
 Sources:            { CLK_pci_sys_clk_p }
 
 Check Type        Corner  Lib Pin               Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location            Pin
-Min Period        n/a     GTHE3_CHANNEL/DRPCLK  n/a            4.000         10.000      6.000      GTHE3_CHANNEL_X0Y0  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/DRPCLK
+Min Period        n/a     GTHE3_CHANNEL/DRPCLK  n/a            4.000         10.000      6.000      GTHE3_CHANNEL_X0Y4  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/DRPCLK
 Low Pulse Width   Slow    GTHE3_CHANNEL/DRPCLK  n/a            1.800         5.000       3.200      GTHE3_CHANNEL_X0Y0  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/DRPCLK
-High Pulse Width  Slow    GTHE3_CHANNEL/DRPCLK  n/a            1.800         5.000       3.200      GTHE3_CHANNEL_X0Y1  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[1].GTHE3_CHANNEL_PRIM_INST/DRPCLK
+High Pulse Width  Slow    GTHE3_CHANNEL/DRPCLK  n/a            1.800         5.000       3.200      GTHE3_CHANNEL_X0Y4  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/DRPCLK
 
 
 
@@ -362,7 +362,7 @@ High Pulse Width  Slow    GTHE3_CHANNEL/DRPCLK  n/a            1.800         5.0
 From Clock:  txoutclk_out[3]
   To Clock:  txoutclk_out[3]
 
-Setup :            0  Failing Endpoints,  Worst Slack        0.157ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        0.278ns,  Total Violation        0.000ns
 Hold  :            0  Failing Endpoints,  Worst Slack        0.030ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        0.000ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
@@ -370,27 +370,27 @@ PW    :            0  Failing Endpoints,  Worst Slack        0.000ns,  Total Vio
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.157ns  (required time - arrival time)
-  Source:                 host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_cpl_inst/CPL_FIFO_16KB.bram_16k_inst/RAMB18E2[5].ramb18e2_inst/CLKBWRCLK
+Slack (MET) :             0.278ns  (required time - arrival time)
+  Source:                 host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_req_inst/bram_req_8k_inst/RAMB18E2[2].ramb18e2_inst/CLKARDCLK
                             (rising edge-triggered cell RAMB18E2 clocked by txoutclk_out[3]  {rise@0.000ns fall@1.000ns period=2.000ns})
-  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/MICOMPLETIONRAMREADDATA[100]
+  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/MIREQUESTRAMREADDATA[103]
                             (rising edge-triggered cell PCIE_3_1 clocked by txoutclk_out[3]  {rise@0.000ns fall@1.000ns period=2.000ns})
   Path Group:             txoutclk_out[3]
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            2.000ns  (txoutclk_out[3] rise@2.000ns - txoutclk_out[3] rise@0.000ns)
-  Data Path Delay:        1.777ns  (logic 0.390ns (21.947%)  route 1.387ns (78.053%))
+  Data Path Delay:        1.602ns  (logic 0.391ns (24.407%)  route 1.211ns (75.593%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.257ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.228ns = ( 4.228 - 2.000 ) 
-    Source Clock Delay      (SCD):    2.685ns
-    Clock Pessimism Removal (CPR):    0.200ns
+  Clock Path Skew:        -0.264ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.119ns = ( 4.119 - 2.000 ) 
+    Source Clock Delay      (SCD):    2.574ns
+    Clock Pessimism Removal (CPR):    0.190ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.288ns (routing 0.808ns, distribution 1.480ns)
-  Clock Net Delay (Destination): 1.899ns (routing 0.733ns, distribution 1.166ns)
+  Clock Net Delay (Source):      2.177ns (routing 0.521ns, distribution 1.656ns)
+  Clock Net Delay (Destination): 1.790ns (routing 0.471ns, distribution 1.319ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -400,13 +400,13 @@ Slack (MET) :             0.157ns  (required time - arrival time)
                          net (fo=5, routed)           0.082     0.082    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y38        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.315     0.397 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_coreclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=33, routed)          2.288     2.685    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_cpl_inst/CPL_FIFO_16KB.bram_16k_inst/CORECLKMIREQUESTRAM
-    RAMB18_X16Y13        RAMB18E2                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_cpl_inst/CPL_FIFO_16KB.bram_16k_inst/RAMB18E2[5].ramb18e2_inst/CLKBWRCLK
+    X3Y1 (CLOCK_ROOT)    net (fo=33, routed)          2.177     2.574    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_req_inst/bram_req_8k_inst/CORECLKMIREQUESTRAM
+    RAMB18_X16Y4         RAMB18E2                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_req_inst/bram_req_8k_inst/RAMB18E2[2].ramb18e2_inst/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-    RAMB18_X16Y13        RAMB18E2 (Prop_RAMB18E2_U_RAMB181_CLKBWRCLK_DOUTBDOUT[9])
-                                                      0.390     3.075 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_cpl_inst/CPL_FIFO_16KB.bram_16k_inst/RAMB18E2[5].ramb18e2_inst/DOUTBDOUT[9]
-                         net (fo=1, routed)           1.387     4.462    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/MICOMPLETIONRAMREADDATA[100]
-    PCIE_3_1_X0Y0        PCIE_3_1                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/MICOMPLETIONRAMREADDATA[100]
+    RAMB18_X16Y4         RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKARDCLK_DOUTBDOUT[12])
+                                                      0.391     2.965 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_req_inst/bram_req_8k_inst/RAMB18E2[2].ramb18e2_inst/DOUTBDOUT[12]
+                         net (fo=1, routed)           1.211     4.176    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/MIREQUESTRAMREADDATA[103]
+    PCIE_3_1_X0Y0        PCIE_3_1                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/MIREQUESTRAMREADDATA[103]
   -------------------------------------------------------------------    -------------------
 
                          (clock txoutclk_out[3] rise edge)
@@ -415,17 +415,17 @@ Slack (MET) :             0.157ns  (required time - arrival time)
                          net (fo=5, routed)           0.046     2.046    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y38        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.283     2.329 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_coreclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=33, routed)          1.899     4.228    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/CORECLKMIREQUESTRAM
+    X3Y1 (CLOCK_ROOT)    net (fo=33, routed)          1.790     4.119    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/CORECLKMIREQUESTRAM
     PCIE_3_1_X0Y0        PCIE_3_1                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/CORECLK
-                         clock pessimism              0.200     4.428    
-                         clock uncertainty           -0.035     4.393    
-    PCIE_3_1_X0Y0        PCIE_3_1 (Setup_PCIE_3_1_CORECLK_MICOMPLETIONRAMREADDATA[100])
-                                                      0.226     4.619    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst
+                         clock pessimism              0.190     4.310    
+                         clock uncertainty           -0.035     4.274    
+    PCIE_3_1_X0Y0        PCIE_3_1 (Setup_PCIE_3_1_CORECLK_MIREQUESTRAMREADDATA[103])
+                                                      0.180     4.454    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst
   -------------------------------------------------------------------
-                         required time                          4.619    
-                         arrival time                          -4.462    
+                         required time                          4.454    
+                         arrival time                          -4.176    
   -------------------------------------------------------------------
-                         slack                                  0.157    
+                         slack                                  0.278    
 
 
 
@@ -436,19 +436,19 @@ Min Delay Paths
 Slack (MET) :             0.030ns  (arrival time - required time)
   Source:                 host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_req_inst/bram_req_8k_inst/RAMB18E2[2].ramb18e2_inst/CLKARDCLK
                             (rising edge-triggered cell RAMB18E2 clocked by txoutclk_out[3]  {rise@0.000ns fall@1.000ns period=2.000ns})
-  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/MIREQUESTRAMREADDATA[94]
+  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/MIREQUESTRAMREADDATA[98]
                             (rising edge-triggered cell PCIE_3_1 clocked by txoutclk_out[3]  {rise@0.000ns fall@1.000ns period=2.000ns})
   Path Group:             txoutclk_out[3]
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (txoutclk_out[3] rise@0.000ns - txoutclk_out[3] rise@0.000ns)
-  Data Path Delay:        0.362ns  (logic 0.139ns (38.398%)  route 0.223ns (61.602%))
+  Data Path Delay:        0.369ns  (logic 0.141ns (38.211%)  route 0.228ns (61.789%))
   Logic Levels:           0  
   Clock Path Skew:        0.031ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.321ns
-    Source Clock Delay      (SCD):    1.133ns
-    Clock Pessimism Removal (CPR):    0.157ns
-  Clock Net Delay (Source):      1.015ns (routing 0.418ns, distribution 0.597ns)
-  Clock Net Delay (Destination): 1.156ns (routing 0.471ns, distribution 0.685ns)
+    Destination Clock Delay (DCD):    1.262ns
+    Source Clock Delay      (SCD):    1.079ns
+    Clock Pessimism Removal (CPR):    0.152ns
+  Clock Net Delay (Source):      0.961ns (routing 0.278ns, distribution 0.683ns)
+  Clock Net Delay (Destination): 1.097ns (routing 0.317ns, distribution 0.780ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -458,13 +458,13 @@ Slack (MET) :             0.030ns  (arrival time - required time)
                          net (fo=5, routed)           0.018     0.018    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y38        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.100     0.118 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_coreclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=33, routed)          1.015     1.133    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_req_inst/bram_req_8k_inst/CORECLKMIREQUESTRAM
+    X3Y1 (CLOCK_ROOT)    net (fo=33, routed)          0.961     1.079    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_req_inst/bram_req_8k_inst/CORECLKMIREQUESTRAM
     RAMB18_X16Y4         RAMB18E2                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_req_inst/bram_req_8k_inst/RAMB18E2[2].ramb18e2_inst/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-    RAMB18_X16Y4         RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKARDCLK_DOUTBDOUT[4])
-                                                      0.139     1.272 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_req_inst/bram_req_8k_inst/RAMB18E2[2].ramb18e2_inst/DOUTBDOUT[4]
-                         net (fo=1, routed)           0.223     1.495    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/MIREQUESTRAMREADDATA[94]
-    PCIE_3_1_X0Y0        PCIE_3_1                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/MIREQUESTRAMREADDATA[94]
+    RAMB18_X16Y4         RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKARDCLK_DOUTPBDOUTP[0])
+                                                      0.141     1.220 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_req_inst/bram_req_8k_inst/RAMB18E2[2].ramb18e2_inst/DOUTPBDOUTP[0]
+                         net (fo=1, routed)           0.228     1.448    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/MIREQUESTRAMREADDATA[98]
+    PCIE_3_1_X0Y0        PCIE_3_1                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/MIREQUESTRAMREADDATA[98]
   -------------------------------------------------------------------    -------------------
 
                          (clock txoutclk_out[3] rise edge)
@@ -473,14 +473,14 @@ Slack (MET) :             0.030ns  (arrival time - required time)
                          net (fo=5, routed)           0.035     0.035    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y38        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.165 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_coreclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=33, routed)          1.156     1.321    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/CORECLKMIREQUESTRAM
+    X3Y1 (CLOCK_ROOT)    net (fo=33, routed)          1.097     1.262    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/CORECLKMIREQUESTRAM
     PCIE_3_1_X0Y0        PCIE_3_1                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/CORECLK
-                         clock pessimism             -0.157     1.164    
-    PCIE_3_1_X0Y0        PCIE_3_1 (Hold_PCIE_3_1_CORECLK_MIREQUESTRAMREADDATA[94])
-                                                      0.301     1.465    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst
+                         clock pessimism             -0.152     1.110    
+    PCIE_3_1_X0Y0        PCIE_3_1 (Hold_PCIE_3_1_CORECLK_MIREQUESTRAMREADDATA[98])
+                                                      0.308     1.418    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst
   -------------------------------------------------------------------
-                         required time                         -1.465    
-                         arrival time                           1.495    
+                         required time                         -1.418    
+                         arrival time                           1.448    
   -------------------------------------------------------------------
                          slack                                  0.030    
 
@@ -498,82 +498,115 @@ Sources:            { host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwiz
 Check Type        Corner  Lib Pin             Reference Pin     Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
 Min Period        n/a     PCIE_3_1/CORECLK    n/a               2.000         2.000       0.000      PCIE_3_1_X0Y0  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/CORECLK
 Low Pulse Width   Slow    RAMB18E2/CLKARDCLK  n/a               0.980         1.000       0.020      RAMB18_X16Y8   host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_cpl_inst/CPL_FIFO_16KB.bram_16k_inst/RAMB18E2[0].ramb18e2_inst/CLKARDCLK
-High Pulse Width  Fast    RAMB18E2/CLKBWRCLK  n/a               0.980         1.000       0.020      RAMB18_X16Y8   host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_cpl_inst/CPL_FIFO_16KB.bram_16k_inst/RAMB18E2[0].ramb18e2_inst/CLKBWRCLK
-Max Skew          Fast    PCIE_3_1/CORECLK    PCIE_3_1/PIPECLK  0.374         0.252       0.122      PCIE_3_1_X0Y0  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/CORECLK
+High Pulse Width  Fast    RAMB18E2/CLKARDCLK  n/a               0.980         1.000       0.020      RAMB18_X16Y8   host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/bram_inst/bram_cpl_inst/CPL_FIFO_16KB.bram_16k_inst/RAMB18E2[0].ramb18e2_inst/CLKARDCLK
+Max Skew          Fast    PCIE_3_1/CORECLK    PCIE_3_1/PIPECLK  0.374         0.247       0.127      PCIE_3_1_X0Y0  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/CORECLK
 
 
 
 ---------------------------------------------------------------------------------------------------
-From Clock:  host_pcieHostTop_ep7_CLK_epPortalClock
-  To Clock:  host_pcieHostTop_ep7_CLK_epPortalClock
+From Clock:  host_pcieHostTop_ep7_CLK_epPcieClock
+  To Clock:  host_pcieHostTop_ep7_CLK_epPcieClock
 
-Setup :            0  Failing Endpoints,  Worst Slack        0.069ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.031ns,  Total Violation        0.000ns
+Setup :           32  Failing Endpoints,  Worst Slack       -0.210ns,  Total Violation       -2.496ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.030ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        0.000ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.069ns  (required time - arrival time)
-  Source:                 host_pcieHostTop_pciehost/csr/bramResponseFifo/full_reg_reg/C
-                            (rising edge-triggered cell FDRE clocked by host_pcieHostTop_ep7_CLK_epPortalClock  {rise@0.000ns fall@2.000ns period=4.000ns})
-  Destination:            host_pcieHostTop_pciehost/csr/bramResponseFifo/data0_reg_reg[35]/D
-                            (rising edge-triggered cell FDRE clocked by host_pcieHostTop_ep7_CLK_epPortalClock  {rise@0.000ns fall@2.000ns period=4.000ns})
-  Path Group:             host_pcieHostTop_ep7_CLK_epPortalClock
+Slack (VIOLATED) :        -0.210ns  (required time - arrival time)
+  Source:                 tile_0/lEcho_p_rv_core_dInst_reg[34]/C
+                            (rising edge-triggered cell FDRE clocked by host_pcieHostTop_ep7_CLK_epPcieClock  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_1/ENARDEN
+                            (rising edge-triggered cell RAMB36E2 clocked by host_pcieHostTop_ep7_CLK_epPcieClock  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             host_pcieHostTop_ep7_CLK_epPcieClock
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            4.000ns  (host_pcieHostTop_ep7_CLK_epPortalClock rise@4.000ns - host_pcieHostTop_ep7_CLK_epPortalClock rise@0.000ns)
-  Data Path Delay:        3.814ns  (logic 0.303ns (7.944%)  route 3.511ns (92.056%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        -0.141ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.316ns = ( 6.316 - 4.000 ) 
-    Source Clock Delay      (SCD):    2.599ns
-    Clock Pessimism Removal (CPR):    0.142ns
+  Requirement:            4.000ns  (host_pcieHostTop_ep7_CLK_epPcieClock rise@4.000ns - host_pcieHostTop_ep7_CLK_epPcieClock rise@0.000ns)
+  Data Path Delay:        3.541ns  (logic 1.208ns (34.115%)  route 2.333ns (65.885%))
+  Logic Levels:           12  (CARRY8=3 LUT2=1 LUT4=2 LUT5=1 LUT6=5)
+  Clock Path Skew:        -0.172ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.107ns = ( 6.107 - 4.000 ) 
+    Source Clock Delay      (SCD):    2.456ns
+    Clock Pessimism Removal (CPR):    0.177ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.202ns (routing 0.814ns, distribution 1.388ns)
-  Clock Net Delay (Destination): 1.987ns (routing 0.740ns, distribution 1.247ns)
+  Clock Net Delay (Source):      2.059ns (routing 0.530ns, distribution 1.529ns)
+  Clock Net Delay (Destination): 1.778ns (routing 0.481ns, distribution 1.297ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock host_pcieHostTop_ep7_CLK_epPortalClock rise edge)
+                         (clock host_pcieHostTop_ep7_CLK_epPcieClock rise edge)
                                                       0.000     0.000 r  
     GTHE3_CHANNEL_X0Y7   GTHE3_CHANNEL                0.000     0.000 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXOUTCLK
                          net (fo=5, routed)           0.082     0.082    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y47        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.315     0.397 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=17348, routed)       2.202     2.599    host_pcieHostTop_pciehost/csr/bramResponseFifo/CLK_epPortalClock
-    SLICE_X116Y62        FDRE                                         r  host_pcieHostTop_pciehost/csr/bramResponseFifo/full_reg_reg/C
+    X3Y1 (CLOCK_ROOT)    net (fo=19055, routed)       2.059     2.456    tile_0/CLK_epPcieClock
+    SLICE_X104Y158       FDRE                                         r  tile_0/lEcho_p_rv_core_dInst_reg[34]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X116Y62        FDRE (Prop_AFF_SLICEM_C_Q)
-                                                      0.115     2.714 r  host_pcieHostTop_pciehost/csr/bramResponseFifo/full_reg_reg/Q
-                         net (fo=107, routed)         3.484     6.198    host_pcieHostTop_pciehost/csr/bramResponseFifo/full_reg_reg_0
-    SLICE_X132Y43        LUT6 (Prop_D6LUT_SLICEL_I1_O)
-                                                      0.188     6.386 r  host_pcieHostTop_pciehost/csr/bramResponseFifo/data0_reg[35]_i_1__20/O
-                         net (fo=1, routed)           0.027     6.413    host_pcieHostTop_pciehost/csr/bramResponseFifo/data0_reg[35]_i_1__20_n_0
-    SLICE_X132Y43        FDRE                                         r  host_pcieHostTop_pciehost/csr/bramResponseFifo/data0_reg_reg[35]/D
+    SLICE_X104Y158       FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.114     2.570 f  tile_0/lEcho_p_rv_core_dInst_reg[34]/Q
+                         net (fo=46, routed)          0.310     2.880    tile_0/lEcho_p_rv_core_dInst_reg_n_0_[34]
+    SLICE_X103Y158       LUT4 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.040     2.920 f  tile_0/lEcho_p_rv_core_rvd[11]_i_13/O
+                         net (fo=1, routed)           0.066     2.986    tile_0/lEcho_p_rv_core_rvd[11]_i_13_n_0
+    SLICE_X103Y158       LUT6 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.116     3.102 r  tile_0/lEcho_p_rv_core_rvd[11]_i_8/O
+                         net (fo=4, routed)           0.212     3.314    tile_0/lEcho_p_rv_core_rvd[11]_i_8_n_0
+    SLICE_X104Y160       LUT2 (Prop_D6LUT_SLICEL_I1_O)
+                                                      0.041     3.355 r  tile_0/lEcho_p_rv_core_toDmem_rv[44]_i_6/O
+                         net (fo=1, routed)           0.000     3.355    tile_0/lEcho_p_rv_core_toDmem_rv[44]_i_6_n_0
+    SLICE_X104Y160       CARRY8 (Prop_CARRY8_SLICEL_S[3]_CO[7])
+                                                      0.324     3.679 r  tile_0/lEcho_p_rv_core_toDmem_rv_reg[44]_i_1/CO[7]
+                         net (fo=1, routed)           0.027     3.706    tile_0/lEcho_p_rv_core_toDmem_rv_reg[44]_i_1_n_0
+    SLICE_X104Y161       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.022     3.728 r  tile_0/lEcho_p_rv_core_pc_reg[23]_i_2/CO[7]
+                         net (fo=1, routed)           0.027     3.755    tile_0/lEcho_p_rv_core_pc_reg[23]_i_2_n_0
+    SLICE_X104Y162       CARRY8 (Prop_CARRY8_SLICEL_CI_O[5])
+                                                      0.174     3.929 f  tile_0/lEcho_p_rv_core_pc_reg[31]_i_5/O[5]
+                         net (fo=3, routed)           0.396     4.325    tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_13_0[5]
+    SLICE_X105Y161       LUT4 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.115     4.440 f  tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_26/O
+                         net (fo=1, routed)           0.117     4.557    tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_26_n_0
+    SLICE_X105Y161       LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.070     4.627 r  tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_13/O
+                         net (fo=1, routed)           0.137     4.764    tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_13_n_0
+    SLICE_X105Y162       LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.040     4.804 f  tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_7/O
+                         net (fo=1, routed)           0.142     4.946    tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_7_n_0
+    SLICE_X105Y161       LUT6 (Prop_B6LUT_SLICEL_I5_O)
+                                                      0.041     4.987 f  tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_3/O
+                         net (fo=3, routed)           0.149     5.136    tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_dInst_reg[6]
+    SLICE_X105Y159       LUT6 (Prop_C6LUT_SLICEL_I5_O)
+                                                      0.040     5.176 r  tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_toDmem_rv[66]_i_2/O
+                         net (fo=103, routed)         0.194     5.370    tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_state_reg[1]
+    SLICE_X105Y158       LUT5 (Prop_A6LUT_SLICEL_I3_O)
+                                                      0.071     5.441 r  tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_0_i_1/O
+                         net (fo=5, routed)           0.556     5.997    tile_0/lEcho_p_bram_memory/p_77_in
+    RAMB36_X13Y30        RAMB36E2                                     r  tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_1/ENARDEN
   -------------------------------------------------------------------    -------------------
 
-                         (clock host_pcieHostTop_ep7_CLK_epPortalClock rise edge)
+                         (clock host_pcieHostTop_ep7_CLK_epPcieClock rise edge)
                                                       4.000     4.000 r  
     GTHE3_CHANNEL_X0Y7   GTHE3_CHANNEL                0.000     4.000 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXOUTCLK
                          net (fo=5, routed)           0.046     4.046    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y47        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.283     4.329 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=17348, routed)       1.987     6.316    host_pcieHostTop_pciehost/csr/bramResponseFifo/CLK_epPortalClock
-    SLICE_X132Y43        FDRE                                         r  host_pcieHostTop_pciehost/csr/bramResponseFifo/data0_reg_reg[35]/C
-                         clock pessimism              0.142     6.458    
-                         clock uncertainty           -0.035     6.423    
-    SLICE_X132Y43        FDRE (Setup_DFF_SLICEL_C_D)
-                                                      0.059     6.482    host_pcieHostTop_pciehost/csr/bramResponseFifo/data0_reg_reg[35]
+    X3Y1 (CLOCK_ROOT)    net (fo=19055, routed)       1.778     6.107    tile_0/lEcho_p_bram_memory/CLK_epPcieClock
+    RAMB36_X13Y30        RAMB36E2                                     r  tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_1/CLKARDCLK
+                         clock pessimism              0.177     6.284    
+                         clock uncertainty           -0.035     6.249    
+    RAMB36_X13Y30        RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_ENARDEN)
+                                                     -0.462     5.787    tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_1
   -------------------------------------------------------------------
-                         required time                          6.482    
-                         arrival time                          -6.413    
+                         required time                          5.787    
+                         arrival time                          -5.997    
   -------------------------------------------------------------------
-                         slack                                  0.069    
+                         slack                                 -0.210    
 
 
 
@@ -581,56 +614,56 @@ Slack (MET) :             0.069ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.031ns  (arrival time - required time)
-  Source:                 portalTop_lMMURequestWrapper_dut/dut/sglist_requestAdapter_fifo/D_OUT_reg[39]/C
-                            (rising edge-triggered cell FDRE clocked by host_pcieHostTop_ep7_CLK_epPortalClock  {rise@0.000ns fall@2.000ns period=4.000ns})
-  Destination:            portalTop_lMMU_mmu/translationTable_cbram_bram/RAM_reg_bram_2/DINADIN[7]
-                            (rising edge-triggered cell RAMB36E2 clocked by host_pcieHostTop_ep7_CLK_epPortalClock  {rise@0.000ns fall@2.000ns period=4.000ns})
-  Path Group:             host_pcieHostTop_ep7_CLK_epPortalClock
+Slack (MET) :             0.030ns  (arrival time - required time)
+  Source:                 host_pcieHostTop_ep7/intrFifo/data0_reg_reg[58]/C
+                            (rising edge-triggered cell FDRE clocked by host_pcieHostTop_ep7_CLK_epPcieClock  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/CFGINTERRUPTMSIXADDRESS[26]
+                            (rising edge-triggered cell PCIE_3_1 clocked by host_pcieHostTop_ep7_CLK_epPcieClock  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             host_pcieHostTop_ep7_CLK_epPcieClock
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (host_pcieHostTop_ep7_CLK_epPortalClock rise@0.000ns - host_pcieHostTop_ep7_CLK_epPortalClock rise@0.000ns)
-  Data Path Delay:        0.187ns  (logic 0.048ns (25.668%)  route 0.139ns (74.332%))
+  Requirement:            0.000ns  (host_pcieHostTop_ep7_CLK_epPcieClock rise@0.000ns - host_pcieHostTop_ep7_CLK_epPcieClock rise@0.000ns)
+  Data Path Delay:        0.341ns  (logic 0.048ns (14.076%)  route 0.293ns (85.924%))
   Logic Levels:           0  
-  Clock Path Skew:        0.127ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.401ns
-    Source Clock Delay      (SCD):    1.115ns
-    Clock Pessimism Removal (CPR):    0.159ns
-  Clock Net Delay (Source):      0.997ns (routing 0.415ns, distribution 0.582ns)
-  Clock Net Delay (Destination): 1.236ns (routing 0.468ns, distribution 0.768ns)
+  Clock Path Skew:        0.073ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.264ns
+    Source Clock Delay      (SCD):    1.040ns
+    Clock Pessimism Removal (CPR):    0.151ns
+  Clock Net Delay (Source):      0.922ns (routing 0.276ns, distribution 0.646ns)
+  Clock Net Delay (Destination): 1.099ns (routing 0.315ns, distribution 0.784ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock host_pcieHostTop_ep7_CLK_epPortalClock rise edge)
+                         (clock host_pcieHostTop_ep7_CLK_epPcieClock rise edge)
                                                       0.000     0.000 r  
     GTHE3_CHANNEL_X0Y7   GTHE3_CHANNEL                0.000     0.000 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXOUTCLK
                          net (fo=5, routed)           0.018     0.018    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y47        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.100     0.118 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=17348, routed)       0.997     1.115    portalTop_lMMURequestWrapper_dut/dut/sglist_requestAdapter_fifo/CLK_epPortalClock
-    SLICE_X121Y103       FDRE                                         r  portalTop_lMMURequestWrapper_dut/dut/sglist_requestAdapter_fifo/D_OUT_reg[39]/C
+    X3Y1 (CLOCK_ROOT)    net (fo=19055, routed)       0.922     1.040    host_pcieHostTop_ep7/intrFifo/user_clk
+    SLICE_X119Y57        FDRE                                         r  host_pcieHostTop_ep7/intrFifo/data0_reg_reg[58]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X121Y103       FDRE (Prop_CFF2_SLICEL_C_Q)
-                                                      0.048     1.163 r  portalTop_lMMURequestWrapper_dut/dut/sglist_requestAdapter_fifo/D_OUT_reg[39]/Q
-                         net (fo=4, routed)           0.139     1.302    portalTop_lMMU_mmu/translationTable_cbram_bram/RAM_reg_bram_5_0[7]
-    RAMB36_X15Y20        RAMB36E2                                     r  portalTop_lMMU_mmu/translationTable_cbram_bram/RAM_reg_bram_2/DINADIN[7]
+    SLICE_X119Y57        FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.048     1.088 r  host_pcieHostTop_ep7/intrFifo/data0_reg_reg[58]/Q
+                         net (fo=2, routed)           0.293     1.381    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/cfg_interrupt_msix_address[26]
+    PCIE_3_1_X0Y0        PCIE_3_1                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/CFGINTERRUPTMSIXADDRESS[26]
   -------------------------------------------------------------------    -------------------
 
-                         (clock host_pcieHostTop_ep7_CLK_epPortalClock rise edge)
+                         (clock host_pcieHostTop_ep7_CLK_epPcieClock rise edge)
                                                       0.000     0.000 r  
     GTHE3_CHANNEL_X0Y7   GTHE3_CHANNEL                0.000     0.000 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXOUTCLK
                          net (fo=5, routed)           0.035     0.035    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y47        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.165 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=17348, routed)       1.236     1.401    portalTop_lMMU_mmu/translationTable_cbram_bram/CLK_epPortalClock
-    RAMB36_X15Y20        RAMB36E2                                     r  portalTop_lMMU_mmu/translationTable_cbram_bram/RAM_reg_bram_2/CLKARDCLK
-                         clock pessimism             -0.159     1.242    
-    RAMB36_X15Y20        RAMB36E2 (Hold_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[7])
-                                                      0.029     1.271    portalTop_lMMU_mmu/translationTable_cbram_bram/RAM_reg_bram_2
+    X3Y1 (CLOCK_ROOT)    net (fo=19055, routed)       1.099     1.264    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/CLK_USERCLK
+    PCIE_3_1_X0Y0        PCIE_3_1                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/USERCLK
+                         clock pessimism             -0.151     1.113    
+    PCIE_3_1_X0Y0        PCIE_3_1 (Hold_PCIE_3_1_USERCLK_CFGINTERRUPTMSIXADDRESS[26])
+                                                      0.238     1.351    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst
   -------------------------------------------------------------------
-                         required time                         -1.271    
-                         arrival time                           1.302    
+                         required time                         -1.351    
+                         arrival time                           1.381    
   -------------------------------------------------------------------
-                         slack                                  0.031    
+                         slack                                  0.030    
 
 
 
@@ -638,16 +671,16 @@ Slack (MET) :             0.031ns  (arrival time - required time)
 
 Pulse Width Checks
 --------------------------------------------------------------------------------------
-Clock Name:         host_pcieHostTop_ep7_CLK_epPortalClock
+Clock Name:         host_pcieHostTop_ep7_CLK_epPcieClock
 Waveform(ns):       { 0.000 2.000 }
 Period(ns):         4.000
 Sources:            { host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O }
 
 Check Type        Corner  Lib Pin             Reference Pin     Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
 Min Period        n/a     PCIE_3_1/USERCLK    n/a               4.000         4.000       0.000      PCIE_3_1_X0Y0  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/USERCLK
-Low Pulse Width   Fast    RAMB36E2/CLKARDCLK  n/a               0.980         2.000       1.020      RAMB36_X16Y8   host_pcieHostTop_pciehost/csr/changeFifo_memory/RAM_reg/CLKARDCLK
-High Pulse Width  Slow    RAMB36E2/CLKARDCLK  n/a               0.980         2.000       1.020      RAMB36_X16Y8   host_pcieHostTop_pciehost/csr/changeFifo_memory/RAM_reg/CLKARDCLK
-Max Skew          Fast    PCIE_3_1/USERCLK    PCIE_3_1/PIPECLK  0.374         0.254       0.120      PCIE_3_1_X0Y0  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/USERCLK
+Low Pulse Width   Fast    RAMB36E2/CLKARDCLK  n/a               0.980         2.000       1.020      RAMB36_X14Y8   host_pcieHostTop_pciehost/csr/changeFifo_memory/RAM_reg/CLKARDCLK
+High Pulse Width  Slow    RAMB36E2/CLKARDCLK  n/a               0.980         2.000       1.020      RAMB36_X14Y8   host_pcieHostTop_pciehost/csr/changeFifo_memory/RAM_reg/CLKARDCLK
+Max Skew          Fast    PCIE_3_1/USERCLK    PCIE_3_1/PIPECLK  0.374         0.249       0.125      PCIE_3_1_X0Y0  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/USERCLK
 
 
 
@@ -677,15 +710,15 @@ Min Period  n/a     PCIE_3_1/MCAPCLK  n/a            8.000         8.000       0
 From Clock:  pipe_clk
   To Clock:  pipe_clk
 
-Setup :            0  Failing Endpoints,  Worst Slack        0.888ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.031ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        0.674ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.030ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        0.000ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.888ns  (required time - arrival time)
+Slack (MET) :             0.674ns  (required time - arrival time)
   Source:                 host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/prst_n_r_reg_reg/C
                             (rising edge-triggered cell FDCE clocked by pipe_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
   Destination:            host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/FSM_onehot_fsm_reg[2]/R
@@ -693,19 +726,19 @@ Slack (MET) :             0.888ns  (required time - arrival time)
   Path Group:             pipe_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            4.000ns  (pipe_clk rise@4.000ns - pipe_clk rise@0.000ns)
-  Data Path Delay:        2.805ns  (logic 0.114ns (4.064%)  route 2.691ns (95.936%))
+  Data Path Delay:        3.008ns  (logic 0.114ns (3.790%)  route 2.894ns (96.210%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.188ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.308ns = ( 6.308 - 4.000 ) 
-    Source Clock Delay      (SCD):    2.638ns
-    Clock Pessimism Removal (CPR):    0.142ns
+  Clock Path Skew:        -0.199ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.180ns = ( 6.180 - 4.000 ) 
+    Source Clock Delay      (SCD):    2.496ns
+    Clock Pessimism Removal (CPR):    0.117ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.241ns (routing 0.803ns, distribution 1.438ns)
-  Clock Net Delay (Destination): 1.979ns (routing 0.729ns, distribution 1.250ns)
+  Clock Net Delay (Source):      2.099ns (routing 0.517ns, distribution 1.582ns)
+  Clock Net Delay (Destination): 1.851ns (routing 0.468ns, distribution 1.383ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -715,13 +748,13 @@ Slack (MET) :             0.888ns  (required time - arrival time)
                          net (fo=5, routed)           0.082     0.082    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y44        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.315     0.397 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_pclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=2086, routed)        2.241     2.638    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/CLK_PCLK
-    SLICE_X137Y75        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/prst_n_r_reg_reg/C
+    X3Y1 (CLOCK_ROOT)    net (fo=2086, routed)        2.099     2.496    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/CLK_PCLK
+    SLICE_X128Y66        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/prst_n_r_reg_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X137Y75        FDCE (Prop_EFF_SLICEL_C_Q)
-                                                      0.114     2.752 f  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/prst_n_r_reg_reg/Q
-                         net (fo=409, routed)         2.691     5.443    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/SR[0]
-    SLICE_X132Y4         FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/FSM_onehot_fsm_reg[2]/R  (IS_INVERTED)
+    SLICE_X128Y66        FDCE (Prop_EFF_SLICEL_C_Q)
+                                                      0.114     2.610 f  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/prst_n_r_reg_reg/Q
+                         net (fo=409, routed)         2.894     5.504    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/SR[0]
+    SLICE_X127Y2         FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/FSM_onehot_fsm_reg[2]/R  (IS_INVERTED)
   -------------------------------------------------------------------    -------------------
 
                          (clock pipe_clk rise edge)
@@ -730,17 +763,17 @@ Slack (MET) :             0.888ns  (required time - arrival time)
                          net (fo=5, routed)           0.046     4.046    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y44        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.283     4.329 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_pclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=2086, routed)        1.979     6.308    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/CLK_PCLK
-    SLICE_X132Y4         FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/FSM_onehot_fsm_reg[2]/C
-                         clock pessimism              0.142     6.450    
-                         clock uncertainty           -0.035     6.415    
-    SLICE_X132Y4         FDRE (Setup_CFF_SLICEL_C_R)
-                                                     -0.084     6.331    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/FSM_onehot_fsm_reg[2]
+    X3Y1 (CLOCK_ROOT)    net (fo=2086, routed)        1.851     6.180    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/CLK_PCLK
+    SLICE_X127Y2         FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/FSM_onehot_fsm_reg[2]/C
+                         clock pessimism              0.117     6.297    
+                         clock uncertainty           -0.035     6.262    
+    SLICE_X127Y2         FDRE (Setup_CFF_SLICEL_C_R)
+                                                     -0.084     6.178    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_lane[7].phy_rxeq_i/FSM_onehot_fsm_reg[2]
   -------------------------------------------------------------------
-                         required time                          6.331    
-                         arrival time                          -5.443    
+                         required time                          6.178    
+                         arrival time                          -5.504    
   -------------------------------------------------------------------
-                         slack                                  0.888    
+                         slack                                  0.674    
 
 
 
@@ -748,22 +781,22 @@ Slack (MET) :             0.888ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.031ns  (arrival time - required time)
-  Source:                 host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_5_inst/pipe_stages_1.pipe_rx_eqdone_q_reg/C
+Slack (MET) :             0.030ns  (arrival time - required time)
+  Source:                 host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_5_inst/pipe_stages_1.pipe_rx_polarity_q_reg/C
                             (rising edge-triggered cell FDRE clocked by pipe_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
-  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/PIPERX5EQDONE
-                            (rising edge-triggered cell PCIE_3_1 clocked by pipe_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[2].GTHE3_CHANNEL_PRIM_INST/RXPOLARITY
+                            (rising edge-triggered cell GTHE3_CHANNEL clocked by pipe_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
   Path Group:             pipe_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (pipe_clk rise@0.000ns - pipe_clk rise@0.000ns)
-  Data Path Delay:        0.455ns  (logic 0.048ns (10.549%)  route 0.407ns (89.451%))
+  Data Path Delay:        0.184ns  (logic 0.048ns (26.087%)  route 0.136ns (73.913%))
   Logic Levels:           0  
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.287ns
-    Source Clock Delay      (SCD):    1.120ns
-    Clock Pessimism Removal (CPR):    0.151ns
-  Clock Net Delay (Source):      1.002ns (routing 0.414ns, distribution 0.588ns)
-  Clock Net Delay (Destination): 1.122ns (routing 0.466ns, distribution 0.656ns)
+  Clock Path Skew:        0.004ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.231ns
+    Source Clock Delay      (SCD):    1.081ns
+    Clock Pessimism Removal (CPR):    0.146ns
+  Clock Net Delay (Source):      0.963ns (routing 0.274ns, distribution 0.689ns)
+  Clock Net Delay (Destination): 1.066ns (routing 0.312ns, distribution 0.754ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -773,13 +806,13 @@ Slack (MET) :             0.031ns  (arrival time - required time)
                          net (fo=5, routed)           0.018     0.018    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y44        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.100     0.118 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_pclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=2086, routed)        1.002     1.120    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_5_inst/CLK
-    SLICE_X134Y29        FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_5_inst/pipe_stages_1.pipe_rx_eqdone_q_reg/C
+    X3Y1 (CLOCK_ROOT)    net (fo=2086, routed)        0.963     1.081    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_5_inst/CLK
+    SLICE_X138Y37        FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_5_inst/pipe_stages_1.pipe_rx_polarity_q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X134Y29        FDRE (Prop_GFF_SLICEL_C_Q)
-                                                      0.048     1.168 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_5_inst/pipe_stages_1.pipe_rx_eqdone_q_reg/Q
-                         net (fo=1, routed)           0.407     1.575    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PIPERX5EQDONE
-    PCIE_3_1_X0Y0        PCIE_3_1                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/PIPERX5EQDONE
+    SLICE_X138Y37        FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.048     1.129 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_5_inst/pipe_stages_1.pipe_rx_polarity_q_reg/Q
+                         net (fo=1, routed)           0.136     1.265    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/rxpolarity_in[2]
+    GTHE3_CHANNEL_X0Y2   GTHE3_CHANNEL                                r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[2].GTHE3_CHANNEL_PRIM_INST/RXPOLARITY
   -------------------------------------------------------------------    -------------------
 
                          (clock pipe_clk rise edge)
@@ -788,16 +821,16 @@ Slack (MET) :             0.031ns  (arrival time - required time)
                          net (fo=5, routed)           0.035     0.035    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y44        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.165 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_pclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=2086, routed)        1.122     1.287    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/CLK
-    PCIE_3_1_X0Y0        PCIE_3_1                                     r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/PIPECLK
-                         clock pessimism             -0.151     1.136    
-    PCIE_3_1_X0Y0        PCIE_3_1 (Hold_PCIE_3_1_PIPECLK_PIPERX5EQDONE)
-                                                      0.408     1.544    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst
+    X3Y1 (CLOCK_ROOT)    net (fo=2086, routed)        1.066     1.231    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/rxusrclk2_in[2]
+    GTHE3_CHANNEL_X0Y2   GTHE3_CHANNEL                                r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[2].GTHE3_CHANNEL_PRIM_INST/RXUSRCLK2
+                         clock pessimism             -0.146     1.085    
+    GTHE3_CHANNEL_X0Y2   GTHE3_CHANNEL (Hold_GTHE3_CHANNEL_RXUSRCLK2_RXPOLARITY)
+                                                      0.150     1.235    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[2].GTHE3_CHANNEL_PRIM_INST
   -------------------------------------------------------------------
-                         required time                         -1.544    
-                         arrival time                           1.575    
+                         required time                         -1.235    
+                         arrival time                           1.265    
   -------------------------------------------------------------------
-                         slack                                  0.031    
+                         slack                                  0.030    
 
 
 
@@ -812,63 +845,63 @@ Sources:            { host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_
 
 Check Type        Corner  Lib Pin                 Reference Pin     Required(ns)  Actual(ns)  Slack(ns)  Location            Pin
 Min Period        n/a     PCIE_3_1/PIPECLK        n/a               4.000         4.000       0.000      PCIE_3_1_X0Y0       host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/PIPECLK
-Low Pulse Width   Slow    GTHE3_CHANNEL/TXUSRCLK  n/a               1.100         2.000       0.900      GTHE3_CHANNEL_X0Y7  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXUSRCLK
-High Pulse Width  Slow    GTHE3_CHANNEL/TXUSRCLK  n/a               1.100         2.000       0.900      GTHE3_CHANNEL_X0Y3  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXUSRCLK
-Max Skew          Fast    PCIE_3_1/PIPECLK        PCIE_3_1/USERCLK  0.374         0.199       0.175      PCIE_3_1_X0Y0       host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/PIPECLK
+Low Pulse Width   Fast    GTHE3_CHANNEL/RXUSRCLK  n/a               1.100         2.000       0.900      GTHE3_CHANNEL_X0Y1  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[1].GTHE3_CHANNEL_PRIM_INST/RXUSRCLK
+High Pulse Width  Slow    GTHE3_CHANNEL/TXUSRCLK  n/a               1.100         2.000       0.900      GTHE3_CHANNEL_X0Y6  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[2].GTHE3_CHANNEL_PRIM_INST/TXUSRCLK
+Max Skew          Fast    PCIE_3_1/PIPECLK        PCIE_3_1/USERCLK  0.374         0.195       0.179      PCIE_3_1_X0Y0       host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pcie3_uscale_wrapper_inst/PCIE_3_1_inst/PIPECLK
 
 
 
 ---------------------------------------------------------------------------------------------------
-From Clock:  host_pcieHostTop_ep7_CLK_epPortalClock
+From Clock:  host_pcieHostTop_ep7_CLK_epPcieClock
   To Clock:  pipe_clk
 
-Setup :            0  Failing Endpoints,  Worst Slack        0.845ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.102ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        0.609ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.130ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.845ns  (required time - arrival time)
+Slack (MET) :             0.609ns  (required time - arrival time)
   Source:                 host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by host_pcieHostTop_ep7_CLK_epPortalClock  {rise@0.000ns fall@2.000ns period=4.000ns})
-  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/pipe_stages_1.pipe_tx_data_q_reg[15]/R
+                            (rising edge-triggered cell FDCE clocked by host_pcieHostTop_ep7_CLK_epPcieClock  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_7_inst/pipe_stages_1.pipe_rx_data_q_reg[14]/R
                             (rising edge-triggered cell FDRE clocked by pipe_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
   Path Group:             pipe_clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            4.000ns  (pipe_clk rise@4.000ns - host_pcieHostTop_ep7_CLK_epPortalClock rise@0.000ns)
-  Data Path Delay:        2.739ns  (logic 0.263ns (9.602%)  route 2.476ns (90.398%))
+  Requirement:            4.000ns  (pipe_clk rise@4.000ns - host_pcieHostTop_ep7_CLK_epPcieClock rise@0.000ns)
+  Data Path Delay:        2.955ns  (logic 0.268ns (9.069%)  route 2.687ns (90.931%))
   Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        -0.298ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.319ns = ( 6.319 - 4.000 ) 
-    Source Clock Delay      (SCD):    2.617ns
+  Clock Path Skew:        -0.317ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.194ns = ( 6.194 - 4.000 ) 
+    Source Clock Delay      (SCD):    2.511ns
     Clock Pessimism Removal (CPR):    0.000ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.220ns (routing 0.814ns, distribution 1.406ns)
-  Clock Net Delay (Destination): 1.990ns (routing 0.729ns, distribution 1.261ns)
+  Clock Net Delay (Source):      2.114ns (routing 0.530ns, distribution 1.584ns)
+  Clock Net Delay (Destination): 1.865ns (routing 0.468ns, distribution 1.397ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock host_pcieHostTop_ep7_CLK_epPortalClock rise edge)
+                         (clock host_pcieHostTop_ep7_CLK_epPcieClock rise edge)
                                                       0.000     0.000 r  
     GTHE3_CHANNEL_X0Y7   GTHE3_CHANNEL                0.000     0.000 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXOUTCLK
                          net (fo=5, routed)           0.082     0.082    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y47        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.315     0.397 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=17348, routed)       2.220     2.617    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/CLK_USERCLK
-    SLICE_X136Y23        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[2]/C
+    X3Y1 (CLOCK_ROOT)    net (fo=19055, routed)       2.114     2.511    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/CLK_USERCLK
+    SLICE_X133Y52        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X136Y23        FDCE (Prop_GFF_SLICEL_C_Q)
-                                                      0.114     2.731 f  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[2]/Q
-                         net (fo=6, routed)           0.274     3.005    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg_n_0_[2]
-    SLICE_X136Y23        LUT2 (Prop_D5LUT_SLICEL_I1_O)
-                                                      0.149     3.154 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_user_tph_stt_read_data_valid_o_i_2/O
-                         net (fo=978, routed)         2.202     5.356    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/SR[0]
-    SLICE_X139Y63        FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/pipe_stages_1.pipe_tx_data_q_reg[15]/R
+    SLICE_X133Y52        FDCE (Prop_GFF_SLICEM_C_Q)
+                                                      0.114     2.625 f  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[2]/Q
+                         net (fo=6, routed)           0.326     2.951    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg_n_0_[2]
+    SLICE_X133Y52        LUT2 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.154     3.105 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_user_tph_stt_read_data_valid_o_i_2/O
+                         net (fo=978, routed)         2.361     5.466    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_7_inst/SR[0]
+    SLICE_X136Y4         FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_7_inst/pipe_stages_1.pipe_rx_data_q_reg[14]/R
   -------------------------------------------------------------------    -------------------
 
                          (clock pipe_clk rise edge)
@@ -877,17 +910,17 @@ Slack (MET) :             0.845ns  (required time - arrival time)
                          net (fo=5, routed)           0.046     4.046    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y44        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.283     4.329 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_pclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=2086, routed)        1.990     6.319    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/CLK
-    SLICE_X139Y63        FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/pipe_stages_1.pipe_tx_data_q_reg[15]/C
-                         clock pessimism              0.000     6.319    
-                         clock uncertainty           -0.035     6.284    
-    SLICE_X139Y63        FDRE (Setup_EFF_SLICEM_C_R)
-                                                     -0.083     6.201    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/pipe_stages_1.pipe_tx_data_q_reg[15]
+    X3Y1 (CLOCK_ROOT)    net (fo=2086, routed)        1.865     6.194    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_7_inst/CLK
+    SLICE_X136Y4         FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_7_inst/pipe_stages_1.pipe_rx_data_q_reg[14]/C
+                         clock pessimism              0.000     6.194    
+                         clock uncertainty           -0.035     6.159    
+    SLICE_X136Y4         FDRE (Setup_AFF_SLICEL_C_R)
+                                                     -0.084     6.075    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_7_inst/pipe_stages_1.pipe_rx_data_q_reg[14]
   -------------------------------------------------------------------
-                         required time                          6.201    
-                         arrival time                          -5.356    
+                         required time                          6.075    
+                         arrival time                          -5.466    
   -------------------------------------------------------------------
-                         slack                                  0.845    
+                         slack                                  0.609    
 
 
 
@@ -895,41 +928,41 @@ Slack (MET) :             0.845ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.102ns  (arrival time - required time)
+Slack (MET) :             0.130ns  (arrival time - required time)
   Source:                 host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by host_pcieHostTop_ep7_CLK_epPortalClock  {rise@0.000ns fall@2.000ns period=4.000ns})
-  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/pipe_stages_1.pipe_tx_eqdeemph_q_reg[3]/R
+                            (rising edge-triggered cell FDCE clocked by host_pcieHostTop_ep7_CLK_epPcieClock  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_4_inst/pipe_stages_1.pipe_tx_eqcoeff_q_reg[15]/R
                             (rising edge-triggered cell FDRE clocked by pipe_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
   Path Group:             pipe_clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (pipe_clk rise@0.000ns - host_pcieHostTop_ep7_CLK_epPortalClock rise@0.000ns)
-  Data Path Delay:        0.345ns  (logic 0.103ns (29.855%)  route 0.242ns (70.145%))
+  Requirement:            0.000ns  (pipe_clk rise@0.000ns - host_pcieHostTop_ep7_CLK_epPcieClock rise@0.000ns)
+  Data Path Delay:        0.349ns  (logic 0.105ns (30.086%)  route 0.244ns (69.914%))
   Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        0.238ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.369ns
-    Source Clock Delay      (SCD):    1.131ns
+  Clock Path Skew:        0.214ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.302ns
+    Source Clock Delay      (SCD):    1.088ns
     Clock Pessimism Removal (CPR):    -0.000ns
-  Clock Net Delay (Source):      1.013ns (routing 0.415ns, distribution 0.598ns)
-  Clock Net Delay (Destination): 1.204ns (routing 0.466ns, distribution 0.738ns)
+  Clock Net Delay (Source):      0.970ns (routing 0.276ns, distribution 0.694ns)
+  Clock Net Delay (Destination): 1.137ns (routing 0.312ns, distribution 0.825ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock host_pcieHostTop_ep7_CLK_epPortalClock rise edge)
+                         (clock host_pcieHostTop_ep7_CLK_epPcieClock rise edge)
                                                       0.000     0.000 r  
     GTHE3_CHANNEL_X0Y7   GTHE3_CHANNEL                0.000     0.000 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXOUTCLK
                          net (fo=5, routed)           0.018     0.018    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y47        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.100     0.118 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=17348, routed)       1.013     1.131    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/CLK_USERCLK
-    SLICE_X136Y23        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[0]/C
+    X3Y1 (CLOCK_ROOT)    net (fo=19055, routed)       0.970     1.088    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/CLK_USERCLK
+    SLICE_X133Y52        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X136Y23        FDCE (Prop_HFF2_SLICEL_C_Q)
-                                                      0.048     1.179 f  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[0]/Q
-                         net (fo=6, routed)           0.043     1.222    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg_n_0_[0]
-    SLICE_X136Y23        LUT2 (Prop_D5LUT_SLICEL_I0_O)
-                                                      0.055     1.277 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_user_tph_stt_read_data_valid_o_i_2/O
-                         net (fo=978, routed)         0.199     1.476    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/SR[0]
-    SLICE_X138Y22        FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/pipe_stages_1.pipe_tx_eqdeemph_q_reg[3]/R
+    SLICE_X133Y52        FDCE (Prop_HFF2_SLICEM_C_Q)
+                                                      0.048     1.136 f  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[0]/Q
+                         net (fo=6, routed)           0.045     1.181    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg_n_0_[0]
+    SLICE_X133Y52        LUT2 (Prop_D5LUT_SLICEM_I0_O)
+                                                      0.057     1.238 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_user_tph_stt_read_data_valid_o_i_2/O
+                         net (fo=978, routed)         0.199     1.437    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_4_inst/SR[0]
+    SLICE_X133Y53        FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_4_inst/pipe_stages_1.pipe_tx_eqcoeff_q_reg[15]/R
   -------------------------------------------------------------------    -------------------
 
                          (clock pipe_clk rise edge)
@@ -938,16 +971,16 @@ Slack (MET) :             0.102ns  (arrival time - required time)
                          net (fo=5, routed)           0.035     0.035    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y44        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.165 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_pclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=2086, routed)        1.204     1.369    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/CLK
-    SLICE_X138Y22        FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/pipe_stages_1.pipe_tx_eqdeemph_q_reg[3]/C
-                         clock pessimism              0.000     1.369    
-    SLICE_X138Y22        FDRE (Hold_EFF_SLICEL_C_R)
-                                                      0.005     1.374    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_4_lane.pipe_lane_2_inst/pipe_stages_1.pipe_tx_eqdeemph_q_reg[3]
+    X3Y1 (CLOCK_ROOT)    net (fo=2086, routed)        1.137     1.302    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_4_inst/CLK
+    SLICE_X133Y53        FDRE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_4_inst/pipe_stages_1.pipe_tx_eqcoeff_q_reg[15]/C
+                         clock pessimism              0.000     1.302    
+    SLICE_X133Y53        FDRE (Hold_EFF_SLICEM_C_R)
+                                                      0.005     1.307    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/pipe_pipeline_inst/pipe_8_lane.pipe_lane_4_inst/pipe_stages_1.pipe_tx_eqcoeff_q_reg[15]
   -------------------------------------------------------------------
-                         required time                         -1.374    
-                         arrival time                           1.476    
+                         required time                         -1.307    
+                         arrival time                           1.437    
   -------------------------------------------------------------------
-                         slack                                  0.102    
+                         slack                                  0.130    
 
 
 
@@ -955,75 +988,75 @@ Slack (MET) :             0.102ns  (arrival time - required time)
 
 ---------------------------------------------------------------------------------------------------
 Path Group:  **async_default**
-From Clock:  host_pcieHostTop_ep7_CLK_epPortalClock
-  To Clock:  host_pcieHostTop_ep7_CLK_epPortalClock
+From Clock:  host_pcieHostTop_ep7_CLK_epPcieClock
+  To Clock:  host_pcieHostTop_ep7_CLK_epPcieClock
 
-Setup :            0  Failing Endpoints,  Worst Slack        2.059ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.196ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        1.113ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.142ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             2.059ns  (required time - arrival time)
+Slack (MET) :             1.113ns  (required time - arrival time)
   Source:                 host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[2]/C
-                            (rising edge-triggered cell FDCE clocked by host_pcieHostTop_ep7_CLK_epPortalClock  {rise@0.000ns fall@2.000ns period=4.000ns})
+                            (rising edge-triggered cell FDCE clocked by host_pcieHostTop_ep7_CLK_epPcieClock  {rise@0.000ns fall@2.000ns period=4.000ns})
   Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/reg_cfg_tph_stt_read_data_valid_o_reg/CLR
-                            (recovery check against rising-edge clock host_pcieHostTop_ep7_CLK_epPortalClock  {rise@0.000ns fall@2.000ns period=4.000ns})
+                            (recovery check against rising-edge clock host_pcieHostTop_ep7_CLK_epPcieClock  {rise@0.000ns fall@2.000ns period=4.000ns})
   Path Group:             **async_default**
   Path Type:              Recovery (Max at Slow Process Corner)
-  Requirement:            4.000ns  (host_pcieHostTop_ep7_CLK_epPortalClock rise@4.000ns - host_pcieHostTop_ep7_CLK_epPortalClock rise@0.000ns)
-  Data Path Delay:        1.718ns  (logic 0.263ns (15.309%)  route 1.455ns (84.692%))
+  Requirement:            4.000ns  (host_pcieHostTop_ep7_CLK_epPcieClock rise@4.000ns - host_pcieHostTop_ep7_CLK_epPcieClock rise@0.000ns)
+  Data Path Delay:        2.608ns  (logic 0.268ns (10.276%)  route 2.340ns (89.724%))
   Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.316ns = ( 6.316 - 4.000 ) 
-    Source Clock Delay      (SCD):    2.617ns
-    Clock Pessimism Removal (CPR):    0.195ns
+  Clock Path Skew:        -0.162ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.165ns = ( 6.165 - 4.000 ) 
+    Source Clock Delay      (SCD):    2.511ns
+    Clock Pessimism Removal (CPR):    0.184ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.220ns (routing 0.814ns, distribution 1.406ns)
-  Clock Net Delay (Destination): 1.987ns (routing 0.740ns, distribution 1.247ns)
+  Clock Net Delay (Source):      2.114ns (routing 0.530ns, distribution 1.584ns)
+  Clock Net Delay (Destination): 1.836ns (routing 0.481ns, distribution 1.355ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock host_pcieHostTop_ep7_CLK_epPortalClock rise edge)
+                         (clock host_pcieHostTop_ep7_CLK_epPcieClock rise edge)
                                                       0.000     0.000 r  
     GTHE3_CHANNEL_X0Y7   GTHE3_CHANNEL                0.000     0.000 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXOUTCLK
                          net (fo=5, routed)           0.082     0.082    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y47        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.315     0.397 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=17348, routed)       2.220     2.617    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/CLK_USERCLK
-    SLICE_X136Y23        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[2]/C
+    X3Y1 (CLOCK_ROOT)    net (fo=19055, routed)       2.114     2.511    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/CLK_USERCLK
+    SLICE_X133Y52        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X136Y23        FDCE (Prop_GFF_SLICEL_C_Q)
-                                                      0.114     2.731 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[2]/Q
-                         net (fo=6, routed)           0.274     3.005    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg_n_0_[2]
-    SLICE_X136Y23        LUT2 (Prop_D5LUT_SLICEL_I1_O)
-                                                      0.149     3.154 f  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_user_tph_stt_read_data_valid_o_i_2/O
-                         net (fo=978, routed)         1.181     4.335    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/SR[0]
-    SLICE_X131Y12        FDCE                                         f  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/reg_cfg_tph_stt_read_data_valid_o_reg/CLR
+    SLICE_X133Y52        FDCE (Prop_GFF_SLICEM_C_Q)
+                                                      0.114     2.625 r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[2]/Q
+                         net (fo=6, routed)           0.326     2.951    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg_n_0_[2]
+    SLICE_X133Y52        LUT2 (Prop_D5LUT_SLICEM_I1_O)
+                                                      0.154     3.105 f  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_user_tph_stt_read_data_valid_o_i_2/O
+                         net (fo=978, routed)         2.014     5.119    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/SR[0]
+    SLICE_X126Y17        FDCE                                         f  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/reg_cfg_tph_stt_read_data_valid_o_reg/CLR
   -------------------------------------------------------------------    -------------------
 
-                         (clock host_pcieHostTop_ep7_CLK_epPortalClock rise edge)
+                         (clock host_pcieHostTop_ep7_CLK_epPcieClock rise edge)
                                                       4.000     4.000 r  
     GTHE3_CHANNEL_X0Y7   GTHE3_CHANNEL                0.000     4.000 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXOUTCLK
                          net (fo=5, routed)           0.046     4.046    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y47        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.283     4.329 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=17348, routed)       1.987     6.316    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/CLK_USERCLK
-    SLICE_X131Y12        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/reg_cfg_tph_stt_read_data_valid_o_reg/C
-                         clock pessimism              0.195     6.511    
-                         clock uncertainty           -0.035     6.476    
-    SLICE_X131Y12        FDCE (Recov_DFF2_SLICEL_C_CLR)
-                                                     -0.082     6.394    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/reg_cfg_tph_stt_read_data_valid_o_reg
+    X3Y1 (CLOCK_ROOT)    net (fo=19055, routed)       1.836     6.165    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/CLK_USERCLK
+    SLICE_X126Y17        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/reg_cfg_tph_stt_read_data_valid_o_reg/C
+                         clock pessimism              0.184     6.349    
+                         clock uncertainty           -0.035     6.314    
+    SLICE_X126Y17        FDCE (Recov_CFF2_SLICEL_C_CLR)
+                                                     -0.082     6.232    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/tph_tbl_inst/reg_cfg_tph_stt_read_data_valid_o_reg
   -------------------------------------------------------------------
-                         required time                          6.394    
-                         arrival time                          -4.335    
+                         required time                          6.232    
+                         arrival time                          -5.119    
   -------------------------------------------------------------------
-                         slack                                  2.059    
+                         slack                                  1.113    
 
 
 
@@ -1031,56 +1064,56 @@ Slack (MET) :             2.059ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.196ns  (arrival time - required time)
-  Source:                 host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_cold_reset_reg[1]/C
-                            (rising edge-triggered cell FDSE clocked by host_pcieHostTop_ep7_CLK_epPortalClock  {rise@0.000ns fall@2.000ns period=4.000ns})
-  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[0]/CLR
-                            (removal check against rising-edge clock host_pcieHostTop_ep7_CLK_epPortalClock  {rise@0.000ns fall@2.000ns period=4.000ns})
+Slack (MET) :             0.142ns  (arrival time - required time)
+  Source:                 host_pcieHostTop_ep7/pcieReset250/reset_hold_reg[4]_rep_replica_36/C
+                            (rising edge-triggered cell FDRE clocked by host_pcieHostTop_ep7_CLK_epPcieClock  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            GetPutWithClocks_inst_mkConnectionWithClocks_synchronizer/sDeqPtr_reg[5]/CLR
+                            (removal check against rising-edge clock host_pcieHostTop_ep7_CLK_epPcieClock  {rise@0.000ns fall@2.000ns period=4.000ns})
   Path Group:             **async_default**
   Path Type:              Removal (Min at Fast Process Corner)
-  Requirement:            0.000ns  (host_pcieHostTop_ep7_CLK_epPortalClock rise@0.000ns - host_pcieHostTop_ep7_CLK_epPortalClock rise@0.000ns)
-  Data Path Delay:        0.243ns  (logic 0.049ns (20.165%)  route 0.194ns (79.835%))
+  Requirement:            0.000ns  (host_pcieHostTop_ep7_CLK_epPcieClock rise@0.000ns - host_pcieHostTop_ep7_CLK_epPcieClock rise@0.000ns)
+  Data Path Delay:        0.221ns  (logic 0.048ns (21.719%)  route 0.173ns (78.281%))
   Logic Levels:           0  
-  Clock Path Skew:        0.042ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.358ns
-    Source Clock Delay      (SCD):    1.130ns
-    Clock Pessimism Removal (CPR):    0.186ns
-  Clock Net Delay (Source):      1.012ns (routing 0.415ns, distribution 0.597ns)
-  Clock Net Delay (Destination): 1.193ns (routing 0.468ns, distribution 0.725ns)
+  Clock Path Skew:        0.074ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.269ns
+    Source Clock Delay      (SCD):    1.042ns
+    Clock Pessimism Removal (CPR):    0.153ns
+  Clock Net Delay (Source):      0.924ns (routing 0.276ns, distribution 0.648ns)
+  Clock Net Delay (Destination): 1.104ns (routing 0.315ns, distribution 0.789ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock host_pcieHostTop_ep7_CLK_epPortalClock rise edge)
+                         (clock host_pcieHostTop_ep7_CLK_epPcieClock rise edge)
                                                       0.000     0.000 r  
     GTHE3_CHANNEL_X0Y7   GTHE3_CHANNEL                0.000     0.000 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXOUTCLK
                          net (fo=5, routed)           0.018     0.018    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y47        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.100     0.118 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=17348, routed)       1.012     1.130    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/CLK_USERCLK
-    SLICE_X136Y22        FDSE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_cold_reset_reg[1]/C
+    X3Y1 (CLOCK_ROOT)    net (fo=19055, routed)       0.924     1.042    host_pcieHostTop_ep7/pcieReset250/user_clk
+    SLICE_X126Y62        FDRE                                         r  host_pcieHostTop_ep7/pcieReset250/reset_hold_reg[4]_rep_replica_36/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X136Y22        FDSE (Prop_AFF2_SLICEL_C_Q)
-                                                      0.049     1.179 f  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_cold_reset_reg[1]/Q
-                         net (fo=3, routed)           0.194     1.373    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/p_0_in
-    SLICE_X136Y23        FDCE                                         f  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[0]/CLR
+    SLICE_X126Y62        FDRE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.048     1.090 r  host_pcieHostTop_ep7/pcieReset250/reset_hold_reg[4]_rep_replica_36/Q
+                         net (fo=170, routed)         0.173     1.263    GetPutWithClocks_inst_mkConnectionWithClocks_synchronizer/reset_hold_reg[4]_rep_0_repN_36_alias
+    SLICE_X125Y62        FDCE                                         f  GetPutWithClocks_inst_mkConnectionWithClocks_synchronizer/sDeqPtr_reg[5]/CLR  (IS_INVERTED)
   -------------------------------------------------------------------    -------------------
 
-                         (clock host_pcieHostTop_ep7_CLK_epPortalClock rise edge)
+                         (clock host_pcieHostTop_ep7_CLK_epPcieClock rise edge)
                                                       0.000     0.000 r  
     GTHE3_CHANNEL_X0Y7   GTHE3_CHANNEL                0.000     0.000 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[1].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/TXOUTCLK
                          net (fo=5, routed)           0.035     0.035    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/CLK_USERCLK_IN
     BUFG_GT_X1Y47        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.165 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_clk_i/bufg_gt_userclk/O
-    X3Y0 (CLOCK_ROOT)    net (fo=17348, routed)       1.193     1.358    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/CLK_USERCLK
-    SLICE_X136Y23        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[0]/C
-                         clock pessimism             -0.186     1.172    
-    SLICE_X136Y23        FDCE (Remov_HFF2_SLICEL_C_CLR)
-                                                      0.005     1.177    host_pcieHostTop_ep7/pcie_ep/inst/pcie3_uscale_top_inst/init_ctrl_inst/reg_state_reg[0]
+    X3Y1 (CLOCK_ROOT)    net (fo=19055, routed)       1.104     1.269    GetPutWithClocks_inst_mkConnectionWithClocks_synchronizer/sCLK
+    SLICE_X125Y62        FDCE                                         r  GetPutWithClocks_inst_mkConnectionWithClocks_synchronizer/sDeqPtr_reg[5]/C
+                         clock pessimism             -0.153     1.116    
+    SLICE_X125Y62        FDCE (Remov_AFF2_SLICEL_C_CLR)
+                                                      0.005     1.121    GetPutWithClocks_inst_mkConnectionWithClocks_synchronizer/sDeqPtr_reg[5]
   -------------------------------------------------------------------
-                         required time                         -1.177    
-                         arrival time                           1.373    
+                         required time                         -1.121    
+                         arrival time                           1.263    
   -------------------------------------------------------------------
-                         slack                                  0.196    
+                         slack                                  0.142    
 
 
 
@@ -1091,14 +1124,14 @@ Path Group:  **async_default**
 From Clock:  pci_refclk
   To Clock:  pci_refclk
 
-Setup :            0  Failing Endpoints,  Worst Slack        9.042ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.151ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        8.967ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.210ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             9.042ns  (required time - arrival time)
+Slack (MET) :             8.967ns  (required time - arrival time)
   Source:                 host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/rrst_n_r_reg_reg/C
                             (rising edge-triggered cell FDCE clocked by pci_refclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/cpllreset_cnt_reg[4]/CLR
@@ -1106,19 +1139,19 @@ Slack (MET) :             9.042ns  (required time - arrival time)
   Path Group:             **async_default**
   Path Type:              Recovery (Max at Slow Process Corner)
   Requirement:            10.000ns  (pci_refclk rise@10.000ns - pci_refclk rise@0.000ns)
-  Data Path Delay:        0.765ns  (logic 0.114ns (14.902%)  route 0.651ns (85.098%))
+  Data Path Delay:        0.788ns  (logic 0.114ns (14.467%)  route 0.674ns (85.533%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.076ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.315ns = ( 12.315 - 10.000 ) 
-    Source Clock Delay      (SCD):    2.791ns
-    Clock Pessimism Removal (CPR):    0.400ns
+  Clock Path Skew:        -0.128ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.329ns = ( 12.329 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.793ns
+    Clock Pessimism Removal (CPR):    0.336ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.031ns (routing 0.718ns, distribution 1.313ns)
-  Clock Net Delay (Destination): 1.778ns (routing 0.651ns, distribution 1.127ns)
+  Clock Net Delay (Source):      2.033ns (routing 0.718ns, distribution 1.315ns)
+  Clock Net Delay (Destination): 1.792ns (routing 0.651ns, distribution 1.141ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1131,13 +1164,13 @@ Slack (MET) :             9.042ns  (required time - arrival time)
                          net (fo=2, routed)           0.082     0.445    host_pcieHostTop_ep7/pcie_ep/inst/sys_clk
     BUFG_GT_X1Y27        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.315     0.760 r  host_pcieHostTop_ep7/pcie_ep/inst/bufg_gt_sysclk/O
-    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         2.031     2.791    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
-    SLICE_X137Y76        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/rrst_n_r_reg_reg/C
+    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         2.033     2.793    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
+    SLICE_X137Y73        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/rrst_n_r_reg_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X137Y76        FDCE (Prop_EFF_SLICEL_C_Q)
-                                                      0.114     2.905 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/rrst_n_r_reg_reg/Q
-                         net (fo=26, routed)          0.651     3.556    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/phy_rrst_n
-    SLICE_X137Y77        FDCE                                         f  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/cpllreset_cnt_reg[4]/CLR  (IS_INVERTED)
+    SLICE_X137Y73        FDCE (Prop_EFF_SLICEL_C_Q)
+                                                      0.114     2.907 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/rrst_n_r_reg_reg/Q
+                         net (fo=26, routed)          0.674     3.581    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/phy_rrst_n
+    SLICE_X139Y77        FDCE                                         f  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/cpllreset_cnt_reg[4]/CLR  (IS_INVERTED)
   -------------------------------------------------------------------    -------------------
 
                          (clock pci_refclk rise edge)
@@ -1149,17 +1182,17 @@ Slack (MET) :             9.042ns  (required time - arrival time)
                          net (fo=2, routed)           0.046    10.254    host_pcieHostTop_ep7/pcie_ep/inst/sys_clk
     BUFG_GT_X1Y27        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.283    10.537 r  host_pcieHostTop_ep7/pcie_ep/inst/bufg_gt_sysclk/O
-    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         1.778    12.315    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
-    SLICE_X137Y77        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/cpllreset_cnt_reg[4]/C
-                         clock pessimism              0.400    12.715    
-                         clock uncertainty           -0.035    12.680    
-    SLICE_X137Y77        FDCE (Recov_DFF_SLICEL_C_CLR)
-                                                     -0.082    12.598    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/cpllreset_cnt_reg[4]
+    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         1.792    12.329    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
+    SLICE_X139Y77        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/cpllreset_cnt_reg[4]/C
+                         clock pessimism              0.336    12.665    
+                         clock uncertainty           -0.035    12.630    
+    SLICE_X139Y77        FDCE (Recov_HFF_SLICEM_C_CLR)
+                                                     -0.082    12.548    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/cpllreset_cnt_reg[4]
   -------------------------------------------------------------------
-                         required time                         12.598    
-                         arrival time                          -3.556    
+                         required time                         12.548    
+                         arrival time                          -3.581    
   -------------------------------------------------------------------
-                         slack                                  9.042    
+                         slack                                  8.967    
 
 
 
@@ -1167,22 +1200,22 @@ Slack (MET) :             9.042ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.151ns  (arrival time - required time)
+Slack (MET) :             0.210ns  (arrival time - required time)
   Source:                 host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/rrst_n_r_reg_reg/C
                             (rising edge-triggered cell FDCE clocked by pci_refclk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[1]/CLR
+  Destination:            host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_reg/PRE
                             (removal check against rising-edge clock pci_refclk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             **async_default**
   Path Type:              Removal (Min at Fast Process Corner)
   Requirement:            0.000ns  (pci_refclk rise@0.000ns - pci_refclk rise@0.000ns)
-  Data Path Delay:        0.229ns  (logic 0.049ns (21.397%)  route 0.180ns (78.603%))
+  Data Path Delay:        0.269ns  (logic 0.049ns (18.216%)  route 0.220ns (81.784%))
   Logic Levels:           0  
-  Clock Path Skew:        0.073ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.501ns
-    Source Clock Delay      (SCD):    1.196ns
-    Clock Pessimism Removal (CPR):    0.232ns
-  Clock Net Delay (Source):      0.913ns (routing 0.367ns, distribution 0.546ns)
-  Clock Net Delay (Destination): 1.083ns (routing 0.417ns, distribution 0.666ns)
+  Clock Path Skew:        0.054ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.514ns
+    Source Clock Delay      (SCD):    1.197ns
+    Clock Pessimism Removal (CPR):    0.263ns
+  Clock Net Delay (Source):      0.914ns (routing 0.367ns, distribution 0.547ns)
+  Clock Net Delay (Destination): 1.096ns (routing 0.417ns, distribution 0.679ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1195,13 +1228,13 @@ Slack (MET) :             0.151ns  (arrival time - required time)
                          net (fo=2, routed)           0.018     0.183    host_pcieHostTop_ep7/pcie_ep/inst/sys_clk
     BUFG_GT_X1Y27        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.100     0.283 r  host_pcieHostTop_ep7/pcie_ep/inst/bufg_gt_sysclk/O
-    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         0.913     1.196    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
-    SLICE_X137Y76        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/rrst_n_r_reg_reg/C
+    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         0.914     1.197    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
+    SLICE_X137Y73        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/rrst_n_r_reg_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X137Y76        FDCE (Prop_EFF_SLICEL_C_Q)
-                                                      0.049     1.245 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/rrst_n_r_reg_reg/Q
-                         net (fo=26, routed)          0.180     1.425    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/phy_rrst_n
-    SLICE_X139Y76        FDCE                                         f  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[1]/CLR  (IS_INVERTED)
+    SLICE_X137Y73        FDCE (Prop_EFF_SLICEL_C_Q)
+                                                      0.049     1.246 r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/rrst_n_r_reg_reg/Q
+                         net (fo=26, routed)          0.220     1.466    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/phy_rrst_n
+    SLICE_X138Y74        FDPE                                         f  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_reg/PRE  (IS_INVERTED)
   -------------------------------------------------------------------    -------------------
 
                          (clock pci_refclk rise edge)
@@ -1213,16 +1246,16 @@ Slack (MET) :             0.151ns  (arrival time - required time)
                          net (fo=2, routed)           0.035     0.288    host_pcieHostTop_ep7/pcie_ep/inst/sys_clk
     BUFG_GT_X1Y27        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.418 r  host_pcieHostTop_ep7/pcie_ep/inst/bufg_gt_sysclk/O
-    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         1.083     1.501    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
-    SLICE_X139Y76        FDCE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[1]/C
-                         clock pessimism             -0.232     1.269    
-    SLICE_X139Y76        FDCE (Remov_DFF_SLICEM_C_CLR)
-                                                      0.005     1.274    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/FSM_onehot_fsm_reg[1]
+    X4Y0 (CLOCK_ROOT)    net (fo=237, routed)         1.096     1.514    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/sync_reg[0]
+    SLICE_X138Y74        FDPE                                         r  host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_reg/C
+                         clock pessimism             -0.263     1.251    
+    SLICE_X138Y74        FDPE (Remov_EFF_SLICEL_C_PRE)
+                                                      0.005     1.256    host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/phy_rst_i/gtreset_reg
   -------------------------------------------------------------------
-                         required time                         -1.274    
-                         arrival time                           1.425    
+                         required time                         -1.256    
+                         arrival time                           1.466    
   -------------------------------------------------------------------
-                         slack                                  0.151    
+                         slack                                  0.210    
 
 
 

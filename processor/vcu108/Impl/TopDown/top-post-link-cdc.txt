@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date              : Sat Mar 23 00:06:47 2024
+| Date              : Sat Mar 23 17:50:23 2024
 | Host              : audacity running 64-bit Ubuntu 18.04.6 LTS
 | Command           : report_cdc -details -verbose -file ./Impl/TopDown/top-post-link-cdc.txt
 | Design            : mkPcieTop
@@ -17,7 +17,7 @@ ID     Severity  Count  Description
 CDC-3  Info         26  1-bit synchronized with ASYNC_REG property
 
 Source Clock: pci_refclk
-Destination Clock: host_pcieHostTop_ep7_CLK_epPortalClock
+Destination Clock: host_pcieHostTop_ep7_CLK_epPcieClock
 CDC Type: No Common Node
 
 Row  ID     Severity  Description                                 Depth  Exception   Source (From)                                                    Destination (To)

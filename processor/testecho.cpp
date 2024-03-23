@@ -69,9 +69,9 @@ int main(int argc, const char **argv)
 	    (double)actualFrequency * 1.0e-6,
 	    status, (status != 0) ? errno : 0);
 
-    int v = 42;
-    printf("Saying %d\n", v);
-    call_say(v);
+    int v = 0;
+    printf("Checking status -- Saying %d\n", v);
+    for (int i=0; i<50;i++) call_say(v);
     call_say(v);
     call_say(v);
     call_say(v);

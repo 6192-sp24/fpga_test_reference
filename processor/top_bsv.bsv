@@ -12,7 +12,7 @@ endinterface
 module mktop_bsv(ProcInterface);
     // Instantiate the dual ported memory
     BRAM_Configure cfg = defaultValue();
-    cfg.loadFormat = tagged Hex "mem.vmh";
+    cfg.loadFormat = tagged Hex "/home/seshan/fpga_test_reference/processor/mem.vmh";
     BRAM2PortBE#(Bit#(12), Word, 4) bram <- mkBRAM2ServerBE(cfg);
 
     RVIfc rv_core <- mkmulticycle;
@@ -110,7 +110,7 @@ module mktop_bsv(ProcInterface);
 
 
     method ActionValue#(Bit#(32)) getStatus();
-		return status;
+		return status+1;
     endmethod
     
 endmodule

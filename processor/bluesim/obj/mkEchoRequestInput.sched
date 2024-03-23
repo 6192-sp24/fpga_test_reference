@@ -1,0 +1,396 @@
+=== Generated schedule for mkEchoRequestInput ===
+
+Method schedule
+---------------
+Method: portalIfc_messageSize_size
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+ 
+Method: portalIfc_requests_0_enq
+Ready signal: say_requestAdapter_fifo.notFull &&
+	      say_requestAdapter_fifo.i_notFull
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: pipes_say_PipeOut_deq
+Sequenced after: portalIfc_requests_0_notFull, pipes_say_PipeOut_notEmpty
+Conflicts: portalIfc_requests_0_enq
+ 
+Method: portalIfc_requests_0_notFull
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_0_enq, pipes_say_PipeOut_deq
+ 
+Method: portalIfc_requests_1_enq
+Ready signal: say2_requestAdapter_fifo.notFull &&
+	      say2_requestAdapter_fifo.i_notFull
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: pipes_say2_PipeOut_deq
+Sequenced after: portalIfc_requests_1_notFull, pipes_say2_PipeOut_notEmpty
+Conflicts: portalIfc_requests_1_enq
+ 
+Method: portalIfc_requests_1_notFull
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_1_enq, pipes_say2_PipeOut_deq
+ 
+Method: portalIfc_requests_2_enq
+Ready signal: setLeds_requestAdapter_fifo.notFull &&
+	      setLeds_requestAdapter_fifo.i_notFull
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first
+Sequenced before: pipes_setLeds_PipeOut_deq
+Sequenced after: portalIfc_requests_2_notFull, pipes_setLeds_PipeOut_notEmpty
+Conflicts: portalIfc_requests_2_enq
+ 
+Method: portalIfc_requests_2_notFull
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_2_enq, pipes_setLeds_PipeOut_deq
+ 
+Method: portalIfc_intr_status
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+ 
+Method: portalIfc_intr_channel
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+ 
+Method: pipes_say_PipeOut_first
+Ready signal: say_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: pipes_say_PipeOut_deq
+ 
+Method: pipes_say_PipeOut_deq
+Ready signal: say_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced after: portalIfc_requests_0_enq,
+		 portalIfc_requests_0_notFull,
+		 pipes_say_PipeOut_first,
+		 pipes_say_PipeOut_notEmpty
+Conflicts: pipes_say_PipeOut_deq
+ 
+Method: pipes_say_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_0_enq, pipes_say_PipeOut_deq
+ 
+Method: pipes_say2_PipeOut_first
+Ready signal: say2_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: pipes_say2_PipeOut_deq
+ 
+Method: pipes_say2_PipeOut_deq
+Ready signal: say2_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced after: portalIfc_requests_1_enq,
+		 portalIfc_requests_1_notFull,
+		 pipes_say2_PipeOut_first,
+		 pipes_say2_PipeOut_notEmpty
+Conflicts: pipes_say2_PipeOut_deq
+ 
+Method: pipes_say2_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_deq,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_1_enq, pipes_say2_PipeOut_deq
+ 
+Method: pipes_setLeds_PipeOut_first
+Ready signal: setLeds_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_enq,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: pipes_setLeds_PipeOut_deq
+ 
+Method: pipes_setLeds_PipeOut_deq
+Ready signal: setLeds_requestAdapter_fifo.i_notEmpty
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty
+Sequenced after: portalIfc_requests_2_enq,
+		 portalIfc_requests_2_notFull,
+		 pipes_setLeds_PipeOut_first,
+		 pipes_setLeds_PipeOut_notEmpty
+Conflicts: pipes_setLeds_PipeOut_deq
+ 
+Method: pipes_setLeds_PipeOut_notEmpty
+Ready signal: True
+Conflict-free: portalIfc_messageSize_size,
+	       portalIfc_requests_0_enq,
+	       portalIfc_requests_0_notFull,
+	       portalIfc_requests_1_enq,
+	       portalIfc_requests_1_notFull,
+	       portalIfc_requests_2_notFull,
+	       portalIfc_intr_status,
+	       portalIfc_intr_channel,
+	       pipes_say_PipeOut_first,
+	       pipes_say_PipeOut_deq,
+	       pipes_say_PipeOut_notEmpty,
+	       pipes_say2_PipeOut_first,
+	       pipes_say2_PipeOut_deq,
+	       pipes_say2_PipeOut_notEmpty,
+	       pipes_setLeds_PipeOut_first,
+	       pipes_setLeds_PipeOut_notEmpty
+Sequenced before: portalIfc_requests_2_enq, pipes_setLeds_PipeOut_deq
+ 
+Logical execution order: portalIfc_messageSize_size,
+			 portalIfc_requests_0_notFull,
+			 portalIfc_requests_1_notFull,
+			 portalIfc_requests_2_notFull,
+			 portalIfc_intr_status,
+			 portalIfc_intr_channel,
+			 pipes_say_PipeOut_first,
+			 pipes_say_PipeOut_notEmpty,
+			 portalIfc_requests_0_enq,
+			 pipes_say_PipeOut_deq,
+			 pipes_say2_PipeOut_first,
+			 pipes_say2_PipeOut_notEmpty,
+			 portalIfc_requests_1_enq,
+			 pipes_say2_PipeOut_deq,
+			 pipes_setLeds_PipeOut_first,
+			 pipes_setLeds_PipeOut_notEmpty,
+			 portalIfc_requests_2_enq,
+			 pipes_setLeds_PipeOut_deq
+
+==================================================

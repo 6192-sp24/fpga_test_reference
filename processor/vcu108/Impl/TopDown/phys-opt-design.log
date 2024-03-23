@@ -2,8 +2,310 @@ Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xcvu095'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095'
 INFO: [Common 17-1540] The version limit for your license is '2021.06' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
-INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.250 ns. Skipping all physical synthesis optimizations.
-INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34647 ; free virtual = 122898
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.355 | TNS=-8.347 |
+Phase 1 Physical Synthesis Initialization | Checksum: ef6e4487
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34610 ; free virtual = 122861
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.355 | TNS=-8.347 |
+
+Phase 2 Fanout Optimization
+INFO: [Physopt 32-76] Pass 1. Identified 31 candidate nets for fanout optimization.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_state_reg[1] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[32]. Replicated 2 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[34] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/p_1_in114_in. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[33]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[26]_i_12_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[26]_i_13_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_bram_serverAdapterB_outDataCore/D[15]. Replicated 4 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][12] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][15] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][11] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][13] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][27]. Replicated 2 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][19] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_toMMIO_rv_reg[68] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_toDmem_rv[66]_i_1_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-76] Pass 2. Identified 2 candidate nets for fanout optimization.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_state_reg[1] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[34] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-232] Optimized 5 nets. Created 10 new instances.
+INFO: [Physopt 32-775] End 4 Pass. Optimized 5 nets or cells. Created 10 new cells, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.348 | TNS=-7.715 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34603 ; free virtual = 122854
+Phase 2 Fanout Optimization | Checksum: f70f841a
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:08 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34603 ; free virtual = 122854
+
+Phase 3 Placement Based Optimization
+INFO: [Physopt 32-660] Identified 48 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_state_reg[1].  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_toDmem_rv[66]_i_2
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[34].  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[34]
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rv1_reg[30].  Did not re-place instance tile_0/lEcho_p_mmioreq/data1_reg[15]_i_3__0
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_bram_memory/p_77_in.  Re-placed instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_0_i_1
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[7]_0[0].  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_mem_business[0]_i_1
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[2]_i_5_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[2]_i_5
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_mmioreq/data1_reg[15]_i_8__0_n_0.  Did not re-place instance tile_0/lEcho_p_mmioreq/data1_reg[15]_i_8__0
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_mem_business[2]_i_7_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_mem_business[2]_i_7
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[32]_repN.  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[32]_replica
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_dInst_reg[6].  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_3
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[11]_i_8_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[11]_i_8
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_13_n_0.  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_13
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_26_n_0.  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_26
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_7_n_0.  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_7
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[11]_i_15_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[11]_i_15
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_toDmem_rv[44]_i_6_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_toDmem_rv[44]_i_6
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[11]_i_13_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[11]_i_13
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[0]_i_10_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[0]_i_10
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_mem_business[2]_i_9_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_mem_business[2]_i_9
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[1]_i_10_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[1]_i_10
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_mem_business[2]_i_8_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_mem_business[2]_i_8
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[8].  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[8]
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_mmioreq/data1_reg[15]_i_9_n_0.  Did not re-place instance tile_0/lEcho_p_mmioreq/data1_reg[15]_i_9
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[3]_i_7_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[3]_i_7
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_mem_business[2]_i_6_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_mem_business[2]_i_6
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[33].  Re-placed instance tile_0/lEcho_p_rv_core_dInst_reg[33]
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[11]_i_14_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[11]_i_14
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[7].  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[7]
+INFO: [Physopt 32-662] Processed net tile_0/p_1_in114_in_repN.  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[35]_replica
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_rv_core_rvd[17]_i_4_n_0.  Re-placed instance tile_0/lEcho_p_rv_core_rvd[17]_i_4
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_pc[23]_i_10_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_pc[23]_i_10
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[15]_0.  Did not re-place instance tile_0/lEcho_p_bram_memory/data1_reg[15]_i_7
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[22].  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[22]
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[33]_repN.  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[33]_replica
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[10].  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[10]
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_rv_core_rvd[18]_i_4_n_0.  Re-placed instance tile_0/lEcho_p_rv_core_rvd[18]_i_4
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_pc[23]_i_9_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_pc[23]_i_9
+INFO: [Physopt 32-663] Processed net tile_0/p_1_in114_in.  Re-placed instance tile_0/lEcho_p_rv_core_dInst_reg[35]
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_1_i_8_n_0.  Re-placed instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_1_i_8
+INFO: [Physopt 32-663] Processed net tile_0/data40.  Re-placed instance tile_0/lEcho_p_rv_core_dInst_reg[31]
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[20].  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[20]
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_rv_core_rvd[26]_i_13_n_0.  Re-placed instance tile_0/lEcho_p_rv_core_rvd[26]_i_13
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_pc[31]_i_16_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_pc[31]_i_16
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[4]_i_4_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[4]_i_4
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_mem_business[2]_i_5_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_mem_business[2]_i_5
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[23].  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[23]
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_pc[23]_i_6_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_pc[23]_i_6
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[11].  Did not re-place instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_0_i_3
+INFO: [Physopt 32-661] Optimized 8 nets.  Re-placed 8 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 8 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 8 existing cells
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.299 | TNS=-7.545 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34601 ; free virtual = 122853
+Phase 3 Placement Based Optimization | Checksum: 16f64b7aa
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:11 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34601 ; free virtual = 122853
+
+Phase 4 Rewire
+INFO: [Physopt 32-246] Starting Signal Push optimization...
+INFO: [Physopt 32-77] Pass 1. Identified 6 candidate nets for rewire optimization.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rv1_reg[30]. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_rv_core_rvd[0]_i_10_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_rv_core_rvd[26]_i_12_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_rv_core_rvd[26]_i_13_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_rv_core_rvd[16]_i_5_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_rv_core_rvd[15]_i_4_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 4 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34592 ; free virtual = 122843
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34592 ; free virtual = 122843
+Phase 4 Rewire | Checksum: 1210f6135
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:12 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34592 ; free virtual = 122843
+
+Phase 5 Critical Cell Optimization
+INFO: [Physopt 32-46] Identified 52 candidate nets for critical-cell optimization.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rv1_reg[30] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/p_77_in was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[7]_0[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[2]_i_5_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[32]_repN. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_dInst_reg[6] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[11]_i_8_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[0]_i_10_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[1]_i_10_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[8]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[3]_i_7_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[7]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/p_1_in114_in_repN. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[15]_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[11] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[22]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[33]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[33]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[10]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[18]_i_4_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[20]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/p_1_in114_in. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[4]_i_4_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[23]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[2] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[17]_i_4_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/data40. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[12]_i_4_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[5] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[30] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[16]_i_5_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[11]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[15]_i_4_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[9] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[15] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[4] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[24]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[6] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[7] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_serverAdapterA_outDataCore/hasodata_reg_0[28] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-571] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rf_2[4]_i_3_n_0 was not replicated.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[8] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[1] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[3] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[10] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/p_1_in37_in. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_toDmem_rv[44]_i_10_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_rv1[7]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[21]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/p_3_in[0]. Replicated 1 times.
+INFO: [Physopt 32-232] Optimized 17 nets. Created 17 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 17 nets or cells. Created 17 new cells, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.299 | TNS=-7.545 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34588 ; free virtual = 122839
+Phase 5 Critical Cell Optimization | Checksum: 213360b62
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:26 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34588 ; free virtual = 122839
+
+Phase 6 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 6 DSP Register Optimization | Checksum: 213360b62
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:26 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34588 ; free virtual = 122839
+
+Phase 7 BRAM Register Optimization
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 7 BRAM Register Optimization | Checksum: 213360b62
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:26 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34588 ; free virtual = 122839
+
+Phase 8 URAM Register Optimization
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 8 URAM Register Optimization | Checksum: 213360b62
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:00:26 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34588 ; free virtual = 122839
+
+Phase 9 Shift Register Optimization
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 9 Shift Register Optimization | Checksum: 213360b62
+
+Time (s): cpu = 00:01:36 ; elapsed = 00:00:26 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34588 ; free virtual = 122839
+
+Phase 10 Critical Pin Optimization
+INFO: [Physopt 32-606] Identified 34 candidate nets for critical-pin optimization.
+INFO: [Physopt 32-608] Optimized 6 nets.  Swapped 301 pins.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 6 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 301 existing cells
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.264 | TNS=-5.207 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34624 ; free virtual = 122876
+Phase 10 Critical Pin Optimization | Checksum: 213360b62
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:00:32 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34624 ; free virtual = 122876
+
+Phase 11 Very High Fanout Optimization
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 11 Very High Fanout Optimization | Checksum: 213360b62
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:00:32 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34624 ; free virtual = 122876
+
+Phase 12 BRAM Enable Optimization
+Phase 12 BRAM Enable Optimization | Checksum: 213360b62
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:00:33 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34624 ; free virtual = 122876
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34624 ; free virtual = 122876
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34624 ; free virtual = 122876
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-0.264 | TNS=-5.207 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization       |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Fanout             |          0.007  |          0.632  |           10  |              0  |                     5  |           0  |           1  |  00:00:05  |
+|  Placement Based    |          0.049  |          0.170  |            0  |              0  |                     8  |           0  |           1  |  00:00:03  |
+|  Rewire             |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:01  |
+|  Critical Cell      |          0.000  |          0.000  |           17  |              0  |                    17  |           0  |           1  |  00:00:14  |
+|  DSP Register       |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register      |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register      |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register     |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Pin       |          0.035  |          2.337  |            0  |              0  |                     6  |           0  |           1  |  00:00:06  |
+|  Very High Fanout   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Enable        |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total              |          0.091  |          3.140  |           27  |              0  |                    36  |           0  |          11  |  00:00:29  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34624 ; free virtual = 122875
+Ending Physical Synthesis Task | Checksum: 213868957
+
+Time (s): cpu = 00:01:45 ; elapsed = 00:00:36 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34624 ; free virtual = 122875
 INFO: [Common 17-83] Releasing license: Implementation
-124 Infos, 36 Warnings, 24 Critical Warnings and 0 Errors encountered.
+279 Infos, 36 Warnings, 24 Critical Warnings and 0 Errors encountered.
 phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:01:46 ; elapsed = 00:00:36 . Memory (MB): peak = 3748.855 ; gain = 0.000 ; free physical = 34663 ; free virtual = 122915

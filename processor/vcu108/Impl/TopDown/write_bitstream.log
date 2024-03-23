@@ -28,6 +28,6 @@ Writing bitstream Impl/TopDown/mkTop.bit...
 Writing bitstream Impl/TopDown/mkTop.bin...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Common 17-83] Releasing license: Implementation
-169 Infos, 37 Warnings, 24 Critical Warnings and 0 Errors encountered.
+329 Infos, 38 Warnings, 24 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 4152.770 ; gain = 128.801 ; free physical = 35062 ; free virtual = 122699
+write_bitstream: Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 4208.625 ; gain = 157.348 ; free physical = 34275 ; free virtual = 122527

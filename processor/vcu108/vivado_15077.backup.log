@@ -1,0 +1,1237 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Mar 23 17:32:31 2024
+# Process ID: 15077
+# Current directory: /home/seshan/fpga_test_reference/processor/vcu108
+# Command line: vivado -notrace -mode batch -source /home/seshan/fpga_test_reference/fpgamake/tcl/topdown.tcl
+# Log file: /home/seshan/fpga_test_reference/processor/vcu108/vivado.log
+# Journal file: /home/seshan/fpga_test_reference/processor/vcu108/vivado.jou
+#-----------------------------------------------------------
+source /home/seshan/fpga_test_reference/fpgamake/tcl/topdown.tcl -notrace
+read_checkpoint ./Synth/mkPcieTop/mkPcieTop-synth.dcp
+Command: read_checkpoint ./Synth/mkPcieTop/mkPcieTop-synth.dcp
+WARNING: [Vivado 12-4167] The checkpoint part 'xcvu095-ffva2104-2-e' does not match the current project part 'xc7vx485tffg1157-1'.
+Elapsed time 1 seconds
+link_design
+Command: link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to dcp part: xcvu095-ffva2104-2-e
+Design is defaulting to dcp top: mkPcieTop
+INFO: [Device 21-403] Loading part xcvu095-ffva2104-2-e
+INFO: [Netlist 29-17] Analyzing 981 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2223.023 ; gain = 0.000 ; free physical = 35578 ; free virtual = 123829
+Restored from archive | CPU: 1.450000 secs | Memory: 2.173195 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2223.023 ; gain = 0.000 ; free physical = 35578 ; free virtual = 123829
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2228.961 ; gain = 0.000 ; free physical = 35586 ; free virtual = 123838
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 91 instances were transformed.
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 91 instances
+
+10 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 2228.961 ; gain = 836.172 ; free physical = 35586 ; free virtual = 123838
+Elapsed time 20 seconds
+read_xdc /home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc
+Parsing XDC File [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk1_300_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk1_300_n'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk2_300_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk2_300_n'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk1_300_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk1_300_n'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk2_300_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk2_300_n'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/vcu108.xdc]
+Elapsed time 0 seconds
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+read_xdc /home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc
+Parsing XDC File [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:3]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:3]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk1_300_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:5]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk1_300_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:5]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk2_300_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:6]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk2_300_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:6]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk_300_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:8]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk_300_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:8]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk1_250_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:9]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk1_250_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:9]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'CLK_sys_clk2_250_p'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:10]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK_sys_clk2_250_p]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:10]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+INFO: [Timing 38-2] Deriving generated clocks [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:18]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:18]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:18]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:19]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:19]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:19]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'get_property' expects at least one object. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:24]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:24]
+WARNING: [Vivado 12-627] No clocks matched 'sys_clk'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:24]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:24]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_clocks userclk2]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:24]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:25]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:25]
+WARNING: [Vivado 12-627] No clocks matched 'sys_clk'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:25]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:25]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_clocks sys_clk]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:25]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:27]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:27]
+WARNING: [Vivado 12-627] No clocks matched 'clk_pll_i'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:27]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:27]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_clocks userclk2]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:27]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'userclk2'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:28]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:28]
+WARNING: [Vivado 12-627] No clocks matched 'clk_pll_i'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:28]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:28]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-from [get_clocks clk_pll_i]'. [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc:28]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [/home/seshan/fpga_test_reference/connectal/constraints/xilinx/pcie-clocks.xdc]
+Elapsed time 1 seconds
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for 
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for 
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for 
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for 
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for 
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Common 17-55] 
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for 
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for 
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for 
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for 
+write_checkpoint -force ./Impl/TopDown/top-post-link.dcp
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2398.992 ; gain = 0.000 ; free physical = 35525 ; free virtual = 123776
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2464.727 ; gain = 32.719 ; free physical = 35500 ; free virtual = 123758
+INFO: [Common 17-1381] The checkpoint '/home/seshan/fpga_test_reference/processor/vcu108/Impl/TopDown/top-post-link.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2466.727 ; gain = 67.734 ; free physical = 35508 ; free virtual = 123759
+Elapsed time 5 seconds
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_timing_summary: Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 3376.777 ; gain = 910.051 ; free physical = 34964 ; free virtual = 123215
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 100 -nworst 1 -delay_type max -sort_by group.
+INFO: [Timing 38-91] UpdateTimingParams: No interconnect No Cell Dly, Speed grade: -2, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-314] The report_cdc command only analyzes and reports clock domain crossing paths where clocks have been defined on both source and destination sides. Ports with no input delay constraint are skipped. Please run check_timing to verify there are no missing clock definitions in your design, nor any unconstrained input port.
+opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-1540] The version limit for your license is '2021.06' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3472.824 ; gain = 64.031 ; free physical = 34958 ; free virtual = 123209
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 14e731451
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3472.824 ; gain = 0.000 ; free physical = 34958 ; free virtual = 123209
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 8 inverter(s) to 5935 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 15cafbd1e
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3472.824 ; gain = 0.000 ; free physical = 34895 ; free virtual = 123147
+INFO: [Opt 31-389] Phase Retarget created 17 cells and removed 45 cells
+INFO: [Opt 31-1021] In phase Retarget, 14 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 13474435b
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3472.824 ; gain = 0.000 ; free physical = 34895 ; free virtual = 123147
+INFO: [Opt 31-389] Phase Constant propagation created 36 cells and removed 109 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 2 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 13957a388
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3472.824 ; gain = 0.000 ; free physical = 34894 ; free virtual = 123146
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 758 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 13957a388
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3472.824 ; gain = 0.000 ; free physical = 34895 ; free virtual = 123146
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 13957a388
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3472.824 ; gain = 0.000 ; free physical = 34895 ; free virtual = 123146
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 13957a388
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 3472.824 ; gain = 0.000 ; free physical = 34895 ; free virtual = 123147
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              17  |              45  |                                             14  |
+|  Constant propagation         |              36  |             109  |                                              2  |
+|  Sweep                        |               0  |             758  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              1  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3472.824 ; gain = 0.000 ; free physical = 34895 ; free virtual = 123147
+Ending Logic Optimization Task | Checksum: 12f3cce3e
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 3472.824 ; gain = 0.000 ; free physical = 34897 ; free virtual = 123148
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.437 | TNS=-26.626 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 4 BRAM(s) out of a total of 55 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 2 WE to EN ports
+Number of BRAM Ports augmented: 14 newly gated: 5 Total Ports: 110
+Ending PowerOpt Patch Enables Task | Checksum: 17d1be956
+
+Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.28 . Memory (MB): peak = 3664.883 ; gain = 0.000 ; free physical = 34822 ; free virtual = 123073
+Ending Power Optimization Task | Checksum: 17d1be956
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 3664.883 ; gain = 192.059 ; free physical = 34859 ; free virtual = 123111
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Logic Optimization Task | Checksum: d4692904
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3664.883 ; gain = 0.000 ; free physical = 34864 ; free virtual = 123115
+Ending Final Cleanup Task | Checksum: d4692904
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3664.883 ; gain = 0.000 ; free physical = 34863 ; free virtual = 123115
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3664.883 ; gain = 0.000 ; free physical = 34863 ; free virtual = 123115
+Ending Netlist Obfuscation Task | Checksum: d4692904
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3664.883 ; gain = 0.000 ; free physical = 34863 ; free virtual = 123115
+INFO: [Common 17-83] Releasing license: Implementation
+69 Infos, 35 Warnings, 24 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:21 . Memory (MB): peak = 3664.883 ; gain = 264.094 ; free physical = 34864 ; free virtual = 123115
+Elapsed time 21 seconds
+write_checkpoint -force ./Impl/TopDown/top-post-opt.dcp
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3664.883 ; gain = 0.000 ; free physical = 34864 ; free virtual = 123115
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3664.883 ; gain = 0.000 ; free physical = 34855 ; free virtual = 123111
+INFO: [Common 17-1381] The checkpoint '/home/seshan/fpga_test_reference/processor/vcu108/Impl/TopDown/top-post-opt.dcp' has been generated.
+Elapsed time 5 seconds
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Vivado 12-1034] No pblocks matched '*'.
+Command: report_drc -file ./Impl/TopDown/pre_place_drc.txt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/seshan/fpga_test_reference/processor/vcu108/Impl/TopDown/pre_place_drc.txt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 3744.922 ; gain = 80.039 ; free physical = 34769 ; free virtual = 123020
+place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-1540] The version limit for your license is '2021.06' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [DRC PORTPROP-10] Incorrect IOStandard on MCAP reset: The PCI Express reset pin RST_N_pci_sys_reset_n is driven by an IOB with a 1.8V IO standard.  This is incompatible with the 3.3V signal that is generated by the reset pin of the PCI Express edge connector.  Your  design will require an external level shifter to convert the incoming 3.3V reset signal from the edge connector to the 1.8V at the FPGA pin.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Advisories
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34763 ; free virtual = 123014
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 246d57f1
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34763 ; free virtual = 123014
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34763 ; free virtual = 123014
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 10c2c3c1d
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34770 ; free virtual = 123021
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 20784e2b3
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34731 ; free virtual = 122982
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 20784e2b3
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34731 ; free virtual = 122982
+Phase 1 Placer Initialization | Checksum: 20784e2b3
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34731 ; free virtual = 122982
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1a90d28fa
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:09 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34677 ; free virtual = 122929
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-76] Pass 1. Identified 1 candidate net for fanout optimization.
+INFO: [Physopt 32-81] Processed net host_pcieHostTop_ep7/pcieReset250/reset_hold_reg[4]_rep_0. Replicated 35 times.
+INFO: [Physopt 32-232] Optimized 1 net. Created 35 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 1 net or cell. Created 35 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34573 ; free virtual = 122824
+INFO: [Physopt 32-64] No nets found for fanout-optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-117] Net host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/toPcieTraceBram_cbram_bram_ADDRA[0] could not be optimized because driver host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/RAM_reg_bram_0_i_11 could not be replicated
+INFO: [Physopt 32-117] Net host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/tlpTraceBramWrAddrReg_reg[10] could not be optimized because driver host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/RAM_reg_bram_0_i_1 could not be replicated
+INFO: [Physopt 32-117] Net host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/toPcieTraceBram_cbram_bram_ADDRA[9] could not be optimized because driver host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/RAM_reg_bram_0_i_2 could not be replicated
+INFO: [Physopt 32-117] Net host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/tlpTraceBramWrAddrReg_reg[10]_8[0] could not be optimized because driver host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/RAM_reg_bram_1_i_4__0 could not be replicated
+INFO: [Physopt 32-117] Net host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/WEA[0] could not be optimized because driver host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/RAM_reg_bram_0_i_48 could not be replicated
+INFO: [Physopt 32-117] Net host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/toPcieTraceBram_cbram_bram_ADDRA[1] could not be optimized because driver host_pcieHostTop_pciehost/traceif/tlpTraceBramWrAddrFifo/RAM_reg_bram_0_i_10 could not be replicated
+INFO: [Physopt 32-68] No nets found for critical-cell optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34574 ; free virtual = 122826
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Very High Fanout              |           35  |              0  |                     1  |           0  |           1  |  00:00:01  |
+|  Fanout                        |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Cell                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  HD Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                         |           35  |              0  |                     1  |           0  |           7  |  00:00:01  |
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 10a0f724b
+
+Time (s): cpu = 00:02:04 ; elapsed = 00:00:42 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34576 ; free virtual = 122827
+Phase 2.2 Global Placement Core | Checksum: 24ac61d74
+
+Time (s): cpu = 00:02:06 ; elapsed = 00:00:43 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34569 ; free virtual = 122820
+Phase 2 Global Placement | Checksum: 24ac61d74
+
+Time (s): cpu = 00:02:07 ; elapsed = 00:00:43 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34589 ; free virtual = 122840
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1db353d52
+
+Time (s): cpu = 00:02:08 ; elapsed = 00:00:43 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34584 ; free virtual = 122835
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 104d5dddc
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:00:44 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34578 ; free virtual = 122830
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1a8556c46
+
+Time (s): cpu = 00:02:12 ; elapsed = 00:00:45 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34578 ; free virtual = 122829
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: cb2d96e5
+
+Time (s): cpu = 00:02:12 ; elapsed = 00:00:45 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34578 ; free virtual = 122829
+
+Phase 3.5 IO Cut Optimizer
+Phase 3.5 IO Cut Optimizer | Checksum: e1a4923c
+
+Time (s): cpu = 00:02:12 ; elapsed = 00:00:45 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34577 ; free virtual = 122828
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 11bec84a0
+
+Time (s): cpu = 00:02:16 ; elapsed = 00:00:47 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34577 ; free virtual = 122829
+
+Phase 3.7 Small Shape Clustering
+Phase 3.7 Small Shape Clustering | Checksum: 10c84ac8c
+
+Time (s): cpu = 00:02:19 ; elapsed = 00:00:49 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34541 ; free virtual = 122793
+
+Phase 3.8 DP Optimization
+Phase 3.8 DP Optimization | Checksum: 15f30fc17
+
+Time (s): cpu = 00:02:33 ; elapsed = 00:00:53 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34529 ; free virtual = 122780
+
+Phase 3.9 Flow Legalize Slice Clusters
+Phase 3.9 Flow Legalize Slice Clusters | Checksum: 12b16795a
+
+Time (s): cpu = 00:02:33 ; elapsed = 00:00:54 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34528 ; free virtual = 122780
+
+Phase 3.10 Slice Area Swap
+Phase 3.10 Slice Area Swap | Checksum: 1998ebea6
+
+Time (s): cpu = 00:02:36 ; elapsed = 00:00:56 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34493 ; free virtual = 122744
+
+Phase 3.11 Commit Slice Clusters
+Phase 3.11 Commit Slice Clusters | Checksum: 1c5c9d7dc
+
+Time (s): cpu = 00:02:41 ; elapsed = 00:00:57 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34516 ; free virtual = 122767
+
+Phase 3.12 Re-assign LUT pins
+Phase 3.12 Re-assign LUT pins | Checksum: 1049a3617
+
+Time (s): cpu = 00:02:43 ; elapsed = 00:00:59 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34518 ; free virtual = 122769
+
+Phase 3.13 Pipeline Register Optimization
+Phase 3.13 Pipeline Register Optimization | Checksum: c929687d
+
+Time (s): cpu = 00:02:44 ; elapsed = 00:00:59 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34526 ; free virtual = 122777
+
+Phase 3.14 Fast Optimization
+Phase 3.14 Fast Optimization | Checksum: 1453c825c
+
+Time (s): cpu = 00:02:57 ; elapsed = 00:01:06 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34518 ; free virtual = 122770
+Phase 3 Detail Placement | Checksum: 1453c825c
+
+Time (s): cpu = 00:02:57 ; elapsed = 00:01:06 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34518 ; free virtual = 122770
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 10d270f30
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 10d270f30
+
+Time (s): cpu = 00:03:08 ; elapsed = 00:01:10 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34530 ; free virtual = 122781
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.592. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 202564796
+
+Time (s): cpu = 00:03:34 ; elapsed = 00:01:36 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34532 ; free virtual = 122783
+Phase 4.1 Post Commit Optimization | Checksum: 202564796
+
+Time (s): cpu = 00:03:35 ; elapsed = 00:01:36 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34532 ; free virtual = 122784
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 202564796
+
+Time (s): cpu = 00:03:36 ; elapsed = 00:01:37 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34551 ; free virtual = 122802
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34564 ; free virtual = 122815
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 2f289cbfa
+
+Time (s): cpu = 00:03:37 ; elapsed = 00:01:38 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34565 ; free virtual = 122816
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34565 ; free virtual = 122816
+Phase 4.4 Final Placement Cleanup | Checksum: 37c87b50b
+
+Time (s): cpu = 00:03:37 ; elapsed = 00:01:38 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34565 ; free virtual = 122816
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 37c87b50b
+
+Time (s): cpu = 00:03:37 ; elapsed = 00:01:38 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34565 ; free virtual = 122816
+Ending Placer Task | Checksum: 28adfd66b
+
+Time (s): cpu = 00:03:37 ; elapsed = 00:01:38 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34565 ; free virtual = 122816
+INFO: [Common 17-83] Releasing license: Implementation
+117 Infos, 36 Warnings, 24 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:03:43 ; elapsed = 00:01:43 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34704 ; free virtual = 122955
+Elapsed time 103 seconds
+write_checkpoint -force ./Impl/TopDown/top-post-place.dcp
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34704 ; free virtual = 122955
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.94 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34646 ; free virtual = 122937
+INFO: [Common 17-1381] The checkpoint '/home/seshan/fpga_test_reference/processor/vcu108/Impl/TopDown/top-post-place.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34701 ; free virtual = 122952
+Elapsed time 5 seconds
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_io: Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.39 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34603 ; free virtual = 122854
+phys_opt_design
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-1540] The version limit for your license is '2021.06' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34652 ; free virtual = 122903
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.585 | TNS=-44.699 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1662431e0
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34614 ; free virtual = 122865
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.585 | TNS=-44.699 |
+
+Phase 2 Fanout Optimization
+INFO: [Physopt 32-76] Pass 1. Identified 19 candidate nets for fanout optimization.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_state_reg[1] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/p_1_in114_in. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[33]. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[34]. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[32]. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_rvd[26]_i_13_n_0. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_rvd[26]_i_12_n_0. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_bram_serverAdapterB_outDataCore/D[15]. Replicated 4 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][10] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][25]. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][18]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_bram_serverAdapterB_outDataCore/D[16]. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][17]. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][26]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][31]. Replicated 3 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_toDmem_rv[66]_i_1_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][22] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][12] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][15] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-76] Pass 2. Identified 7 candidate nets for fanout optimization.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_state_reg[1] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][19] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][20] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][21] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-601] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][27]. Net driver tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rf_2[27]_i_1 was replaced.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][30]. Replicated 3 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][24]. Replicated 3 times.
+INFO: [Physopt 32-76] Pass 3. Identified 7 candidate nets for fanout optimization.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rf_2[31]_i_8_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][22] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][19] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][20] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][21] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][27] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rvd_reg[31][16] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-232] Optimized 16 nets. Created 31 new instances.
+INFO: [Physopt 32-775] End 4 Pass. Optimized 16 nets or cells. Created 31 new cells, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.563 | TNS=-40.235 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34609 ; free virtual = 122860
+Phase 2 Fanout Optimization | Checksum: 1c487f210
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:10 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34609 ; free virtual = 122860
+
+Phase 3 Placement Based Optimization
+INFO: [Physopt 32-660] Identified 41 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_state_reg[1].  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_toDmem_rv[66]_i_2
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_bram_memory/p_77_in.  Re-placed instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_0_i_1
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rv1_reg[30].  Did not re-place instance tile_0/lEcho_p_mmioreq/data1_reg[15]_i_3__0
+INFO: [Physopt 32-663] Processed net tile_0/p_1_in114_in.  Re-placed instance tile_0/lEcho_p_rv_core_dInst_reg[35]
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[7]_0[0].  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_mem_business[0]_i_1
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[11]_i_8_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[11]_i_8
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_WEA[2].  Re-placed instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_2_i_13
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_mmioreq/data1_reg[15]_i_8__0_n_0.  Did not re-place instance tile_0/lEcho_p_mmioreq/data1_reg[15]_i_8__0
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[11]_i_13_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[11]_i_13
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_toDmem_rv[44]_i_6_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_toDmem_rv[44]_i_6
+INFO: [Physopt 32-662] Processed net tile_0/p_1_in114_in_repN.  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[35]_replica
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[11]_i_14_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[11]_i_14
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[33]_repN.  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[33]_replica
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[11]_i_15_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[11]_i_15
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_dInst_reg[6].  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_3
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_13_n_0.  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_13
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_26_n_0.  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_26
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_7_n_0.  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rvd[31]_i_7
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_mmioreq/data1_reg[15]_i_9_n_0.  Did not re-place instance tile_0/lEcho_p_mmioreq/data1_reg[15]_i_9
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_WEA[1].  Re-placed instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_1_i_13
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[34].  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[34]
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[15].  Did not re-place instance tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_mem_business[0]_i_2
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[30].  Did not re-place instance tile_0/lEcho_p_bram_memory/data1_reg[15]_i_5__0
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[1]_i_10_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[1]_i_10
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_mem_business[2]_i_8_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_mem_business[2]_i_8
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[5].  Re-placed instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_0_i_9
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[2]_i_5_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[2]_i_5
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_mem_business[2]_i_7_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_mem_business[2]_i_7
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[34]_repN.  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[34]_replica
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_WEA[0].  Did not re-place instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_0_i_39
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_2_i_3_n_0.  Did not re-place instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_2_i_3
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[0]_i_10_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[0]_i_10
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_mem_business[2]_i_9_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_mem_business[2]_i_9
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[32]_repN.  Did not re-place instance tile_0/lEcho_p_rv_core_dInst_reg[32]_replica
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[3]_i_7_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[3]_i_7
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_mem_business[2]_i_6_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_mem_business[2]_i_6
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[11].  Did not re-place instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_0_i_3
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[15]_0.  Did not re-place instance tile_0/lEcho_p_bram_memory/data1_reg[15]_i_7
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_rvd[16]_i_5_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_rvd[16]_i_5
+INFO: [Physopt 32-663] Processed net tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_1_i_8_n_0.  Re-placed instance tile_0/lEcho_p_bram_memory/portb_we[1].RAM_reg_1_i_8
+INFO: [Physopt 32-662] Processed net tile_0/lEcho_p_rv_core_pc[23]_i_11_n_0.  Did not re-place instance tile_0/lEcho_p_rv_core_pc[23]_i_11
+INFO: [Physopt 32-661] Optimized 6 nets.  Re-placed 6 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 6 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 6 existing cells
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.532 | TNS=-39.236 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34607 ; free virtual = 122859
+Phase 3 Placement Based Optimization | Checksum: 1ccd991e9
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:12 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34607 ; free virtual = 122859
+
+Phase 4 Rewire
+INFO: [Physopt 32-246] Starting Signal Push optimization...
+INFO: [Physopt 32-77] Pass 1. Identified 7 candidate nets for rewire optimization.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rv1_reg[30]. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[15]. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_rv_core_rvd[1]_i_10_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_rv_core_rvd[2]_i_5_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_rv_core_rvd[0]_i_10_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_rv_core_rvd[3]_i_7_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-134] Processed net tile_0/lEcho_p_rv_core_rvd[15]_i_4_n_0. Rewiring did not optimize the net.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 4 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34597 ; free virtual = 122848
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34597 ; free virtual = 122848
+Phase 4 Rewire | Checksum: 19c64e25b
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:14 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34597 ; free virtual = 122848
+
+Phase 5 Critical Cell Optimization
+INFO: [Physopt 32-46] Identified 49 candidate nets for critical-cell optimization.
+INFO: [Physopt 32-81] Processed net tile_0/p_1_in114_in_repN. Replicated 2 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_mmioreq/lEcho_p_rv_core_rv1_reg[30] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[7]_0[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[11]_i_8_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[33]_repN. Replicated 2 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_dInst_reg[6] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/p_77_in was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[15] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[30] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[1]_i_10_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[2]_i_5_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[34]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[11] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[0]_i_10_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[32]_repN. Replicated 2 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[3]_i_7_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[5] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/p_1_in114_in. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_rv_core_rv1_reg[15]_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[16]_i_5_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[7]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[2] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[10] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[20]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[8]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[9] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[3] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[4]_i_4_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[6] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[23]. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[11]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[17]_i_4_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[8] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[22]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[18]_i_4_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[4] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/data40. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_dInst_reg_n_0_[24]. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[13]_i_4_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[7] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_rv_core_rvd[19]_i_4_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net tile_0/lEcho_p_rv_core_rvd[15]_i_4_n_0. Replicated 1 times.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[1] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net tile_0/lEcho_p_bram_memory/lEcho_p_bram_memory_ADDRA[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-601] Processed net tile_0/lEcho_p_rv_core_rvd[26]_i_13_n_0_repN. Net driver tile_0/lEcho_p_rv_core_rvd[26]_i_13_replica was replaced.
+INFO: [Physopt 32-232] Optimized 14 nets. Created 17 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 14 nets or cells. Created 17 new cells, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.525 | TNS=-38.315 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34592 ; free virtual = 122843
+Phase 5 Critical Cell Optimization | Checksum: 1d6c34f2f
+
+Time (s): cpu = 00:01:44 ; elapsed = 00:00:28 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34592 ; free virtual = 122843
+
+Phase 6 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 6 DSP Register Optimization | Checksum: 1d6c34f2f
+
+Time (s): cpu = 00:01:44 ; elapsed = 00:00:28 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34592 ; free virtual = 122843
+
+Phase 7 BRAM Register Optimization
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 7 BRAM Register Optimization | Checksum: 1d6c34f2f
+
+Time (s): cpu = 00:01:44 ; elapsed = 00:00:28 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34592 ; free virtual = 122843
+
+Phase 8 URAM Register Optimization
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 8 URAM Register Optimization | Checksum: 1d6c34f2f
+
+Time (s): cpu = 00:01:44 ; elapsed = 00:00:28 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34592 ; free virtual = 122843
+
+Phase 9 Shift Register Optimization
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 9 Shift Register Optimization | Checksum: 1d6c34f2f
+
+Time (s): cpu = 00:01:44 ; elapsed = 00:00:28 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34592 ; free virtual = 122843
+
+Phase 10 Critical Pin Optimization
+INFO: [Physopt 32-606] Identified 36 candidate nets for critical-pin optimization.
+INFO: [Physopt 32-608] Optimized 8 nets.  Swapped 429 pins.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 8 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 429 existing cells
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.492 | TNS=-34.467 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34628 ; free virtual = 122879
+Phase 10 Critical Pin Optimization | Checksum: 1d6c34f2f
+
+Time (s): cpu = 00:01:48 ; elapsed = 00:00:34 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34628 ; free virtual = 122879
+
+Phase 11 Very High Fanout Optimization
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 11 Very High Fanout Optimization | Checksum: 1d6c34f2f
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:00:35 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34628 ; free virtual = 122879
+
+Phase 12 BRAM Enable Optimization
+Phase 12 BRAM Enable Optimization | Checksum: 1d6c34f2f
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:00:35 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34628 ; free virtual = 122879
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34628 ; free virtual = 122879
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34628 ; free virtual = 122879
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-0.492 | TNS=-34.467 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization       |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Fanout             |          0.022  |          4.463  |           31  |              0  |                    16  |           0  |           1  |  00:00:07  |
+|  Placement Based    |          0.031  |          0.999  |            0  |              0  |                     6  |           0  |           1  |  00:00:02  |
+|  Rewire             |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:01  |
+|  Critical Cell      |          0.007  |          0.921  |           17  |              0  |                    14  |           0  |           1  |  00:00:14  |
+|  DSP Register       |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register      |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register      |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register     |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Pin       |          0.033  |          3.848  |            0  |              0  |                     8  |           0  |           1  |  00:00:06  |
+|  Very High Fanout   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Enable        |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total              |          0.093  |         10.232  |           48  |              0  |                    44  |           0  |          11  |  00:00:31  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34625 ; free virtual = 122877
+Ending Physical Synthesis Task | Checksum: 1a88392e7
+
+Time (s): cpu = 00:01:54 ; elapsed = 00:00:38 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34625 ; free virtual = 122877
+INFO: [Common 17-83] Releasing license: Implementation
+287 Infos, 36 Warnings, 24 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:01:54 ; elapsed = 00:00:38 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34667 ; free virtual = 122919
+Elapsed time 38 seconds
+write_checkpoint -force ./Impl/TopDown/top-post-phys-opt.dcp
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34667 ; free virtual = 122919
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.94 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34608 ; free virtual = 122900
+INFO: [Common 17-1381] The checkpoint '/home/seshan/fpga_test_reference/processor/vcu108/Impl/TopDown/top-post-phys-opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 3744.922 ; gain = 0.000 ; free physical = 34664 ; free virtual = 122915
+Elapsed time 5 seconds
+route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-1540] The version limit for your license is '2021.06' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [DRC PORTPROP-10] Incorrect IOStandard on MCAP reset: The PCI Express reset pin RST_N_pci_sys_reset_n is driven by an IOB with a 1.8V IO standard.  This is incompatible with the 3.3V signal that is generated by the reset pin of the PCI Express edge connector.  Your  design will require an external level shifter to convert the incoming 3.3V reset signal from the edge connector to the 1.8V at the FPGA pin.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Advisories
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: b3fdeb33 ConstDB: 0 ShapeSum: 294358d1 RouteDB: c63c1794
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 11029178f
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:36 . Memory (MB): peak = 3835.883 ; gain = 90.961 ; free physical = 34352 ; free virtual = 122604
+Post Restoration Checksum: NetGraph: fce94c88 NumContArr: 13837fe8 Constraints: e8b2337e Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 1f91effee
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:37 . Memory (MB): peak = 3835.883 ; gain = 90.961 ; free physical = 34354 ; free virtual = 122605
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 1f91effee
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:37 . Memory (MB): peak = 3876.348 ; gain = 131.426 ; free physical = 34275 ; free virtual = 122526
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 1f91effee
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:37 . Memory (MB): peak = 3876.348 ; gain = 131.426 ; free physical = 34275 ; free virtual = 122526
+
+Phase 2.4 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.4 Global Clock Net Routing | Checksum: 257b84c0e
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:40 . Memory (MB): peak = 3994.160 ; gain = 249.238 ; free physical = 34253 ; free virtual = 122504
+
+Phase 2.5 Update Timing
+Phase 2.5 Update Timing | Checksum: 2f21af1b8
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:43 . Memory (MB): peak = 3994.160 ; gain = 249.238 ; free physical = 34248 ; free virtual = 122500
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.338 | TNS=-10.273| WHS=-0.300 | THS=-42.393|
+
+Phase 2 Router Initialization | Checksum: 22467eb65
+
+Time (s): cpu = 00:01:21 ; elapsed = 00:00:46 . Memory (MB): peak = 3994.160 ; gain = 249.238 ; free physical = 34243 ; free virtual = 122495
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 31771
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 27421
+  Number of Partially Routed Nets     = 4350
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 2509df4a4
+
+Time (s): cpu = 00:01:37 ; elapsed = 00:00:52 . Memory (MB): peak = 4029.332 ; gain = 284.410 ; free physical = 34215 ; free virtual = 122467
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 6039
+ Number of Nodes with overlaps = 510
+ Number of Nodes with overlaps = 99
+ Number of Nodes with overlaps = 41
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-467] Router swapped GT pin host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_common.gen_common_container[0].gen_enabled_common.gthe3_common_wrapper_inst/common_inst/gthe3_common_gen.GTHE3_COMMON_PRIM_INST/GTREFCLK01 to physical pin GTHE3_COMMON_X0Y0/COM2_REFCLKOUT5
+INFO: [Route 35-467] Router swapped GT pin host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[0].GTHE3_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTHE3_CHANNEL_X0Y0/SOUTHREFCLK1
+INFO: [Route 35-467] Router swapped GT pin host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[1].GTHE3_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTHE3_CHANNEL_X0Y1/SOUTHREFCLK1
+INFO: [Route 35-467] Router swapped GT pin host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[2].GTHE3_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTHE3_CHANNEL_X0Y2/SOUTHREFCLK1
+INFO: [Route 35-467] Router swapped GT pin host_pcieHostTop_ep7/pcie_ep/inst/gt_top_i/gt_wizard.gtwizard_top_i/pcie3_ultrascale_0_gt_i/inst/gen_gtwizard_gthe3_top.pcie3_ultrascale_0_gt_gtwizard_gthe3_inst/gen_gtwizard_gthe3.gen_channel_container[0].gen_enabled_channel.gthe3_channel_wrapper_inst/channel_inst/gthe3_channel_gen.gen_gthe3_channel_inst[3].GTHE3_CHANNEL_PRIM_INST/GTREFCLK0 to physical pin GTHE3_CHANNEL_X0Y3/SOUTHREFCLK1
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.709 | TNS=-50.474| WHS=0.003  | THS=0.000  |
+
+Phase 4.1 Global Iteration 0 | Checksum: 204613c90
+
+Time (s): cpu = 00:02:28 ; elapsed = 00:01:13 . Memory (MB): peak = 4029.332 ; gain = 284.410 ; free physical = 34225 ; free virtual = 122476
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 162
+ Number of Nodes with overlaps = 42
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.550 | TNS=-33.007| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 331e893f8
+
+Time (s): cpu = 00:02:36 ; elapsed = 00:01:19 . Memory (MB): peak = 4029.332 ; gain = 284.410 ; free physical = 34221 ; free virtual = 122473
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 136
+ Number of Nodes with overlaps = 24
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.611 | TNS=-38.955| WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 282f1832e
+
+Time (s): cpu = 00:02:40 ; elapsed = 00:01:23 . Memory (MB): peak = 4029.332 ; gain = 284.410 ; free physical = 34221 ; free virtual = 122473
+Phase 4 Rip-up And Reroute | Checksum: 282f1832e
+
+Time (s): cpu = 00:02:40 ; elapsed = 00:01:23 . Memory (MB): peak = 4029.332 ; gain = 284.410 ; free physical = 34221 ; free virtual = 122473
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 215b9884c
+
+Time (s): cpu = 00:02:45 ; elapsed = 00:01:25 . Memory (MB): peak = 4029.332 ; gain = 284.410 ; free physical = 34226 ; free virtual = 122477
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.550 | TNS=-33.007| WHS=0.003  | THS=0.000  |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 3492150d9
+
+Time (s): cpu = 00:03:21 ; elapsed = 00:01:40 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34106 ; free virtual = 122358
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 3492150d9
+
+Time (s): cpu = 00:03:21 ; elapsed = 00:01:40 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34106 ; free virtual = 122358
+Phase 5 Delay and Skew Optimization | Checksum: 3492150d9
+
+Time (s): cpu = 00:03:21 ; elapsed = 00:01:40 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34106 ; free virtual = 122358
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 3026388ba
+
+Time (s): cpu = 00:03:26 ; elapsed = 00:01:42 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34118 ; free virtual = 122369
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.550 | TNS=-29.275| WHS=0.003  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 23e39e7d5
+
+Time (s): cpu = 00:03:27 ; elapsed = 00:01:43 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34176 ; free virtual = 122427
+Phase 6 Post Hold Fix | Checksum: 23e39e7d5
+
+Time (s): cpu = 00:03:27 ; elapsed = 00:01:43 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34176 ; free virtual = 122427
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.87553 %
+  Global Horizontal Routing Utilization  = 0.801818 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 57.4468%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 64.9789%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 66.3462%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 55.7692%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 2e1ab58e1
+
+Time (s): cpu = 00:03:30 ; elapsed = 00:01:44 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34168 ; free virtual = 122420
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 2e1ab58e1
+
+Time (s): cpu = 00:03:30 ; elapsed = 00:01:44 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34168 ; free virtual = 122419
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 2e1ab58e1
+
+Time (s): cpu = 00:03:32 ; elapsed = 00:01:46 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34169 ; free virtual = 122420
+
+Phase 10 Post Router Timing
+
+Phase 10.1 Update Timing
+Phase 10.1 Update Timing | Checksum: 2d19bc605
+
+Time (s): cpu = 00:03:37 ; elapsed = 00:01:48 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34175 ; free virtual = 122426
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-0.550 | TNS=-29.275| WHS=0.030  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 2d19bc605
+
+Time (s): cpu = 00:03:37 ; elapsed = 00:01:48 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34175 ; free virtual = 122426
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:03:38 ; elapsed = 00:01:48 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34323 ; free virtual = 122574
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+313 Infos, 37 Warnings, 24 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:03:44 ; elapsed = 00:01:53 . Memory (MB): peak = 4360.332 ; gain = 615.410 ; free physical = 34323 ; free virtual = 122574
+Elapsed time 114 seconds
+write_checkpoint -force ./Impl/TopDown/top-post-route.dcp
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4360.332 ; gain = 0.000 ; free physical = 34323 ; free virtual = 122574
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 4360.332 ; gain = 0.000 ; free physical = 34257 ; free virtual = 122560
+INFO: [Common 17-1381] The checkpoint '/home/seshan/fpga_test_reference/processor/vcu108/Impl/TopDown/top-post-route.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 4360.332 ; gain = 0.000 ; free physical = 34323 ; free virtual = 122574
+Elapsed time 5 seconds
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 100 -nworst 1 -delay_type max -sort_by group.
+report_io: Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.39 . Memory (MB): peak = 4384.344 ; gain = 0.000 ; free physical = 34274 ; free virtual = 122525
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+write_bitstream -bin_file -force Impl/TopDown/mkTop.bit
+Command: write_bitstream -bin_file -force Impl/TopDown/mkTop.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-1540] The version limit for your license is '2021.06' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC CFGBVS-1] Missing CFGBVS and CONFIG_VOLTAGE Design Properties: Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+INFO: [DRC PORTPROP-10] Incorrect IOStandard on MCAP reset: The PCI Express reset pin RST_N_pci_sys_reset_n is driven by an IOB with a 1.8V IO standard.  This is incompatible with the 3.3V signal that is generated by the reset pin of the PCI Express edge connector.  Your  design will require an external level shifter to convert the incoming 3.3V reset signal from the edge connector to the 1.8V at the FPGA pin.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 1 Warnings, 1 Advisories
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream Impl/TopDown/mkTop.bit...
+Writing bitstream Impl/TopDown/mkTop.bin...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+336 Infos, 38 Warnings, 24 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 4392.348 ; gain = 8.004 ; free physical = 34282 ; free virtual = 122533
+Elapsed time 37 seconds
+topdown.tcl elapsed time 419 seconds
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 23 17:39:34 2024...
