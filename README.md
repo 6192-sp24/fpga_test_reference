@@ -22,9 +22,10 @@ on the FPGA....
 source setup.sh
 cd processor
 ./test.sh add32 # or some other test -- do this before compiling
-make build.vcu108 # uses bsc and vivado to compile (ignore timing violation for now)
+make build.vcu108 # uses bsc and vivado to compile
 make run.vcu108 # flash the fpga and read
 ```
+The build might take a while (few minutes),  (ignore timing violation for now).
 
 in simulation....
 ```
@@ -61,6 +62,10 @@ Let us know if you have questions :)
 # Debugging....
 
 You can use `$display` in bluesim, but not an FPGA. You will need to use some server side C program with connectal to pass debug messages. Its hard for first time FPGA users. Make sure it runs in simulation and you get no timing violations on the FPGA (since its fixed clock speed).
+
+# Large memory
+
+The vcu108 is pretty big compared to 6.111 boards so you have have fairly large BRAMs. If you need DRAM, the board has DDR4, which we can try to get working, but using a server side copy to FPGA is also an option.
 
 # Importing verilog
 
