@@ -57,6 +57,8 @@ You can do some clever things with host pc to fpga connection, such as runnning 
 
 You can see the samples from connectal for other C to bluespec/FPGA interfaces. Make sure your C code does not run for ever or it will be a pain to kill
 
+Look at how the interfaces are working in Echo.bsv, top_bsv.bsv, and test_echo.c.
+
 Let us know if you have questions :)
 
 # Debugging....
