@@ -25,7 +25,7 @@ cd processor
 make build.vcu108 # uses bsc and vivado to compile
 make run.vcu108 # flash the fpga and read
 ```
-The build might take a while (few minutes),  (ignore timing violation for now).
+The build might take a while (few minutes),  (ignore timing violation for now). Ignore some errors after running about read/write/append mode. If you see "heard an echo 2" at the end, you are all good.
 
 in simulation....
 ```
@@ -35,6 +35,7 @@ cd processor
 make build.bluesim # uses bsc and bluesim
 make run.bluesim # run in simulation
 ```
+This demo is not fully set up to do server to simulator communication correctly so you may see some weird responses. You should probably get this working for better testing, without having to constantly flash the FPGA.
 
 # How it works....
 
